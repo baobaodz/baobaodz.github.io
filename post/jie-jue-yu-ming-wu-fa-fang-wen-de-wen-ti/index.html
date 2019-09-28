@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>解决域名无法访问的问题 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://baobaodz.top/favicon.ico?v=1569639298822">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://baobaodz.top/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="http://baobaodz.top">
+        <img class="avatar" src="http://baobaodz.top/images/avatar.png?v=1569639298822" alt="" width="32px" height="32px">
+      </a>
+      <a href="http://baobaodz.top">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">解决域名无法访问的问题</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-22</span>
+            
+          </div>
+          <div class="post-content">
+            <h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
+<p>最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。<img src="https://s2.ax1x.com/2019/09/28/uQNqKI.png" alt="拒绝请求"></p>
+<p>可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。<img src="https://s2.ax1x.com/2019/09/28/uQNjVf.png" alt="检测"></p>
+<p>查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。<img src="https://s2.ax1x.com/2019/09/28/uQNLrt.png" alt="端口监听"></p>
+<p>提工单阿里云技术人员说我是用8080端口服务的，用域名自然是访问不了的。需要域名+8080端口才能访问，一试还真可以。但是我想还需要用80端口访问。于是进入修改/root/java/tomcat/apache-tomcat-8.5.34/conf目录下的sever.xml文件，启动80端口监听。</p>
+<pre><code class="language-xml">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+改为
+&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+</code></pre>
+<p>查看端口监听,可以看到8080端口没有了，出现了80端口监听。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# netstat -an | grep 80
+tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN     
+tcp        4      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        1      0 172.19.93.164:80        180.111.33.207:11809    CLOSE_WAIT 
+tcp        0      0 172.19.93.164:26252     100.100.30.26:80        ESTABLISHED
+tcp        0     52 172.19.93.164:22        180.111.33.207:11847    ESTABLISHED
+tcp        0      0 172.19.93.164:80        180.111.33.207:11834    ESTABLISHED
+tcp        0      0 172.19.93.164:1521      101.132.116.203:46580   ESTABLISHED
+tcp      527      0 172.19.93.164:80        180.111.33.207:11833    ESTABLISHED
+tcp      553      0 172.19.93.164:80        180.111.33.207:11808    ESTABLISHED
+tcp        0      0 172.19.93.164:22        180.111.33.207:9649     ESTABLISHED
+</code></pre>
+<p>重启Tomcat。这里我又犯了一个错误。我直接启动tomcat，要知道Tomcat本来就运行着的，这样一点用也没有。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./satrtup.sh
+</code></pre>
+<p>正确做法应该先关闭Tomcat，再启动。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./shutdown.sh
+[root@izuf66fm097gavs15ngjfvz bin]# ./startup.sh
+Using CATALINA_BASE:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_HOME:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_TMPDIR: /root/java/tomcat/apache-tomcat-8.5.34/temp
+Using JRE_HOME:        /root/java/jdk/jdk1.8.0_181/jre
+Using CLASSPATH:       /root/java/tomcat/apache-tomcat-8.5.34/bin/bootstrap.jar:/root/java/tomcat/apache-tomcat-8.5.34/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre>
+<p>访问baobaodz.com就可以访问了。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="http://baobaodz.top/post/hello-gridea">
+              <h3 class="post-title">
+                下一篇：Hello Gridea
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">温故而知新</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
