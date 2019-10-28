@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://baobaodz.top</id>
     <title>Gridea</title>
-    <updated>2019-10-28T14:57:51.835Z</updated>
+    <updated>2019-10-28T15:23:17.454Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://baobaodz.top"/>
     <link rel="self" href="http://baobaodz.top/atom.xml"/>
@@ -10,15 +10,6 @@
     <logo>http://baobaodz.top/images/avatar.png</logo>
     <icon>http://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
-    <entry>
-        <title type="html"><![CDATA[222]]></title>
-        <id>http://baobaodz.top/post/222</id>
-        <link href="http://baobaodz.top/post/222">
-        </link>
-        <updated>2019-10-28T14:57:34.000Z</updated>
-        <content type="html"><![CDATA[<p>22222222</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>http://baobaodz.top/post/hello-gridea</id>
@@ -49,6 +40,45 @@
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[七牛云存储配置服务器CNAME]]></title>
+        <id>http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
+        <link href="http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
+        </link>
+        <updated>2018-11-16T15:07:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
+<!--more-->
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" alt="测试域名"></figure>
+<h3 id="配置cname">配置CNAME</h3>
+<p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" alt="image.png"></figure>
+<p>步骤2：点击后确定，查看CNAME，并复制</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/uj7UWF.png" alt="CNAME"></figure>
+<p>步骤3：进入阿里云控制台，域名-域名配置，新增一条记录</p>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/uj70y9.png" alt="image.png"></figure>
+<p>其中</p>
+<pre><code>记录类型改为CNAME
+主机记录为之前步骤1中的加速域名前缀。
+记录值为CNMAE的值。
+</code></pre>
+<p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
+<p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" alt="image.png"></figure>
+<p>步骤5：更改图片存储路径，更改项目链接地址</p>
+<p>&lt;a href='http://resource.baobaodz.com/image/preview/articlepreview&quot;+data[i].aid+&quot;.jpg'&gt;</p>
+<h3 id="相关知识">相关知识</h3>
+<h4 id="二级域名">二级域名</h4>
+<p>baidu.com 是顶级域名， zhidao.baidu.com就是二级域名<br>
+baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
+<p>而形如&quot;abc.com/bbs&quot;的、采取目录形式的不能够称为二级域名，一般称之为&quot;网址&quot;。</p>
+<p>使用二级域名的好处是一个是好记，另一个是搜索权重高于网址形式。</p>
+<h4 id="cname解析">CNAME解析</h4>
+<p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
+<p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
 ]]></content>
     </entry>
 </feed>

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | Gridea</title>
+<title>七牛云存储配置服务器CNAME | Gridea</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="http://baobaodz.top/favicon.ico?v=1572276195554">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -73,54 +73,76 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              七牛云存储配置服务器CNAME
             </h2>
             <div class="post-info">
               <span>
-                2018-12-12
+                2018-11-16
               </span>
               <span>
-                2 min read
+                3 min read
               </span>
               
-                <a href="http://baobaodz.top/tag/EjR4jRupi" class="post-tag">
-                  # Gridea
+                <a href="http://baobaodz.top/tag/Java Web" class="post-tag">
+                  # Java Web
+                </a>
+              
+                <a href="http://baobaodz.top/tag/云服务器" class="post-tag">
+                  # 云服务器
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="http://baobaodz.top/post-images/hello-gridea.png" alt="">
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/10/13/ujHGXd.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                <p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
+<!--more-->
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" alt="测试域名"></figure>
+<h3 id="配置cname">配置CNAME</h3>
+<p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" alt="image.png"></figure>
+<p>步骤2：点击后确定，查看CNAME，并复制</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/uj7UWF.png" alt="CNAME"></figure>
+<p>步骤3：进入阿里云控制台，域名-域名配置，新增一条记录</p>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/uj70y9.png" alt="image.png"></figure>
+<p>其中</p>
+<pre><code>记录类型改为CNAME
+主机记录为之前步骤1中的加速域名前缀。
+记录值为CNMAE的值。
+</code></pre>
+<p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
+<p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" alt="image.png"></figure>
+<p>步骤5：更改图片存储路径，更改项目链接地址</p>
+<p>&lt;a href='http://resource.baobaodz.com/image/preview/articlepreview&quot;+data[i].aid+&quot;.jpg'&gt;</p>
+<h3 id="相关知识">相关知识</h3>
+<h4 id="二级域名">二级域名</h4>
+<p>baidu.com 是顶级域名， zhidao.baidu.com就是二级域名<br>
+baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
+<p>而形如&quot;abc.com/bbs&quot;的、采取目录形式的不能够称为二级域名，一般称之为&quot;网址&quot;。</p>
+<p>使用二级域名的好处是一个是好记，另一个是搜索权重高于网址形式。</p>
+<h4 id="cname解析">CNAME解析</h4>
+<p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
+<p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
+<li>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AEcname">配置CNAME</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86">相关知识</a>
+<ul>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D">二级域名</a></li>
+<li><a href="#cname%E8%A7%A3%E6%9E%90">CNAME解析</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -130,15 +152,6 @@
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
-              <h3 class="post-title">
-                七牛云存储配置服务器CNAME
-              </h3>
-            </a>
-          </div>
         
 
         
