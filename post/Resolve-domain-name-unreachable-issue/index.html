@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | baobaodz</title>
+<title>解决域名无法访问的问题 | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
 <link rel="shortcut icon" href="http://baobaodz.top/favicon.ico?v=1572540017322">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -85,58 +85,71 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              解决域名无法访问的问题
             </h2>
             <div class="post-info">
               <span>
-                2018-12-12
+                2019-09-22
               </span>
               <span>
-                2 min read
+                4 min read
               </span>
               
-                <a href="http://baobaodz.top/tag/EjR4jRupi" class="post-tag">
-                  # Gridea
+                <a href="http://baobaodz.top/tag/云服务器" class="post-tag">
+                  # 云服务器
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="http://baobaodz.top/post-images/hello-gridea.png" alt="">
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/09/11/nwypwD.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-
+                <h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
+<p>最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。<img src="https://s2.ax1x.com/2019/09/28/uQNqKI.png" alt="拒绝请求"></p>
+<p>可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。<img src="https://s2.ax1x.com/2019/09/28/uQNjVf.png" alt="检测"></p>
+<p>查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。<img src="https://s2.ax1x.com/2019/09/28/uQNLrt.png" alt="端口监听"></p>
+<p>提工单阿里云技术人员说我是用8080端口服务的，用域名自然是访问不了的。需要域名+8080端口才能访问，一试还真可以。但是我想还需要用80端口访问。于是进入修改/root/java/tomcat/apache-tomcat-8.5.34/conf目录下的sever.xml文件，启动80端口监听。</p>
+<pre><code class="language-xml">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+改为
+&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+</code></pre>
+<p>查看端口监听,可以看到8080端口没有了，出现了80端口监听。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# netstat -an | grep 80
+tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN     
+tcp        4      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        1      0 172.19.93.164:80        180.111.33.207:11809    CLOSE_WAIT 
+tcp        0      0 172.19.93.164:26252     100.100.30.26:80        ESTABLISHED
+tcp        0     52 172.19.93.164:22        180.111.33.207:11847    ESTABLISHED
+tcp        0      0 172.19.93.164:80        180.111.33.207:11834    ESTABLISHED
+tcp        0      0 172.19.93.164:1521      101.132.116.203:46580   ESTABLISHED
+tcp      527      0 172.19.93.164:80        180.111.33.207:11833    ESTABLISHED
+tcp      553      0 172.19.93.164:80        180.111.33.207:11808    ESTABLISHED
+tcp        0      0 172.19.93.164:22        180.111.33.207:9649     ESTABLISHED
+</code></pre>
+<p>重启Tomcat。这里我又犯了一个错误。我直接启动tomcat，要知道Tomcat本来就运行着的，这样一点用也没有。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./satrtup.sh
+</code></pre>
+<p>正确做法应该先关闭Tomcat，再启动。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./shutdown.sh
+[root@izuf66fm097gavs15ngjfvz bin]# ./startup.sh
+Using CATALINA_BASE:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_HOME:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_TMPDIR: /root/java/tomcat/apache-tomcat-8.5.34/temp
+Using JRE_HOME:        /root/java/jdk/jdk1.8.0_181/jre
+Using CLASSPATH:       /root/java/tomcat/apache-tomcat-8.5.34/bin/bootstrap.jar:/root/java/tomcat/apache-tomcat-8.5.34/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre>
+<p>访问baobaodz.com就可以访问了。</p>
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
@@ -145,9 +158,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
+            <a href="http://baobaodz.top/post/hello-gridea">
               <h3 class="post-title">
-                七牛云存储配置服务器CNAME
+                Hello Gridea
               </h3>
             </a>
           </div>

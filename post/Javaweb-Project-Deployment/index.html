@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>javaweb项目部署 | baobaodz</title>
+<meta name="description" content="keep humble , stay hungery" />
+<link rel="shortcut icon" href="http://baobaodz.top/favicon.ico?v=1572540017322">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://baobaodz.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://baobaodz.top">
+  <img class="avatar" src="http://baobaodz.top/images/avatar.png?v=1572540017322" alt="">
+  </a>
+  <h1 class="site-title">
+    baobaodz
+  </h1>
+  <p class="site-description">
+    keep humble , stay hungery
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/skillpoints" class="menu">
+          技能点
+        </a>
+      
+    
+      
+        <a href="/keywords" class="menu">
+          关键词
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              javaweb项目部署
+            </h2>
+            <div class="post-info">
+              <span>
+                2018-10-13
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+                <a href="http://baobaodz.top/tag/Java Web" class="post-tag">
+                  # Java Web
+                </a>
+              
+                <a href="http://baobaodz.top/tag/云服务器" class="post-tag">
+                  # 云服务器
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/10/13/uj8IyV.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="购买域名和服务器">购买域名和服务器</h3>
+<h4 id="购买服务器">购买服务器</h4>
+<p>阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。</p>
+<p>具体可看<a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujGa0U.png" alt="image.png"></figure>
+<h4 id="购买域名">购买域名</h4>
+<p>链接：<a href="https://wanwang.aliyun.com/domain/com/">域名注册</a><br>
+com大概45元/年，cn29元/年。top9元/年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。<br>
+买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/ujGd7F.png" alt="image.png"></figure>
+<p>等个十分钟就可以按域名访问了。</p>
+<h3 id="配置java环境和tomcat">配置java环境和tomcat</h3>
+<p>因为我服务器端是Linux操作系统，为了方便操作，需要两个工具</p>
+<p>1.xshell远程连接工具</p>
+<p><a href="http://www.netsarang.com/download/software.html">官网下载</a></p>
+<p>其实在购买云服务器后在管理后台就有远程连接，可以在线远程连接，但是为了方便操作下载这个工具。<br>
+<img src="https://s2.ax1x.com/2019/10/13/ujGDh9.png" alt="image.png"><br>
+2.Xftp 传输文件工具</p>
+<p><a href="http://www.netsarang.com/products/xfp_overview.html">官网下载</a></p>
+<p>此工具和xshell是一家的，可以方便的复制粘贴把本机文件传输到服务器。</p>
+<p>具体参考<a href="https://www.jianshu.com/p/2604e53a7f6a?from=singlemessage">阿里云ECS建网站（建站）超详细全套完整图文教程！菜鸟必看！</a>讲的非常详细。</p>
+<h3 id="配置服务器上的数据库">配置服务器上的数据库</h3>
+<p>java环境和tomcat安装好后，在服务器安装数据库。这里我选择的是Oracle 11g这个产品。<br>
+具体安装过程可参考<a href="https://blog.csdn.net/sinat_32998977/article/details/79437014">阿里云 CentOS7.4，静默安装Oracle11g2的教程</a>。</p>
+<p>总结一下常用的命令：</p>
+<pre><code>su - oracle #切换到oracle用户
+lsbrctl start #启动监听
+lsnrctl stop #停止监听
+sdnrctl status #查看listener的状态
+
+sqlplus &quot;/as sysdba&quot; #以sysdba的身份登陆
+shutdown #关闭数据库服务
+strartup #启动数据库服务
+</code></pre>
+<h3 id="plsql-dev远程连接数据库">pl/sql dev远程连接数据库</h3>
+<p>数据库搞好之后，我想需要个工具来操作服务器上的数据库。先选择了navicate for Oracle，但是正版需要1000多块钱，找前找后也没破解版。虽然只有14天免费试用，但是可以连接到远端服务器。</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" alt="image.png"></figure>
+<p>但是这样始终不是长久之计啊。于是选择了pl/sql developer。因为我本机之前已经装了Oracle客户端，所以可以在C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN下tnsnames.ora文件中添加</p>
+<pre><code>alioracle=
+	(DESCRIPTION =
+		(ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.116.203)(PORT = 1521))
+		(CONNECT_DATA =
+  			(SERVER = DEDICATED)
+  			(SERVICE_NAME = orcl11g)
+		)
+	)
+</code></pre>
+<p>其中</p>
+<pre><code>alioracle：连接时显示的本地名称，可以任意取
+ADDRESS ：链接地址 
+PROTOCOL ：使用的协议，一般为TCP 
+HOST ：服务器ip地址 
+PORT ：服务器监听端口号，Oracle默认为1521 
+SERVICE_NAME ：服务器服务名称
+</code></pre>
+<p>然后打开pl/sql developer工具就会在database的下拉选项中看到刚才起的本地连接名</p>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" alt="image.png"></figure>
+<p>点击ok但是就是登不上去显示</p>
+<pre><code>ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+</code></pre>
+<p>然后本地cmd中tnsping alioracle 是没问题的</p>
+<pre><code>C:\Users\Administrator&gt;tnsping alioracle
+
+TNS Ping Utility for 32-bit Windows: Version 10.2.0.1.0 - Production on 11-10月-
+2018 11:28:54
+
+Copyright (c) 1997, 2005, Oracle.  All rights reserved.
+
+已使用的参数文件:
+C:\oracle\product\10.2.0\db_1\network\admin\sqlnet.ora
+
+已使用 TNSNAMES 适配器来解析别名
+Attempting to contact (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.
+116.203)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl11g)))
+OK (80 毫秒)
+</code></pre>
+<p>弄了好久才明白：</p>
+<p>这里的连接标识符即SERVICE_NAME（网络别名、网络服务名、主机连接字符串、主机名) tnsping 是用来执行oracle 网络别名SERVICE_NAME的解析工作。会解析出ORACLE client中设定的服务器IP与监听端口。</p>
+<p>因此tnsping alioracle 的时候只是根据tnsname.ora文件中记录的这个字符串&quot;alioracle&quot;相应的IP地址去查看对应的端口是否开放，而不会去验证SERVICE_NAME是否正确，SERVICE_NAME如果配置的不正确是不能连接上数据库的。</p>
+<p>那这个SERVICE_NAME在哪看呢？</p>
+<p>在Xshell中远程连接服务器输入</p>
+<pre><code>	[root@izuf66fm097gavs15ngjfvz ~]# su - oracle
+	
+	[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+
+	SQL&gt; show parameter service_name
+
+	NAME				     TYPE	 VALUE
+	------------------------------------ ----------- ------------------------------
+	service_names			 string	 orcl11g.us.oracle.com
+</code></pre>
+<p>可以看出服务器端的Oracle数据库service_name是orcl11g.us.oracle.com，而我在tnsnames.ora中的SERVICE_NAME = orcl11g。所以会显示无法识别连接描述符。改正之后，豁然可以连接上去了。</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/iteye_13903/article/details/82164884">tnsping通却连接不上数据库</a></li>
+<li><a href="https://blog.csdn.net/beihangyjs/article/details/5732508">plSQL技巧：“tns:无法解析指定的连接标识符”问题详解</a></li>
+</ul>
+<h3 id="项目部署到服务器">项目部署到服务器</h3>
+<p>查看服务器端数据库名</p>
+<pre><code>SQL&gt; select name from v$database;
+
+NAME
+---------
+ORCL11G
+</code></pre>
+<p>在项目WEB-INF目录下db.properties文件中<br>
+修改dataSource.jdbcUrl=jdbc: oracle: thin:@127.0.0.1: 1521:ORCL为</p>
+<pre><code>dataSource.jdbcUrl=jdbc:oracle:thin:@101.132.116.203:1521:ORCL11G
+</code></pre>
+<p>注意：除此之外还需要加入对应的数据库驱动包。<br>
+客户端Oracle为10g，而服务器端Oracle为11g驱动包不一致还不行。于是在lib文件下加入jdbc_6g.jar。<br>
+然后在myeclipse中项目上右键-export-war文件。然后通过通过xftp工具将此war文件上传到tomcat目录下的webapps目录下。</p>
+<p>然后在访问时通过ip地址+端口号+war包名+jsp文件就可以访问啦！例如：</p>
+<pre><code>http://101.132.116.203:8080/MyBlog/jsp/index.jsp
+</code></pre>
+<p>本地数据库的数据怎么办？<br>
+本来想着pl/sql dev中可以导出数据的sql脚本，但是因为表中含有列是clob类型，所以数据时无法导出的，但是建表语句还是可以查看的。<br>
+在新建表过程中出现了一个问题，就是中文字符乱码问题，所有中文字符变成了“？”。<br>
+查看数据库编码</p>
+<pre><code>SQL&gt; select userenv('language') from dual;
+
+USERENV('LANGUAGE')
+----------------------------------------------------
+AMERICAN_AMERICA.WE8MSWIN1252
+</code></pre>
+<p>可以看出数据库编码不是中文编码，于是在服务器上<br>
+vi /home/oracle/.bash_profile加入</p>
+<pre><code>export NLS_LANG=Simplified Chinese_CHINA.AL32UTF8
+</code></pre>
+<p>会发现“？”都变成了中文字符“靠”。。。按理说应该起作用啊。百思不得其解。后来发现，这个数据库编码只对新数据有效，旧数据没作用的，因此只要把其删掉重新插入就显示正常了。</p>
+<h3 id="去除项目名和端口号">去除项目名和端口号</h3>
+<p>项目部署后，输入http://101.132.116.203:8080/MyBlog/jsp/index.jsp 可访问。现在需求是访问http://baobaodz.com 也可以响应我们需要的内容。<br>
+1.去除端口号：<br>
+tomcat项目运行端口为8080，而我们平常访问的网站都是不带端口号的，即端口号是80，在阿里云安全组设置里面添加规则</p>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/ujGOHS.gif" alt="安全组.gif"></figure>
+<p>过一会就可以访问baobaodz.com/MyBlog/jsp/index.jsp<br>
+，如果不行，别忘了去域名备案。不备案的话，端口80是不给开放的。<br>
+备案的过程很麻烦，填写各种信息，还要拍照打印各种证明材料，不过有指引一步一步来。备案提交后，需要七八天的审核时间。<br>
+2.设置欢迎页<br>
+在项目文件的web.xml文件里，欢迎页面需要进行小小的改动，把原来默认的index.jsp改为jsp/index.jsp。因为首页我是放在jsp文件夹下的。</p>
+<pre><code>&lt; display-name&gt;MyBlog&lt; /display-name&gt;
+&lt; welcome-file-list&gt;
+    &lt; welcome-file&gt;jsp/index.jsp&lt; /welcome-file&gt;
+&lt; /welcome-file-list&gt;
+</code></pre>
+<p>除此之外，index.jsp文件中的所有跳转路径必须要改成绝对路径。这样css.js等资源才可以被正确访问。</p>
+<pre><code>&lt; a href=&quot;archives.jsp&quot;&gt;归档&lt;/a&gt;
+&lt; a href=&quot;&lt;%=request.getContextPath()%&gt;/jsp/archives.jsp&quot;&gt;归档&lt; /a&gt;
+</code></pre>
+<p>重启服务器tomcat，访问baobaodz.com/MyBlog就可以了。<br>
+3.去除项目名<br>
+需要进入tomcat根目录下conf文件夹下的server.xml，添加Context标签。</p>
+<pre><code>	&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;
+    	&lt;Context  path=&quot;&quot;   docBase=&quot;/root/java/tomcat/apache-tomcat-8.5.34/webapps/MyBlog&quot;   debug=&quot;0&quot;/&gt;  
+        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
+    &lt;/Host&gt;
+</code></pre>
+<h3 id="遇到的问题">遇到的问题</h3>
+<p>重启tomcat，刷新页面发现数据显示不了。出现500状态码错误，再去sqlplus连接数据库，显示无法监听，原来数据库连接不上了。原因是之前我重启Linux系统后，数据库没有重新启动，开启监听。</p>
+<p>切到Oracle登录显示</p>
+<pre><code>[root@izuf66fm097gavs15ngjfvz logs]# su - oracle
+Last login: Fri Oct 12 17:52:55 CST 2018 on pts/0
+-bash: export: `Chinese_CHINA.AL32UTF8': not a valid identifier
+[oracle@izuf66fm097gavs15ngjfvz ~]$ ls
+</code></pre>
+<p>原因是之前修改Oracle字符集的时候，在windows系统文本编辑器上修改的，和Linux上修改会有出入。所以建议还是在Linux下修改比较稳妥。</p>
+<p>编辑oracle用户的.bash_profile文件</p>
+<pre><code>[oracle@node00 dse]$ vim ~/.bash_profile
+找到
+export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.AL32UTF8&quot;
+</code></pre>
+<p>发现没加双引号，加上使改变立即生效：</p>
+<pre><code>[oracle@node00 dse]$ source ~/.bash_profile
+</code></pre>
+<p>如果不解决这个问题的话，在以dba登录时，会出现如下错误</p>
+<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+
+SQL*Plus: Release 11.2.0.1.0 Production on Wed Nov 14 18:55:03 2018
+
+Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+
+ERROR:
+ORA-12705: Cannot access NLS data files or invalid environment specified
+</code></pre>
+<p>然后后续启动数据库，启动监听</p>
+<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+SQL&gt; strartup
+SQL&gt; exit
+[oracle@izuf66fm097gavs15ngjfvz ~]$ lsnrctl start</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8">购买域名和服务器</a>
+<ul>
+<li><a href="#%E8%B4%AD%E4%B9%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">购买服务器</a></li>
+<li><a href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D">购买域名</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E7%BD%AEjava%E7%8E%AF%E5%A2%83%E5%92%8Ctomcat">配置java环境和tomcat</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93">配置服务器上的数据库</a></li>
+<li><a href="#plsql-dev%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93">pl/sql dev远程连接数据库</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">项目部署到服务器</a></li>
+<li><a href="#%E5%8E%BB%E9%99%A4%E9%A1%B9%E7%9B%AE%E5%90%8D%E5%92%8C%E7%AB%AF%E5%8F%A3%E5%8F%B7">去除项目名和端口号</a></li>
+<li><a href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98">遇到的问题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="http://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

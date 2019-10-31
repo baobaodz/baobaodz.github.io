@@ -1,0 +1,431 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux常用命令汇总 | baobaodz</title>
+<meta name="description" content="keep humble , stay hungery" />
+<link rel="shortcut icon" href="http://baobaodz.top/favicon.ico?v=1572540017322">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="http://baobaodz.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="http://baobaodz.top">
+  <img class="avatar" src="http://baobaodz.top/images/avatar.png?v=1572540017322" alt="">
+  </a>
+  <h1 class="site-title">
+    baobaodz
+  </h1>
+  <p class="site-description">
+    keep humble , stay hungery
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/skillpoints" class="menu">
+          技能点
+        </a>
+      
+    
+      
+        <a href="/keywords" class="menu">
+          关键词
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Linux常用命令汇总
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-10-12
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+                <a href="http://baobaodz.top/tag/Linux" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/10/13/ujqZIx.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="一-目录操作">一、目录操作</h3>
+<h4 id="pwd-当前所在目录">pwd 当前所在目录</h4>
+<pre><code>[root@izuf66fm097gavs15ngjfvz home]# pwd
+/home
+`&lt;/pre&gt;
+</code></pre>
+<h4 id="ls-列出目录内容">ls 列出目录内容</h4>
+<ul>
+<li>
+<p>英文原意：list</p>
+</li>
+<li>
+<p>常用选项：</p>
+</li>
+<li>
+<ul>
+<li>-l ：详细信息显示</li>
+<li>-a：显示所有文件，包括隐藏文件</li>
+<li>-h：将文件容量以较易读的方式（GB，kB等）列出来</li>
+</ul>
+<p>另外，这些参数可以组合使用，例如<code>ls -la</code>，显示当前目录所有文件的详细信息</p>
+<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -a
+.  ..  oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -la
+total 2097168
+drwxr-xr-x.  3 root   root           4096 Apr 11  2018 .
+dr-xr-xr-x. 19 root   root           4096 Sep  7 21:14 ..
+drwx------   3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r--   1 root   root     2147483648 Oct  9  2018 swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -lah
+total 2.1G
+drwxr-xr-x.  3 root   root     4.0K Apr 11  2018 .
+dr-xr-xr-x. 19 root   root     4.0K Sep  7 21:14 ..
+drwx------   3 oracle oinstall 4.0K Nov 14  2018 oracle
+-rw-r--r--   1 root   root     2.0G Oct  9  2018 swap
+</pre>
+</li>
+</ul>
+<h4 id="cd-切换目录"><strong>cd</strong> 切换目录</h4>
+<ul>
+<li>英文原意：change directory</li>
+<li>cd oracle     //进入指定目录,相当于<br>
+cd ./oracle   // 切换到当前目录下的shi目录中，“.”表示当前目录<br>
+cd ..         //  回到上级目录<br>
+cd -          // 返回进入此目录之前的目录<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# cd ..
+[root@izuf66fm097gavs15ngjfvz home]# cd ./oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# cd -
+/home
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# 
+</pre>
+</li>
+</ul>
+<h4 id="mkdir-新建目录"><strong>mkdir 新建目录</strong></h4>
+<pre><code>&lt;pre&gt;root@izuf66fm097gavs15ngjfvz /]# cd home
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+mysql  oracle  swap
+
+&lt;/pre&gt;
+</code></pre>
+<h4 id="rmdir-删除空目录"><strong>rmdir 删除空目录</strong></h4>
+<pre><code>如目录不为空，删除不了，需要使用`rm -rf 目录名`才能强制删除非空目录。
+
+&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+mysql  oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd mysql
+[root@izuf66fm097gavs15ngjfvz mysql]# touch readme.md
+[root@izuf66fm097gavs15ngjfvz mysql]# cd ../
+[root@izuf66fm097gavs15ngjfvz home]# rmdir mysql
+rmdir: failed to remove ‘mysql’: Directory not empty
+[root@izuf66fm097gavs15ngjfvz home]# rm -rf mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]#
+&lt;/pre&gt;
+</code></pre>
+<h3 id="二-文件操作">二、文件操作</h3>
+<h4 id="touch-新建文件"><strong>touch 新建文件</strong></h4>
+<p>如果一个文件名参数是一个不存在的文件，则会创建一个空文件。</p>
+<p>如果存在则会更新文件访问时间。并不会对文件内容做出改变。</p>
+<pre><code>&lt;pre&gt;touch test.java    // 如果文件不存在，就创建test.java
+&lt;/pre&gt;
+
+example:
+
+&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz home]# touch test.java
+[root@izuf66fm097gavs15ngjfvz home]# ls -l
+total 2097160
+drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap
+-rw-r--r-- 1 root   root              0 Oct 11 23:33 test.java
+[root@izuf66fm097gavs15ngjfvz home]# touch test.java
+[root@izuf66fm097gavs15ngjfvz home]# ls -l
+total 2097160
+drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap
+-rw-r--r-- 1 root   root              0 Oct 11 23:34 test.java
+&lt;/pre&gt;
+</code></pre>
+<h4 id="mv-移动和重命名文件"><strong>mv 移动和重命名文件</strong></h4>
+<ul>
+<li>
+<p>英文原意：move</p>
+</li>
+<li>
+<p>常用选项：</p>
+</li>
+<li>
+<ul>
+<li>-f ：force强制的意思，如果目标文件已经存在，不会询问而直接覆盖</li>
+<li>-i ：若目标文件已经存在，就会询问是否覆盖</li>
+<li>-u ：若目标文件已经存在，且比目标文件新，才会更新</li>
+</ul>
+<p><strong>mv file1 file2 file3 dir   // 把文件file1、file2、file3移动到当前目录dir中</strong></p>
+<p><strong>mv file1 file2 file3 ../dir   // 把文件file1、file2、file3移动到当上级目录dir中</strong></p>
+<p><strong>mv file1 file2  // 把文件file1重命名为file2</strong></p>
+<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap  test.java
+[root@izuf66fm097gavs15ngjfvz home]# mv test.java oracle 
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle  test.java
+[root@izuf66fm097gavs15ngjfvz oracle]# mv test.java HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+HelloWorld.java  oradiag_oracle
+</pre>
+</li>
+</ul>
+<h4 id="ls-l-查看文件权限">ls -l 查看文件权限</h4>
+<h4 id="chmod-修改权限">chmod 修改权限</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java 
+-rw-r--r-- 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 777 HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java 
+-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 666 HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java
+&lt;/pre&gt;
+</code></pre>
+<p>r表示读取（read）权限，w表示写入（write）权限，x表示执行（eXecute）权限，通常具体的权限由数字来表示：r=4，w=2，x=1</p>
+<p>若要rwx属性则4+2+1=7；</p>
+<p>若要rw-属性则4+2=6；</p>
+<p>若要r-x属性则4+1=7。</p>
+<p>常用修改权限的命令：</p>
+<pre><code>&lt;pre&gt;sudo chmod 600 ××× （只有所有者有读和写的权限）
+
+sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）
+
+sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）
+
+sudo chmod 666 ××× （每个人都有读和写的权限）
+
+sudo chmod 777 ××× （每个人都有读和写以及执行的权限）
+&lt;/pre&gt;
+
+若要修改目录下所有文件的权限:chmod -R 权限 目录
+
+&lt;pre&gt;`[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rw-r--r-- 1 root root 0 Oct 13 15:32 app.java
+-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod -R 777 ../HelloWorld
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rwxrwxrwx 1 root root 0 Oct 13 15:32 app.java
+-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java
+`&lt;/pre&gt;
+</code></pre>
+<h4 id="rm-删除文件或目录">rm 删除文件或目录</h4>
+<ul>
+<li>常用选项：</li>
+<li>
+<ul>
+<li>-f ：就是force的意思，忽略不存在的文件，不会出现警告消息</li>
+<li>-i ：互动模式，在删除前会询问用户是否操作</li>
+<li>-r ：(recursive) 指示rm将参数中列出的全部目录和子目录均递归地删除。</li>
+</ul>
+</li>
+</ul>
+<h4 id="cat-查看文件内容">cat 查看文件内容</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# vi HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# cat HelloWorld.java 
+import test.package;
+&lt;/pre&gt;
+</code></pre>
+<h4 id="find-查找文件">find 查找文件</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls
+appConfiguration.java  app.java  HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app.java
+app.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app*.java
+appConfiguration.java
+app.java
+[root@izuf66fm097gavs15ngjfvz home]# find oracle/HelloWorld/ -name &amp;quot;*.java&amp;quot;
+oracle/HelloWorld/appConfiguration.java
+oracle/HelloWorld/HelloWorld.java
+oracle/HelloWorld/app.java
+</code></pre>
+<h4 id="vi-编辑文件">vi 编辑文件</h4>
+<p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C">一、目录操作</a>
+<ul>
+<li><a href="#pwd-%E5%BD%93%E5%89%8D%E6%89%80%E5%9C%A8%E7%9B%AE%E5%BD%95">pwd 当前所在目录</a></li>
+<li><a href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%E5%86%85%E5%AE%B9">ls 列出目录内容</a></li>
+<li><a href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><strong>cd</strong> 切换目录</a></li>
+<li><a href="#mkdir-%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95"><strong>mkdir 新建目录</strong></a></li>
+<li><a href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9B%AE%E5%BD%95"><strong>rmdir 删除空目录</strong></a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C">二、文件操作</a>
+<ul>
+<li><a href="#touch-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><strong>touch 新建文件</strong></a></li>
+<li><a href="#mv-%E7%A7%BB%E5%8A%A8%E5%92%8C%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6"><strong>mv 移动和重命名文件</strong></a></li>
+<li><a href="#ls-l-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90">ls -l 查看文件权限</a></li>
+<li><a href="#chmod-%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90">chmod 修改权限</a></li>
+<li><a href="#rm-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">rm 删除文件或目录</a></li>
+<li><a href="#cat-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9">cat 查看文件内容</a></li>
+<li><a href="#find-%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6">find 查找文件</a></li>
+<li><a href="#vi-%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6">vi 编辑文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://baobaodz.top/post/Resolve-domain-name-unreachable-issue">
+              <h3 class="post-title">
+                解决域名无法访问的问题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="http://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

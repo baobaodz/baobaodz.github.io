@@ -1,15 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://baobaodz.top</id>
-    <title>Gridea</title>
-    <updated>2019-10-28T15:23:17.454Z</updated>
+    <title>baobaodz</title>
+    <updated>2019-10-31T16:40:18.040Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://baobaodz.top"/>
     <link rel="self" href="http://baobaodz.top/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>keep humble , stay hungery</subtitle>
     <logo>http://baobaodz.top/images/avatar.png</logo>
     <icon>http://baobaodz.top/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[技能点/WEEK]]></title>
+        <id>http://baobaodz.top/post/ji-neng-dian-week</id>
+        <link href="http://baobaodz.top/post/ji-neng-dian-week">
+        </link>
+        <updated>2019-10-31T16:19:43.000Z</updated>
+        <content type="html"><![CDATA[<p>111</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[multiple parameters with no annotation. Unable to resolve the injection source]]></title>
+        <id>http://baobaodz.top/post/multiple-parameters-with-no-annotation</id>
+        <link href="http://baobaodz.top/post/multiple-parameters-with-no-annotation">
+        </link>
+        <updated>2019-10-17T15:51:34.000Z</updated>
+        <content type="html"><![CDATA[<p>在dropwizard中resource中想通过POST方法增加书籍，接收两个参数报错：</p>
+<pre><code>package com.baobaodz.example.dropwizard.resources;
+
+import com.baobaodz.example.dropwizard.api.Book;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+/**
+*@author baobaodz
+*/
+@Path(&amp;quot;/api&amp;quot;)
+@Produces(MediaType.APPLICATION_JSON)
+public class HolaRestResource {
+
+	@Path(&amp;quot;/book&amp;quot;)
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Book saveSingleBook(HttpServletRequest request,Book book){
+		Book newBook = new Book();
+		newBook.setId(book.getId());
+		newBook.setName(book.getName());
+		newBook.setAuthor(book.getAuthor());
+		newBook.setPublishDate(book.getPublishDate());
+		return newBook;
+	}
+}
+</code></pre>
+<p>报错：</p>
+<pre><code>[[FATAL] Method public com.baobaodz.example.dropwizard.api.Book com.baobaodz.example.dropwizard.resources.HolaRestResource.saveSingleBook(javax.servlet.http.HttpServletRequest,com.baobaodz.example.dropwizard.api.Book) on resource class com.baobaodz.example.dropwizard.resources.HolaRestResource contains multiple parameters with no annotation. Unable to resolve the injection source.; 
+.......
+io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwizard.jersey.setup.JerseyServletContainer,jsp=null,order=1,inst=false
+</code></pre>
+<p>注意这一句</p>
+<p><code>HolaRestResource contains multiple parameters with no annotation. Unable to resolve the injection source.</code></p>
+<p>大意就是<code>HolaRestResource</code>里包含了多个未被注解的参数</p>
+<p>原因：参考<a href="https://stackoverflow.com/questions/47121182/multiple-parameters-in-web-service-java-jax-rs">multiple parameters in web service java JAX-RS</a>]</p>
+<p>其中：资源方法不能具有多个实体参数。每个资源方法中可以有多个<code>@PathParam</code>，<code>@QueryParam</code>等，但只能有一个未注释的参数。参数未用@FormParam等注释注释的参数值（称为实体参数）是从请求实体主体映射的。实体主体和Java类型之间的转换是实体提供者的责任，<strong>资源方法必须最多具有一个实体参数</strong>。</p>
+<p>解决办法有两种，第一种去掉第一个参数，第二种给第一个参数添加注解@Context。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux常用命令汇总]]></title>
+        <id>http://baobaodz.top/post/Commonly-Used-Linux-Command-Summary</id>
+        <link href="http://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
+        </link>
+        <updated>2019-10-12T15:36:45.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="一-目录操作">一、目录操作</h3>
+<h4 id="pwd-当前所在目录">pwd 当前所在目录</h4>
+<pre><code>[root@izuf66fm097gavs15ngjfvz home]# pwd
+/home
+`&lt;/pre&gt;
+</code></pre>
+<h4 id="ls-列出目录内容">ls 列出目录内容</h4>
+<ul>
+<li>
+<p>英文原意：list</p>
+</li>
+<li>
+<p>常用选项：</p>
+</li>
+<li>
+<ul>
+<li>-l ：详细信息显示</li>
+<li>-a：显示所有文件，包括隐藏文件</li>
+<li>-h：将文件容量以较易读的方式（GB，kB等）列出来</li>
+</ul>
+<p>另外，这些参数可以组合使用，例如<code>ls -la</code>，显示当前目录所有文件的详细信息</p>
+<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -a
+.  ..  oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -la
+total 2097168
+drwxr-xr-x.  3 root   root           4096 Apr 11  2018 .
+dr-xr-xr-x. 19 root   root           4096 Sep  7 21:14 ..
+drwx------   3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r--   1 root   root     2147483648 Oct  9  2018 swap
+[root@izuf66fm097gavs15ngjfvz home]# ls -lah
+total 2.1G
+drwxr-xr-x.  3 root   root     4.0K Apr 11  2018 .
+dr-xr-xr-x. 19 root   root     4.0K Sep  7 21:14 ..
+drwx------   3 oracle oinstall 4.0K Nov 14  2018 oracle
+-rw-r--r--   1 root   root     2.0G Oct  9  2018 swap
+</pre>
+</li>
+</ul>
+<h4 id="cd-切换目录"><strong>cd</strong> 切换目录</h4>
+<ul>
+<li>英文原意：change directory</li>
+<li>cd oracle     //进入指定目录,相当于<br>
+cd ./oracle   // 切换到当前目录下的shi目录中，“.”表示当前目录<br>
+cd ..         //  回到上级目录<br>
+cd -          // 返回进入此目录之前的目录<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# cd ..
+[root@izuf66fm097gavs15ngjfvz home]# cd ./oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# cd -
+/home
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# 
+</pre>
+</li>
+</ul>
+<h4 id="mkdir-新建目录"><strong>mkdir 新建目录</strong></h4>
+<pre><code>&lt;pre&gt;root@izuf66fm097gavs15ngjfvz /]# cd home
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+mysql  oracle  swap
+
+&lt;/pre&gt;
+</code></pre>
+<h4 id="rmdir-删除空目录"><strong>rmdir 删除空目录</strong></h4>
+<pre><code>如目录不为空，删除不了，需要使用`rm -rf 目录名`才能强制删除非空目录。
+
+&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+mysql  oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd mysql
+[root@izuf66fm097gavs15ngjfvz mysql]# touch readme.md
+[root@izuf66fm097gavs15ngjfvz mysql]# cd ../
+[root@izuf66fm097gavs15ngjfvz home]# rmdir mysql
+rmdir: failed to remove ‘mysql’: Directory not empty
+[root@izuf66fm097gavs15ngjfvz home]# rm -rf mysql
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]#
+&lt;/pre&gt;
+</code></pre>
+<h3 id="二-文件操作">二、文件操作</h3>
+<h4 id="touch-新建文件"><strong>touch 新建文件</strong></h4>
+<p>如果一个文件名参数是一个不存在的文件，则会创建一个空文件。</p>
+<p>如果存在则会更新文件访问时间。并不会对文件内容做出改变。</p>
+<pre><code>&lt;pre&gt;touch test.java    // 如果文件不存在，就创建test.java
+&lt;/pre&gt;
+
+example:
+
+&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz home]# touch test.java
+[root@izuf66fm097gavs15ngjfvz home]# ls -l
+total 2097160
+drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap
+-rw-r--r-- 1 root   root              0 Oct 11 23:33 test.java
+[root@izuf66fm097gavs15ngjfvz home]# touch test.java
+[root@izuf66fm097gavs15ngjfvz home]# ls -l
+total 2097160
+drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle
+-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap
+-rw-r--r-- 1 root   root              0 Oct 11 23:34 test.java
+&lt;/pre&gt;
+</code></pre>
+<h4 id="mv-移动和重命名文件"><strong>mv 移动和重命名文件</strong></h4>
+<ul>
+<li>
+<p>英文原意：move</p>
+</li>
+<li>
+<p>常用选项：</p>
+</li>
+<li>
+<ul>
+<li>-f ：force强制的意思，如果目标文件已经存在，不会询问而直接覆盖</li>
+<li>-i ：若目标文件已经存在，就会询问是否覆盖</li>
+<li>-u ：若目标文件已经存在，且比目标文件新，才会更新</li>
+</ul>
+<p><strong>mv file1 file2 file3 dir   // 把文件file1、file2、file3移动到当前目录dir中</strong></p>
+<p><strong>mv file1 file2 file3 ../dir   // 把文件file1、file2、file3移动到当上级目录dir中</strong></p>
+<p><strong>mv file1 file2  // 把文件file1重命名为file2</strong></p>
+<pre>[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap  test.java
+[root@izuf66fm097gavs15ngjfvz home]# mv test.java oracle 
+[root@izuf66fm097gavs15ngjfvz home]# ls
+oracle  swap
+[root@izuf66fm097gavs15ngjfvz home]# cd oracle
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+oradiag_oracle  test.java
+[root@izuf66fm097gavs15ngjfvz oracle]# mv test.java HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz oracle]# ls
+HelloWorld.java  oradiag_oracle
+</pre>
+</li>
+</ul>
+<h4 id="ls-l-查看文件权限">ls -l 查看文件权限</h4>
+<h4 id="chmod-修改权限">chmod 修改权限</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java 
+-rw-r--r-- 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 777 HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java 
+-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 666 HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java
+&lt;/pre&gt;
+</code></pre>
+<p>r表示读取（read）权限，w表示写入（write）权限，x表示执行（eXecute）权限，通常具体的权限由数字来表示：r=4，w=2，x=1</p>
+<p>若要rwx属性则4+2+1=7；</p>
+<p>若要rw-属性则4+2=6；</p>
+<p>若要r-x属性则4+1=7。</p>
+<p>常用修改权限的命令：</p>
+<pre><code>&lt;pre&gt;sudo chmod 600 ××× （只有所有者有读和写的权限）
+
+sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）
+
+sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）
+
+sudo chmod 666 ××× （每个人都有读和写的权限）
+
+sudo chmod 777 ××× （每个人都有读和写以及执行的权限）
+&lt;/pre&gt;
+
+若要修改目录下所有文件的权限:chmod -R 权限 目录
+
+&lt;pre&gt;`[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rw-r--r-- 1 root root 0 Oct 13 15:32 app.java
+-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod -R 777 ../HelloWorld
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l
+total 0
+-rwxrwxrwx 1 root root 0 Oct 13 15:32 app.java
+-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java
+`&lt;/pre&gt;
+</code></pre>
+<h4 id="rm-删除文件或目录">rm 删除文件或目录</h4>
+<ul>
+<li>常用选项：</li>
+<li>
+<ul>
+<li>-f ：就是force的意思，忽略不存在的文件，不会出现警告消息</li>
+<li>-i ：互动模式，在删除前会询问用户是否操作</li>
+<li>-r ：(recursive) 指示rm将参数中列出的全部目录和子目录均递归地删除。</li>
+</ul>
+</li>
+</ul>
+<h4 id="cat-查看文件内容">cat 查看文件内容</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# vi HelloWorld.java 
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# cat HelloWorld.java 
+import test.package;
+&lt;/pre&gt;
+</code></pre>
+<h4 id="find-查找文件">find 查找文件</h4>
+<pre><code>&lt;pre&gt;[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls
+appConfiguration.java  app.java  HelloWorld.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app.java
+app.java
+[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app*.java
+appConfiguration.java
+app.java
+[root@izuf66fm097gavs15ngjfvz home]# find oracle/HelloWorld/ -name &amp;quot;*.java&amp;quot;
+oracle/HelloWorld/appConfiguration.java
+oracle/HelloWorld/HelloWorld.java
+oracle/HelloWorld/app.java
+</code></pre>
+<h4 id="vi-编辑文件">vi 编辑文件</h4>
+<p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决域名无法访问的问题]]></title>
+        <id>http://baobaodz.top/post/Resolve-domain-name-unreachable-issue</id>
+        <link href="http://baobaodz.top/post/Resolve-domain-name-unreachable-issue">
+        </link>
+        <updated>2019-09-22T15:22:01.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
+<p>最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。<img src="https://s2.ax1x.com/2019/09/28/uQNqKI.png" alt="拒绝请求"></p>
+<p>可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。<img src="https://s2.ax1x.com/2019/09/28/uQNjVf.png" alt="检测"></p>
+<p>查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。<img src="https://s2.ax1x.com/2019/09/28/uQNLrt.png" alt="端口监听"></p>
+<p>提工单阿里云技术人员说我是用8080端口服务的，用域名自然是访问不了的。需要域名+8080端口才能访问，一试还真可以。但是我想还需要用80端口访问。于是进入修改/root/java/tomcat/apache-tomcat-8.5.34/conf目录下的sever.xml文件，启动80端口监听。</p>
+<pre><code class="language-xml">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+改为
+&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+</code></pre>
+<p>查看端口监听,可以看到8080端口没有了，出现了80端口监听。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# netstat -an | grep 80
+tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN     
+tcp        4      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        1      0 172.19.93.164:80        180.111.33.207:11809    CLOSE_WAIT 
+tcp        0      0 172.19.93.164:26252     100.100.30.26:80        ESTABLISHED
+tcp        0     52 172.19.93.164:22        180.111.33.207:11847    ESTABLISHED
+tcp        0      0 172.19.93.164:80        180.111.33.207:11834    ESTABLISHED
+tcp        0      0 172.19.93.164:1521      101.132.116.203:46580   ESTABLISHED
+tcp      527      0 172.19.93.164:80        180.111.33.207:11833    ESTABLISHED
+tcp      553      0 172.19.93.164:80        180.111.33.207:11808    ESTABLISHED
+tcp        0      0 172.19.93.164:22        180.111.33.207:9649     ESTABLISHED
+</code></pre>
+<p>重启Tomcat。这里我又犯了一个错误。我直接启动tomcat，要知道Tomcat本来就运行着的，这样一点用也没有。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./satrtup.sh
+</code></pre>
+<p>正确做法应该先关闭Tomcat，再启动。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./shutdown.sh
+[root@izuf66fm097gavs15ngjfvz bin]# ./startup.sh
+Using CATALINA_BASE:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_HOME:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_TMPDIR: /root/java/tomcat/apache-tomcat-8.5.34/temp
+Using JRE_HOME:        /root/java/jdk/jdk1.8.0_181/jre
+Using CLASSPATH:       /root/java/tomcat/apache-tomcat-8.5.34/bin/bootstrap.jar:/root/java/tomcat/apache-tomcat-8.5.34/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre>
+<p>访问baobaodz.com就可以访问了。</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>http://baobaodz.top/post/hello-gridea</id>
@@ -79,6 +416,203 @@ baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
 <h4 id="cname解析">CNAME解析</h4>
 <p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
 <p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[javaweb项目部署]]></title>
+        <id>http://baobaodz.top/post/Javaweb-Project-Deployment</id>
+        <link href="http://baobaodz.top/post/Javaweb-Project-Deployment">
+        </link>
+        <updated>2018-10-13T15:17:35.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="购买域名和服务器">购买域名和服务器</h3>
+<h4 id="购买服务器">购买服务器</h4>
+<p>阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。</p>
+<p>具体可看<a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujGa0U.png" alt="image.png"></figure>
+<h4 id="购买域名">购买域名</h4>
+<p>链接：<a href="https://wanwang.aliyun.com/domain/com/">域名注册</a><br>
+com大概45元/年，cn29元/年。top9元/年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。<br>
+买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/ujGd7F.png" alt="image.png"></figure>
+<p>等个十分钟就可以按域名访问了。</p>
+<h3 id="配置java环境和tomcat">配置java环境和tomcat</h3>
+<p>因为我服务器端是Linux操作系统，为了方便操作，需要两个工具</p>
+<p>1.xshell远程连接工具</p>
+<p><a href="http://www.netsarang.com/download/software.html">官网下载</a></p>
+<p>其实在购买云服务器后在管理后台就有远程连接，可以在线远程连接，但是为了方便操作下载这个工具。<br>
+<img src="https://s2.ax1x.com/2019/10/13/ujGDh9.png" alt="image.png"><br>
+2.Xftp 传输文件工具</p>
+<p><a href="http://www.netsarang.com/products/xfp_overview.html">官网下载</a></p>
+<p>此工具和xshell是一家的，可以方便的复制粘贴把本机文件传输到服务器。</p>
+<p>具体参考<a href="https://www.jianshu.com/p/2604e53a7f6a?from=singlemessage">阿里云ECS建网站（建站）超详细全套完整图文教程！菜鸟必看！</a>讲的非常详细。</p>
+<h3 id="配置服务器上的数据库">配置服务器上的数据库</h3>
+<p>java环境和tomcat安装好后，在服务器安装数据库。这里我选择的是Oracle 11g这个产品。<br>
+具体安装过程可参考<a href="https://blog.csdn.net/sinat_32998977/article/details/79437014">阿里云 CentOS7.4，静默安装Oracle11g2的教程</a>。</p>
+<p>总结一下常用的命令：</p>
+<pre><code>su - oracle #切换到oracle用户
+lsbrctl start #启动监听
+lsnrctl stop #停止监听
+sdnrctl status #查看listener的状态
+
+sqlplus &quot;/as sysdba&quot; #以sysdba的身份登陆
+shutdown #关闭数据库服务
+strartup #启动数据库服务
+</code></pre>
+<h3 id="plsql-dev远程连接数据库">pl/sql dev远程连接数据库</h3>
+<p>数据库搞好之后，我想需要个工具来操作服务器上的数据库。先选择了navicate for Oracle，但是正版需要1000多块钱，找前找后也没破解版。虽然只有14天免费试用，但是可以连接到远端服务器。</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" alt="image.png"></figure>
+<p>但是这样始终不是长久之计啊。于是选择了pl/sql developer。因为我本机之前已经装了Oracle客户端，所以可以在C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN下tnsnames.ora文件中添加</p>
+<pre><code>alioracle=
+	(DESCRIPTION =
+		(ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.116.203)(PORT = 1521))
+		(CONNECT_DATA =
+  			(SERVER = DEDICATED)
+  			(SERVICE_NAME = orcl11g)
+		)
+	)
+</code></pre>
+<p>其中</p>
+<pre><code>alioracle：连接时显示的本地名称，可以任意取
+ADDRESS ：链接地址 
+PROTOCOL ：使用的协议，一般为TCP 
+HOST ：服务器ip地址 
+PORT ：服务器监听端口号，Oracle默认为1521 
+SERVICE_NAME ：服务器服务名称
+</code></pre>
+<p>然后打开pl/sql developer工具就会在database的下拉选项中看到刚才起的本地连接名</p>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" alt="image.png"></figure>
+<p>点击ok但是就是登不上去显示</p>
+<pre><code>ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+</code></pre>
+<p>然后本地cmd中tnsping alioracle 是没问题的</p>
+<pre><code>C:\Users\Administrator&gt;tnsping alioracle
+
+TNS Ping Utility for 32-bit Windows: Version 10.2.0.1.0 - Production on 11-10月-
+2018 11:28:54
+
+Copyright (c) 1997, 2005, Oracle.  All rights reserved.
+
+已使用的参数文件:
+C:\oracle\product\10.2.0\db_1\network\admin\sqlnet.ora
+
+已使用 TNSNAMES 适配器来解析别名
+Attempting to contact (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.
+116.203)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl11g)))
+OK (80 毫秒)
+</code></pre>
+<p>弄了好久才明白：</p>
+<p>这里的连接标识符即SERVICE_NAME（网络别名、网络服务名、主机连接字符串、主机名) tnsping 是用来执行oracle 网络别名SERVICE_NAME的解析工作。会解析出ORACLE client中设定的服务器IP与监听端口。</p>
+<p>因此tnsping alioracle 的时候只是根据tnsname.ora文件中记录的这个字符串&quot;alioracle&quot;相应的IP地址去查看对应的端口是否开放，而不会去验证SERVICE_NAME是否正确，SERVICE_NAME如果配置的不正确是不能连接上数据库的。</p>
+<p>那这个SERVICE_NAME在哪看呢？</p>
+<p>在Xshell中远程连接服务器输入</p>
+<pre><code>	[root@izuf66fm097gavs15ngjfvz ~]# su - oracle
+	
+	[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+
+	SQL&gt; show parameter service_name
+
+	NAME				     TYPE	 VALUE
+	------------------------------------ ----------- ------------------------------
+	service_names			 string	 orcl11g.us.oracle.com
+</code></pre>
+<p>可以看出服务器端的Oracle数据库service_name是orcl11g.us.oracle.com，而我在tnsnames.ora中的SERVICE_NAME = orcl11g。所以会显示无法识别连接描述符。改正之后，豁然可以连接上去了。</p>
+<p>参考文章：</p>
+<ul>
+<li><a href="https://blog.csdn.net/iteye_13903/article/details/82164884">tnsping通却连接不上数据库</a></li>
+<li><a href="https://blog.csdn.net/beihangyjs/article/details/5732508">plSQL技巧：“tns:无法解析指定的连接标识符”问题详解</a></li>
+</ul>
+<h3 id="项目部署到服务器">项目部署到服务器</h3>
+<p>查看服务器端数据库名</p>
+<pre><code>SQL&gt; select name from v$database;
+
+NAME
+---------
+ORCL11G
+</code></pre>
+<p>在项目WEB-INF目录下db.properties文件中<br>
+修改dataSource.jdbcUrl=jdbc: oracle: thin:@127.0.0.1: 1521:ORCL为</p>
+<pre><code>dataSource.jdbcUrl=jdbc:oracle:thin:@101.132.116.203:1521:ORCL11G
+</code></pre>
+<p>注意：除此之外还需要加入对应的数据库驱动包。<br>
+客户端Oracle为10g，而服务器端Oracle为11g驱动包不一致还不行。于是在lib文件下加入jdbc_6g.jar。<br>
+然后在myeclipse中项目上右键-export-war文件。然后通过通过xftp工具将此war文件上传到tomcat目录下的webapps目录下。</p>
+<p>然后在访问时通过ip地址+端口号+war包名+jsp文件就可以访问啦！例如：</p>
+<pre><code>http://101.132.116.203:8080/MyBlog/jsp/index.jsp
+</code></pre>
+<p>本地数据库的数据怎么办？<br>
+本来想着pl/sql dev中可以导出数据的sql脚本，但是因为表中含有列是clob类型，所以数据时无法导出的，但是建表语句还是可以查看的。<br>
+在新建表过程中出现了一个问题，就是中文字符乱码问题，所有中文字符变成了“？”。<br>
+查看数据库编码</p>
+<pre><code>SQL&gt; select userenv('language') from dual;
+
+USERENV('LANGUAGE')
+----------------------------------------------------
+AMERICAN_AMERICA.WE8MSWIN1252
+</code></pre>
+<p>可以看出数据库编码不是中文编码，于是在服务器上<br>
+vi /home/oracle/.bash_profile加入</p>
+<pre><code>export NLS_LANG=Simplified Chinese_CHINA.AL32UTF8
+</code></pre>
+<p>会发现“？”都变成了中文字符“靠”。。。按理说应该起作用啊。百思不得其解。后来发现，这个数据库编码只对新数据有效，旧数据没作用的，因此只要把其删掉重新插入就显示正常了。</p>
+<h3 id="去除项目名和端口号">去除项目名和端口号</h3>
+<p>项目部署后，输入http://101.132.116.203:8080/MyBlog/jsp/index.jsp 可访问。现在需求是访问http://baobaodz.com 也可以响应我们需要的内容。<br>
+1.去除端口号：<br>
+tomcat项目运行端口为8080，而我们平常访问的网站都是不带端口号的，即端口号是80，在阿里云安全组设置里面添加规则</p>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/ujGOHS.gif" alt="安全组.gif"></figure>
+<p>过一会就可以访问baobaodz.com/MyBlog/jsp/index.jsp<br>
+，如果不行，别忘了去域名备案。不备案的话，端口80是不给开放的。<br>
+备案的过程很麻烦，填写各种信息，还要拍照打印各种证明材料，不过有指引一步一步来。备案提交后，需要七八天的审核时间。<br>
+2.设置欢迎页<br>
+在项目文件的web.xml文件里，欢迎页面需要进行小小的改动，把原来默认的index.jsp改为jsp/index.jsp。因为首页我是放在jsp文件夹下的。</p>
+<pre><code>&lt; display-name&gt;MyBlog&lt; /display-name&gt;
+&lt; welcome-file-list&gt;
+    &lt; welcome-file&gt;jsp/index.jsp&lt; /welcome-file&gt;
+&lt; /welcome-file-list&gt;
+</code></pre>
+<p>除此之外，index.jsp文件中的所有跳转路径必须要改成绝对路径。这样css.js等资源才可以被正确访问。</p>
+<pre><code>&lt; a href=&quot;archives.jsp&quot;&gt;归档&lt;/a&gt;
+&lt; a href=&quot;&lt;%=request.getContextPath()%&gt;/jsp/archives.jsp&quot;&gt;归档&lt; /a&gt;
+</code></pre>
+<p>重启服务器tomcat，访问baobaodz.com/MyBlog就可以了。<br>
+3.去除项目名<br>
+需要进入tomcat根目录下conf文件夹下的server.xml，添加Context标签。</p>
+<pre><code>	&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;
+    	&lt;Context  path=&quot;&quot;   docBase=&quot;/root/java/tomcat/apache-tomcat-8.5.34/webapps/MyBlog&quot;   debug=&quot;0&quot;/&gt;  
+        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
+    &lt;/Host&gt;
+</code></pre>
+<h3 id="遇到的问题">遇到的问题</h3>
+<p>重启tomcat，刷新页面发现数据显示不了。出现500状态码错误，再去sqlplus连接数据库，显示无法监听，原来数据库连接不上了。原因是之前我重启Linux系统后，数据库没有重新启动，开启监听。</p>
+<p>切到Oracle登录显示</p>
+<pre><code>[root@izuf66fm097gavs15ngjfvz logs]# su - oracle
+Last login: Fri Oct 12 17:52:55 CST 2018 on pts/0
+-bash: export: `Chinese_CHINA.AL32UTF8': not a valid identifier
+[oracle@izuf66fm097gavs15ngjfvz ~]$ ls
+</code></pre>
+<p>原因是之前修改Oracle字符集的时候，在windows系统文本编辑器上修改的，和Linux上修改会有出入。所以建议还是在Linux下修改比较稳妥。</p>
+<p>编辑oracle用户的.bash_profile文件</p>
+<pre><code>[oracle@node00 dse]$ vim ~/.bash_profile
+找到
+export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.AL32UTF8&quot;
+</code></pre>
+<p>发现没加双引号，加上使改变立即生效：</p>
+<pre><code>[oracle@node00 dse]$ source ~/.bash_profile
+</code></pre>
+<p>如果不解决这个问题的话，在以dba登录时，会出现如下错误</p>
+<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+
+SQL*Plus: Release 11.2.0.1.0 Production on Wed Nov 14 18:55:03 2018
+
+Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+
+ERROR:
+ORA-12705: Cannot access NLS data files or invalid environment specified
+</code></pre>
+<p>然后后续启动数据库，启动监听</p>
+<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
+SQL&gt; strartup
+SQL&gt; exit
+[oracle@izuf66fm097gavs15ngjfvz ~]$ lsnrctl start</code></pre>
 ]]></content>
     </entry>
 </feed>
