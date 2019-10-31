@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>baobaodz.top</id>
+    <id>http://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-10-31T16:53:06.529Z</updated>
+    <updated>2019-10-31T16:54:06.537Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="baobaodz.top"/>
-    <link rel="self" href="baobaodz.top/atom.xml"/>
+    <link rel="alternate" href="http://baobaodz.top"/>
+    <link rel="self" href="http://baobaodz.top/atom.xml"/>
     <subtitle>keep humble , stay hungery</subtitle>
-    <logo>baobaodz.top/images/avatar.png</logo>
-    <icon>baobaodz.top/favicon.ico</icon>
+    <logo>http://baobaodz.top/images/avatar.png</logo>
+    <icon>http://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
     <entry>
         <title type="html"><![CDATA[技能点/WEEK]]></title>
-        <id>baobaodz.top/post/ji-neng-dian-week</id>
-        <link href="baobaodz.top/post/ji-neng-dian-week">
+        <id>http://baobaodz.top/post/ji-neng-dian-week</id>
+        <link href="http://baobaodz.top/post/ji-neng-dian-week">
         </link>
         <updated>2019-10-31T16:19:43.000Z</updated>
         <content type="html"><![CDATA[<p>111</p>
@@ -21,8 +21,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[multiple parameters with no annotation. Unable to resolve the injection source]]></title>
-        <id>baobaodz.top/post/multiple-parameters-with-no-annotation</id>
-        <link href="baobaodz.top/post/multiple-parameters-with-no-annotation">
+        <id>http://baobaodz.top/post/multiple-parameters-with-no-annotation</id>
+        <link href="http://baobaodz.top/post/multiple-parameters-with-no-annotation">
         </link>
         <updated>2019-10-17T15:51:34.000Z</updated>
         <content type="html"><![CDATA[<p>在dropwizard中resource中想通过POST方法增加书籍，接收两个参数报错：</p>
@@ -71,8 +71,8 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux常用命令汇总]]></title>
-        <id>baobaodz.top/post/Commonly-Used-Linux-Command-Summary</id>
-        <link href="baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
+        <id>http://baobaodz.top/post/Commonly-Used-Linux-Command-Summary</id>
+        <link href="http://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
         </link>
         <updated>2019-10-12T15:36:45.000Z</updated>
         <content type="html"><![CDATA[<h3 id="一-目录操作">一、目录操作</h3>
@@ -300,8 +300,8 @@ oracle/HelloWorld/app.java
     </entry>
     <entry>
         <title type="html"><![CDATA[解决域名无法访问的问题]]></title>
-        <id>baobaodz.top/post/Resolve-domain-name-unreachable-issue</id>
-        <link href="baobaodz.top/post/Resolve-domain-name-unreachable-issue">
+        <id>http://baobaodz.top/post/Resolve-domain-name-unreachable-issue</id>
+        <link href="http://baobaodz.top/post/Resolve-domain-name-unreachable-issue">
         </link>
         <updated>2019-09-22T15:22:01.000Z</updated>
         <content type="html"><![CDATA[<h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
@@ -349,8 +349,8 @@ Tomcat started.
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>baobaodz.top/post/hello-gridea</id>
-        <link href="baobaodz.top/post/hello-gridea">
+        <id>http://baobaodz.top/post/hello-gridea</id>
+        <link href="http://baobaodz.top/post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
@@ -381,8 +381,8 @@ Tomcat started.
     </entry>
     <entry>
         <title type="html"><![CDATA[七牛云存储配置服务器CNAME]]></title>
-        <id>baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
-        <link href="baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
+        <id>http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
+        <link href="http://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
         </link>
         <updated>2018-11-16T15:07:50.000Z</updated>
         <summary type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
@@ -420,8 +420,8 @@ baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[javaweb项目部署]]></title>
-        <id>baobaodz.top/post/Javaweb-Project-Deployment</id>
-        <link href="baobaodz.top/post/Javaweb-Project-Deployment">
+        <id>http://baobaodz.top/post/Javaweb-Project-Deployment</id>
+        <link href="http://baobaodz.top/post/Javaweb-Project-Deployment">
         </link>
         <updated>2018-10-13T15:17:35.000Z</updated>
         <content type="html"><![CDATA[<h3 id="购买域名和服务器">购买域名和服务器</h3>
