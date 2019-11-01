@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-10-31T17:01:13.716Z</updated>
+    <updated>2019-11-01T14:40:22.547Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -11,12 +11,12 @@
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
     <entry>
-        <title type="html"><![CDATA[技能点/WEEK]]></title>
-        <id>https://baobaodz.top/post/ji-neng-dian-week</id>
-        <link href="https://baobaodz.top/post/ji-neng-dian-week">
+        <title type="html"><![CDATA[【2019-11第一周】技能点]]></title>
+        <id>https://baobaodz.top/post/2019-11-first-week</id>
+        <link href="https://baobaodz.top/post/2019-11-first-week">
         </link>
-        <updated>2019-10-31T16:19:43.000Z</updated>
-        <content type="html"><![CDATA[<p>111</p>
+        <updated>2019-10-31T17:06:10.000Z</updated>
+        <content type="html"><![CDATA[<p>11</p>
 ]]></content>
     </entry>
     <entry>
