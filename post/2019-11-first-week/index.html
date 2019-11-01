@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>【2019-11第一周】技能点 | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
-<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1572619077539">
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1572625920898">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://baobaodz.top">
-  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1572619077539" alt="">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1572625920898" alt="">
   </a>
   <h1 class="site-title">
     baobaodz
@@ -92,18 +92,76 @@
                 2019-11-01
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/11/02/KbsxL8.jpg" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>11</p>
+                <h3 id="monday">Monday</h3>
+<h4 id="premire渲染器">premire渲染器</h4>
+<p>在将视频拖入pr轨道时候，时间轴上方呈现红色，表示没有渲染，播放预览会卡顿现象，而且渲染时CPU占用到99%。正常情况下应该为黄色。</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/02/Kbs2GR.png" alt="image-20191101231359836"></figure>
+<p>在文件-项目设置-视频渲染和回放中，渲染程序只支持【仅Mercury Playback Engine软件】。</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/11/02/Kbs6IJ.png" alt="捕获1"></figure>
+<p>原因是使用的系统自带的核显造成的，系统安装的独立显卡并未使用上。更新或安装独立显卡驱动即可。再次打开项目设置，可以看到出现了【Mercury Playback Engine GPU加速（OpenCL）】的选项，选择后会发现红线现象消失。</p>
+<ul>
+<li>Mercury Playback Engine软件： 纯CPU处理</li>
+<li>Mercury Playback Engine GPU加速（OpenCL）：针对AMD显卡/Intel集显</li>
+</ul>
+<h4 id="cpu和gpu的区别">CPU和GPU的区别</h4>
+<p>CPU（ Central Processing Unit）即中央处理器</p>
+<p>GPU（Graphics Processing Unit）即图形处理器</p>
+<p>GPU是显卡的&quot;心脏&quot;，也就相当于CPU在电脑中的作用 。CPU是通用计算，GPU是专用计算。</p>
+<p>GPU的强项是并行运算能力比CPU强（多个不同任务的并行运算GPU也无法胜任，GPU只适合处理单个可并行任务的并行运算），而不是浮点运算能力强。</p>
+<p>引用知乎上的一个回答</p>
+<blockquote>
+<p>当你操作电脑的时候，为了完成某项工作，需要电脑帮你工作，就像计算某个题目那样。计算题目，理解题目并且整理出解题的步骤以及解法，那是CPU的事情。但是解题的过程需要用到的众多计算，则需要一帮不需要很高逻辑理解力的计算者完成，他们只需要负责其中很简单但是数量又很大的简单运算就行了，最后他们把各自运算的结果交出来给CPU整理，那么这群计算者就是GPU。这就是一个博士带着100个小学生的意思了</p>
+</blockquote>
+<p>GPU有非常多的厂商都生产，和CPU一样，比较知名的有AMD、NVIDIA、Intel3个生产厂商。</p>
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>nVidia GPU</th>
+<th>AMD GPU</th>
+<th>Intel MIC</th>
+<th>nVidia Tegra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>协议</td>
+<td>CUDA C/C++</td>
+<td>OpenCL</td>
+<td>MIC OpenMP</td>
+<td>CUDA</td>
+</tr>
+</tbody>
+</table>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#monday">Monday</a>
+<ul>
+<li><a href="#premire%E6%B8%B2%E6%9F%93%E5%99%A8">premire渲染器</a></li>
+<li><a href="#cpu%E5%92%8Cgpu%E7%9A%84%E5%8C%BA%E5%88%AB">CPU和GPU的区别</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
