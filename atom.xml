@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-01T16:48:02.194Z</updated>
+    <updated>2019-11-02T16:12:55.034Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -57,6 +57,18 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<h3 id="saturday">Saturday</h3>
+<h4 id="maven常用命令">maven常用命令</h4>
+<ul>
+<li>清理 mvn clean：将以前编译得到的旧文件class字节码文件删除</li>
+<li>编译 mvn compile：将java源程序编译成class字节码文件</li>
+<li>测试 mvn test：自动测试，自动调用junit程序</li>
+<li>报告 mvn report：测试程序执行的结果</li>
+<li>打包 mvn package：动态Web工程打War包，java工程打jar包</li>
+<li>安装 mvn install：Maven特定的概念-----将打包得到的文件复制到“仓库”中的指定位置</li>
+<li>部署 mvn deploy：将动态Web工程生成的war包复制到Servlet容器下，使其可以运行</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
