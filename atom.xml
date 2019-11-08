@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-07T16:16:11.770Z</updated>
+    <updated>2019-11-08T16:54:38.033Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,138 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[【2019-11第二周】技能点]]></title>
+        <id>https://baobaodz.top/post/2019-11-second-week</id>
+        <link href="https://baobaodz.top/post/2019-11-second-week">
+        </link>
+        <updated>2019-11-07T16:38:42.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="friday">Friday</h3>
+<h4 id="将idea设置eclipse风格的快捷键">将IDEA设置eclipse风格的快捷键</h4>
+<p><code>Files-Settings-keymap</code>选择<code>Eclipse</code>即可</p>
+<figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/MeFwNQ"><img src="https://s2.ax1x.com/2019/11/09/MeFwNQ.md.png" alt="MeFwNQ.md.png"></a></figure>
+<p>还要设置Alt+/代码提示快捷键</p>
+<p><code>File -settings -keymap</code> 在搜索框中搜索 <code>completion</code><br>
+选择<code>Cyclic Expand word</code>右键选择 <code>Remove Alt+/</code></p>
+<figure data-type="image" tabindex="2"><a href="https://imgchr.com/i/MekYG9"><img src="https://s2.ax1x.com/2019/11/09/MekYG9.md.png" alt="MekYG9.md.png"></a></figure>
+<p>在下方选择<code>Class Name Completion</code> 右键 <code>Remove Ctrl+Alt+</code>空格 并更改快捷键为<code>Alt+/</code></p>
+<figure data-type="image" tabindex="3"><a href="https://imgchr.com/i/MekRMt"><img src="https://s2.ax1x.com/2019/11/09/MekRMt.md.png" alt="MekRMt.md.png"></a></figure>
+<h4 id="eclipse常用快捷键">Eclipse常用快捷键</h4>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+<th>好处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alt+/</td>
+<td>补全提示代码</td>
+<td>省去多余的敲键盘啦</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>删除鼠标所在行或选中的多行</td>
+<td>不用选中再删除啦</td>
+</tr>
+<tr>
+<td>Crtl+Alt+↓</td>
+<td>向下复制</td>
+<td>不用选中再复制粘贴啦</td>
+</tr>
+<tr>
+<td>Crtl+Alt+↑</td>
+<td>向上复制</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt+↓</td>
+<td>向下移动</td>
+<td>不用剪切啦</td>
+</tr>
+<tr>
+<td>Alt+↑</td>
+<td>向上移动</td>
+<td></td>
+</tr>
+<tr>
+<td>Shift+Enter</td>
+<td>插入空行</td>
+<td>鼠标不用再放到行末回车啦...🤞🤞🤞🤞🤞</td>
+</tr>
+<tr>
+<td>Ctrl+/</td>
+<td>注释</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt+Enter</td>
+<td>导入所需的包</td>
+<td></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+O</td>
+<td>移除没有用到的包</td>
+<td>不用手动删除啦</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+X</td>
+<td>将所选全部大写</td>
+<td></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Y</td>
+<td>将所选全部小写</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>查找、搜索、跳转快捷键</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+<th>好处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+K</td>
+<td>向下循环定位选中字符</td>
+<td></td>
+</tr>
+<tr>
+<td>Ctrl+H</td>
+<td>打开搜索弹窗或底部显示栏</td>
+<td></td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>所选字符在项目和library中的声明</td>
+<td>快速定位到某个类或方法在哪被引用</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+T</td>
+<td>查找项目中与之匹配的类</td>
+<td>IDEA呼出弹窗，可以搜索全部、文件、类等</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>跳转到类或方法声明的地方</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt+←</td>
+<td>返回上一次所在文件</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【2019-11第一周】技能点]]></title>
         <id>https://baobaodz.top/post/2019-11-first-week</id>
