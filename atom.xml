@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-09T16:31:40.144Z</updated>
+    <updated>2019-11-11T16:53:25.067Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux常用命令汇总（二）]]></title>
+        <id>https://baobaodz.top/post/linux-chang-yong-ming-ling-hui-zong-er</id>
+        <link href="https://baobaodz.top/post/linux-chang-yong-ming-ling-hui-zong-er">
+        </link>
+        <updated>2019-11-10T08:51:42.000Z</updated>
+        <content type="html"><![CDATA[<h3 id=""></h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【2019-11第二周】技能点]]></title>
         <id>https://baobaodz.top/post/2019-11-second-week</id>
@@ -261,7 +270,7 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Linux常用命令汇总]]></title>
+        <title type="html"><![CDATA[Linux常用命令汇总（一）]]></title>
         <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary</id>
         <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
         </link>
@@ -270,7 +279,6 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
 <h4 id="pwd-当前所在目录">pwd 当前所在目录</h4>
 <pre><code>[root@izuf66fm097gavs15ngjfvz home]# pwd
 /home
-`&lt;/pre&gt;
 </code></pre>
 <h4 id="ls-列出目录内容">ls 列出目录内容</h4>
 <ul>
@@ -336,7 +344,6 @@ oracle  swap
 [root@izuf66fm097gavs15ngjfvz home]# mkdir mysql
 [root@izuf66fm097gavs15ngjfvz home]# ls
 mysql  oracle  swap
-
 &lt;/pre&gt;
 </code></pre>
 <h4 id="rmdir-删除空目录"><strong>rmdir 删除空目录</strong></h4>

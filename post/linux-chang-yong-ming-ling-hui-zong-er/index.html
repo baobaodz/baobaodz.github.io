@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>multiple parameters with no annotation. Unable to resolve the injection source | baobaodz</title>
+<title>Linux常用命令汇总（二） | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
 <link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1573491203192">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -85,72 +85,36 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              multiple parameters with no annotation. Unable to resolve the injection source
+              Linux常用命令汇总（二）
             </h2>
             <div class="post-info">
               <span>
-                2019-10-17
+                2019-11-10
               </span>
               <span>
-                2 min read
+                0 min read
               </span>
-              
-                <a href="https://baobaodz.top/tag/Dropwizard" class="post-tag">
-                  # Dropwizard
-                </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://s2.ax1x.com/2019/10/17/Kkncz4.jpg" alt="">
-            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>在dropwizard中resource中想通过POST方法增加书籍，接收两个参数报错：</p>
-<pre><code>package com.baobaodz.example.dropwizard.resources;
-
-import com.baobaodz.example.dropwizard.api.Book;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-/**
-*@author baobaodz
-*/
-@Path(&amp;quot;/api&amp;quot;)
-@Produces(MediaType.APPLICATION_JSON)
-public class HolaRestResource {
-
-	@Path(&amp;quot;/book&amp;quot;)
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Book saveSingleBook(HttpServletRequest request,Book book){
-		Book newBook = new Book();
-		newBook.setId(book.getId());
-		newBook.setName(book.getName());
-		newBook.setAuthor(book.getAuthor());
-		newBook.setPublishDate(book.getPublishDate());
-		return newBook;
-	}
-}
-</code></pre>
-<p>报错：</p>
-<pre><code>[[FATAL] Method public com.baobaodz.example.dropwizard.api.Book com.baobaodz.example.dropwizard.resources.HolaRestResource.saveSingleBook(javax.servlet.http.HttpServletRequest,com.baobaodz.example.dropwizard.api.Book) on resource class com.baobaodz.example.dropwizard.resources.HolaRestResource contains multiple parameters with no annotation. Unable to resolve the injection source.; 
-.......
-io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwizard.jersey.setup.JerseyServletContainer,jsp=null,order=1,inst=false
-</code></pre>
-<p>注意这一句</p>
-<p><code>HolaRestResource contains multiple parameters with no annotation. Unable to resolve the injection source.</code></p>
-<p>大意就是<code>HolaRestResource</code>里包含了多个未被注解的参数</p>
-<p>原因：参考<a href="https://stackoverflow.com/questions/47121182/multiple-parameters-in-web-service-java-jax-rs">multiple parameters in web service java JAX-RS</a>]</p>
-<p>其中：资源方法不能具有多个实体参数。每个资源方法中可以有多个<code>@PathParam</code>，<code>@QueryParam</code>等，但只能有一个未注释的参数。参数未用@FormParam等注释注释的参数值（称为实体参数）是从请求实体主体映射的。实体主体和Java类型之间的转换是实体提供者的责任，<strong>资源方法必须最多具有一个实体参数</strong>。</p>
-<p>解决办法有两种，第一种去掉第一个参数，第二种给第一个参数添加注解@Context。</p>
+                <h3 id=""></h3>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -159,9 +123,9 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
+            <a href="https://baobaodz.top/post/2019-11-second-week">
               <h3 class="post-title">
-                Linux常用命令汇总（一）
+                【2019-11第二周】技能点
               </h3>
             </a>
           </div>
