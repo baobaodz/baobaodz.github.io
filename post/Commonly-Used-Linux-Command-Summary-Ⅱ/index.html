@@ -1,0 +1,299 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux常用命令汇总（二） | baobaodz</title>
+<meta name="description" content="keep humble , stay hungery" />
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1573574534160">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://baobaodz.top">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1573574534160" alt="">
+  </a>
+  <h1 class="site-title">
+    baobaodz
+  </h1>
+  <p class="site-description">
+    keep humble , stay hungery
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/skillpoints" class="menu">
+          技能点
+        </a>
+      
+    
+      
+        <a href="/post/keywords" class="menu">
+          关键词
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Linux常用命令汇总（二）
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-10
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://baobaodz.top/tag/Linux" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/11/12/M8BQL6.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="系统磁盘占用">系统磁盘占用</h3>
+<h4 id="df-h-查看磁盘空间">df -h 查看磁盘空间</h4>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        40G   28G  9.3G  76% /
+devtmpfs        909M     0  909M   0% /dev
+tmpfs           920M  479M  441M  53% /dev/shm
+tmpfs           920M  560K  919M   1% /run
+tmpfs           920M     0  920M   0% /sys/fs/cgroup
+tmpfs           184M     0  184M   0% /run/user/0
+</code></pre>
+<h4 id="du-sh-查看当前目录总共占的容量而不单独列出各子项占用的容量">du -sh : 查看当前目录总共占的容量,而不单独列出各子项占用的容量</h4>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# du -sh
+1.4G    .
+</code></pre>
+<h4 id="du-ah-max-depth1-查看根目录下各个文件占用情况">du -ah --max-depth=1  /   查看根目录下各个文件占用情况</h4>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# du -ah --max-depth=1 /
+2.1G    /home
+560K    /run
+68K     /tmp
+2.2G    /opt
+1.8G    /usr
+16K     /lost+found
+4.0K    /srv
+0       /lib
+0       /.autorelabel
+du: cannot access ‘/proc/10862/task/10862/fd/4’: No such file or directory
+du: cannot access ‘/proc/10862/task/10862/fdinfo/4’: No such file or directory
+du: cannot access ‘/proc/10862/fd/3’: No such file or directory
+du: cannot access ‘/proc/10862/fdinfo/3’: No such file or directory
+0       /proc
+4.0K    /mnt
+172M    /boot
+0       /lib64
+479M    /dev
+0       /sbin
+0       /sys
+1.4G    /root
+0       /bin
+4.0K    /media
+38M     /etc
+738M    /var
+20G     /data
+0       /profile
+29G     /
+</code></pre>
+<p>max-depth=1表示目录深度，如果改成max-depth=2，则会查询二级目录的大小</p>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# du -ah --max-depth=2 /
+2.1G    /home/swap
+388K    /home/oracle
+2.1G    /home
+.....
+</code></pre>
+<p>/代表根目录，换成其他目录du -ah --max-depth=1 /home</p>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# du -ah --max-depth=1  /home
+2.1G    /home/swap
+388K    /home/oracle
+2.1G    /home
+</code></pre>
+<h4 id="du-h-sort-hr-按文件大小kmg排序">du -h *|sort -hr 按文件大小（K/M/G）排序</h4>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz oracle]# du -h ./ --max-depth=1 | sort -hr
+18G     ./
+8.2G    ./oradata
+5.3G    ./diag
+4.0G    ./product
+9.4M    ./flash_recovery_area
+2.1M    ./admin
+104K    ./cfgtoollogs
+4.0K    ./checkpoints
+</code></pre>
+<h4 id="du-s-sort-nr-按文件字节大小排序">du -s * | sort -nr 按文件字节大小排序</h4>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz oracle]#  du -s * | sort -nr
+8530932 oradata
+5452148 diag
+4178284 product
+9536    flash_recovery_area
+2056    admin
+104     cfgtoollogs
+4       checkpoints
+</code></pre>
+<h4 id="du-和-df-的区别">du 和 df 的区别</h4>
+<p><code>du(disk usage)</code>会把指定目录下所有文件、目录、目录下的文件都统计。也就是说我们能在文件系统里面看到的文件才会被du统计。</p>
+<p>而 <code>df(disk free)</code>不光考虑文件占用空间，还统计被命令和程序占用的空间 。因此df统计的会大于du统计的，这也是有时候有df查看空间已满，而du还有空间的原因。</p>
+<p>比如说在清理磁盘空间时，rm掉一些日志文件后，发现磁盘空间并没有释放，根本是原因是文件被进程打开中，文件描述符未被释放，而这些以删除的文件而依然被占用的文件df会统计，du并不会。</p>
+<p>查看哪些文件被删除但是依然被占用</p>
+<pre><code class="language-bash">yum install lsof
+lsof | grep deleted
+</code></pre>
+<p>结果</p>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz /]# lsof | grep deleted
+oracle    20475        oracle    8u      REG              253,1          0    1311391 /data/oracle/product/11.2.0/db_1/dbs/lkinstorcl11g (deleted)
+oracle    20475        oracle    9w      REG              253,1      14418     528000 /data/oracle/diag/rdbms/orcl11g/orcl11g/trace/orcl11g_ora_20227.trc (deleted)
+oracle    20475        oracle   10w      REG              253,1        246     528001 /data/oracle/diag/rdbms/orcl11g/orcl11g/trace/orcl11g_ora_20227.trm (deleted)
+oracle    20908        oracle    8u      REG              253,1          0    1311391 /data/oracle/product/11.2.0/db_1/dbs/lkinstorcl11g (deleted)
+oracle    20908        oracle    9w      REG              253,1      14418     528000 /data/oracle/diag/rdbms/orcl11g/orcl11g/trace/orcl11g_ora_20227.trc (deleted)
+oracle    20908        oracle   10w      REG              253,1        246     528001 /data/oracle/diag/rdbms/orcl11g/orcl11g/trace/orcl11g_ora_20227.trm (deleted)
+oracle    20912        oracle    8u      REG              253,1          0    1311391 /data/oracle/product/11.2.0/db_1/dbs/lkinstorcl11g (deleted)
+......
+</code></pre>
+<p>注：可以利用<code>echo &quot;&quot; &gt; &quot;/data/oracle/diag/rdbms/orcl11g/orcl11g/trace/orcl11g_ora_20227.trc&quot;</code>删除日志文件</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8">系统磁盘占用</a>
+<ul>
+<li><a href="#df-h-%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4">df -h 查看磁盘空间</a></li>
+<li><a href="#du-sh-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E6%80%BB%E5%85%B1%E5%8D%A0%E7%9A%84%E5%AE%B9%E9%87%8F%E8%80%8C%E4%B8%8D%E5%8D%95%E7%8B%AC%E5%88%97%E5%87%BA%E5%90%84%E5%AD%90%E9%A1%B9%E5%8D%A0%E7%94%A8%E7%9A%84%E5%AE%B9%E9%87%8F">du -sh : 查看当前目录总共占的容量,而不单独列出各子项占用的容量</a></li>
+<li><a href="#du-ah-max-depth1-%E6%9F%A5%E7%9C%8B%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E4%B8%AA%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5">du -ah --max-depth=1  /   查看根目录下各个文件占用情况</a></li>
+<li><a href="#du-h-sort-hr-%E6%8C%89%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8Fkmg%E6%8E%92%E5%BA%8F">du -h *|sort -hr 按文件大小（K/M/G）排序</a></li>
+<li><a href="#du-s-sort-nr-%E6%8C%89%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E5%A4%A7%E5%B0%8F%E6%8E%92%E5%BA%8F">du -s * | sort -nr 按文件字节大小排序</a></li>
+<li><a href="#du-%E5%92%8C-df-%E7%9A%84%E5%8C%BA%E5%88%AB">du 和 df 的区别</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://baobaodz.top/post/2019-11-second-week">
+              <h3 class="post-title">
+                【2019-11第二周】技能点
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/baobaodz/baobaodz.github.io" target="_blank">baobaodz</a> | 
+  <a class="rss" href="https://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
