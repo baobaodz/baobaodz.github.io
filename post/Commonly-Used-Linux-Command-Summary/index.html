@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux常用命令汇总（一） | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
-<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1573650913894">
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1573655121208">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://baobaodz.top">
-  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1573650913894" alt="">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1573655121208" alt="">
   </a>
   <h1 class="site-title">
     baobaodz
@@ -377,6 +377,32 @@ oracle/HelloWorld/app.java
           </div>
         
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '5608c9829f9ef3fb8174',
+    clientSecret: '3e59fed258ab2ee63e57c209b5499b13e5e8f274',
+    repo: 'baobaodz.github.io',
+    owner: 'baoabodz',
+    admin: ['baoabodz'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
         <div class="site-footer">
