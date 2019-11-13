@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-12T16:11:31.259Z</updated>
+    <updated>2019-11-13T13:13:23.928Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -16,7 +16,11 @@
         <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ">
         </link>
         <updated>2019-11-10T08:51:42.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="系统磁盘占用">系统磁盘占用</h3>
+        <summary type="html"><![CDATA[<p>总结一些在日常工作中用到的查看磁盘占用的linux命令</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>总结一些在日常工作中用到的查看磁盘占用的linux命令</p>
+<!-- more -->
+<h3 id="系统磁盘占用">系统磁盘占用</h3>
 <h4 id="df-h-查看磁盘空间">df -h 查看磁盘空间</h4>
 <pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# df -h
 Filesystem      Size  Used Avail Use% Mounted on
@@ -374,7 +378,11 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
         <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
         </link>
         <updated>2019-10-12T15:36:45.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="一-目录操作">一、目录操作</h3>
+        <summary type="html"><![CDATA[<p>总结一些在日常工作中用到的处理文件和目录的linux命令</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>总结一些在日常工作中用到的处理文件和目录的linux命令</p>
+<!-- more -->
+<h3 id="一-目录操作">一、目录操作</h3>
 <h4 id="pwd-当前所在目录">pwd 当前所在目录</h4>
 <pre><code>[root@izuf66fm097gavs15ngjfvz home]# pwd
 /home
