@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-13T13:13:23.928Z</updated>
+    <updated>2019-11-13T13:18:40.908Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -128,7 +128,11 @@ oracle    20912        oracle    8u      REG              253,1          0    13
         <link href="https://baobaodz.top/post/2019-11-second-week">
         </link>
         <updated>2019-11-07T16:38:42.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="friday">Friday</h3>
+        <summary type="html"><![CDATA[<p>这一周主要有：将IDEA设置eclipse风格的快捷键,Eclipse常用快捷键</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这一周主要有：将IDEA设置eclipse风格的快捷键,Eclipse常用快捷键</p>
+<!-- more -->
+<h3 id="friday">Friday</h3>
 <h4 id="将idea设置eclipse风格的快捷键">将IDEA设置eclipse风格的快捷键</h4>
 <p><code>Files-Settings-keymap</code>选择<code>Eclipse</code>即可</p>
 <figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/MeFwNQ"><img src="https://s2.ax1x.com/2019/11/09/MeFwNQ.md.png" alt="MeFwNQ.md.png"></a></figure>
@@ -260,7 +264,11 @@ oracle    20912        oracle    8u      REG              253,1          0    13
         <link href="https://baobaodz.top/post/2019-11-first-week">
         </link>
         <updated>2019-11-01T14:06:10.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="monday">Monday</h3>
+        <summary type="html"><![CDATA[<p>这一周主要有：premire渲染器,CPU和GPU的区别,maven常用命令,aria2</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这一周主要有：premire渲染器,CPU和GPU的区别,maven常用命令,aria2</p>
+<!-- more -->
+<h3 id="monday">Monday</h3>
 <h4 id="premire渲染器">premire渲染器</h4>
 <p>在将视频拖入pr轨道时候，时间轴上方呈现红色，表示没有渲染，播放预览会卡顿现象，而且渲染时CPU占用到99%。正常情况下应该为黄色。</p>
 <figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/02/Kbs2GR.png" alt="image-20191101231359836"></figure>
