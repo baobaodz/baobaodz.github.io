@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-14T16:48:34.416Z</updated>
+    <updated>2019-11-16T17:33:40.671Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,299 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[tree命令]]></title>
+        <id>https://baobaodz.top/post/tree-command</id>
+        <link href="https://baobaodz.top/post/tree-command">
+        </link>
+        <updated>2019-11-16T17:31:25.000Z</updated>
+        <content type="html"><![CDATA[<p>如果阅读到别人的技术文章时，经常会看到作者列出的文件树结构，而<code>tree</code>命令就可以实现这种效果</p>
+<h3 id="windows-cmd-的-tree命令"><code>Windows cmd</code> 的 <code>tree</code>命令</h3>
+<p>在<code>cmd</code>中就集成了<code>tree</code> 命令</p>
+<p>使用<code>tree /?</code>查看帮助信息</p>
+<pre><code class="language-bash">G:\Dev\workspace\hola&gt;tree /?
+以图形显示驱动器或路径的文件夹结构。
+
+TREE [drive:][path] [/F] [/A]
+
+   /F   显示每个文件夹中文件的名称。
+   /A   使用 ASCII 字符，而不使用扩展字符。
+</code></pre>
+<p>主要命令</p>
+<ul>
+<li><code>tree</code></li>
+<li><code>tree /a</code>(不区分大小写)</li>
+<li><code>tree /f</code>(不区分大小写) 显示全部文件</li>
+<li><code>tree /f &gt; tree.text</code> 将结果输出到tree.txt文件中</li>
+</ul>
+<p>tree  显示目录结构</p>
+<pre><code class="language-bash">G:\Dev\workspace\hola&gt;tree
+卷 软件&amp;开发 的文件夹 PATH 列表
+卷序列号为 623A-7D30
+G:.
+└─hola-dropwizard
+    └─src
+        ├─main
+        │  └─java
+        │      └─com
+        │          └─baobaodz
+        │              └─example
+        │                  └─dropwizard
+        └─test
+            └─java
+                └─com
+                    └─baobaodz
+                        └─example
+                            └─dropwizard
+</code></pre>
+<p><code>tree /A</code></p>
+<pre><code class="language-bash">G:\Dev\workspace\hola&gt;tree /A
+卷 软件&amp;开发 的文件夹 PATH 列表
+卷序列号为 623A-7D30
+G:.
+\---hola-dropwizard
+    \---src
+        +---main
+        |   \---java
+        |       \---com
+        |           \---baobaodz
+        |               \---example
+        |                   \---dropwizard
+        \---test
+            \---java
+                \---com
+                    \---baobaodz
+                        \---example
+                            \---dropwizard
+
+
+</code></pre>
+<p><code>tree /f</code> 不仅显示文件夹，还显示文件</p>
+<pre><code class="language-bash">G:\Dev\workspace\hola&gt;tree /f
+卷 软件&amp;开发 的文件夹 PATH 列表
+卷序列号为 623A-7D30
+G:.
+└─hola-dropwizard
+    │  pom.xml
+    │
+    └─src
+        ├─main
+        │  └─java
+        │      └─com
+        │          └─baobaodz
+        │              └─example
+        │                  └─dropwizard
+        │                          App.java
+        │
+        └─test
+            └─java
+                └─com
+                    └─baobaodz
+                        └─example
+                            └─dropwizard
+                                    AppTest.java
+</code></pre>
+<h3 id="windows-git-bash-的-tree-命令"><code>Windows git bash</code> 的 <code>tree</code> 命令</h3>
+<p>然而git中并没有集成<code>tree</code> 命令</p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ tree
+bash: tree: command not found
+</code></pre>
+<p>如果想使用<code>tree</code>命令</p>
+<ol>
+<li>下载  <a href="http://gnuwin32.sourceforge.net/packages/tree.htm">tree for windows</a> 的 <code>Binaries Zip</code>格式，解压后找到bin目录下的<code>tree.exe</code></li>
+<li>复制粘贴到<code>git</code>安装目录下的*usr/bin/*目录下</li>
+<li>重新打开<code>git bash</code>，输入tree就有啦</li>
+</ol>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ tree
+.
+`-- hola-dropwizard
+    |-- pom.xml
+    `-- src
+        |-- main
+        |   `-- java
+        |       `-- com
+        |           `-- baobaodz
+        |               `-- example
+        |                   `-- dropwizard
+        |                       `-- App.java
+        `-- test
+            `-- java
+                `-- com
+                    `-- baobaodz
+                        `-- example
+                            `-- dropwizard
+                                `-- AppTest.java
+
+14 directories, 3 files
+</code></pre>
+<p>常用命令</p>
+<pre><code class="language-bash">tree 列出所有文件(以虚线形式)
+
+tree --help
+
+tree -a 列出所有文件
+
+tree -A 列出所有文件(以ANSI线图形缩进线形式)我叫它折线形式
+
+tree -d 仅列出目录
+
+tree -L level 显示目录深度
+
+tree -o file 将结果输出到文件中
+</code></pre>
+<p>tree -a 和tree-A的区别就是画线的不同，个人更喜欢-A折线形式的目录树。</p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ tree -a
+.
+`-- hola-dropwizard
+    |-- pom.xml
+    `-- src
+        |-- main
+        |   `-- java
+        |       `-- com
+        |           `-- baobaodz
+        |               `-- example
+        |                   `-- dropwizard
+        |                       `-- App.java
+        `-- test
+            `-- java
+                `-- com
+                    `-- baobaodz
+                        `-- example
+                            `-- dropwizard
+                                `-- AppTest.java
+
+14 directories, 3 files
+
+baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ tree -A
+.
+└── hola-dropwizard
+    ├── pom.xml
+    └── src
+        ├── main
+        │   └── java
+        │       └── com
+        │           └── baobaodz
+        │               └── example
+        │                   └── dropwizard
+        │                       └── App.java
+        └── test
+            └── java
+                └── com
+                    └── baobaodz
+                        └── example
+                            └── dropwizard
+                                └── AppTest.java
+
+14 directories, 3 files
+</code></pre>
+<p>tree -LA 3 列出三级目录下所有文件（以折线形式）</p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ tree -LA 3
+.
+└── hola-dropwizard
+    ├── pom.xml
+    └── src
+        ├── main
+        └── test
+4 directories, 1 file
+</code></pre>
+<h3 id="linux-的-tree-命令"><code>Linux</code> 的 <code>tree</code> 命令</h3>
+<p>Linux自身也没有集成tree命令</p>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# tree
+-bash: tree: command not found
+</code></pre>
+<p>需要下载，以centOS 7为例，执行yum -y install tree</p>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# yum -y install tree
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+.....
+
+Dependencies Resolved
+
+================================================================================================================================
+
+ Package                    Arch                         Version                               Repository                  Size
+================================================================================================================================
+
+Installing:
+ tree                       x86_64                       1.6.0-10.el7                          base                        46 k
+
+Transaction Summary
+================================================================================================================================
+
+Install  1 Package
+
+Total download size: 46 k
+Installed size: 87 k
+Downloading packages:
+tree-1.6.0-10.el7.x86_64.rpm                                                                             |  46 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : tree-1.6.0-10.el7.x86_64                                                                                     1/1
+  Verifying  : tree-1.6.0-10.el7.x86_64                                                                                     1/1
+
+Installed:
+  tree.x86_64 0:1.6.0-10.el7
+
+Complete!
+</code></pre>
+<p>常用命令 和git bash安装的tree 命令一致</p>
+<pre><code class="language-bash">tree 列出所有文件(以虚线形式)
+
+tree --help
+
+tree -a 列出所有文件
+
+tree -A 列出所有文件(以ANSI线图形缩进线形式)我叫它折线形式
+
+tree -d 仅列出目录
+
+tree -L level 显示目录深度
+
+tree -o file 将结果输出到文件中
+
+
+</code></pre>
+<pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz home]# tree
+.
+├── oracle
+│   └── oradiag_oracle
+│       └── diag
+│           └── clients
+│               └── user_oracle
+│                   └── host_2814106076_76
+│                       ├── alert
+│                       │   └── log.xml
+│                       ├── cdump
+│                       ├── incident
+│                       ├── incpkg
+│                       ├── lck
+│                       │   ├── AM_1096102193_3488045378.lck
+│                       │   ├── AM_1096102262_3454819329.lck
+│                       │   ├── AM_1744845641_3861997533.lck
+│                       │   └── AM_3216668543_3129272988.lck
+│                       ├── metadata
+│                       │   ├── ADR_CONTROL.ams
+│                       │   ├── ADR_INVALIDATION.ams
+│                       │   ├── INC_METER_IMPT_DEF.ams
+│                       │   └── INC_METER_PK_IMPTS.ams
+│                       ├── stage
+│                       ├── sweep
+│                       └── trace
+│                           └── sqlnet.log
+└── swap
+
+15 directories, 11 files
+</code></pre>
+<h3 id="windows-cmd的tree和-git-bash的tree的区别"><code>Windows cmd</code>的<code>tree</code>和 <code>git bash</code>的<code>tree</code>的区别</h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux常用命令汇总（二）]]></title>
         <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ</id>
