@@ -2,9 +2,9 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>tree命令 | baobaodz</title>
+<title>tree命令用法（CMD/Git Bash/Linux） | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
-<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1573926322141">
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1574008510258">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://baobaodz.top">
-  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1573926322141" alt="">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1574008510258" alt="">
   </a>
   <h1 class="site-title">
     baobaodz
@@ -85,14 +85,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              tree命令
+              tree命令用法（CMD/Git Bash/Linux）
             </h2>
             <div class="post-info">
               <span>
                 2019-11-17
               </span>
               <span>
-                5 min read
+                6 min read
               </span>
               
                 <a href="https://baobaodz.top/tag/Linux" class="post-tag">
@@ -105,7 +105,8 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>如果阅读到别人的技术文章时，经常会看到作者列出的文件树结构，而<code>tree</code>命令就可以实现这种效果</p>
+                <p>在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而<code>tree</code>命令就可以实现这种效果。<br>
+<img src="https://s2.ax1x.com/2019/11/18/MsR64x.md.png" alt="目录树示例.png"></p>
 <h2 id="windows-cmd-的-tree命令"><code>Windows cmd</code> 的 <code>tree</code>命令</h2>
 <p>在<code>cmd</code>中就集成了<code>tree</code> 命令</p>
 <p>使用<code>tree /?</code>查看帮助信息</p>
@@ -198,6 +199,33 @@ $ tree
 bash: tree: command not found
 </code></pre>
 <p>如果想使用<code>tree</code>命令</p>
+<h3 id="第一种使用winpty命令">第一种：使用<code>winpty</code>命令</h3>
+<p><code>winpty</code> 是一种提供与<code>cmd</code> 通信的软件包 ，可以通过调用<code>cmd</code>间接实现<code>tree</code>命令</p>
+<pre><code class="language-bash">winpty tree.com 
+winpty cmd //c tree 
+</code></pre>
+<p>结果</p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
+$ winpty tree.com
+卷 软件&amp;开发 的文件夹 PATH 列表
+卷序列号为 623A-7D30
+G:.
+└─hola-dropwizard
+    └─src
+        ├─main
+        │  └─java
+        │      └─com
+        │          └─baobaodz
+        │              └─example
+        │                  └─dropwizard
+        └─test
+            └─java
+                └─com
+                    └─baobaodz
+                        └─example
+                            └─dropwizard
+</code></pre>
+<h3 id="第二种使用treeexe">第二种：使用<code>tree.exe</code></h3>
 <ol>
 <li>下载  <a href="http://gnuwin32.sourceforge.net/packages/tree.htm">tree for windows</a> 的 <code>Binaries Zip</code>格式，解压后找到bin目录下的<code>tree.exe</code></li>
 <li>复制粘贴到<code>git</code>安装目录下的*usr/bin/*目录下</li>
@@ -241,7 +269,7 @@ tree -L level 显示目录深度
 
 tree -o file 将结果输出到文件中
 </code></pre>
-<p>tree -a 和tree-A的区别就是画线的不同，个人更喜欢-A折线形式的目录树。</p>
+<p><code>tree -a</code> 和<code>tree-A</code>的区别就是画线的不同，个人更喜欢-A折线形式的目录树。</p>
 <pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
 $ tree -a
 .
@@ -288,7 +316,7 @@ $ tree -A
 
 14 directories, 3 files
 </code></pre>
-<p>tree -LA 3 列出三级目录下所有文件（以折线形式）</p>
+<p><code>tree -LA 3</code> 列出三级目录下所有文件（以折线形式）</p>
 <pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola
 $ tree -LA 3
 .
@@ -300,11 +328,11 @@ $ tree -LA 3
 4 directories, 1 file
 </code></pre>
 <h2 id="linux-的-tree-命令"><code>Linux</code> 的 <code>tree</code> 命令</h2>
-<p>Linux自身也没有集成tree命令</p>
+<p><code>Linux</code>自身也没有集成<code>tree</code>命令</p>
 <pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# tree
 -bash: tree: command not found
 </code></pre>
-<p>需要下载，以centOS 7为例，执行yum -y install tree</p>
+<p>需要下载，以<code>centOS 7</code>为例，执行 <code>yum -y install tree</code></p>
 <pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz ~]# yum -y install tree
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
@@ -341,22 +369,14 @@ Installed:
 
 Complete!
 </code></pre>
-<p>常用命令 和git bash安装的tree 命令一致</p>
+<p>常用命令 和<code>git bash</code>安装的<code>tree</code> 命令一致</p>
 <pre><code class="language-bash">tree 列出所有文件(以虚线形式)
-
 tree --help
-
 tree -a 列出所有文件
-
 tree -A 列出所有文件(以ANSI线图形缩进线形式)我叫它折线形式
-
 tree -d 仅列出目录
-
 tree -L level 显示目录深度
-
 tree -o file 将结果输出到文件中
-
-
 </code></pre>
 <pre><code class="language-bash">[root@izuf66fm097gavs15ngjfvz home]# tree
 .
@@ -390,6 +410,14 @@ tree -o file 将结果输出到文件中
 15 directories, 11 files
 </code></pre>
 <h2 id="windows-cmd的tree和-git-bash的tree的区别"><code>Windows cmd</code>的<code>tree</code>和 <code>git bash</code>的<code>tree</code>的区别</h2>
+<p><code>Windows</code>集成的<code>tree</code>命令是在<em>C:\Windows\System32</em>目录下的<code>tree.com</code>文件起的作用</p>
+<p><code>git bash</code> 的<code>tree</code>命令是通过引入<code>tree.exe</code>到<em>Git\usr\bin</em>中而实现的</p>
+<p>在命令格式上，<code>cmd tree</code> 使用<code>/</code>来作为参数，git bash tree使用<code>-</code>作为输入参数；另外前者不区分大小写，<code>/f</code>和<code>/F</code>的作用一致。而<code>git bash tree</code>不仅区分大小写，而且大写小写参数不同作用也往往不同：</p>
+<p>如</p>
+<pre><code class="language-bash">tree -d 仅显示文件夹
+tree -D 以显示日期目录树
+</code></pre>
+<p>其次<code>cmd tree</code>默认显示是以折线显示目录树，而<code>git bash tree</code>默认以虚线形式显示目录树，这点与Linux tree命令显示的不一样。</p>
 
               </div>
               <div class="toc-container">
@@ -397,7 +425,12 @@ tree -o file 将结果输出到文件中
 <li>
 <ul>
 <li><a href="#windows-cmd-%E7%9A%84-tree%E5%91%BD%E4%BB%A4"><code>Windows cmd</code> 的 <code>tree</code>命令</a></li>
-<li><a href="#windows-git-bash-%E7%9A%84-tree-%E5%91%BD%E4%BB%A4"><code>Windows git bash</code> 的 <code>tree</code> 命令</a></li>
+<li><a href="#windows-git-bash-%E7%9A%84-tree-%E5%91%BD%E4%BB%A4"><code>Windows git bash</code> 的 <code>tree</code> 命令</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E4%BD%BF%E7%94%A8winpty%E5%91%BD%E4%BB%A4">第一种：使用<code>winpty</code>命令</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E4%BD%BF%E7%94%A8treeexe">第二种：使用<code>tree.exe</code></a></li>
+</ul>
+</li>
 <li><a href="#linux-%E7%9A%84-tree-%E5%91%BD%E4%BB%A4"><code>Linux</code> 的 <code>tree</code> 命令</a></li>
 <li><a href="#windows-cmd%E7%9A%84tree%E5%92%8C-git-bash%E7%9A%84tree%E7%9A%84%E5%8C%BA%E5%88%AB"><code>Windows cmd</code>的<code>tree</code>和 <code>git bash</code>的<code>tree</code>的区别</a></li>
 </ul>
