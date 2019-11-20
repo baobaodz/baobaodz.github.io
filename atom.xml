@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-20T16:45:44.056Z</updated>
+    <updated>2019-11-20T16:48:15.536Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -14,98 +14,6 @@
         <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
         <id>https://baobaodz.top/post/Dropwizard-project-build——initialization</id>
         <link href="https://baobaodz.top/post/Dropwizard-project-build——initialization">
-        </link>
-        <updated>2019-11-20T14:36:58.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="maven创建项目">maven创建项目</h2>
-<pre><code class="language-bash">$ mvn -B archetype:generate 
-\ -DarchetypeGroupId=io.dropwizard.archetypes 
-\ -DarchetypeArtifactId=java-simple 
-\ -DarchetypeVersion=2.0.0-rc9
-\ -DgroupId=com.baoabodz.example.dropwizard 
-\ -DartifactId=ava-dropwizard 
-\ -Dversion=2.0.0-rc9-SNAPSHOT
-\ -Dname=AvaDropwizard
-</code></pre>
-<p>十几分钟后等待出现<code>BUILD SUCCESS</code></p>
-<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/ava
-$ tree -A
-.
-└── ava-dropwizard
-    ├── README.md
-    ├── config.yml
-    ├── pom.xml
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── com
-        │   │       └── baoabodz
-        │   │           └── example
-        │   │               └── dropwizard
-        │   │                   ├── AvaDropwizardApplication.java
-        │   │                   ├── AvaDropwizardConfiguration.java
-        │   │                   ├── api
-        │   │                   ├── cli
-        │   │                   ├── client
-        │   │                   ├── core
-        │   │                   ├── db
-        │   │                   ├── health
-        │   │                   └── resources
-        │   └── resources
-        │       ├── assets
-        │       └── banner.txt
-        └── test
-            ├── java
-            │   └── com
-            │       └── baoabodz
-            │           └── example
-            │               └── dropwizard
-            │                   ├── api
-            │                   ├── client
-            │                   ├── core
-            │                   ├── db
-            │                   └── resources
-            └── resources
-                └── fixtures
-
-30 directories, 6 files
-</code></pre>
-<p>首先来说一下这个<code>mvn -B</code>是什么意思。<code>mvn -help</code>查看帮助可以看到</p>
-<pre><code class="language-bash">-B,--batch-mode                        Run in non-interactive (batch)
-</code></pre>
-<p>是以非交互（批处理）模式执行命令。所谓非交互就是在执行的时候不会一步一步询问你<code>DgroupId</code>设置、<code>DartifactId</code>设置等，而是将需要的参数一次性输入。</p>
-<pre><code class="language-bash">mvn -B rchetype:generate 相当于
-mvn --batch-mode rchetype:generate 相当于
-mvn rchetype:generate -DinteractiveMode=false
-</code></pre>
-<p><code>mvn archetype:generate</code>则调用<code>maven</code>的一个插件<code>maven-archetype-plugin</code>。这个插件可以直接生成一些模板或者原型，更加方便。这个命令是直接生成项目的一个指令：</p>
-<pre><code>archetypeGroupId：原型唯一的标识 
-archetypeArtifactId：原型的名字
-DarchetypeVersion:模板的版本
-DgroupId：项目或组织名，通常是成为包名
-DartifactId：项目标识
-Dversion：项目版本
-Dname：项目名称
-</code></pre>
-<h2 id="问题及解决qr">问题及解决Q&amp;R</h2>
-<p>我看在<code>dropwizard</code>的<code>github</code>官方例子中项目的版本为<code>2.0.0-rc13</code>，但是执行创建项目报错找不到这个版本</p>
-<pre><code class="language-bash">[INFO] Archetype repository not defined. Using the one from [io.dropwizard.archetypes:java-simple:2.0.0-rc9] found in catalog remote
-[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple/2.0.0-rc13/java-simple-2.0.0-rc13.pom
-[WARNING] The POM for io.dropwizard.archetypes:java-simple:jar:2.0.0-rc13 is missing, no dependency information available
-......
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate (default-cli) on project standalone-pom: The desired archetype does not exist (io.dropwizard.archetypes:java-simple:2.0.0-rc13) -&gt; [Help 1]
-</code></pre>
-<p>按照它的提示在浏览器输入</p>
-<pre><code class="language-bash">https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple
-</code></pre>
-<p>可以看到版本从<code>1.3.9</code>跳到<code>2.0.0-x</code>版本</p>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/20/MhDG9I.png" alt="MhDG9I.png"></figure>
-<p>改为<code>2.0.0-rc9</code> 执行 成功</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
-        <id>https://baobaodz.top/post/dropwizard-</id>
-        <link href="https://baobaodz.top/post/dropwizard-">
         </link>
         <updated>2019-11-20T14:36:58.000Z</updated>
         <content type="html"><![CDATA[<h2 id="maven创建项目">maven创建项目</h2>
@@ -1197,6 +1105,45 @@ Tomcat started.
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[七牛云存储配置服务器CNAME]]></title>
+        <id>https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
+        <link href="https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
+        </link>
+        <updated>2018-11-16T15:07:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
+<!--more-->
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" alt="测试域名"></figure>
+<h3 id="配置cname">配置CNAME</h3>
+<p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" alt="image.png"></figure>
+<p>步骤2：点击后确定，查看CNAME，并复制</p>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/uj7UWF.png" alt="CNAME"></figure>
+<p>步骤3：进入阿里云控制台，域名-域名配置，新增一条记录</p>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/uj70y9.png" alt="image.png"></figure>
+<p>其中</p>
+<pre><code>记录类型改为CNAME
+主机记录为之前步骤1中的加速域名前缀。
+记录值为CNMAE的值。
+</code></pre>
+<p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
+<p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" alt="image.png"></figure>
+<p>步骤5：更改图片存储路径，更改项目链接地址</p>
+<p>&lt;a href='http://resource.baobaodz.com/image/preview/articlepreview&quot;+data[i].aid+&quot;.jpg'&gt;</p>
+<h3 id="相关知识">相关知识</h3>
+<h4 id="二级域名">二级域名</h4>
+<p>baidu.com 是顶级域名， zhidao.baidu.com就是二级域名<br>
+baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
+<p>而形如&quot;abc.com/bbs&quot;的、采取目录形式的不能够称为二级域名，一般称之为&quot;网址&quot;。</p>
+<p>使用二级域名的好处是一个是好记，另一个是搜索权重高于网址形式。</p>
+<h4 id="cname解析">CNAME解析</h4>
+<p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
+<p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
 ]]></content>
     </entry>
 </feed>
