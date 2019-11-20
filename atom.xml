@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-19T16:13:37.427Z</updated>
+    <updated>2019-11-20T16:45:44.056Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,190 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
+        <id>https://baobaodz.top/post/Dropwizard-project-build——initialization</id>
+        <link href="https://baobaodz.top/post/Dropwizard-project-build——initialization">
+        </link>
+        <updated>2019-11-20T14:36:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="maven创建项目">maven创建项目</h2>
+<pre><code class="language-bash">$ mvn -B archetype:generate 
+\ -DarchetypeGroupId=io.dropwizard.archetypes 
+\ -DarchetypeArtifactId=java-simple 
+\ -DarchetypeVersion=2.0.0-rc9
+\ -DgroupId=com.baoabodz.example.dropwizard 
+\ -DartifactId=ava-dropwizard 
+\ -Dversion=2.0.0-rc9-SNAPSHOT
+\ -Dname=AvaDropwizard
+</code></pre>
+<p>十几分钟后等待出现<code>BUILD SUCCESS</code></p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/ava
+$ tree -A
+.
+└── ava-dropwizard
+    ├── README.md
+    ├── config.yml
+    ├── pom.xml
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── com
+        │   │       └── baoabodz
+        │   │           └── example
+        │   │               └── dropwizard
+        │   │                   ├── AvaDropwizardApplication.java
+        │   │                   ├── AvaDropwizardConfiguration.java
+        │   │                   ├── api
+        │   │                   ├── cli
+        │   │                   ├── client
+        │   │                   ├── core
+        │   │                   ├── db
+        │   │                   ├── health
+        │   │                   └── resources
+        │   └── resources
+        │       ├── assets
+        │       └── banner.txt
+        └── test
+            ├── java
+            │   └── com
+            │       └── baoabodz
+            │           └── example
+            │               └── dropwizard
+            │                   ├── api
+            │                   ├── client
+            │                   ├── core
+            │                   ├── db
+            │                   └── resources
+            └── resources
+                └── fixtures
+
+30 directories, 6 files
+</code></pre>
+<p>首先来说一下这个<code>mvn -B</code>是什么意思。<code>mvn -help</code>查看帮助可以看到</p>
+<pre><code class="language-bash">-B,--batch-mode                        Run in non-interactive (batch)
+</code></pre>
+<p>是以非交互（批处理）模式执行命令。所谓非交互就是在执行的时候不会一步一步询问你<code>DgroupId</code>设置、<code>DartifactId</code>设置等，而是将需要的参数一次性输入。</p>
+<pre><code class="language-bash">mvn -B rchetype:generate 相当于
+mvn --batch-mode rchetype:generate 相当于
+mvn rchetype:generate -DinteractiveMode=false
+</code></pre>
+<p><code>mvn archetype:generate</code>则调用<code>maven</code>的一个插件<code>maven-archetype-plugin</code>。这个插件可以直接生成一些模板或者原型，更加方便。这个命令是直接生成项目的一个指令：</p>
+<pre><code>archetypeGroupId：原型唯一的标识 
+archetypeArtifactId：原型的名字
+DarchetypeVersion:模板的版本
+DgroupId：项目或组织名，通常是成为包名
+DartifactId：项目标识
+Dversion：项目版本
+Dname：项目名称
+</code></pre>
+<h2 id="问题及解决qr">问题及解决Q&amp;R</h2>
+<p>我看在<code>dropwizard</code>的<code>github</code>官方例子中项目的版本为<code>2.0.0-rc13</code>，但是执行创建项目报错找不到这个版本</p>
+<pre><code class="language-bash">[INFO] Archetype repository not defined. Using the one from [io.dropwizard.archetypes:java-simple:2.0.0-rc9] found in catalog remote
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple/2.0.0-rc13/java-simple-2.0.0-rc13.pom
+[WARNING] The POM for io.dropwizard.archetypes:java-simple:jar:2.0.0-rc13 is missing, no dependency information available
+......
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate (default-cli) on project standalone-pom: The desired archetype does not exist (io.dropwizard.archetypes:java-simple:2.0.0-rc13) -&gt; [Help 1]
+</code></pre>
+<p>按照它的提示在浏览器输入</p>
+<pre><code class="language-bash">https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple
+</code></pre>
+<p>可以看到版本从<code>1.3.9</code>跳到<code>2.0.0-x</code>版本</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/20/MhDG9I.png" alt="MhDG9I.png"></figure>
+<p>改为<code>2.0.0-rc9</code> 执行 成功</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
+        <id>https://baobaodz.top/post/dropwizard-</id>
+        <link href="https://baobaodz.top/post/dropwizard-">
+        </link>
+        <updated>2019-11-20T14:36:58.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="maven创建项目">maven创建项目</h2>
+<pre><code class="language-bash">$ mvn -B archetype:generate 
+\ -DarchetypeGroupId=io.dropwizard.archetypes 
+\ -DarchetypeArtifactId=java-simple 
+\ -DarchetypeVersion=2.0.0-rc9
+\ -DgroupId=com.baoabodz.example.dropwizard 
+\ -DartifactId=ava-dropwizard 
+\ -Dversion=2.0.0-rc9-SNAPSHOT
+\ -Dname=AvaDropwizard
+</code></pre>
+<p>十几分钟后等待出现<code>BUILD SUCCESS</code></p>
+<pre><code class="language-bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/ava
+$ tree -A
+.
+└── ava-dropwizard
+    ├── README.md
+    ├── config.yml
+    ├── pom.xml
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── com
+        │   │       └── baoabodz
+        │   │           └── example
+        │   │               └── dropwizard
+        │   │                   ├── AvaDropwizardApplication.java
+        │   │                   ├── AvaDropwizardConfiguration.java
+        │   │                   ├── api
+        │   │                   ├── cli
+        │   │                   ├── client
+        │   │                   ├── core
+        │   │                   ├── db
+        │   │                   ├── health
+        │   │                   └── resources
+        │   └── resources
+        │       ├── assets
+        │       └── banner.txt
+        └── test
+            ├── java
+            │   └── com
+            │       └── baoabodz
+            │           └── example
+            │               └── dropwizard
+            │                   ├── api
+            │                   ├── client
+            │                   ├── core
+            │                   ├── db
+            │                   └── resources
+            └── resources
+                └── fixtures
+
+30 directories, 6 files
+</code></pre>
+<p>首先来说一下这个<code>mvn -B</code>是什么意思。<code>mvn -help</code>查看帮助可以看到</p>
+<pre><code class="language-bash">-B,--batch-mode                        Run in non-interactive (batch)
+</code></pre>
+<p>是以非交互（批处理）模式执行命令。所谓非交互就是在执行的时候不会一步一步询问你<code>DgroupId</code>设置、<code>DartifactId</code>设置等，而是将需要的参数一次性输入。</p>
+<pre><code class="language-bash">mvn -B rchetype:generate 相当于
+mvn --batch-mode rchetype:generate 相当于
+mvn rchetype:generate -DinteractiveMode=false
+</code></pre>
+<p><code>mvn archetype:generate</code>则调用<code>maven</code>的一个插件<code>maven-archetype-plugin</code>。这个插件可以直接生成一些模板或者原型，更加方便。这个命令是直接生成项目的一个指令：</p>
+<pre><code>archetypeGroupId：原型唯一的标识 
+archetypeArtifactId：原型的名字
+DarchetypeVersion:模板的版本
+DgroupId：项目或组织名，通常是成为包名
+DartifactId：项目标识
+Dversion：项目版本
+Dname：项目名称
+</code></pre>
+<h2 id="问题及解决qr">问题及解决Q&amp;R</h2>
+<p>我看在<code>dropwizard</code>的<code>github</code>官方例子中项目的版本为<code>2.0.0-rc13</code>，但是执行创建项目报错找不到这个版本</p>
+<pre><code class="language-bash">[INFO] Archetype repository not defined. Using the one from [io.dropwizard.archetypes:java-simple:2.0.0-rc9] found in catalog remote
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple/2.0.0-rc13/java-simple-2.0.0-rc13.pom
+[WARNING] The POM for io.dropwizard.archetypes:java-simple:jar:2.0.0-rc13 is missing, no dependency information available
+......
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:3.1.2:generate (default-cli) on project standalone-pom: The desired archetype does not exist (io.dropwizard.archetypes:java-simple:2.0.0-rc13) -&gt; [Help 1]
+</code></pre>
+<p>按照它的提示在浏览器输入</p>
+<pre><code class="language-bash">https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple
+</code></pre>
+<p>可以看到版本从<code>1.3.9</code>跳到<code>2.0.0-x</code>版本</p>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/20/MhDG9I.png" alt="MhDG9I.png"></figure>
+<p>改为<code>2.0.0-rc9</code> 执行 成功</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[tree命令用法（CMD/Git Bash/Linux）]]></title>
         <id>https://baobaodz.top/post/tree-command</id>
@@ -1013,242 +1197,6 @@ Tomcat started.
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[七牛云存储配置服务器CNAME]]></title>
-        <id>https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
-        <link href="https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
-        </link>
-        <updated>2018-11-16T15:07:50.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
-<!--more-->
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" alt="测试域名"></figure>
-<h3 id="配置cname">配置CNAME</h3>
-<p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" alt="image.png"></figure>
-<p>步骤2：点击后确定，查看CNAME，并复制</p>
-<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/uj7UWF.png" alt="CNAME"></figure>
-<p>步骤3：进入阿里云控制台，域名-域名配置，新增一条记录</p>
-<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/uj70y9.png" alt="image.png"></figure>
-<p>其中</p>
-<pre><code>记录类型改为CNAME
-主机记录为之前步骤1中的加速域名前缀。
-记录值为CNMAE的值。
-</code></pre>
-<p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
-<p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
-<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" alt="image.png"></figure>
-<p>步骤5：更改图片存储路径，更改项目链接地址</p>
-<p>&lt;a href='http://resource.baobaodz.com/image/preview/articlepreview&quot;+data[i].aid+&quot;.jpg'&gt;</p>
-<h3 id="相关知识">相关知识</h3>
-<h4 id="二级域名">二级域名</h4>
-<p>baidu.com 是顶级域名， zhidao.baidu.com就是二级域名<br>
-baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
-<p>而形如&quot;abc.com/bbs&quot;的、采取目录形式的不能够称为二级域名，一般称之为&quot;网址&quot;。</p>
-<p>使用二级域名的好处是一个是好记，另一个是搜索权重高于网址形式。</p>
-<h4 id="cname解析">CNAME解析</h4>
-<p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
-<p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[javaweb项目部署]]></title>
-        <id>https://baobaodz.top/post/Javaweb-Project-Deployment</id>
-        <link href="https://baobaodz.top/post/Javaweb-Project-Deployment">
-        </link>
-        <updated>2018-10-13T15:17:35.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="购买域名和服务器">购买域名和服务器</h3>
-<h4 id="购买服务器">购买服务器</h4>
-<p>阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。</p>
-<p>具体可看<a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></p>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujGa0U.png" alt="image.png"></figure>
-<h4 id="购买域名">购买域名</h4>
-<p>链接：<a href="https://wanwang.aliyun.com/domain/com/">域名注册</a><br>
-com大概45元/年，cn29元/年。top9元/年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。<br>
-买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录</p>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/ujGd7F.png" alt="image.png"></figure>
-<p>等个十分钟就可以按域名访问了。</p>
-<h3 id="配置java环境和tomcat">配置java环境和tomcat</h3>
-<p>因为我服务器端是Linux操作系统，为了方便操作，需要两个工具</p>
-<p>1.xshell远程连接工具</p>
-<p><a href="http://www.netsarang.com/download/software.html">官网下载</a></p>
-<p>其实在购买云服务器后在管理后台就有远程连接，可以在线远程连接，但是为了方便操作下载这个工具。<br>
-<img src="https://s2.ax1x.com/2019/10/13/ujGDh9.png" alt="image.png"><br>
-2.Xftp 传输文件工具</p>
-<p><a href="http://www.netsarang.com/products/xfp_overview.html">官网下载</a></p>
-<p>此工具和xshell是一家的，可以方便的复制粘贴把本机文件传输到服务器。</p>
-<p>具体参考<a href="https://www.jianshu.com/p/2604e53a7f6a?from=singlemessage">阿里云ECS建网站（建站）超详细全套完整图文教程！菜鸟必看！</a>讲的非常详细。</p>
-<h3 id="配置服务器上的数据库">配置服务器上的数据库</h3>
-<p>java环境和tomcat安装好后，在服务器安装数据库。这里我选择的是Oracle 11g这个产品。<br>
-具体安装过程可参考<a href="https://blog.csdn.net/sinat_32998977/article/details/79437014">阿里云 CentOS7.4，静默安装Oracle11g2的教程</a>。</p>
-<p>总结一下常用的命令：</p>
-<pre><code>su - oracle #切换到oracle用户
-lsbrctl start #启动监听
-lsnrctl stop #停止监听
-sdnrctl status #查看listener的状态
-
-sqlplus &quot;/as sysdba&quot; #以sysdba的身份登陆
-shutdown #关闭数据库服务
-strartup #启动数据库服务
-</code></pre>
-<h3 id="plsql-dev远程连接数据库">pl/sql dev远程连接数据库</h3>
-<p>数据库搞好之后，我想需要个工具来操作服务器上的数据库。先选择了navicate for Oracle，但是正版需要1000多块钱，找前找后也没破解版。虽然只有14天免费试用，但是可以连接到远端服务器。</p>
-<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" alt="image.png"></figure>
-<p>但是这样始终不是长久之计啊。于是选择了pl/sql developer。因为我本机之前已经装了Oracle客户端，所以可以在C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN下tnsnames.ora文件中添加</p>
-<pre><code>alioracle=
-	(DESCRIPTION =
-		(ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.116.203)(PORT = 1521))
-		(CONNECT_DATA =
-  			(SERVER = DEDICATED)
-  			(SERVICE_NAME = orcl11g)
-		)
-	)
-</code></pre>
-<p>其中</p>
-<pre><code>alioracle：连接时显示的本地名称，可以任意取
-ADDRESS ：链接地址 
-PROTOCOL ：使用的协议，一般为TCP 
-HOST ：服务器ip地址 
-PORT ：服务器监听端口号，Oracle默认为1521 
-SERVICE_NAME ：服务器服务名称
-</code></pre>
-<p>然后打开pl/sql developer工具就会在database的下拉选项中看到刚才起的本地连接名</p>
-<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" alt="image.png"></figure>
-<p>点击ok但是就是登不上去显示</p>
-<pre><code>ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
-</code></pre>
-<p>然后本地cmd中tnsping alioracle 是没问题的</p>
-<pre><code>C:\Users\Administrator&gt;tnsping alioracle
-
-TNS Ping Utility for 32-bit Windows: Version 10.2.0.1.0 - Production on 11-10月-
-2018 11:28:54
-
-Copyright (c) 1997, 2005, Oracle.  All rights reserved.
-
-已使用的参数文件:
-C:\oracle\product\10.2.0\db_1\network\admin\sqlnet.ora
-
-已使用 TNSNAMES 适配器来解析别名
-Attempting to contact (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.
-116.203)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl11g)))
-OK (80 毫秒)
-</code></pre>
-<p>弄了好久才明白：</p>
-<p>这里的连接标识符即SERVICE_NAME（网络别名、网络服务名、主机连接字符串、主机名) tnsping 是用来执行oracle 网络别名SERVICE_NAME的解析工作。会解析出ORACLE client中设定的服务器IP与监听端口。</p>
-<p>因此tnsping alioracle 的时候只是根据tnsname.ora文件中记录的这个字符串&quot;alioracle&quot;相应的IP地址去查看对应的端口是否开放，而不会去验证SERVICE_NAME是否正确，SERVICE_NAME如果配置的不正确是不能连接上数据库的。</p>
-<p>那这个SERVICE_NAME在哪看呢？</p>
-<p>在Xshell中远程连接服务器输入</p>
-<pre><code>	[root@izuf66fm097gavs15ngjfvz ~]# su - oracle
-	
-	[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
-
-	SQL&gt; show parameter service_name
-
-	NAME				     TYPE	 VALUE
-	------------------------------------ ----------- ------------------------------
-	service_names			 string	 orcl11g.us.oracle.com
-</code></pre>
-<p>可以看出服务器端的Oracle数据库service_name是orcl11g.us.oracle.com，而我在tnsnames.ora中的SERVICE_NAME = orcl11g。所以会显示无法识别连接描述符。改正之后，豁然可以连接上去了。</p>
-<p>参考文章：</p>
-<ul>
-<li><a href="https://blog.csdn.net/iteye_13903/article/details/82164884">tnsping通却连接不上数据库</a></li>
-<li><a href="https://blog.csdn.net/beihangyjs/article/details/5732508">plSQL技巧：“tns:无法解析指定的连接标识符”问题详解</a></li>
-</ul>
-<h3 id="项目部署到服务器">项目部署到服务器</h3>
-<p>查看服务器端数据库名</p>
-<pre><code>SQL&gt; select name from v$database;
-
-NAME
----------
-ORCL11G
-</code></pre>
-<p>在项目WEB-INF目录下db.properties文件中<br>
-修改dataSource.jdbcUrl=jdbc: oracle: thin:@127.0.0.1: 1521:ORCL为</p>
-<pre><code>dataSource.jdbcUrl=jdbc:oracle:thin:@101.132.116.203:1521:ORCL11G
-</code></pre>
-<p>注意：除此之外还需要加入对应的数据库驱动包。<br>
-客户端Oracle为10g，而服务器端Oracle为11g驱动包不一致还不行。于是在lib文件下加入jdbc_6g.jar。<br>
-然后在myeclipse中项目上右键-export-war文件。然后通过通过xftp工具将此war文件上传到tomcat目录下的webapps目录下。</p>
-<p>然后在访问时通过ip地址+端口号+war包名+jsp文件就可以访问啦！例如：</p>
-<pre><code>http://101.132.116.203:8080/MyBlog/jsp/index.jsp
-</code></pre>
-<p>本地数据库的数据怎么办？<br>
-本来想着pl/sql dev中可以导出数据的sql脚本，但是因为表中含有列是clob类型，所以数据时无法导出的，但是建表语句还是可以查看的。<br>
-在新建表过程中出现了一个问题，就是中文字符乱码问题，所有中文字符变成了“？”。<br>
-查看数据库编码</p>
-<pre><code>SQL&gt; select userenv('language') from dual;
-
-USERENV('LANGUAGE')
-----------------------------------------------------
-AMERICAN_AMERICA.WE8MSWIN1252
-</code></pre>
-<p>可以看出数据库编码不是中文编码，于是在服务器上<br>
-vi /home/oracle/.bash_profile加入</p>
-<pre><code>export NLS_LANG=Simplified Chinese_CHINA.AL32UTF8
-</code></pre>
-<p>会发现“？”都变成了中文字符“靠”。。。按理说应该起作用啊。百思不得其解。后来发现，这个数据库编码只对新数据有效，旧数据没作用的，因此只要把其删掉重新插入就显示正常了。</p>
-<h3 id="去除项目名和端口号">去除项目名和端口号</h3>
-<p>项目部署后，输入http://101.132.116.203:8080/MyBlog/jsp/index.jsp 可访问。现在需求是访问http://baobaodz.com 也可以响应我们需要的内容。<br>
-1.去除端口号：<br>
-tomcat项目运行端口为8080，而我们平常访问的网站都是不带端口号的，即端口号是80，在阿里云安全组设置里面添加规则</p>
-<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/ujGOHS.gif" alt="安全组.gif"></figure>
-<p>过一会就可以访问baobaodz.com/MyBlog/jsp/index.jsp<br>
-，如果不行，别忘了去域名备案。不备案的话，端口80是不给开放的。<br>
-备案的过程很麻烦，填写各种信息，还要拍照打印各种证明材料，不过有指引一步一步来。备案提交后，需要七八天的审核时间。<br>
-2.设置欢迎页<br>
-在项目文件的web.xml文件里，欢迎页面需要进行小小的改动，把原来默认的index.jsp改为jsp/index.jsp。因为首页我是放在jsp文件夹下的。</p>
-<pre><code>&lt; display-name&gt;MyBlog&lt; /display-name&gt;
-&lt; welcome-file-list&gt;
-    &lt; welcome-file&gt;jsp/index.jsp&lt; /welcome-file&gt;
-&lt; /welcome-file-list&gt;
-</code></pre>
-<p>除此之外，index.jsp文件中的所有跳转路径必须要改成绝对路径。这样css.js等资源才可以被正确访问。</p>
-<pre><code>&lt; a href=&quot;archives.jsp&quot;&gt;归档&lt;/a&gt;
-&lt; a href=&quot;&lt;%=request.getContextPath()%&gt;/jsp/archives.jsp&quot;&gt;归档&lt; /a&gt;
-</code></pre>
-<p>重启服务器tomcat，访问baobaodz.com/MyBlog就可以了。<br>
-3.去除项目名<br>
-需要进入tomcat根目录下conf文件夹下的server.xml，添加Context标签。</p>
-<pre><code>	&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;
-    	&lt;Context  path=&quot;&quot;   docBase=&quot;/root/java/tomcat/apache-tomcat-8.5.34/webapps/MyBlog&quot;   debug=&quot;0&quot;/&gt;  
-        &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;
-    &lt;/Host&gt;
-</code></pre>
-<h3 id="遇到的问题">遇到的问题</h3>
-<p>重启tomcat，刷新页面发现数据显示不了。出现500状态码错误，再去sqlplus连接数据库，显示无法监听，原来数据库连接不上了。原因是之前我重启Linux系统后，数据库没有重新启动，开启监听。</p>
-<p>切到Oracle登录显示</p>
-<pre><code>[root@izuf66fm097gavs15ngjfvz logs]# su - oracle
-Last login: Fri Oct 12 17:52:55 CST 2018 on pts/0
--bash: export: `Chinese_CHINA.AL32UTF8': not a valid identifier
-[oracle@izuf66fm097gavs15ngjfvz ~]$ ls
-</code></pre>
-<p>原因是之前修改Oracle字符集的时候，在windows系统文本编辑器上修改的，和Linux上修改会有出入。所以建议还是在Linux下修改比较稳妥。</p>
-<p>编辑oracle用户的.bash_profile文件</p>
-<pre><code>[oracle@node00 dse]$ vim ~/.bash_profile
-找到
-export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.AL32UTF8&quot;
-</code></pre>
-<p>发现没加双引号，加上使改变立即生效：</p>
-<pre><code>[oracle@node00 dse]$ source ~/.bash_profile
-</code></pre>
-<p>如果不解决这个问题的话，在以dba登录时，会出现如下错误</p>
-<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
-
-SQL*Plus: Release 11.2.0.1.0 Production on Wed Nov 14 18:55:03 2018
-
-Copyright (c) 1982, 2009, Oracle.  All rights reserved.
-
-ERROR:
-ORA-12705: Cannot access NLS data files or invalid environment specified
-</code></pre>
-<p>然后后续启动数据库，启动监听</p>
-<pre><code>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;
-SQL&gt; strartup
-SQL&gt; exit
-[oracle@izuf66fm097gavs15ngjfvz ~]$ lsnrctl start</code></pre>
 ]]></content>
     </entry>
 </feed>
