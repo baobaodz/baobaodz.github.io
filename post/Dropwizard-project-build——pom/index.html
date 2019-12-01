@@ -1,0 +1,362 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dropwizard项目构建——pom.xml | baobaodz</title>
+<meta name="description" content="keep humble , stay hungery" />
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1575211986535">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://baobaodz.top">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1575211986535" alt="">
+  </a>
+  <h1 class="site-title">
+    baobaodz
+  </h1>
+  <p class="site-description">
+    keep humble , stay hungery
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/skillpoints" class="menu">
+          技能点
+        </a>
+      
+    
+      
+        <a href="/post/keywords" class="menu">
+          关键词
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Dropwizard项目构建——pom.xml
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-27
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://baobaodz.top/tag/Dropwizard" class="post-tag">
+                  # Dropwizard
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://s2.ax1x.com/2019/12/01/Qmrq2j.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="dropwizard项目构建pomxml">Dropwizard项目构建——pom.xml</h2>
+<p>用IDEA导入项目文件夹，查看pom.xml文件。</p>
+<blockquote>
+<p>pom即 <strong>Project Object Model（项目对象模型）</strong>，它用于描述整个 Maven 项目，所以也称为 Maven 描述文件。</p>
+</blockquote>
+<p>纵观整个<code>pom</code>文件可以分为3部分。</p>
+<ul>
+<li>
+<p>项目描述</p>
+</li>
+<li>
+<p>项目依赖</p>
+</li>
+<li>
+<p>项目构建</p>
+</li>
+</ul>
+<h4 id="项目描述">项目描述</h4>
+<pre><code class="language-xml">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+&lt;groupId&gt;com.baoabodz.example.dropwizard&lt;/groupId&gt;
+&lt;artifactId&gt;ava-dropwizard&lt;/artifactId&gt;
+&lt;version&gt;2.0.0-rc9-SNAPSHOT&lt;/version&gt;
+&lt;packaging&gt;jar&lt;/packaging&gt;
+
+&lt;name&gt;AvaDropwizard&lt;/name&gt;
+</code></pre>
+<p><code>modelVersion</code>：这个是 <code>pom</code>的版本号，目前为 <code>4.0.0</code> ，必须。</p>
+<p><code>groupId、artifactId、version</code>：分别表示 <code>Maven</code> 项目的组织名、构件名、版本号，组成了关于原型（ <code>archetype</code> ）在<code>maven</code>仓库中为唯一坐标。</p>
+<p><code>packaging</code>：表示该项目的打包方式，也就是执行<code>mvn package</code>命令后生成的文件格式，默认为 <code>jar</code>，也可以是<code>war</code>等</p>
+<p><code>name、url</code>：表示该项目的名称与 <code>URL</code> 地址，意义不大，可以省略。</p>
+<p>dependencies：定义该项目的依赖关系，其中每一个 dependency 对应一个 Maven 项目，可见 Maven 坐标再次出现，还多了一个 scope，表示作用域（下面会描述）。</p>
+<p>build：表示与构建相关的配置，这里的 finalName 表示最终构建后的名称 smart-demo.war，这里的 finalName 还可以使用另一种方式来定义（下面会描述）。</p>
+<h4 id="项目依赖">项目依赖</h4>
+<pre><code class="language-xml">&lt;properties&gt;    
+	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;  
+    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;    	
+    &lt;dropwizard.version&gt;2.0.0-rc9&lt;/dropwizard.version&gt;    				
+    &lt;mainClass&gt;com.baoabodz.example.dropwizard.AvaDropwizardApplication&lt;/mainClass&gt;
+&lt;/properties&gt;
+&lt;dependencyManagement&gt;    
+    &lt;dependencies&gt;        
+        &lt;dependency&gt;            
+            &lt;artifactId&gt;dropwizard-dependencies&lt;/artifactId&gt;       
+            &lt;version&gt;${dropwizard.version}&lt;/version&gt;            
+            &lt;type&gt;pom&lt;/type&gt;            
+            &lt;scope&gt;import&lt;/scope&gt;        
+        &lt;/dependency&gt;    
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;    
+    &lt;dependency&gt;        
+        &lt;groupId&gt;io.dropwizard&lt;/groupId&gt;        
+        &lt;artifactId&gt;dropwizard-core&lt;/artifactId&gt;    
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<p><code>properties</code> ：maven使用 <code>properties</code> 来自定义一些配置属性，例如：<code>project.build.sourceEncoding</code>（项目构建源码编码方式），可设置为 <code>UTF-8</code>，可防止中文乱码。也可定义相关构件包版本号，例如：<code>dropwizard.version</code>，便于日后统一升级。 在<code>properties</code> 里设置的属性都可以通过**<code>${}</code>**形式获取，如下面<code>dependencies</code>中的<code>${dropwizard.version}</code>则可以获取<code>&lt;dropwizard.version&gt;2.0.0-rc9&lt;/dropwizard.version&gt;</code>中的版本号。</p>
+<h4 id="项目构建">项目构建</h4>
+<p>项目构建部分主要是被build标签包裹的部分</p>
+<details><summary>pom.xml的build部分</summary>
+<pre><code class="language-xml">&lt;build&gt;    
+    &lt;plugins&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.1.1&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;createDependencyReducedPom&gt;true&lt;/createDependencyReducedPom&gt;                
+                &lt;transformers&gt;                    
+                    &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ServicesResourceTransformer&quot;/&gt;                    
+                    &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;                        
+                        &lt;mainClass&gt;${mainClass}&lt;/mainClass&gt;                    
+                    &lt;/transformer&gt;                
+                &lt;/transformers&gt;                
+                &lt;!-- exclude signed Manifests --&gt;                
+                &lt;filters&gt;                    
+                    &lt;filter&gt;                        
+                        &lt;artifact&gt;*:*&lt;/artifact&gt;                        
+                        &lt;excludes&gt;                            
+                            &lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;                            
+                            &lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;                            
+                            &lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;                        
+                        &lt;/excludes&gt;                    
+                    &lt;/filter&gt;                
+                &lt;/filters&gt;            
+            &lt;/configuration&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;phase&gt;package&lt;/phase&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;shade&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.1.0&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;archive&gt;                    
+                    &lt;manifest&gt;                        
+                        &lt;addClasspath&gt;true&lt;/addClasspath&gt;                        
+                        &lt;mainClass&gt;${mainClass}&lt;/mainClass&gt;                    
+                    &lt;/manifest&gt;                
+                &lt;/archive&gt;            
+            &lt;/configuration&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.8.0&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;source&gt;1.8&lt;/source&gt;                
+                &lt;target&gt;1.8&lt;/target&gt;            
+            &lt;/configuration&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.0.1&lt;/version&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;id&gt;attach-sources&lt;/id&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;jar&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.0.1&lt;/version&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;id&gt;attach-javadocs&lt;/id&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;jar&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;    
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+</details>
+可以看到
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#dropwizard%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApomxml">Dropwizard项目构建——pom.xml</a><br>
+*
+<ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%8F%8F%E8%BF%B0">项目描述</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96">项目依赖</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA">项目构建</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://baobaodz.top/post/Dropwizard-project-build——initialization">
+              <h3 class="post-title">
+                Dropwizard项目构建——初始化
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '5608c9829f9ef3fb8174',
+    clientSecret: '3e59fed258ab2ee63e57c209b5499b13e5e8f274',
+    repo: 'baobaodz.github.io',
+    owner: 'baobaodz',
+    admin: ['baobaodz'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/baobaodz/baobaodz.github.io" target="_blank">baobaodz</a> | 
+  <a class="rss" href="https://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2019-11-25T16:28:26.123Z</updated>
+    <updated>2019-12-01T14:53:08.112Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,157 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2019, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[Dropwizard项目构建——pom.xml]]></title>
+        <id>https://baobaodz.top/post/Dropwizard-project-build——pom</id>
+        <link href="https://baobaodz.top/post/Dropwizard-project-build——pom">
+        </link>
+        <updated>2019-11-27T14:29:24.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="dropwizard项目构建pomxml">Dropwizard项目构建——pom.xml</h2>
+<p>用IDEA导入项目文件夹，查看pom.xml文件。</p>
+<blockquote>
+<p>pom即 <strong>Project Object Model（项目对象模型）</strong>，它用于描述整个 Maven 项目，所以也称为 Maven 描述文件。</p>
+</blockquote>
+<p>纵观整个<code>pom</code>文件可以分为3部分。</p>
+<ul>
+<li>
+<p>项目描述</p>
+</li>
+<li>
+<p>项目依赖</p>
+</li>
+<li>
+<p>项目构建</p>
+</li>
+</ul>
+<h4 id="项目描述">项目描述</h4>
+<pre><code class="language-xml">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+&lt;groupId&gt;com.baoabodz.example.dropwizard&lt;/groupId&gt;
+&lt;artifactId&gt;ava-dropwizard&lt;/artifactId&gt;
+&lt;version&gt;2.0.0-rc9-SNAPSHOT&lt;/version&gt;
+&lt;packaging&gt;jar&lt;/packaging&gt;
+
+&lt;name&gt;AvaDropwizard&lt;/name&gt;
+</code></pre>
+<p><code>modelVersion</code>：这个是 <code>pom</code>的版本号，目前为 <code>4.0.0</code> ，必须。</p>
+<p><code>groupId、artifactId、version</code>：分别表示 <code>Maven</code> 项目的组织名、构件名、版本号，组成了关于原型（ <code>archetype</code> ）在<code>maven</code>仓库中为唯一坐标。</p>
+<p><code>packaging</code>：表示该项目的打包方式，也就是执行<code>mvn package</code>命令后生成的文件格式，默认为 <code>jar</code>，也可以是<code>war</code>等</p>
+<p><code>name、url</code>：表示该项目的名称与 <code>URL</code> 地址，意义不大，可以省略。</p>
+<p>dependencies：定义该项目的依赖关系，其中每一个 dependency 对应一个 Maven 项目，可见 Maven 坐标再次出现，还多了一个 scope，表示作用域（下面会描述）。</p>
+<p>build：表示与构建相关的配置，这里的 finalName 表示最终构建后的名称 smart-demo.war，这里的 finalName 还可以使用另一种方式来定义（下面会描述）。</p>
+<h4 id="项目依赖">项目依赖</h4>
+<pre><code class="language-xml">&lt;properties&gt;    
+	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;  
+    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;    	
+    &lt;dropwizard.version&gt;2.0.0-rc9&lt;/dropwizard.version&gt;    				
+    &lt;mainClass&gt;com.baoabodz.example.dropwizard.AvaDropwizardApplication&lt;/mainClass&gt;
+&lt;/properties&gt;
+&lt;dependencyManagement&gt;    
+    &lt;dependencies&gt;        
+        &lt;dependency&gt;            
+            &lt;artifactId&gt;dropwizard-dependencies&lt;/artifactId&gt;       
+            &lt;version&gt;${dropwizard.version}&lt;/version&gt;            
+            &lt;type&gt;pom&lt;/type&gt;            
+            &lt;scope&gt;import&lt;/scope&gt;        
+        &lt;/dependency&gt;    
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+&lt;dependencies&gt;    
+    &lt;dependency&gt;        
+        &lt;groupId&gt;io.dropwizard&lt;/groupId&gt;        
+        &lt;artifactId&gt;dropwizard-core&lt;/artifactId&gt;    
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<p><code>properties</code> ：maven使用 <code>properties</code> 来自定义一些配置属性，例如：<code>project.build.sourceEncoding</code>（项目构建源码编码方式），可设置为 <code>UTF-8</code>，可防止中文乱码。也可定义相关构件包版本号，例如：<code>dropwizard.version</code>，便于日后统一升级。 在<code>properties</code> 里设置的属性都可以通过**<code>${}</code>**形式获取，如下面<code>dependencies</code>中的<code>${dropwizard.version}</code>则可以获取<code>&lt;dropwizard.version&gt;2.0.0-rc9&lt;/dropwizard.version&gt;</code>中的版本号。</p>
+<h4 id="项目构建">项目构建</h4>
+<p>项目构建部分主要是被build标签包裹的部分</p>
+<details><summary>pom.xml的build部分</summary>
+<pre><code class="language-xml">&lt;build&gt;    
+    &lt;plugins&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.1.1&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;createDependencyReducedPom&gt;true&lt;/createDependencyReducedPom&gt;                
+                &lt;transformers&gt;                    
+                    &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ServicesResourceTransformer&quot;/&gt;                    
+                    &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;                        
+                        &lt;mainClass&gt;${mainClass}&lt;/mainClass&gt;                    
+                    &lt;/transformer&gt;                
+                &lt;/transformers&gt;                
+                &lt;!-- exclude signed Manifests --&gt;                
+                &lt;filters&gt;                    
+                    &lt;filter&gt;                        
+                        &lt;artifact&gt;*:*&lt;/artifact&gt;                        
+                        &lt;excludes&gt;                            
+                            &lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;                            
+                            &lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;                            
+                            &lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;                        
+                        &lt;/excludes&gt;                    
+                    &lt;/filter&gt;                
+                &lt;/filters&gt;            
+            &lt;/configuration&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;phase&gt;package&lt;/phase&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;shade&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.1.0&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;archive&gt;                    
+                    &lt;manifest&gt;                        
+                        &lt;addClasspath&gt;true&lt;/addClasspath&gt;                        
+                        &lt;mainClass&gt;${mainClass}&lt;/mainClass&gt;                    
+                    &lt;/manifest&gt;                
+                &lt;/archive&gt;            
+            &lt;/configuration&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.8.0&lt;/version&gt;            
+            &lt;configuration&gt;                
+                &lt;source&gt;1.8&lt;/source&gt;                
+                &lt;target&gt;1.8&lt;/target&gt;            
+            &lt;/configuration&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.0.1&lt;/version&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;id&gt;attach-sources&lt;/id&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;jar&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;        
+        &lt;plugin&gt;            
+            &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;            
+            &lt;version&gt;3.0.1&lt;/version&gt;            
+            &lt;executions&gt;                
+                &lt;execution&gt;                    
+                    &lt;id&gt;attach-javadocs&lt;/id&gt;                    
+                    &lt;goals&gt;                        
+                        &lt;goal&gt;jar&lt;/goal&gt;                    
+                    &lt;/goals&gt;                
+                &lt;/execution&gt;            
+            &lt;/executions&gt;        
+        &lt;/plugin&gt;    
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+</details>
+可以看到]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
         <id>https://baobaodz.top/post/Dropwizard-project-build——initialization</id>
@@ -1105,45 +1256,6 @@ Tomcat started.
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
 <p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[七牛云存储配置服务器CNAME]]></title>
-        <id>https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration</id>
-        <link href="https://baobaodz.top/post/Niuyun-Storage-CNAME-Configuration">
-        </link>
-        <updated>2018-11-16T15:07:50.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
-<!--more-->
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" alt="测试域名"></figure>
-<h3 id="配置cname">配置CNAME</h3>
-<p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" alt="image.png"></figure>
-<p>步骤2：点击后确定，查看CNAME，并复制</p>
-<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/uj7UWF.png" alt="CNAME"></figure>
-<p>步骤3：进入阿里云控制台，域名-域名配置，新增一条记录</p>
-<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/uj70y9.png" alt="image.png"></figure>
-<p>其中</p>
-<pre><code>记录类型改为CNAME
-主机记录为之前步骤1中的加速域名前缀。
-记录值为CNMAE的值。
-</code></pre>
-<p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
-<p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
-<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" alt="image.png"></figure>
-<p>步骤5：更改图片存储路径，更改项目链接地址</p>
-<p>&lt;a href='http://resource.baobaodz.com/image/preview/articlepreview&quot;+data[i].aid+&quot;.jpg'&gt;</p>
-<h3 id="相关知识">相关知识</h3>
-<h4 id="二级域名">二级域名</h4>
-<p>baidu.com 是顶级域名， zhidao.baidu.com就是二级域名<br>
-baobaodz.com是顶级域名，resource.baobaodz.com就是二级域名</p>
-<p>而形如&quot;abc.com/bbs&quot;的、采取目录形式的不能够称为二级域名，一般称之为&quot;网址&quot;。</p>
-<p>使用二级域名的好处是一个是好记，另一个是搜索权重高于网址形式。</p>
-<h4 id="cname解析">CNAME解析</h4>
-<p>CNAME别名解析就是一个或者多个域名指向另外一个以域名为基础的服务器上。与之区别的A记录是IP解析，将域名解析成对应的服务器的IP地址。</p>
-<p>CNAME存在的好处是，如果涉及到更改服务器IP地址，如果使用A记录解析，服务器更换IP时，解析中的IP也需要相应变更，而使用别名解析，由于使用的是域名，所以即使指向的服务器IP发生变化，也不需要重新修改。</p>
 ]]></content>
     </entry>
 </feed>
