@@ -1,0 +1,576 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>多项式相加问题的设计与实现方法 | baobaodz</title>
+<meta name="description" content="keep humble , stay hungery" />
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1588352228615">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://baobaodz.top">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1588352228615" alt="">
+  </a>
+  <h1 class="site-title">
+    baobaodz
+  </h1>
+  <p class="site-description">
+    keep humble , stay hungery
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/skillpoints" class="menu">
+          技能点
+        </a>
+      
+    
+      
+        <a href="/post/keywords" class="menu">
+          关键词
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              多项式相加问题的设计与实现方法
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-02
+              </span>
+              <span>
+                11 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="多项式相加问题的设计与实现方法">多项式相加问题的设计与实现方法</h3>
+<h3 id="问题">问题</h3>
+<h4 id="问题描述">【问题描述】</h4>
+<p>一个多项式可以表达为x的各次幂与系数乘积的和，比如：</p>
+<p><code>2x6+3x5+12x3+6x+20</code></p>
+<p>也就是对应数学中的</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>12</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">2x^6+3x^5+12x^3+6x+20
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span></span></p>
+<p>现在，你的程序要读入两个多项式，然后输出这两个多项式的和，也就是把对应的幂上的系数相加然后输出。</p>
+<p>程序要处理的幂最大为100。</p>
+<h4 id="输入形式">【输入形式】</h4>
+<p>总共要输入两个多项式，每个多项式的输入格式如下：</p>
+<p>每行输入两个数字，第一个表示幂次，第二个表示该幂次的系数，所有的系数都是整数。第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；如果某个幂次的系数为0，就不出现在输入数据中了；0次幂的系数为0时还是会出现在输入数据中。</p>
+<h4 id="输出形式">【输出形式】</h4>
+<p>从最高幂开始依次降到0幂，如：</p>
+<p><code>2x6+3x5+12x3-6x+20</code></p>
+<p>注意其中的x是小写字母x，而且所有的符号之间都没有空格，如果某个幂的系数为0则不需要有那项。</p>
+<h4 id="样例输入">【样例输入】</h4>
+<pre><code>6 2
+5 3
+3 12
+1 6
+0 20
+6 2 
+5 3
+2 12
+1 6
+0 20
+</code></pre>
+<h4 id="样例输出">【样例输出】</h4>
+<p><code>4x6+6x5+12x3+12x2+12x+40</code></p>
+<h4 id="评分标准">【评分标准】</h4>
+<p>要求：将多项式中的项设计为<code>Item</code>类，多项式设计为<code>Polyomial</code>类，设计类时要体现多项式和项是一对多的关系。<code>Polyomial</code>类中提供<code>public Polyomial add(Polyomial other)</code>方法完成两个多项式的相加，返回两者和。</p>
+<h3 id="思路">思路</h3>
+<ul>
+<li>多项式相加，也就是相同幂次的系数项相加，按照一定格式输出</li>
+<li>面向对象的方法设计，项类（<code>Item</code>）和多项式类（<code>Polyomial</code>）</li>
+<li>主要三部分实现：类设计（属性，方法）；控制台输入控制（最高幂次不超过100,0系数不输入）；控制台输出显示（0次幂的处理，加减号处理）。</li>
+</ul>
+<h3 id="实现">实现</h3>
+<h4 id="类的设计">类的设计</h4>
+<p><code>Item</code>类：</p>
+<p>实现了<code>Comparable</code>接口，重写比较方法，用于根据系数排序（最后输出用到）；</p>
+<p>属性<code>power</code>幂次和<code>coefficient</code>系数；</p>
+<p>方法<code>addItem(Item otherItem)</code>用于项与项之间系数相加；</p>
+<pre><code class="language-java">public class Item implements Comparable&lt;Item&gt;{
+
+    private int power; //幂次
+    private int coefficient; //系数
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public int getCoefficient() {
+        return coefficient;
+    }
+
+    public void setCoefficient(int coefficient) {
+        this.coefficient = coefficient;
+    }
+
+    public Item(int power, int coefficient) {
+        this.power = power;
+        this.coefficient = coefficient;
+    }
+
+    public Item() {
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Item{&quot; +
+                &quot;power=&quot; + power +
+                &quot;, coefficient=&quot; + coefficient +
+                '}';
+    }
+    
+    public Item addItem(Item otherItem){
+        int coeff = this.coefficient + otherItem.coefficient;
+        return new Item(this.power,coeff);
+    }
+
+    @Override
+    public int compareTo(Item otherItem) {
+        if (this.power &lt; otherItem.getPower()) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+}
+
+</code></pre>
+<p><code>Polyomial</code>类</p>
+<p>属性<code>items</code>，用<code>List&lt;Item&gt;</code>体现项与多项式之间的多对一的关系；</p>
+<p>公共方法<code>add(Polyomial otherPolyomial)</code>用于两个多项式相加；<code>selfAdd()</code>方法多项式自身去重相加；</p>
+<p>根据题意</p>
+<blockquote>
+<p>第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；</p>
+</blockquote>
+<p>可以得知两点</p>
+<p>1）单个多项式的系数是杂乱的需要对其系数排序（<code>Item</code>类安排）</p>
+<p>2）单个多项式的系数存在重复相同的可能，需要在两个多项式相加之前先对单个进行去重相加，从而增加<code>selfAdd()</code>方法</p>
+<pre><code class="language-java">import java.util.*;
+
+public class Polyomial {
+
+    private List&lt;Item&gt; items;
+
+    public List&lt;Item&gt; getItems() {
+        return items;
+    }
+
+    public void setItems(List&lt;Item&gt; items) {
+        this.items = items;
+    }
+
+    public Polyomial(List&lt;Item&gt; items) {
+        this.items = items;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Polyomial{&quot; +
+                &quot;items=&quot; + items +
+                '}';
+    }
+
+    //多项式相加
+    public Polyomial add(Polyomial otherPolyomial){
+        List&lt;Item&gt; items = this.items;
+        List&lt;Item&gt; deduplicatedItems = new ArrayList&lt;Item&gt;(this.items);
+        for(int i=0;i&lt;deduplicatedItems.size();i++){
+            for(int j=0;j&lt;otherPolyomial.items.size();j++){
+                if(deduplicatedItems.get(i).getPower() == otherPolyomial.items.get(j).getPower()){
+                    deduplicatedItems.set(i,items.get(i).addItem(otherPolyomial.items.get(j)));
+                    otherPolyomial.items.remove(j--);
+                }
+            }
+        }
+        deduplicatedItems.addAll(otherPolyomial.items);
+        return new Polyomial(deduplicatedItems);
+    }
+
+    //自身先去重相加
+    public void selfAdd(){
+        int size = this.getItems().size();
+        for(int i=0;i&lt;size-1;i++){
+            for(int j=i+1;j&lt;size;j++){
+                if(this.getItems().get(i).getPower() == this.getItems().get(j).getPower()){
+                    this.getItems().set(i,this.getItems().get(i).addItem(this.getItems().get(j)));
+                    this.getItems().remove(j--);
+                }
+            }
+        }
+    }
+}
+
+</code></pre>
+<h4 id="输入处理">输入处理</h4>
+<p>输入这块是我比较头疼的地方，主要是确认哪些地方需要程序控制以及应该怎样控制。仔细审题</p>
+<blockquote>
+<p>程序要处理的幂最大为100。</p>
+</blockquote>
+<blockquote>
+<p>每行输入两个数字，第一个表示幂次，第二个表示该幂次的系数，所有的系数都是整数。第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；如果某个幂次的系数为0，就不出现在输入数据中了；0次幂的系数为0时还是会出现在输入数据中。</p>
+</blockquote>
+<p>题意要求每行输入两个数字，输入三个数字该怎么办？</p>
+<p>题意要求所有系数应该为整数，那输入的系数为小数怎么办？</p>
+<p>题意要求第一行为最高幂，那后面输入比最高幂高的幂了该怎么办？</p>
+<p>这些如果交给程序控制也可以，不符合格式要求直接打印提示语句退出。但是我认为以上这些都交给人来输入控制吧，而且吧题目中也没有对应的报错信息，这么多事儿干嘛？</p>
+<p>当然也有我认为需要程序控制的地方，比如程序可以处理最大幂为100；不能输入系数为0</p>
+<p>确定了程序控制哪些地方，那是输入时控制还是输入完毕的时候控制呢？.......</p>
+<pre><code class="language-java">Scanner scanner = new Scanner(System.in);
+List&lt;Item&gt; inputitems = new ArrayList&lt;Item&gt;();
+String nextLine = scanner.nextLine();
+while (nextLine != null &amp;&amp; !nextLine.equals(&quot;&quot;)) {
+    if(Integer.parseInt(nextLine.split(&quot; &quot;)[0]) &gt; 100){
+        System.out.println(&quot;power over 100 does not support!&quot;);
+        return;
+    }
+    if(Integer.parseInt(nextLine.split(&quot; &quot;)[1]) == 0){
+        System.out.println(&quot;coefficient 0 should not be inputed!&quot;);
+        return;
+    }
+    inputitems.add(new Item(Integer.parseInt(nextLine.split(&quot; &quot;)[0]),Integer.parseInt(nextLine.split(&quot; &quot;)[1])));
+    nextLine = scanner.nextLine();
+}
+</code></pre>
+<p>这里我选择输入时控制，及时提示及时退出；因为每一多项式最后一行幂次必定为0，但是也存在之间也有0次幂时这种可能，因此不能边输入边获取值，必须输入完毕后获取数据，因此要给个输入完毕的指令；这里我设计为不输入按下回车表示两个多项式系数幂次输入完毕，对应代码中<code>while (nextLine != null &amp;&amp; !nextLine.equals(&quot;&quot;))</code>条件判断；输入的数据存储到<code>inputitems</code>中。</p>
+<h4 id="输出处理">输出处理</h4>
+<p>这一部分主要是将输入获取的数据分割成两个多项式，调用方法实现多项式相加；最后排下序处理一下打印的格式。</p>
+<p>以输入以下数据来看一下处理</p>
+<pre><code class="language-xml">7 4
+3 5
+3 4
+5 -8
+0 -2
+0 6
+4 7
+3 10
+4 -1
+0 4
+</code></pre>
+<pre><code class="language-java">//分割
+List&lt;Item&gt; newList = new ArrayList&lt;Item&gt;();
+List&lt;Item&gt; newOtherList = new ArrayList&lt;Item&gt;();
+for(int i=0;i&lt;inputitems.size()-1;i++){
+    if(inputitems.get(i).getPower()==0 &amp;&amp; inputitems.get(i+1).getPower()&gt;0){
+        newList.addAll(inputitems.subList(0,i+1));
+        newOtherList.addAll(inputitems.subList(i+1,inputitems.size()));
+    }
+}
+
+//自加
+Polyomial inputPolyomial = new Polyomial(newList)
+inputPolyomial.selfAdd();
+
+Polyomial inputOtherPolyomial = new Polyomial(newOtherList);
+inputOtherPolyomial.selfAdd();
+
+//相加
+Polyomial outputpolyomial = inputPolyomial.add(inputOtherPolyomial);
+
+//排序
+Collections.sort(outputpolyomial.items);
+
+//打印
+StringBuilder outputResult = new StringBuilder();
+for(int i=0;i&lt;outputpolyomial.items.size();i++){
+    //系数为负
+    if(outputpolyomial.items.get(i).getCoefficient()&lt;0){
+        //幂次为0
+        if(outputpolyomial.items.get(i).getPower()==0){
+            outputResult.append(outputpolyomial.items.get(i).getCoefficient());
+        }else{   outputResult.append(outputpolyomial.items.get(i).getCoefficient()).append(&quot;x&quot;).append(outputpolyomial.items.get(i).getPower());
+        }
+    }else if(outputpolyomial.items.get(i).getCoefficient()&gt;0){//系数为正
+        if(outputpolyomial.items.get(i).getPower()==0){
+            outputResult.append(&quot;+&quot;).append(outputpolyomial.items.get(i).getCoefficient());
+        }else{
+            outputResult.append(&quot;+&quot;).append(outputpolyomial.items.get(i).getCoefficient()).append(&quot;x&quot;).append(outputpolyomial.items.get(i).getPower());
+        }
+    }
+
+}
+if(outputResult.toString().startsWith(&quot;+&quot;)){
+    System.out.println(outputResult.substring(1));
+}else{
+    System.out.println(outputResult);
+}
+
+</code></pre>
+<p>输入数据 <code>inputitems</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=7, coefficient=4}, 
+    Item{power=3, coefficient=5}, 
+    Item{power=3, coefficient=4}, 
+    Item{power=5, coefficient=-8}, 
+    Item{power=0, coefficient=-2}, 
+    Item{power=0, coefficient=6},
+    Item{power=4, coefficient=7}, 
+    Item{power=3, coefficient=10}, 
+    Item{power=4, coefficient=-1}, 
+    Item{power=0, coefficient=4}
+]}
+</code></pre>
+</blockquote>
+<p>分割后</p>
+<p><code>inputPolyomial</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=7, coefficient=4}, 
+    Item{power=3, coefficient=5}, 
+    Item{power=3, coefficient=4}, 
+    Item{power=5, coefficient=-8}, 
+    Item{power=0, coefficient=-2}, 
+    Item{power=0, coefficient=6}
+]}
+</code></pre>
+</blockquote>
+<p><code>inputOtherPolyomial</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=4, coefficient=7}, 
+    Item{power=3, coefficient=10}, 
+    Item{power=4, coefficient=-1}, 
+    Item{power=0, coefficient=4}
+]}
+</code></pre>
+</blockquote>
+<p>自身去重相加后</p>
+<p><code>inputPolyomial</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=7, coefficient=4}, 
+    Item{power=3, coefficient=9}, 
+    Item{power=5, coefficient=-8}, 
+    Item{power=0, coefficient=4}
+]}
+</code></pre>
+</blockquote>
+<p><code>inputOtherPolyomial</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=4, coefficient=6}, 
+    Item{power=3, coefficient=10}, 
+    Item{power=0, coefficient=4}
+]}
+</code></pre>
+</blockquote>
+<p>多项式相加</p>
+<p><code>outputpolyomial</code></p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=7, coefficient=4},  
+    Item{power=5, coefficient=-8},
+    Item{power=3, coefficient=19}, 
+    Item{power=0, coefficient=8},
+    Item{power=4, coefficient=6}
+]}
+</code></pre>
+</blockquote>
+<p>最后多项式相加的结果排序后</p>
+<blockquote>
+<pre><code class="language-java">Polyomial{items=[
+    Item{power=7, coefficient=4}, 
+    Item{power=5, coefficient=-8},
+    Item{power=4, coefficient=6},
+    Item{power=3, coefficient=19}, 
+    Item{power=0, coefficient=8}, 
+]}
+</code></pre>
+</blockquote>
+<p>最后打印</p>
+<pre><code>4x7-8x5+6x4+19x3+8
+</code></pre>
+<h3 id="踩坑">踩坑</h3>
+<p><code>list</code>中删除元素，循环中需要注意删除元素后<code>list</code>长度发生变化，有可能会导致出错</p>
+<p><code>list</code>用<code>subList</code>方法截取子<code>list</code>，并不会返回新<code>list</code>，而是返回原有<code>list</code>的视图，原有list变化会影响到<code>sublist</code></p>
+<p>这两点后面文章重点研究一下。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9B%B8%E5%8A%A0%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95">多项式相加问题的设计与实现方法</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98">问题</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0">【问题描述】</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E5%BD%A2%E5%BC%8F">【输入形式】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E5%BD%A2%E5%BC%8F">【输出形式】</a></li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5">【样例输入】</a></li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA">【样例输出】</a></li>
+<li><a href="#%E8%AF%84%E5%88%86%E6%A0%87%E5%87%86">【评分标准】</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a>
+<ul>
+<li><a href="#%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1">类的设计</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E5%A4%84%E7%90%86">输入处理</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86">输出处理</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B8%A9%E5%9D%91">踩坑</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://baobaodz.top/post/Dropwizard-project-build——pom">
+              <h3 class="post-title">
+                Dropwizard项目构建——pom.xml
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '5608c9829f9ef3fb8174',
+    clientSecret: '3e59fed258ab2ee63e57c209b5499b13e5e8f274',
+    repo: 'baobaodz.github.io',
+    owner: 'baobaodz',
+    admin: ['baobaodz'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/baobaodz/baobaodz.github.io" target="_blank">baobaodz</a> | 
+  <a class="rss" href="https://baobaodz.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
