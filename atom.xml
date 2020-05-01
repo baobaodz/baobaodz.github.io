@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2020-05-01T16:57:14.213Z</updated>
+    <updated>2020-05-01T17:19:27.183Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -14,361 +14,6 @@
         <title type="html"><![CDATA[多项式相加问题的设计与实现方法]]></title>
         <id>https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem</id>
         <link href="https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem">
-        </link>
-        <updated>2020-05-01T16:52:15.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="多项式相加问题的设计与实现方法">多项式相加问题的设计与实现方法</h3>
-<h3 id="问题">问题</h3>
-<h4 id="问题描述">【问题描述】</h4>
-<p>一个多项式可以表达为x的各次幂与系数乘积的和，比如：</p>
-<p><code>2x6+3x5+12x3+6x+20</code></p>
-<p>也就是对应数学中的</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>12</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">2x^6+3x^5+12x^3+6x+20
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9474379999999999em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span></span></p>
-<p>现在，你的程序要读入两个多项式，然后输出这两个多项式的和，也就是把对应的幂上的系数相加然后输出。</p>
-<p>程序要处理的幂最大为100。</p>
-<h4 id="输入形式">【输入形式】</h4>
-<p>总共要输入两个多项式，每个多项式的输入格式如下：</p>
-<p>每行输入两个数字，第一个表示幂次，第二个表示该幂次的系数，所有的系数都是整数。第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；如果某个幂次的系数为0，就不出现在输入数据中了；0次幂的系数为0时还是会出现在输入数据中。</p>
-<h4 id="输出形式">【输出形式】</h4>
-<p>从最高幂开始依次降到0幂，如：</p>
-<p><code>2x6+3x5+12x3-6x+20</code></p>
-<p>注意其中的x是小写字母x，而且所有的符号之间都没有空格，如果某个幂的系数为0则不需要有那项。</p>
-<h4 id="样例输入">【样例输入】</h4>
-<pre><code>6 2
-5 3
-3 12
-1 6
-0 20
-6 2 
-5 3
-2 12
-1 6
-0 20
-</code></pre>
-<h4 id="样例输出">【样例输出】</h4>
-<p><code>4x6+6x5+12x3+12x2+12x+40</code></p>
-<h4 id="评分标准">【评分标准】</h4>
-<p>要求：将多项式中的项设计为<code>Item</code>类，多项式设计为<code>Polyomial</code>类，设计类时要体现多项式和项是一对多的关系。<code>Polyomial</code>类中提供<code>public Polyomial add(Polyomial other)</code>方法完成两个多项式的相加，返回两者和。</p>
-<h3 id="思路">思路</h3>
-<ul>
-<li>多项式相加，也就是相同幂次的系数项相加，按照一定格式输出</li>
-<li>面向对象的方法设计，项类（<code>Item</code>）和多项式类（<code>Polyomial</code>）</li>
-<li>主要三部分实现：类设计（属性，方法）；控制台输入控制（最高幂次不超过100,0系数不输入）；控制台输出显示（0次幂的处理，加减号处理）。</li>
-</ul>
-<h3 id="实现">实现</h3>
-<h4 id="类的设计">类的设计</h4>
-<p><code>Item</code>类：</p>
-<p>实现了<code>Comparable</code>接口，重写比较方法，用于根据系数排序（最后输出用到）；</p>
-<p>属性<code>power</code>幂次和<code>coefficient</code>系数；</p>
-<p>方法<code>addItem(Item otherItem)</code>用于项与项之间系数相加；</p>
-<pre><code class="language-java">public class Item implements Comparable&lt;Item&gt;{
-
-    private int power; //幂次
-    private int coefficient; //系数
-
-    public int getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
-    }
-
-    public int getCoefficient() {
-        return coefficient;
-    }
-
-    public void setCoefficient(int coefficient) {
-        this.coefficient = coefficient;
-    }
-
-    public Item(int power, int coefficient) {
-        this.power = power;
-        this.coefficient = coefficient;
-    }
-
-    public Item() {
-    }
-
-    @Override
-    public String toString() {
-        return &quot;Item{&quot; +
-                &quot;power=&quot; + power +
-                &quot;, coefficient=&quot; + coefficient +
-                '}';
-    }
-    
-    public Item addItem(Item otherItem){
-        int coeff = this.coefficient + otherItem.coefficient;
-        return new Item(this.power,coeff);
-    }
-
-    @Override
-    public int compareTo(Item otherItem) {
-        if (this.power &lt; otherItem.getPower()) {
-            return 1;
-        } else {
-            return -1;
-        }
-    }
-}
-
-</code></pre>
-<p><code>Polyomial</code>类</p>
-<p>属性<code>items</code>，用<code>List&lt;Item&gt;</code>体现项与多项式之间的多对一的关系；</p>
-<p>公共方法<code>add(Polyomial otherPolyomial)</code>用于两个多项式相加；<code>selfAdd()</code>方法多项式自身去重相加；</p>
-<p>根据题意</p>
-<blockquote>
-<p>第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；</p>
-</blockquote>
-<p>可以得知两点</p>
-<p>1）单个多项式的系数是杂乱的需要对其系数排序（<code>Item</code>类安排）</p>
-<p>2）单个多项式的系数存在重复相同的可能，需要在两个多项式相加之前先对单个进行去重相加，从而增加<code>selfAdd()</code>方法</p>
-<pre><code class="language-java">import java.util.*;
-
-public class Polyomial {
-
-    private List&lt;Item&gt; items;
-
-    public List&lt;Item&gt; getItems() {
-        return items;
-    }
-
-    public void setItems(List&lt;Item&gt; items) {
-        this.items = items;
-    }
-
-    public Polyomial(List&lt;Item&gt; items) {
-        this.items = items;
-    }
-
-    @Override
-    public String toString() {
-        return &quot;Polyomial{&quot; +
-                &quot;items=&quot; + items +
-                '}';
-    }
-
-    //多项式相加
-    public Polyomial add(Polyomial otherPolyomial){
-        List&lt;Item&gt; items = this.items;
-        List&lt;Item&gt; deduplicatedItems = new ArrayList&lt;Item&gt;(this.items);
-        for(int i=0;i&lt;deduplicatedItems.size();i++){
-            for(int j=0;j&lt;otherPolyomial.items.size();j++){
-                if(deduplicatedItems.get(i).getPower() == otherPolyomial.items.get(j).getPower()){
-                    deduplicatedItems.set(i,items.get(i).addItem(otherPolyomial.items.get(j)));
-                    otherPolyomial.items.remove(j--);
-                }
-            }
-        }
-        deduplicatedItems.addAll(otherPolyomial.items);
-        return new Polyomial(deduplicatedItems);
-    }
-
-    //自身先去重相加
-    public void selfAdd(){
-        int size = this.getItems().size();
-        for(int i=0;i&lt;size-1;i++){
-            for(int j=i+1;j&lt;size;j++){
-                if(this.getItems().get(i).getPower() == this.getItems().get(j).getPower()){
-                    this.getItems().set(i,this.getItems().get(i).addItem(this.getItems().get(j)));
-                    this.getItems().remove(j--);
-                }
-            }
-        }
-    }
-}
-
-</code></pre>
-<h4 id="输入处理">输入处理</h4>
-<p>输入这块是我比较头疼的地方，主要是确认哪些地方需要程序控制以及应该怎样控制。仔细审题</p>
-<blockquote>
-<p>程序要处理的幂最大为100。</p>
-</blockquote>
-<blockquote>
-<p>每行输入两个数字，第一个表示幂次，第二个表示该幂次的系数，所有的系数都是整数。第一行一定是最高幂，最后一行一定是0次幂。注意：第一行和最后一行之间不一定按照幂次降低顺序排列；如果某个幂次的系数为0，就不出现在输入数据中了；0次幂的系数为0时还是会出现在输入数据中。</p>
-</blockquote>
-<p>题意要求每行输入两个数字，输入三个数字该怎么办？</p>
-<p>题意要求所有系数应该为整数，那输入的系数为小数怎么办？</p>
-<p>题意要求第一行为最高幂，那后面输入比最高幂高的幂了该怎么办？</p>
-<p>这些如果交给程序控制也可以，不符合格式要求直接打印提示语句退出。但是我认为以上这些都交给人来输入控制吧，而且吧题目中也没有对应的报错信息，这么多事儿干嘛？</p>
-<p>当然也有我认为需要程序控制的地方，比如程序可以处理最大幂为100；不能输入系数为0</p>
-<p>确定了程序控制哪些地方，那是输入时控制还是输入完毕的时候控制呢？.......</p>
-<pre><code class="language-java">Scanner scanner = new Scanner(System.in);
-List&lt;Item&gt; inputitems = new ArrayList&lt;Item&gt;();
-String nextLine = scanner.nextLine();
-while (nextLine != null &amp;&amp; !nextLine.equals(&quot;&quot;)) {
-    if(Integer.parseInt(nextLine.split(&quot; &quot;)[0]) &gt; 100){
-        System.out.println(&quot;power over 100 does not support!&quot;);
-        return;
-    }
-    if(Integer.parseInt(nextLine.split(&quot; &quot;)[1]) == 0){
-        System.out.println(&quot;coefficient 0 should not be inputed!&quot;);
-        return;
-    }
-    inputitems.add(new Item(Integer.parseInt(nextLine.split(&quot; &quot;)[0]),Integer.parseInt(nextLine.split(&quot; &quot;)[1])));
-    nextLine = scanner.nextLine();
-}
-</code></pre>
-<p>这里我选择输入时控制，及时提示及时退出；因为每一多项式最后一行幂次必定为0，但是也存在之间也有0次幂时这种可能，因此不能边输入边获取值，必须输入完毕后获取数据，因此要给个输入完毕的指令；这里我设计为不输入按下回车表示两个多项式系数幂次输入完毕，对应代码中<code>while (nextLine != null &amp;&amp; !nextLine.equals(&quot;&quot;))</code>条件判断；输入的数据存储到<code>inputitems</code>中。</p>
-<h4 id="输出处理">输出处理</h4>
-<p>这一部分主要是将输入获取的数据分割成两个多项式，调用方法实现多项式相加；最后排下序处理一下打印的格式。</p>
-<p>以输入以下数据来看一下处理</p>
-<pre><code class="language-xml">7 4
-3 5
-3 4
-5 -8
-0 -2
-0 6
-4 7
-3 10
-4 -1
-0 4
-</code></pre>
-<pre><code class="language-java">//分割
-List&lt;Item&gt; newList = new ArrayList&lt;Item&gt;();
-List&lt;Item&gt; newOtherList = new ArrayList&lt;Item&gt;();
-for(int i=0;i&lt;inputitems.size()-1;i++){
-    if(inputitems.get(i).getPower()==0 &amp;&amp; inputitems.get(i+1).getPower()&gt;0){
-        newList.addAll(inputitems.subList(0,i+1));
-        newOtherList.addAll(inputitems.subList(i+1,inputitems.size()));
-    }
-}
-
-//自加
-Polyomial inputPolyomial = new Polyomial(newList)
-inputPolyomial.selfAdd();
-
-Polyomial inputOtherPolyomial = new Polyomial(newOtherList);
-inputOtherPolyomial.selfAdd();
-
-//相加
-Polyomial outputpolyomial = inputPolyomial.add(inputOtherPolyomial);
-
-//排序
-Collections.sort(outputpolyomial.items);
-
-//打印
-StringBuilder outputResult = new StringBuilder();
-for(int i=0;i&lt;outputpolyomial.items.size();i++){
-    //系数为负
-    if(outputpolyomial.items.get(i).getCoefficient()&lt;0){
-        //幂次为0
-        if(outputpolyomial.items.get(i).getPower()==0){
-            outputResult.append(outputpolyomial.items.get(i).getCoefficient());
-        }else{   outputResult.append(outputpolyomial.items.get(i).getCoefficient()).append(&quot;x&quot;).append(outputpolyomial.items.get(i).getPower());
-        }
-    }else if(outputpolyomial.items.get(i).getCoefficient()&gt;0){//系数为正
-        if(outputpolyomial.items.get(i).getPower()==0){
-            outputResult.append(&quot;+&quot;).append(outputpolyomial.items.get(i).getCoefficient());
-        }else{
-            outputResult.append(&quot;+&quot;).append(outputpolyomial.items.get(i).getCoefficient()).append(&quot;x&quot;).append(outputpolyomial.items.get(i).getPower());
-        }
-    }
-
-}
-if(outputResult.toString().startsWith(&quot;+&quot;)){
-    System.out.println(outputResult.substring(1));
-}else{
-    System.out.println(outputResult);
-}
-
-</code></pre>
-<p>输入数据 <code>inputitems</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=7, coefficient=4}, 
-    Item{power=3, coefficient=5}, 
-    Item{power=3, coefficient=4}, 
-    Item{power=5, coefficient=-8}, 
-    Item{power=0, coefficient=-2}, 
-    Item{power=0, coefficient=6},
-    Item{power=4, coefficient=7}, 
-    Item{power=3, coefficient=10}, 
-    Item{power=4, coefficient=-1}, 
-    Item{power=0, coefficient=4}
-]}
-</code></pre>
-</blockquote>
-<p>分割后</p>
-<p><code>inputPolyomial</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=7, coefficient=4}, 
-    Item{power=3, coefficient=5}, 
-    Item{power=3, coefficient=4}, 
-    Item{power=5, coefficient=-8}, 
-    Item{power=0, coefficient=-2}, 
-    Item{power=0, coefficient=6}
-]}
-</code></pre>
-</blockquote>
-<p><code>inputOtherPolyomial</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=4, coefficient=7}, 
-    Item{power=3, coefficient=10}, 
-    Item{power=4, coefficient=-1}, 
-    Item{power=0, coefficient=4}
-]}
-</code></pre>
-</blockquote>
-<p>自身去重相加后</p>
-<p><code>inputPolyomial</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=7, coefficient=4}, 
-    Item{power=3, coefficient=9}, 
-    Item{power=5, coefficient=-8}, 
-    Item{power=0, coefficient=4}
-]}
-</code></pre>
-</blockquote>
-<p><code>inputOtherPolyomial</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=4, coefficient=6}, 
-    Item{power=3, coefficient=10}, 
-    Item{power=0, coefficient=4}
-]}
-</code></pre>
-</blockquote>
-<p>多项式相加</p>
-<p><code>outputpolyomial</code></p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=7, coefficient=4},  
-    Item{power=5, coefficient=-8},
-    Item{power=3, coefficient=19}, 
-    Item{power=0, coefficient=8},
-    Item{power=4, coefficient=6}
-]}
-</code></pre>
-</blockquote>
-<p>最后多项式相加的结果排序后</p>
-<blockquote>
-<pre><code class="language-java">Polyomial{items=[
-    Item{power=7, coefficient=4}, 
-    Item{power=5, coefficient=-8},
-    Item{power=4, coefficient=6},
-    Item{power=3, coefficient=19}, 
-    Item{power=0, coefficient=8}, 
-]}
-</code></pre>
-</blockquote>
-<p>最后打印</p>
-<pre><code>4x7-8x5+6x4+19x3+8
-</code></pre>
-<h3 id="踩坑">踩坑</h3>
-<p><code>list</code>中删除元素，循环中需要注意删除元素后<code>list</code>长度发生变化，有可能会导致出错</p>
-<p><code>list</code>用<code>subList</code>方法截取子<code>list</code>，并不会返回新<code>list</code>，而是返回原有<code>list</code>的视图，原有list变化会影响到<code>sublist</code></p>
-<p>这两点后面文章重点研究一下。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[多项式相加问题的设计与实现方法]]></title>
-        <id>https://baobaodz.top/post/duo-xiang-shi-xiang-jia-wen-ti-de-she-ji-yu-shi-xian-fang-fa</id>
-        <link href="https://baobaodz.top/post/duo-xiang-shi-xiang-jia-wen-ti-de-she-ji-yu-shi-xian-fang-fa">
         </link>
         <updated>2020-05-01T16:52:15.000Z</updated>
         <content type="html"><![CDATA[<h3 id="多项式相加问题的设计与实现方法">多项式相加问题的设计与实现方法</h3>
@@ -1886,5 +1531,54 @@ oracle/HelloWorld/app.java
 <h4 id="vi-编辑文件">vi 编辑文件</h4>
 <p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
 ]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决域名无法访问的问题]]></title>
+        <id>https://baobaodz.top/post/Resolve-domain-name-unreachable-issue</id>
+        <link href="https://baobaodz.top/post/Resolve-domain-name-unreachable-issue">
+        </link>
+        <updated>2019-09-22T15:22:01.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
+<p>最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。<img src="https://s2.ax1x.com/2019/09/28/uQNqKI.png" alt="拒绝请求"></p>
+<p>可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。<img src="https://s2.ax1x.com/2019/09/28/uQNjVf.png" alt="检测"></p>
+<p>查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。<img src="https://s2.ax1x.com/2019/09/28/uQNLrt.png" alt="端口监听"></p>
+<p>提工单阿里云技术人员说我是用8080端口服务的，用域名自然是访问不了的。需要域名+8080端口才能访问，一试还真可以。但是我想还需要用80端口访问。于是进入修改/root/java/tomcat/apache-tomcat-8.5.34/conf目录下的sever.xml文件，启动80端口监听。</p>
+<pre><code class="language-xml">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+改为
+&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+</code></pre>
+<p>查看端口监听,可以看到8080端口没有了，出现了80端口监听。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# netstat -an | grep 80
+tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN     
+tcp        4      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        1      0 172.19.93.164:80        180.111.33.207:11809    CLOSE_WAIT 
+tcp        0      0 172.19.93.164:26252     100.100.30.26:80        ESTABLISHED
+tcp        0     52 172.19.93.164:22        180.111.33.207:11847    ESTABLISHED
+tcp        0      0 172.19.93.164:80        180.111.33.207:11834    ESTABLISHED
+tcp        0      0 172.19.93.164:1521      101.132.116.203:46580   ESTABLISHED
+tcp      527      0 172.19.93.164:80        180.111.33.207:11833    ESTABLISHED
+tcp      553      0 172.19.93.164:80        180.111.33.207:11808    ESTABLISHED
+tcp        0      0 172.19.93.164:22        180.111.33.207:9649     ESTABLISHED
+</code></pre>
+<p>重启Tomcat。这里我又犯了一个错误。我直接启动tomcat，要知道Tomcat本来就运行着的，这样一点用也没有。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./satrtup.sh
+</code></pre>
+<p>正确做法应该先关闭Tomcat，再启动。</p>
+<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
+[root@izuf66fm097gavs15ngjfvz bin]# ./shutdown.sh
+[root@izuf66fm097gavs15ngjfvz bin]# ./startup.sh
+Using CATALINA_BASE:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_HOME:   /root/java/tomcat/apache-tomcat-8.5.34
+Using CATALINA_TMPDIR: /root/java/tomcat/apache-tomcat-8.5.34/temp
+Using JRE_HOME:        /root/java/jdk/jdk1.8.0_181/jre
+Using CLASSPATH:       /root/java/tomcat/apache-tomcat-8.5.34/bin/bootstrap.jar:/root/java/tomcat/apache-tomcat-8.5.34/bin/tomcat-juli.jar
+Tomcat started.
+</code></pre>
+<p>访问baobaodz.com就可以访问了。</p>]]></content>
     </entry>
 </feed>
