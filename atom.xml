@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2020-05-01T17:19:51.769Z</updated>
+    <updated>2020-05-14T16:04:51.156Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
     <rights>All rights reserved 2020, baobaodz</rights>
+    <entry>
+        <title type="html"><![CDATA[输出出现次数最多的整数及其出现次数]]></title>
+        <id>https://baobaodz.top/post/The-most-frequent-integers-and-times</id>
+        <link href="https://baobaodz.top/post/The-most-frequent-integers-and-times">
+        </link>
+        <updated>2020-05-14T16:00:40.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="问题">问题</h3>
+<h4 id="问题描述">【问题描述】</h4>
+<p>输入一组无序的整数，编程输出其中出现次数最多的整数及其出现次数。</p>
+<h4 id="输入形式">【输入形式】</h4>
+<p>先从标准输入读入整数的个数（大于等于1，小于等于100），然后在下一行输入这些整数，各整数之间以一个空格分隔。</p>
+<h4 id="输出形式">【输出形式】</h4>
+<p>在标准输出上输出出现次数最多的整数及其出现次数，两者以一个空格分隔；若出现次数最多的整数有多个，则按照整数升序分行输出。</p>
+<h4 id="样例输入">【样例输入】</h4>
+<pre><code>10
+0 -50 0 632 5813 -50 9 -50 0 632
+</code></pre>
+<h4 id="样例输出">【样例输出】</h4>
+<pre><code>-50 3
+0 3
+</code></pre>
+<h3 id="思路">思路</h3>
+<p>可以边输入边获取值存入数组，也可输入完毕后一并获取整行数据存进数组。</p>
+<p>用<code>TreeMap</code>存放<code>key</code>为输入的值，<code>value</code>为该值出现的次数；而且<code>TreeMap</code>的<code>key</code>默认升序的</p>
+<h3 id="实现">实现</h3>
+<pre><code class="language-java">public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int num = in.nextInt();
+    int[] data = new int[num];
+    int Max = 0;
+    Map&lt;Integer,Integer&gt; max = new TreeMap&lt;&gt;();
+
+    for(int i=0; i&lt; num; i++) {
+        data[i] = in.nextInt();
+
+        if(!max.containsKey(data[i])) {
+            max.put(data[i], 0);
+        }else{
+            max.put(data[i], max.get(data[i]) + 1);
+        }
+        //System.out.println(max);
+        Max = Max &gt; max.get(data[i]) ? Max : max.get(data[i]);
+    }
+
+    Iterator&lt;Integer&gt; iter = max.keySet().iterator();
+    while (iter.hasNext()) {
+        Integer key = iter.next();
+        if(max.get(key) == Max){
+            System.out.println(key + &quot; &quot; + max.get(key));
+        }
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[多项式相加问题的设计与实现方法]]></title>
         <id>https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem</id>
@@ -1531,54 +1586,5 @@ oracle/HelloWorld/app.java
 <h4 id="vi-编辑文件">vi 编辑文件</h4>
 <p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[解决域名无法访问的问题]]></title>
-        <id>https://baobaodz.top/post/Resolve-domain-name-unreachable-issue</id>
-        <link href="https://baobaodz.top/post/Resolve-domain-name-unreachable-issue">
-        </link>
-        <updated>2019-09-22T15:22:01.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="解决域名无法访问的问题">解决域名无法访问的问题</h4>
-<p>最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。<img src="https://s2.ax1x.com/2019/09/28/uQNqKI.png" alt="拒绝请求"></p>
-<p>可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。<img src="https://s2.ax1x.com/2019/09/28/uQNjVf.png" alt="检测"></p>
-<p>查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。<img src="https://s2.ax1x.com/2019/09/28/uQNLrt.png" alt="端口监听"></p>
-<p>提工单阿里云技术人员说我是用8080端口服务的，用域名自然是访问不了的。需要域名+8080端口才能访问，一试还真可以。但是我想还需要用80端口访问。于是进入修改/root/java/tomcat/apache-tomcat-8.5.34/conf目录下的sever.xml文件，启动80端口监听。</p>
-<pre><code class="language-xml">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
-           connectionTimeout=&quot;20000&quot;
-           redirectPort=&quot;8443&quot; /&gt;
-改为
-&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;
-           connectionTimeout=&quot;20000&quot;
-           redirectPort=&quot;8443&quot; /&gt;
-</code></pre>
-<p>查看端口监听,可以看到8080端口没有了，出现了80端口监听。</p>
-<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# netstat -an | grep 80
-tcp        0      0 0.0.0.0:8009            0.0.0.0:*               LISTEN     
-tcp        4      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
-tcp        1      0 172.19.93.164:80        180.111.33.207:11809    CLOSE_WAIT 
-tcp        0      0 172.19.93.164:26252     100.100.30.26:80        ESTABLISHED
-tcp        0     52 172.19.93.164:22        180.111.33.207:11847    ESTABLISHED
-tcp        0      0 172.19.93.164:80        180.111.33.207:11834    ESTABLISHED
-tcp        0      0 172.19.93.164:1521      101.132.116.203:46580   ESTABLISHED
-tcp      527      0 172.19.93.164:80        180.111.33.207:11833    ESTABLISHED
-tcp      553      0 172.19.93.164:80        180.111.33.207:11808    ESTABLISHED
-tcp        0      0 172.19.93.164:22        180.111.33.207:9649     ESTABLISHED
-</code></pre>
-<p>重启Tomcat。这里我又犯了一个错误。我直接启动tomcat，要知道Tomcat本来就运行着的，这样一点用也没有。</p>
-<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
-[root@izuf66fm097gavs15ngjfvz bin]# ./satrtup.sh
-</code></pre>
-<p>正确做法应该先关闭Tomcat，再启动。</p>
-<pre><code class="language-shell">[root@izuf66fm097gavs15ngjfvz bin]# cd /root/java/tomcat/apache-tomcat-8.5.34/bin
-[root@izuf66fm097gavs15ngjfvz bin]# ./shutdown.sh
-[root@izuf66fm097gavs15ngjfvz bin]# ./startup.sh
-Using CATALINA_BASE:   /root/java/tomcat/apache-tomcat-8.5.34
-Using CATALINA_HOME:   /root/java/tomcat/apache-tomcat-8.5.34
-Using CATALINA_TMPDIR: /root/java/tomcat/apache-tomcat-8.5.34/temp
-Using JRE_HOME:        /root/java/jdk/jdk1.8.0_181/jre
-Using CLASSPATH:       /root/java/tomcat/apache-tomcat-8.5.34/bin/bootstrap.jar:/root/java/tomcat/apache-tomcat-8.5.34/bin/tomcat-juli.jar
-Tomcat started.
-</code></pre>
-<p>访问baobaodz.com就可以访问了。</p>]]></content>
     </entry>
 </feed>
