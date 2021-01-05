@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>javaweb项目部署 | baobaodz</title>
 <meta name="description" content="keep humble , stay hungery" />
-<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1589472287521">
+<link rel="shortcut icon" href="https://baobaodz.top/favicon.ico?v=1609856701789">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://baobaodz.top/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://baobaodz.top">
-  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1589472287521" alt="">
+  <img class="avatar" src="https://baobaodz.top/images/avatar.png?v=1609856701789" alt="">
   </a>
   <h1 class="site-title">
     baobaodz
@@ -95,11 +95,11 @@
                 10 min read
               </span>
               
-                <a href="https://baobaodz.top/tag/Java Web" class="post-tag">
+                <a href="https://baobaodz.top/tag/Java Web/" class="post-tag">
                   # Java Web
                 </a>
               
-                <a href="https://baobaodz.top/tag/云服务器" class="post-tag">
+                <a href="https://baobaodz.top/tag/云服务器/" class="post-tag">
                   # 云服务器
                 </a>
               
@@ -113,19 +113,19 @@
 <h4 id="购买服务器">购买服务器</h4>
 <p>阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。</p>
 <p>具体可看<a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></p>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujGa0U.png" alt="image.png"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/10/13/ujGa0U.png" alt="image.png" loading="lazy"></figure>
 <h4 id="购买域名">购买域名</h4>
 <p>链接：<a href="https://wanwang.aliyun.com/domain/com/">域名注册</a><br>
 com大概45元/年，cn29元/年。top9元/年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。<br>
 买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录</p>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/ujGd7F.png" alt="image.png"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/10/13/ujGd7F.png" alt="image.png" loading="lazy"></figure>
 <p>等个十分钟就可以按域名访问了。</p>
 <h3 id="配置java环境和tomcat">配置java环境和tomcat</h3>
 <p>因为我服务器端是Linux操作系统，为了方便操作，需要两个工具</p>
 <p>1.xshell远程连接工具</p>
 <p><a href="http://www.netsarang.com/download/software.html">官网下载</a></p>
 <p>其实在购买云服务器后在管理后台就有远程连接，可以在线远程连接，但是为了方便操作下载这个工具。<br>
-<img src="https://s2.ax1x.com/2019/10/13/ujGDh9.png" alt="image.png"><br>
+<img src="https://s2.ax1x.com/2019/10/13/ujGDh9.png" alt="image.png" loading="lazy"><br>
 2.Xftp 传输文件工具</p>
 <p><a href="http://www.netsarang.com/products/xfp_overview.html">官网下载</a></p>
 <p>此工具和xshell是一家的，可以方便的复制粘贴把本机文件传输到服务器。</p>
@@ -145,7 +145,7 @@ strartup #启动数据库服务
 </code></pre>
 <h3 id="plsql-dev远程连接数据库">pl/sql dev远程连接数据库</h3>
 <p>数据库搞好之后，我想需要个工具来操作服务器上的数据库。先选择了navicate for Oracle，但是正版需要1000多块钱，找前找后也没破解版。虽然只有14天免费试用，但是可以连接到远端服务器。</p>
-<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" alt="image.png"></figure>
+<figure data-type="image" tabindex="3"><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" alt="image.png" loading="lazy"></figure>
 <p>但是这样始终不是长久之计啊。于是选择了pl/sql developer。因为我本机之前已经装了Oracle客户端，所以可以在C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN下tnsnames.ora文件中添加</p>
 <pre><code>alioracle=
 	(DESCRIPTION =
@@ -165,7 +165,7 @@ PORT ：服务器监听端口号，Oracle默认为1521
 SERVICE_NAME ：服务器服务名称
 </code></pre>
 <p>然后打开pl/sql developer工具就会在database的下拉选项中看到刚才起的本地连接名</p>
-<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" alt="image.png"></figure>
+<figure data-type="image" tabindex="4"><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" alt="image.png" loading="lazy"></figure>
 <p>点击ok但是就是登不上去显示</p>
 <pre><code>ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
 </code></pre>
@@ -243,7 +243,7 @@ vi /home/oracle/.bash_profile加入</p>
 <p>项目部署后，输入http://101.132.116.203:8080/MyBlog/jsp/index.jsp 可访问。现在需求是访问http://baobaodz.com 也可以响应我们需要的内容。<br>
 1.去除端口号：<br>
 tomcat项目运行端口为8080，而我们平常访问的网站都是不带端口号的，即端口号是80，在阿里云安全组设置里面添加规则</p>
-<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/ujGOHS.gif" alt="安全组.gif"></figure>
+<figure data-type="image" tabindex="5"><img src="https://s2.ax1x.com/2019/10/13/ujGOHS.gif" alt="安全组.gif" loading="lazy"></figure>
 <p>过一会就可以访问baobaodz.com/MyBlog/jsp/index.jsp<br>
 ，如果不行，别忘了去域名备案。不备案的话，端口80是不给开放的。<br>
 备案的过程很麻烦，填写各种信息，还要拍照打印各种证明材料，不过有指引一步一步来。备案提交后，需要七八天的审核时间。<br>

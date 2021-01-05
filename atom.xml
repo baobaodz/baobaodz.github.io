@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://baobaodz.top</id>
     <title>baobaodz</title>
-    <updated>2020-05-14T16:05:17.805Z</updated>
+    <updated>2021-01-05T14:25:04.260Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://baobaodz.top"/>
     <link rel="self" href="https://baobaodz.top/atom.xml"/>
     <subtitle>keep humble , stay hungery</subtitle>
     <logo>https://baobaodz.top/images/avatar.png</logo>
     <icon>https://baobaodz.top/favicon.ico</icon>
-    <rights>All rights reserved 2020, baobaodz</rights>
+    <rights>All rights reserved 2021, baobaodz</rights>
     <entry>
         <title type="html"><![CDATA[输出出现次数最多的整数及其出现次数]]></title>
-        <id>https://baobaodz.top/post/The-most-frequent-integers-and-times</id>
-        <link href="https://baobaodz.top/post/The-most-frequent-integers-and-times">
+        <id>https://baobaodz.top/post/The-most-frequent-integers-and-times/</id>
+        <link href="https://baobaodz.top/post/The-most-frequent-integers-and-times/">
         </link>
         <updated>2020-05-14T16:00:40.000Z</updated>
         <content type="html"><![CDATA[<h3 id="问题">问题</h3>
@@ -67,8 +67,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[多项式相加问题的设计与实现方法]]></title>
-        <id>https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem</id>
-        <link href="https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem">
+        <id>https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem/</id>
+        <link href="https://baobaodz.top/post/Design-and-implementation-of-polynomial-addition-problem/">
         </link>
         <updated>2020-05-01T16:52:15.000Z</updated>
         <content type="html"><![CDATA[<h3 id="多项式相加问题的设计与实现方法">多项式相加问题的设计与实现方法</h3>
@@ -422,8 +422,8 @@ if(outputResult.toString().startsWith(&quot;+&quot;)){
     </entry>
     <entry>
         <title type="html"><![CDATA[Dropwizard项目构建——pom.xml]]></title>
-        <id>https://baobaodz.top/post/Dropwizard-project-build——pom</id>
-        <link href="https://baobaodz.top/post/Dropwizard-project-build——pom">
+        <id>https://baobaodz.top/post/Dropwizard-project-build——pom/</id>
+        <link href="https://baobaodz.top/post/Dropwizard-project-build——pom/">
         </link>
         <updated>2019-11-27T14:29:24.000Z</updated>
         <content type="html"><![CDATA[<h2 id="dropwizard项目构建pomxml">Dropwizard项目构建——pom.xml</h2>
@@ -573,8 +573,8 @@ if(outputResult.toString().startsWith(&quot;+&quot;)){
     </entry>
     <entry>
         <title type="html"><![CDATA[Dropwizard项目构建——初始化]]></title>
-        <id>https://baobaodz.top/post/Dropwizard-project-build——initialization</id>
-        <link href="https://baobaodz.top/post/Dropwizard-project-build——initialization">
+        <id>https://baobaodz.top/post/Dropwizard-project-build——initialization/</id>
+        <link href="https://baobaodz.top/post/Dropwizard-project-build——initialization/">
         </link>
         <updated>2019-11-20T14:36:58.000Z</updated>
         <content type="html"><![CDATA[<h2 id="maven创建项目">maven创建项目</h2>
@@ -659,18 +659,18 @@ Dname：项目名称
 <pre><code class="language-bash">https://repo.maven.apache.org/maven2/io/dropwizard/archetypes/java-simple
 </code></pre>
 <p>可以看到版本从<code>1.3.9</code>跳到<code>2.0.0-x</code>版本</p>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/20/MhDG9I.png" alt="MhDG9I.png"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/20/MhDG9I.png" alt="MhDG9I.png" loading="lazy"></figure>
 <p>改为<code>2.0.0-rc9</code> 执行 成功</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[tree命令用法（CMD/Git Bash/Linux）]]></title>
-        <id>https://baobaodz.top/post/tree-command</id>
-        <link href="https://baobaodz.top/post/tree-command">
+        <id>https://baobaodz.top/post/tree-command/</id>
+        <link href="https://baobaodz.top/post/tree-command/">
         </link>
         <updated>2019-11-16T17:31:25.000Z</updated>
         <content type="html"><![CDATA[<p>在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而<code>tree</code>命令就可以实现这种效果。<br>
-<img src="https://s2.ax1x.com/2019/11/18/MsR64x.md.png" alt="目录树示例.png"></p>
+<img src="https://s2.ax1x.com/2019/11/18/MsR64x.md.png" alt="目录树示例.png" loading="lazy"></p>
 <h2 id="windows-cmd-的-tree命令"><code>Windows cmd</code> 的 <code>tree</code>命令</h2>
 <p>在<code>cmd</code>中就集成了<code>tree</code> 命令</p>
 <p>使用<code>tree /?</code>查看帮助信息</p>
@@ -988,8 +988,8 @@ tree -D 以显示日期目录树
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux常用命令汇总（二）]]></title>
-        <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ</id>
-        <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ">
+        <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ/</id>
+        <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary-Ⅱ/">
         </link>
         <updated>2019-11-10T08:51:42.000Z</updated>
         <summary type="html"><![CDATA[<p>总结一些在日常工作中用到的查看磁盘占用的linux命令</p>
@@ -1100,8 +1100,8 @@ oracle    20912        oracle    8u      REG              253,1          0    13
     </entry>
     <entry>
         <title type="html"><![CDATA[【2019-11第二周】技能点]]></title>
-        <id>https://baobaodz.top/post/2019-11-second-week</id>
-        <link href="https://baobaodz.top/post/2019-11-second-week">
+        <id>https://baobaodz.top/post/2019-11-second-week/</id>
+        <link href="https://baobaodz.top/post/2019-11-second-week/">
         </link>
         <updated>2019-11-07T16:38:42.000Z</updated>
         <summary type="html"><![CDATA[<p>这一周主要有：将IDEA设置eclipse风格的快捷键,Eclipse常用快捷键</p>
@@ -1111,13 +1111,13 @@ oracle    20912        oracle    8u      REG              253,1          0    13
 <h3 id="friday">Friday</h3>
 <h4 id="将idea设置eclipse风格的快捷键">将IDEA设置eclipse风格的快捷键</h4>
 <p><code>Files-Settings-keymap</code>选择<code>Eclipse</code>即可</p>
-<figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/MeFwNQ"><img src="https://s2.ax1x.com/2019/11/09/MeFwNQ.md.png" alt="MeFwNQ.md.png"></a></figure>
+<figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/MeFwNQ"><img src="https://s2.ax1x.com/2019/11/09/MeFwNQ.md.png" alt="MeFwNQ.md.png" loading="lazy"></a></figure>
 <p>还要设置Alt+/代码提示快捷键</p>
 <p><code>File -settings -keymap</code> 在搜索框中搜索 <code>completion</code><br>
 选择<code>Cyclic Expand word</code>右键选择 <code>Remove Alt+/</code></p>
-<figure data-type="image" tabindex="2"><a href="https://imgchr.com/i/MekYG9"><img src="https://s2.ax1x.com/2019/11/09/MekYG9.md.png" alt="MekYG9.md.png"></a></figure>
+<figure data-type="image" tabindex="2"><a href="https://imgchr.com/i/MekYG9"><img src="https://s2.ax1x.com/2019/11/09/MekYG9.md.png" alt="MekYG9.md.png" loading="lazy"></a></figure>
 <p>在下方选择<code>Class Name Completion</code> 右键 <code>Remove Ctrl+Alt+</code>空格 并更改快捷键为<code>Alt+/</code></p>
-<figure data-type="image" tabindex="3"><a href="https://imgchr.com/i/MekRMt"><img src="https://s2.ax1x.com/2019/11/09/MekRMt.md.png" alt="MekRMt.md.png"></a></figure>
+<figure data-type="image" tabindex="3"><a href="https://imgchr.com/i/MekRMt"><img src="https://s2.ax1x.com/2019/11/09/MekRMt.md.png" alt="MekRMt.md.png" loading="lazy"></a></figure>
 <h4 id="eclipse常用快捷键">Eclipse常用快捷键</h4>
 <table>
 <thead>
@@ -1236,8 +1236,8 @@ oracle    20912        oracle    8u      REG              253,1          0    13
     </entry>
     <entry>
         <title type="html"><![CDATA[【2019-11第一周】技能点]]></title>
-        <id>https://baobaodz.top/post/2019-11-first-week</id>
-        <link href="https://baobaodz.top/post/2019-11-first-week">
+        <id>https://baobaodz.top/post/2019-11-first-week/</id>
+        <link href="https://baobaodz.top/post/2019-11-first-week/">
         </link>
         <updated>2019-11-01T14:06:10.000Z</updated>
         <summary type="html"><![CDATA[<p>这一周主要有：premire渲染器,CPU和GPU的区别,maven常用命令,aria2</p>
@@ -1247,9 +1247,9 @@ oracle    20912        oracle    8u      REG              253,1          0    13
 <h3 id="monday">Monday</h3>
 <h4 id="premire渲染器">premire渲染器</h4>
 <p>在将视频拖入pr轨道时候，时间轴上方呈现红色，表示没有渲染，播放预览会卡顿现象，而且渲染时CPU占用到99%。正常情况下应该为黄色。</p>
-<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/02/Kbs2GR.png" alt="image-20191101231359836"></figure>
+<figure data-type="image" tabindex="1"><img src="https://s2.ax1x.com/2019/11/02/Kbs2GR.png" alt="image-20191101231359836" loading="lazy"></figure>
 <p>在文件-项目设置-视频渲染和回放中，渲染程序只支持【仅Mercury Playback Engine软件】。</p>
-<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/11/02/Kbs6IJ.png" alt="捕获1"></figure>
+<figure data-type="image" tabindex="2"><img src="https://s2.ax1x.com/2019/11/02/Kbs6IJ.png" alt="捕获1" loading="lazy"></figure>
 <p>原因是使用的系统自带的核显造成的，系统安装的独立显卡并未使用上。更新或安装独立显卡驱动即可。再次打开项目设置，可以看到出现了【Mercury Playback Engine GPU加速（OpenCL）】的选项，选择后会发现红线现象消失。</p>
 <ul>
 <li>Mercury Playback Engine软件： 纯CPU处理</li>
@@ -1308,8 +1308,8 @@ oracle    20912        oracle    8u      REG              253,1          0    13
     </entry>
     <entry>
         <title type="html"><![CDATA[multiple parameters with no annotation. Unable to resolve the injection source]]></title>
-        <id>https://baobaodz.top/post/multiple-parameters-with-no-annotation</id>
-        <link href="https://baobaodz.top/post/multiple-parameters-with-no-annotation">
+        <id>https://baobaodz.top/post/multiple-parameters-with-no-annotation/</id>
+        <link href="https://baobaodz.top/post/multiple-parameters-with-no-annotation/">
         </link>
         <updated>2019-10-17T15:51:34.000Z</updated>
         <content type="html"><![CDATA[<p>在dropwizard中resource中想通过POST方法增加书籍，接收两个参数报错：</p>
@@ -1358,8 +1358,8 @@ io.dropwizard.jersey.setup.JerseyServletContainer-38aafb53@4297147d==io.dropwiza
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux常用命令汇总（一）]]></title>
-        <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary</id>
-        <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary">
+        <id>https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary/</id>
+        <link href="https://baobaodz.top/post/Commonly-Used-Linux-Command-Summary/">
         </link>
         <updated>2019-10-12T15:36:45.000Z</updated>
         <summary type="html"><![CDATA[<p>总结一些在日常工作中用到的处理文件和目录的linux命令</p>
