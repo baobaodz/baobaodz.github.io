@@ -225,7 +225,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      380 字
+      388 字
     </span>
   
 
@@ -290,6 +290,7 @@
 <figure class="highlight crmsh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs crmsh">第一步：打开cmd查看之前的<span class="hljs-keyword">node</span><span class="hljs-title">版本安装的路径： where</span> <span class="hljs-keyword">node</span><span class="hljs-title"></span><br><span class="hljs-title">第二步：直接去官网下载你想要的版本，安装在上述路径中覆盖即可。</span><br><span class="hljs-title">第三步： node</span> -v 发现<span class="hljs-keyword">node</span><span class="hljs-title">版本更新到你想要的版本。</span><br></code></pre></div></td></tr></table></figure>
 <p>因为之前配置过环境变量，所以就省去了配置环境变量的步骤。</p>
 <p>具体步骤可参考 </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Small_Yogurt/article/details/104968169">https://blog.csdn.net/Small_Yogurt/article/details/104968169</a></p>
 <p>如果是<code>windows</code>，就别用什么 安装n模块，<code>npm install -g n --force</code>  n latest 什么的 ，因为那玩意只对linux上有用！</p>
 <h3 id="卸载angular"><a href="#卸载angular" class="headerlink" title="卸载angular"></a>卸载angular</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm uninstall -g @angualr/cli<br><br>npm cache clean<br><br>在npm全局的node_modules中找到@angular文件夹删掉<br><br>找到node_modules上一级的目录中找到ng/ng.cmd<br></code></pre></div></td></tr></table></figure>
 <h3 id="安装angular"><a href="#安装angular" class="headerlink" title="安装angular"></a>安装angular</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install -g @angular/cli<br></code></pre></div></td></tr></table></figure>
