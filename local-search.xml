@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>【Angular】Angular应用启动流程</title>
+    <link href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/"/>
+    <url>/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>在<code>ng serve --open</code>后，经过一段时间，<code>Angular</code>应用启动并打开了浏览器，这期间的过程是怎样的呢？<code>Angular</code>是怎样启动的呢？</p><h2 id="由表及里的认识"><a href="#由表及里的认识" class="headerlink" title="由表及里的认识"></a>由表及里的认识</h2><p>我们不妨从表及里，一层一层的拨开它的神秘面纱。</p><p>首先在启动主页<code>F12</code>查看元素，可以看到如下图所示的<code>dom</code>结构。其中<code>app-root</code>这个标签明显不是HTML标签，那它是哪来的，怎么会可以正常挂在上面并显示呢？我们可以去到源码中搜索，发现在index.html中存在这个标签。</p><p><img src="https://z3.ax1x.com/2021/03/28/cpsKdf.png" alt="主页HTML"></p><p>然后根据这个标签就可以找到其对应的是哪个组件的标签。一看，是<code>AppComponent</code>组件的。那又是谁加载的<code>AppComponent</code>组件的呢？一找，原来是<code>app.module.ts</code>在用，<code>app.module.ts</code>对应<code>AppModule</code>又是谁加载的呢？一找，原来是<code>main.ts</code>里的一句话加载了<code>AppModule</code>。<code>platformBrowserDynamic().bootstrapModule()</code>方法貌似是<code>Angular</code>底层代码，走不下去了。我们不妨想想，既然能执行这句话，那肯定是找到了这个<code>main.ts</code>这个文件，哪里用到<code>main.ts</code>了呢？一找，原来是<code>angular.json</code>中配置的一个属性。那谁执行的<code>angular.json</code>呢？不用说了，那就是<code>ng serve</code>了。</p><figure class="highlight typescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs typescript">platformBrowserDynamic().bootstrapModule(AppModule)<br> .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.error(err));<br></code></pre></div></td></tr></table></figure><p><img src="https://z3.ax1x.com/2021/03/28/cpyGtO.png" alt="追踪图"></p><p>至此，我们从页面元素的渲染和dom结构一层一层的往代码里追踪，大概认识了是怎么样的一个流程。而Angular启动过程大概就是倒的顺序。接下来，我们正式从里到外，由里及表的探究Angular的启动过程。</p><h2 id="由里及表的理解"><a href="#由里及表的理解" class="headerlink" title="由里及表的理解"></a>由里及表的理解</h2><ol><li>当你在命令行中输入 ng serve 后</li><li>ng 会根据 <code>angular.json</code> 中的 <code>main</code>元素 找到 应用入口文件<code>main.ts</code></li><li><code>main.ts</code> 再加载 根模块<code>AppModule</code></li><li><code>AppModule</code> 启动<code>Angular</code>模块<code>(@ngModule)</code></li><li><code>@ngModule</code> 为 <code>AppModule</code> 添加元数据,并指定了顶层组件<code>AppComponent</code></li><li><code>AppComponent</code> 中我们就可以为所欲为了</li></ol><p><img src="https://z3.ax1x.com/2021/03/28/cpoN3q.png" alt="启动流程图"></p><h2 id="源码理解"><a href="#源码理解" class="headerlink" title="源码理解"></a>源码理解</h2><p>这部分参考这篇文章吧</p><p><a href="https://zhuanlan.zhihu.com/p/94570685">什么是 Angular Platforms - 深入理解 Angular Platforms 一</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Angular</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【Angular】VS Code开发Angular常用插件集合</title>
     <link href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/"/>
     <url>/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/</url>
