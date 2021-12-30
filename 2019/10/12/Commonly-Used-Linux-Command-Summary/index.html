@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="baobaodz">
+  <meta name="keywords" content="">
+  <title>Linux常用命令汇总（一） - Baobaodz</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2318976_52hxk3evjvb.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Baobaodz</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-el-icon-zhy-zhuye"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-guidang1"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-fenlei"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-biaoqian"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-xiangmuguanli"></i>
+                作品
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/project/">
+                    <i class="iconfont icon-daima"></i>
+                    个人项目
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/2021/01/10/photography">
+                    <i class="iconfont icon-photo"></i>
+                    摄影作品
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-wo"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://s2.ax1x.com/2019/10/13/ujqZIx.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux常用命令汇总（一）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      baobaodz
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-10-12 23:36" pubdate>
+        2019年10月12日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 热度
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux常用命令汇总（一）</h1>
+            
+            <div class="markdown-body">
+              <p>总结一些在日常工作中用到的处理文件和目录的linux命令</p>
+<a id="more"></a>
+<h3 id="一、目录操作"><a href="#一、目录操作" class="headerlink" title="一、目录操作"></a>一、目录操作</h3><h4 id="pwd-当前所在目录"><a href="#pwd-当前所在目录" class="headerlink" title="pwd 当前所在目录"></a>pwd 当前所在目录</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz home]# pwd<br>/home<br></code></pre></div></td></tr></table></figure>
+<h4 id="ls-列出目录内容"><a href="#ls-列出目录内容" class="headerlink" title="ls 列出目录内容"></a>ls 列出目录内容</h4><ul>
+<li><p>英文原意：list</p>
+</li>
+<li><p>常用选项：</p>
+</li>
+<li><ul>
+<li><p>-l ：详细信息显示</p>
+<ul>
+<li>  -a：显示所有文件，包括隐藏文件</li>
+<li>  -h：将文件容量以较易读的方式（GB，kB等）列出来</li>
+</ul>
+<p>另外，这些参数可以组合使用，例如<code>ls -la</code>，显示当前目录所有文件的详细信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">    [root@izuf66fm097gavs15ngjfvz home]# ls<br>    oracle  swap<br>    [root@izuf66fm097gavs15ngjfvz home]# ls -a<br>    .  ..  oracle  swap<br>    [root@izuf66fm097gavs15ngjfvz home]# ls -la<br>    total 2097168<br>    drwxr-xr-x.  3 root   root           4096 Apr 11  2018 .<br>    dr-xr-xr-x. 19 root   root           4096 Sep  7 21:14 ..<br>    drwx------   3 oracle oinstall       4096 Nov 14  2018 oracle<br>    -rw-r--r--   1 root   root     2147483648 Oct  9  2018 swap<br>    [root@izuf66fm097gavs15ngjfvz home]# ls -lah<br>    total 2.1G<br>    drwxr-xr-x.  3 root   root     4.0K Apr 11  2018 .<br>    dr-xr-xr-x. 19 root   root     4.0K Sep  7 21:14 ..<br>    drwx------   3 oracle oinstall 4.0K Nov 14  2018 oracle<br>-rw-r--r--   1 root   root     2.0G Oct  9  2018 swap<br></code></pre></div></td></tr></table></figure>
+
+<p></pre></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a><strong>cd</strong> 切换目录</h4><ul>
+<li><p>英文原意：change directory</p>
+</li>
+<li><p>cd oracle     //进入指定目录,相当于<br>  cd ./oracle   // 切换到当前目录下的shi目录中，“.”表示当前目录<br>  cd ..         //  回到上级目录<br>  cd -          // 返回进入此目录之前的目录</p>
+  <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# cd oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>oradiag_oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# cd ..<br>[root@izuf66fm097gavs15ngjfvz home]# cd ./oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>oradiag_oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# cd -<br>/home<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# <br></code></pre></div></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="mkdir-新建目录"><a href="#mkdir-新建目录" class="headerlink" title="mkdir 新建目录"></a><strong>mkdir 新建目录</strong></h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">root@izuf66fm097gavs15ngjfvz /]# cd home<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>mysql  oracle  swap<br></code></pre></div></td></tr></table></figure>
+<h4 id="rmdir-删除空目录"><a href="#rmdir-删除空目录" class="headerlink" title="rmdir 删除空目录"></a><strong>rmdir 删除空目录</strong></h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">如目录不为空，删除不了，需要使用`rm -rf 目录名`才能强制删除非空目录。<br><br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>mysql  oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# cd mysql<br>[root@izuf66fm097gavs15ngjfvz mysql]# touch readme.md<br>[root@izuf66fm097gavs15ngjfvz mysql]# cd ../<br>[root@izuf66fm097gavs15ngjfvz home]# rmdir mysql<br>rmdir: failed to remove ‘mysql’: Directory not empty<br>[root@izuf66fm097gavs15ngjfvz home]# rm -rf mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]#<br></code></pre></div></td></tr></table></figure>
+<h3 id="二、文件操作"><a href="#二、文件操作" class="headerlink" title="二、文件操作"></a>二、文件操作</h3><h4 id="touch-新建文件"><a href="#touch-新建文件" class="headerlink" title="touch 新建文件"></a><strong>touch 新建文件</strong></h4><p>如果一个文件名参数是一个不存在的文件，则会创建一个空文件。</p>
+<p>如果存在则会更新文件访问时间。并不会对文件内容做出改变。</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">touch test.java    // 如果文件不存在，就创建test.java<br><br>example:<br><br>[root@izuf66fm097gavs15ngjfvz home]# touch test.java<br>[root@izuf66fm097gavs15ngjfvz home]# ls -l<br>total 2097160<br>drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle<br>-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap<br>-rw-r--r-- 1 root   root              0 Oct 11 23:33 test.java<br>[root@izuf66fm097gavs15ngjfvz home]# touch test.java<br>[root@izuf66fm097gavs15ngjfvz home]# ls -l<br>total 2097160<br>drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle<br>-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap<br>-rw-r--r-- 1 root   root              0 Oct 11 23:34 test.java<br></code></pre></div></td></tr></table></figure>
+<h4 id="mv-移动和重命名文件"><a href="#mv-移动和重命名文件" class="headerlink" title="mv 移动和重命名文件"></a><strong>mv 移动和重命名文件</strong></h4><ul>
+<li><p>英文原意：move</p>
+</li>
+<li><p>常用选项：</p>
+</li>
+<li><ul>
+<li><p>-f ：force强制的意思，如果目标文件已经存在，不会询问而直接覆盖</p>
+<ul>
+<li>  -i ：若目标文件已经存在，就会询问是否覆盖</li>
+<li>  -u ：若目标文件已经存在，且比目标文件新，才会更新</li>
+</ul>
+<p><strong>mv file1 file2 file3 dir   // 把文件file1、file2、file3移动到当前目录dir中</strong></p>
+<p><strong>mv file1 file2 file3 ../dir   // 把文件file1、file2、file3移动到当上级目录dir中</strong></p>
+<p><strong>mv file1 file2  // 把文件file1重命名为file2</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap  test.java<br>[root@izuf66fm097gavs15ngjfvz home]# mv test.java oracle <br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# cd oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>oradiag_oracle  test.java<br>[root@izuf66fm097gavs15ngjfvz oracle]# mv test.java HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>HelloWorld.java  oradiag_oracle<br></code></pre></div></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ls-l-查看文件权限"><a href="#ls-l-查看文件权限" class="headerlink" title="ls -l 查看文件权限"></a>ls -l 查看文件权限</h4><h4 id="chmod-修改权限"><a href="#chmod-修改权限" class="headerlink" title="chmod 修改权限"></a>chmod 修改权限</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java <br>-rw-r--r-- 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 777 HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java <br>-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 666 HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java<br><br></code></pre></div></td></tr></table></figure>
+<p>r表示读取（read）权限，w表示写入（write）权限，x表示执行（eXecute）权限，通常具体的权限由数字来表示：r=4，w=2，x=1</p>
+<p>若要rwx属性则4+2+1=7；</p>
+<p>若要rw-属性则4+2=6；</p>
+<p>若要r-x属性则4+1=7。</p>
+<p>常用修改权限的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo chmod 600 ××× （只有所有者有读和写的权限）<br><br>sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）<br><br>sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）<br><br>sudo chmod 666 ××× （每个人都有读和写的权限）<br><br>sudo chmod 777 ××× （每个人都有读和写以及执行的权限）<br><br>若要修改目录下所有文件的权限:chmod -R 权限 目录<br><br>`[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rw-r--r-- 1 root root 0 Oct 13 15:32 app.java<br>-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod -R 777 ../HelloWorld<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rwxrwxrwx 1 root root 0 Oct 13 15:32 app.java<br>-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java<br>`<br></code></pre></div></td></tr></table></figure>
+<h4 id="rm-删除文件或目录"><a href="#rm-删除文件或目录" class="headerlink" title="rm 删除文件或目录"></a>rm 删除文件或目录</h4><ul>
+<li>  常用选项：</li>
+<li><ul>
+<li>-f ：就是force的意思，忽略不存在的文件，不会出现警告消息<ul>
+<li>  -i ：互动模式，在删除前会询问用户是否操作</li>
+<li>  -r ：(recursive) 指示rm将参数中列出的全部目录和子目录均递归地删除。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="cat-查看文件内容"><a href="#cat-查看文件内容" class="headerlink" title="cat 查看文件内容"></a>cat 查看文件内容</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# vi HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# cat HelloWorld.java <br>import test.package;<br></code></pre></div></td></tr></table></figure>
+
+<p>​    </p>
+<h4 id="find-查找文件"><a href="#find-查找文件" class="headerlink" title="find 查找文件"></a>find 查找文件</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls<br>appConfiguration.java  app.java  HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app.java<br>app.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app*.java<br>appConfiguration.java<br>app.java<br>[root@izuf66fm097gavs15ngjfvz home]# find oracle/HelloWorld/ -name &amp;quot;*.java&amp;quot;<br>oracle/HelloWorld/appConfiguration.java<br>oracle/HelloWorld/HelloWorld.java<br>oracle/HelloWorld/app.java<br></code></pre></div></td></tr></table></figure>
+<h4 id="vi-编辑文件"><a href="#vi-编辑文件" class="headerlink" title="vi 编辑文件"></a>vi 编辑文件</h4><p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/10/17/multiple-parameters-with-no-annotation/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">multiple parameters with no annotation. Unable to resolve the injection source</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/09/22/Resolve-domain-name-unreachable-issue/">
+                        <span class="hidden-mobile">解决域名无法访问的问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'baobaodz/baobaodz.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'blog');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        苏ICP备2021009200号-1
+      </a>
+    </span>
+    
+      
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
+            
+            <span>苏ICP备2021009200号-1</span>
+          </a>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script defer type="text/javascript" src="//js.users.51.la/21040841.js"></script>
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
