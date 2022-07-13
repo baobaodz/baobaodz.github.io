@@ -225,7 +225,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      1.4k 字
     </span>
   
 
@@ -235,7 +235,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      19
        分钟
     </span>
   
@@ -307,7 +307,15 @@
 <p>执行<code>npm run start:devjs</code>，查看控制台日志</p>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jR07B4"><img src="https://s1.ax1x.com/2022/07/13/jR07B4.png" srcset="/img/loading.gif" alt="日志"></a></p>
 <p>看启动日志中的<code>proxyOptions </code>可以看到<code>Cookie</code>已经被填入，访问本地调试网站，也自动登录了进去。</p>
-<h3 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h3>
+<h3 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h3><h4 id="1、不引入额外的网络请求库axios"><a href="#1、不引入额外的网络请求库axios" class="headerlink" title="1、不引入额外的网络请求库axios"></a>1、不引入额外的网络请求库<code>axios</code></h4><p>毕竟<code>Angular</code>项目中使用的均为<code>HttpCilent </code>进行请求调用，在<code>proxy.conf.js</code> 中却引入了另外一个请求库<code>axios</code>，如果能一以贯之，不另外引入其他的库，想必是很好的。无奈本人技术水平有限，在<code>ts</code>的<code>constructor</code>中直接注入，在<code>js</code>中我就不会怎么注入<code>Http</code>了</p>
+<h4 id="2、利用node热更新实现失效cookie自动更新"><a href="#2、利用node热更新实现失效cookie自动更新" class="headerlink" title="2、利用node热更新实现失效cookie自动更新"></a>2、利用<code>node</code>热更新实现失效<code>cookie</code>自动更新</h4><p>虽然通过上述操作解决了手动处理的麻烦，但是存在这种情况，当原网站的登录<code>cookie</code>失效后，需要重新登录，重新生成<code>cookie</code>，这个在<code>bypass</code>中是感知不到的，相应的本地调试也跳转到了登录页。虽然说重新执行<code>npm run start:devjs</code> 重新获取一次<code>cookie</code>就可以了，但是对于短时间内频繁登录失效的网站来说，也是一个很头疼的事情（虽然在实际开发中很少遇到）。如果能够实时获取线上地址的<code>cookie</code>与本地调试的<code>cookie</code>对比，如若不一致，同步线上的<code>cookie</code>至调试环境，岂不美哉！然而涉及到<code>node</code>的相关知识，暂时缺乏了解，还需研究下。</p>
+<h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://angular.cn/guide/build#bypass-the-proxy">https://angular.cn/guide/build#bypass-the-proxy</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016314976/">https://segmentfault.com/a/1190000016314976/</a></p>
+</blockquote>
+
             </div>
             <hr>
             <div>
