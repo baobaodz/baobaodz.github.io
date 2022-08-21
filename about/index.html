@@ -283,13 +283,22 @@
 </div>
 
 <article class="mt-5 markdown-body">
-  <blockquote>
+    <div name="我是墙" id="recent-posts">  
+      <!-- id=>type  recent-posts=>name    -->  
+      <div name="我是画框">    
+          <div name="我是纸">      
+              <!--这里通过js挂载githubcalendar，也就是画画-->    
+          </div>  
+      </div>
+</div>  
+
+<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="🏠-关于本站"><a href="#🏠-关于本站" class="headerlink" title="🏠 关于本站"></a>🏠 关于本站</h2><p>记录总结学习积累</p>
 <h2 id="👨‍💻-博主是谁"><a href="#👨‍💻-博主是谁" class="headerlink" title="👨‍💻 博主是谁"></a>👨‍💻 博主是谁</h2><p>菜鸟程序猿，入门vlogger,爱折腾的baobaodz</p>
 <h2 id="⛹-兴趣爱好"><a href="#⛹-兴趣爱好" class="headerlink" title="⛹ 兴趣爱好"></a>⛹ 兴趣爱好</h2><p>电影、剪辑</p>
-<h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><p>QQ邮箱:<a href="mailto:&#x33;&#50;&#x30;&#56;&#x34;&#x31;&#55;&#49;&#53;&#55;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;">&#x33;&#50;&#x30;&#56;&#x34;&#x31;&#55;&#49;&#53;&#55;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#x6d;</a><br>个人网站:<a target="_blank" rel="noopener" href="http://baobaodz.com/">baobaodz.com</a></p>
+<h2 id="📬-联系我呀"><a href="#📬-联系我呀" class="headerlink" title="📬 联系我呀"></a>📬 联系我呀</h2><p>QQ邮箱:<a href="mailto:&#x33;&#x32;&#48;&#56;&#52;&#x31;&#x37;&#49;&#x35;&#55;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#x33;&#x32;&#48;&#56;&#52;&#x31;&#x37;&#49;&#x35;&#55;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a><br>个人网站:<a target="_blank" rel="noopener" href="http://baobaodz.com/">baobaodz.com</a></p>
 
 </article>
 
@@ -507,5 +516,26 @@
 
 
 
-</body>
+<!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?baobaodz";
+            var git_color =['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'];
+            var git_user ="baobaodz";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="github-calendar" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body>
 </html>
