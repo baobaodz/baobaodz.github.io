@@ -69,14 +69,15 @@
         return currentSetting;
     }
 
-    function changeBackground(banner, currentSetting) {
+    function changeBackground(banner) {
+        var currentSetting = toggleCustomColorSchema();
         console.log('🚀 ~ file: change-banner.js ~ line 73 ~ changeBackground ~ currentSetting', currentSetting);
         if (currentSetting === 'dark') { // 此时为日间模式
             banner.style.backgroundImage = "url(https://document.baobaodz.top/blog/banner/32323j448e4%20%284%29.jpg)";
         } else {
             banner.style.backgroundImage = "url(https://document.baobaodz.top/blog/banner/32323j448e4%20%285%29.jpg)";
         }
-        banner.style.transition = "background 1s linear";
+        banner.style.transition = "background 1.2s linear";
     }
 
     Fluid.utils.waitElementLoaded(colorToggleButtonName, function() {
@@ -84,12 +85,12 @@
         // 当用户点击切换按钮时，获得新的显示模式、写入 localStorage、并在页面上生效
         var button = document.getElementById(colorToggleButtonName);
         var banner = document.getElementById(bannerIdName);
-        const currentSetting = toggleCustomColorSchema();
+
         if (button && banner) {
-            changeBackground(banner, currentSetting);
+            changeBackground(banner);
             button.addEventListener('click', () => {
 
-                changeBackground(banner, currentSetting);
+                changeBackground(banner);
 
             });
         }
