@@ -194,7 +194,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="凿破苍苔地，偷他一片天。白云生镜里，明月落阶前。">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -719,34 +719,7 @@ import
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      $.ajax({
-        type: 'GET',
-        url: 'https://v1.jinrishici.com/all.json',
-        headers: {},
-        dataType: 'json',
-        success: function (result) {
-          var text;
-          if (result) {
-            var keys = 'content'.split('.')
-            if (result instanceof Array) {
-              result = result[0]
-            }
-            for (const k of keys) {
-              var value = result[k]
-              if (typeof value === 'string') {
-                text = value
-                break
-              } else if (value instanceof Object) {
-                result = value
-              }
-            }
-          }
-          text ? typing(text) : typing(title);
-        },
-        error: function () {
-          typing(title)
-        }
-      })
+      typing(title)
       
     })(window, document);
   </script>
@@ -800,7 +773,7 @@ import
 
 
 
-<!-- hexo injector body_end start -->
+<!-- hexo injector body_end start --><script src="/js/change-font.js"></script>
   <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
   <script data-pjax>
         function GithubCalendarConfig(){
