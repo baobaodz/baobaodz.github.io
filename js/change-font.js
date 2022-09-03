@@ -64,19 +64,29 @@
     Fluid.utils.waitElementLoaded(homeSubtitleIdName, function() {
 
         var scripts = document.getElementsByTagName("script");
-        for (var script of scripts) {
-            if (script.src && script.src.includes('typed.min.js')) {
-                typedJsSrc = script.src;
-                console.log('🚀 ~ file: change-font.js ~ line 68 ~ script', script);
-                script.nextElementSibling.remove();
-                script.remove();
-                break;
-            }
-            // script.parentNode.removeChild(script)
+        // for (var script of scripts) {
+        //     if (script.src && script.src.includes('typed.min.js')) {
+        //         typedJsSrc = script.src;
+        //         console.log('🚀 ~ file: change-font.js ~ line 68 ~ script', script);
+        //         script.nextElementSibling.remove();
+        //         script.remove();
+        //         break;
+        //     }
+        // }
+        console.log('🚀 ~ file: change-font.js ~ line 77 ~ Fluid.utils.waitElementLoaded ~ hexo.config', CONFIG);
+        if (theme.fun_features.typing.enable && page.subtitle !== false) {
+            return;
         }
-
+        if (theme.index.slogan.api && theme.index.slogan.api.enable) {
+            return;
+        }
         var subtitle = document.getElementById(homeSubtitleIdName);
+        var typing = Fluid.plugins.typing;
         if (subtitle) {
+            if (location.pathname !== '/') {
+                typing(subtitle.title);
+                return;
+            }
             subtitle.style.fontFamily = 'SimSun';
             // var text = getText(1, subtitle.title);
             // console.log('🚀 ~ file: change-font.js ~ line 71 ~ Fluid.utils.waitElementLoaded ~ text', text);
@@ -90,9 +100,6 @@
                 success: function(result) {
                     var text;
                     if (result) {
-                        var script = document.createElement('script');
-                        script.setAttribute('src', typedJsSrc);
-                        document.head.appendChild(script);
                         var keys = 'content'.split('.')
                         if (result instanceof Array) {
                             result = result[0]
@@ -108,7 +115,6 @@
                             }
                         }
                     }
-                    var typing = Fluid.plugins.typing;
                     text ? typing(text) : typing(getText(1, subtitle.title));
                 },
                 error: function(err) {
