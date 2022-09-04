@@ -74,12 +74,12 @@
         //     }
         // }
         console.log('🚀 ~ file: change-font.js ~ line 77 ~ Fluid.utils.waitElementLoaded ~ hexo.config', CONFIG);
-        if (theme.fun_features.typing.enable && page.subtitle !== false) {
-            return;
-        }
-        if (theme.index.slogan.api && theme.index.slogan.api.enable) {
-            return;
-        }
+        // if (theme.fun_features.typing.enable && page.subtitle !== false) {
+        //     return;
+        // }
+        // if (theme.index.slogan.api && theme.index.slogan.api.enable) {
+        //     return;
+        // }
         var subtitle = document.getElementById(homeSubtitleIdName);
         var typing = Fluid.plugins.typing;
         if (subtitle) {
