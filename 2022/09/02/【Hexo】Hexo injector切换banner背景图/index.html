@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="baobaodz">
   <meta name="keywords" content="">
-  <title>【VSCode】Windows下VSCode集成zsh - Baobaodz</title>
+  <title>【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡 - Baobaodz</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -205,14 +205,14 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://image.baobaodz.top/blog%2Fbanner%2FsvkTxA.jpg') no-repeat center center;
+         style="background: url('https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="【VSCode】Windows下VSCode集成zsh">
+            <span class="h2" id="subtitle" title="【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡">
               
-                【VSCode】Windows下VSCode集成zsh
+                【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡
               
             </span>
 
@@ -227,8 +227,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-07-14 16:31" pubdate>
-        2022年7月14日 下午
+      <time datetime="2022-09-02 23:31" pubdate>
+        2022年9月2日 晚上
       </time>
     </span>
   
@@ -239,7 +239,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      922 字
+      1.1k 字
     </span>
   
 
@@ -249,7 +249,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      15
        分钟
     </span>
   
@@ -287,55 +287,29 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【VSCode】Windows下VSCode集成zsh</h1>
+            <h1 style="display: none">【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</h1>
             
             <div class="markdown-body">
-              <h3 id="zsh是什么"><a href="#zsh是什么" class="headerlink" title="zsh是什么"></a>zsh是什么</h3><p>zsh 官网 : <a target="_blank" rel="noopener" href="https://www.zsh.org/">https://www.zsh.org/</a> </p>
-<p>oh-my-zsh官网 : <a target="_blank" rel="noopener" href="http://ohmyz.sh/">http://ohmyz.sh/</a></p>
-<p>zsh是shell语言类型，兼容bash，提供强大的命令行功能，比如tab补全，自动纠错功能等。缺点就是配置太麻烦，好在有一个叫做<code>oh-my-zsh</code>的开源项目，很好的弥补了这一缺陷，只需要修修改改配置文件，就能很顺手。</p>
-<blockquote>
-<p>zsh和 oh-my-zsh的关系 zsh 是 Shell 中的一种，功能极其强大，只是配置过于复杂，起初只有极客才在用。后来，有个穷极无聊的程序员可能是实在看不下去广大猿友一直只能使用单调的bash, 于是他创建了一个名为<code>oh-my-zsh</code>的开源项目…自此，只需要简单的安装配置，也可以享受使用zsh</p>
-</blockquote>
-<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><p><code>mac</code>上默认集成了<code>zsh</code>，<code>windows</code>上需要借助<code>mysy2</code>的终端软件来安装zsh。</p>
-<p>下载<code>mysy2</code><a target="_blank" rel="noopener" href="https://www.msys2.org/"><code>https://www.msys2.org/</code></a>（以安装路径<code>C:\msys64</code>为例）</p>
-<p>修改<code>home</code>目录为<code>Windows home</code>目录，修改<code>C:\msys64\etc\nsswitch.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">db_home: cygwin desc ----&gt; db_home: windows<br></code></pre></div></td></tr></table></figure>
-<p>启动<code>C:\msys64\msys2.exe</code>，在<code>msys2</code>的终端环境里键入以下命令并回车，即自动安装<code>zsh</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">pacman -S zsh<br></code></pre></div></td></tr></table></figure>
-<p>由于<code>msys2 </code>指定 <code>MSYSCON</code> 为 <code>defterm</code> 时默认是执行<code>bash.exe</code>， 我们简单地把 <code>C:\msys64\msys2_shell.cmd</code> 大概第5行的<code>bash</code>改成<code>zsh</code>即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash"><span class="hljs-built_in">set</span> <span class="hljs-string">&quot;LOGINSHELL=bash&quot;</span> ----&gt; <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;LOGINSHELL=zsh&quot;</span><br></code></pre></div></td></tr></table></figure>
-<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JSON">pacman -S git  // 首先安装git<br>sh -c &quot;$(curl -fsSL [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh))&quot;<br></code></pre></div></td></tr></table></figure>
-<h3 id="vscode配置zsh"><a href="#vscode配置zsh" class="headerlink" title="vscode配置zsh"></a>vscode配置zsh</h3><p><code>vscode</code>的<code>setting.json</code>追加:</p>
-<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JSON">&quot;terminal.integrated.defaultProfile.windows&quot;: &quot;GitBash&quot;,<br>&quot;terminal.integrated.profiles.windows&quot;: &#123;<br>  &quot;GitBash&quot;: &#123;<br>    &quot;path&quot;: &quot;C://msys64//msys2_shell.cmd&quot;,<br>    &quot;args&quot;: [<br>      &quot;-defterm&quot;,<br>      &quot;-mingw64&quot;,<br>      &quot;-no-start&quot;,<br>      &quot;-here&quot;,<br>      &quot;-lic&quot;,<br>      <span class="hljs-string">&quot;cd $PWD; exec zsh&quot;</span><br>    ]<br>  &#125;<br> &#125;,<br></code></pre></div></td></tr></table></figure>
-<p>在<code>vscode</code>中就可以看到新添加的终端</p>
-<p><img src="https://image.baobaodz.top/blog/vcsode-new-terminal.png" srcset="/img/loading.gif" alt="新终端"></p>
-<h3 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h3><p>打开<code>.zshrc</code>（一般在<code>c</code>盘当前用户目录下<code>C:\Users\baodunzheng</code>）找到包含<code>ZSH_THEME=</code>的这一行，修改为自己喜欢的主题。</p>
-<p><code>zsh</code>的众多主题见链接：<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a></p>
-<p>当然如果修改成<code>ZSH_THEME=&quot;random&quot;</code> 每次启动都会启用随机主题，也不失为选择困难症的福音。</p>
-<p>当然如果对现有主题不满意，可以自定义主题，对现有主题改进，只需要</p>
-<figure class="highlight text"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1、在`~\.oh-my-zsh\custom\themes` 目录下新建或拷贝现有主题文件修改名称为`my-agnoster.zsh-theme.zsh-theme`<br>2、`.zshrc`中`ZSH_THEME=&quot;my-agnoster&quot;` ，主题名要与自定义主题文件名前半部分对应上<br></code></pre></div></td></tr></table></figure>
-<h3 id="插件设置"><a href="#插件设置" class="headerlink" title="插件设置"></a>插件设置</h3><h4 id="提示插件"><a href="#提示插件" class="headerlink" title="提示插件"></a>提示插件</h4><p>安装提示插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git <span class="hljs-built_in">clone</span> [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) <span class="hljs-variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions<br></code></pre></div></td></tr></table></figure>
-<p>编辑<code>.zshrc</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">plugins=(git zsh-autosuggestions)<br></code></pre></div></td></tr></table></figure>
-<h4 id="高亮插件"><a href="#高亮插件" class="headerlink" title="高亮插件"></a>高亮插件</h4><p>安装高亮插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git <span class="hljs-built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="hljs-variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting<br></code></pre></div></td></tr></table></figure>
-<p>编辑<code>.zshrc</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">plugins=(git zsh-autosuggestions zsh-syntax-highlighting)<br></code></pre></div></td></tr></table></figure>
-<p>最后<code>source ~/.zshrc</code> 使其生效</p>
-<p><img src="https://image.baobaodz.top/blog/oh-my-zsh-theme.png" srcset="/img/loading.gif" alt="新主题"></p>
-<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><p><code>npm -v</code>时，报错<code>command not found: npm</code> 原因是找不到npm的环境，需要手动指定</p>
-<p>执行 <code>which npm</code> 找到<code>npm</code>安装运行环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">baodunzheng@DESKTOP-HEK6UKM MSYS ~<br>$ <span class="hljs-built_in">which</span> npm<br>/d/work/dev/nodejs/npm<br></code></pre></div></td></tr></table></figure>
-<p>去除<code>/npm</code> ，拿到<code>/d/work/dev/nodejs</code>进入<code>.zshrc</code> 添加一行 <code>export PATH=/d/work/dev/nodejs:$PATH</code> 解决</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash"><span class="hljs-comment"># If you come from bash you might have to change your $PATH.</span><br><span class="hljs-comment"># export PATH=$HOME/bin:/usr/local/bin:$PATH</span><br>  <span class="hljs-built_in">export</span> PATH=/d/work/dev/nodejs:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># Path to your oh-my-zsh installation.</span><br><span class="hljs-built_in">export</span> ZSH=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.oh-my-zsh&quot;</span><br></code></pre></div></td></tr></table></figure>
-<p>至此，适合自己的<code>zsh</code>基本可以用了</p>
-<h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21418449">为什么说 zsh 是 shell 中的极品？</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30756923/article/details/124263549">Windows下vscode集成zsh</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Chuancey_CC/article/details/118223562?spm=1001.2101.3001.6650.12&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-12-118223562-blog-124263549.pc_relevant_multi_platform_whitelistv1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-12-118223562-blog-124263549.pc_relevant_multi_platform_whitelistv1&utm_relevant_index=17">Windows安装真正的zsh——不是在WSL子系统下哦</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/haofandedaima/article/details/119699633">mac安装oh-my-zsh出现command not found: npm问题解决</a></li>
-</ul>
+              <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>先看效果</p>
+<p><img src="https://document.baobaodz.top/blog/banner.gif" srcset="/img/loading.gif" alt="banner"></p>
+<p>也可查看博客的在线效果 <a target="_blank" rel="noopener" href="https://baobaodz.top/about/"><code>https://baobaodz.top/about/</code></a></p>
+<h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式/日间模式切换的<code>banner</code>图片。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li>不改变<code>fluid</code>主题源码的原则下，通过<code>hexo injector</code>注入<code>js</code>代码；</li>
+<li>获取夜间模式切换（按钮点击）事件，判断当前的夜间/日间模式，分别呈现不同的背景图片；</li>
+<li>添加过渡效果，避免背景切换生硬，从而实现光影变换，营造出日夜更迭的时间消逝之感。</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="1、注入"><a href="#1、注入" class="headerlink" title="1、注入"></a>1、注入</h3><p><code>Hexo </code>注入器 可以将特定的代码注入到页面中，不影响源码。在根目录下新建<code>scripts\custom-inject.js</code>写入以下代码，可以将<code>source/js</code> 目录下的<code>change-banner.js</code> 注入到<code>about</code>页面的 <code>&lt;/body&gt;</code>之前。具体的<code>injector </code>示例可以参考</p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/advance/">Hexo 注入代码</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot = <span class="hljs-string">&quot;/&quot;</span> &#125; = hexo.config;<br>hexo.extend.injector.register(<span class="hljs-string">&#x27;body_end&#x27;</span>, <span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/change-banner.js&quot;&gt;&lt;/script&gt;`</span>, <span class="hljs-string">&#x27;about&#x27;</span>);<br></code></pre></div></td></tr></table></figure>
+<h3 id="2、具体切换"><a href="#2、具体切换" class="headerlink" title="2、具体切换"></a>2、具体切换</h3><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">var</span> colorSchemaStorageKey = <span class="hljs-string">&#x27;Fluid_Color_Scheme&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorSchemaMediaQueryKey = <span class="hljs-string">&#x27;--color-mode&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleButtonName = <span class="hljs-string">&#x27;color-toggle-btn&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleIconName = <span class="hljs-string">&#x27;color-toggle-icon&#x27;</span>;<br>    <span class="hljs-keyword">var</span> bannerIdName = <span class="hljs-string">&#x27;banner&#x27;</span>;<br>    <span class="hljs-keyword">var</span> baseUrl = <span class="hljs-string">&#x27;https://document.baobaodz.top/blog/banner&#x27;</span>;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLS</span>(<span class="hljs-params">k</span>) </span>&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">localStorage</span>.getItem(k);<br>        &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSchemaFromCSSMediaQuery</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> res = getComputedStyle(rootElement).getPropertyValue(<br>            colorSchemaMediaQueryKey<br>        );<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> res.replace(<span class="hljs-regexp">/[&quot;&#x27;\s]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> validColorSchemaKeys = &#123;<br>        dark: <span class="hljs-literal">true</span>,<br>        light: <span class="hljs-literal">true</span><br>    &#125;;<br><br>    <span class="hljs-keyword">var</span> invertColorSchemaObj = &#123;<br>        dark: <span class="hljs-string">&#x27;light&#x27;</span>,<br>        light: <span class="hljs-string">&#x27;dark&#x27;</span><br>    &#125;;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCustomColorSchema</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = getLS(colorSchemaStorageKey);<br><br>        <span class="hljs-keyword">if</span> (validColorSchemaKeys[currentSetting]) &#123;<br>            <span class="hljs-comment">// 从 localStorage 中读取模式，并取相反的模式</span><br>            currentSetting = invertColorSchemaObj[currentSetting];<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error</span><br>            <span class="hljs-comment">// 先按照按钮的状态进行切换</span><br>            <span class="hljs-keyword">var</span> iconElement = <span class="hljs-built_in">document</span>.getElementById(colorToggleIconName);<br>            <span class="hljs-keyword">if</span> (iconElement) &#123;<br>                currentSetting = iconElement.getAttribute(<span class="hljs-string">&#x27;data&#x27;</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (!iconElement || !validColorSchemaKeys[currentSetting]) &#123;<br>                <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error，则读取默认值并切换到相反的模式</span><br>                currentSetting = invertColorSchemaObj[getSchemaFromCSSMediaQuery()];<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> currentSetting;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeBackground</span>(<span class="hljs-params">banner</span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = toggleCustomColorSchema();<br>        <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-string">&#x27;dark&#x27;</span>) &#123; <span class="hljs-comment">// 此时为日间模式</span><br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%284%29.jpg)`</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%285%29.jpg)`</span>;<br>        &#125;<br>        banner.style.transition = <span class="hljs-string">&quot;background 1.2s linear&quot;</span>;<br>    &#125;<br><br>    Fluid.utils.waitElementLoaded(colorToggleButtonName, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br><br>        <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(colorToggleButtonName);<br>        <span class="hljs-keyword">var</span> banner = <span class="hljs-built_in">document</span>.getElementById(bannerIdName);<br><br>        <span class="hljs-keyword">if</span> (button &amp;&amp; banner) &#123;<br>            changeBackground(banner);<br>            button.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br><br>                changeBackground(banner);<br><br>            &#125;);<br>        &#125;<br><br>    &#125;);<br><br>&#125;)();<br></code></pre></div></td></tr></table></figure>
+<p><code>changeBackground </code>方法上面的是取自<code>fluid</code>主题 <code>themes\fluid\source\js\color-schema.js</code> 中的获取当前模式的写法。</p>
+<p><code>banner.style.transition = &quot;background 1.2s linear&quot;;</code> 添加背景过渡效果，过渡时间为<code>1.2s</code>。</p>
+<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>虽然更改了<code>banner</code>背景的过渡时间为<code>1.2s</code>，但是夜间模式切换的其他元素默认过渡时间为<code>0.2s</code>，于是就会造成主面板和<code>banner </code>切换速率不匹配的视觉差异，为了消除差异，对齐过渡时间，需要修改<code>fluid</code>主题的源码，因为这个过渡时间是写死在代码里的固定值。</p>
+<h3 id="展望1"><a href="#展望1" class="headerlink" title="展望1"></a>展望1</h3><p>给<code>fluid</code>作者提<code>issue</code>，期望能把过渡效果和时间在主题的<code>yml</code>中进行配置，或者引入全局变量例如<code>var(--custom-transition-duration)</code>，而不是像下面都是<code>0.2s</code>的这种写法</p>
+<figure class="highlight stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Stylus"><span class="hljs-selector-tag">img</span>, <span class="hljs-selector-class">.note</span>, .label<br>  -webkit-filter brightness(.9)<br>  filter brightness(.9)<br>  <span class="hljs-attribute">transition</span> filter <span class="hljs-number">0.2s</span> ease-in-out<br><br>.page-header<br>  <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>  <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br><br>.markdown-body<br><br>  :not(pre) &gt; code<br>    background-color rgba(#3e4b5e, .35)<br>    <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-keyword">if</span> <span class="hljs-variable">$highlight</span>-enable<br>    <span class="hljs-selector-class">.highlight</span> pre, pre<br>      background-color rgba(#f6f8fa, .80)<br>      <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, h2<br>    <span class="hljs-attribute">border-bottom-color</span> <span class="hljs-variable">$line</span>-color-dark<br>    <span class="hljs-attribute">transition</span> border-bottom-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">h5</span>, h6<br>    <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>    <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br></code></pre></div></td></tr></table></figure>
+<h3 id="展望2"><a href="#展望2" class="headerlink" title="展望2"></a>展望2</h3><p>注入<code>js</code>或<code>css</code>修改需要修改的过渡属性，比如上面就要覆盖<code>img, .note, .label</code>的<code>transition</code>，<code>page-header</code>的<code>transition</code>，以及<code>markdown-body</code>下的各种标签、<code>class</code>的<code>transition</code>，修改量巨大。</p>
+<p>目前采用的是修改源码的方法对齐了过渡时间，才使得上面<code>banner</code>图和面板过渡效果如此优雅和丝滑~</p>
 
             </div>
             <hr>
@@ -345,11 +319,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E5%85%B7/VSCode/">VSCode</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E5%85%B7/zsh/">zsh</a>
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/Hexo/">Hexo</a>
                     
                   </div>
                 
@@ -357,9 +329,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/VSCode/">VSCode</a>
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+                      <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Injector/">Injector</a>
                     
                   </div>
                 
@@ -372,18 +346,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/">
-                        <span class="hidden-mobile">【Angular】本地调试代理转发</span>
+                      <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/">
+                        <span class="hidden-mobile">【VSCode】Windows下VSCode集成zsh</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
