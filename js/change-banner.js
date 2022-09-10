@@ -6,6 +6,9 @@
     var bannerIdName = 'banner';
     var baseUrl = 'https://document.baobaodz.top/blog/banner';
 
+    var colorToggleButtonSelector = '#color-toggle-btn';
+    var colorToggleIconSelector = '#color-toggle-icon';
+
 
     function getLS(k) {
         try {
@@ -44,7 +47,7 @@
         } else if (currentSetting === null) {
             // 当 localStorage 中没有相关值，或者 localStorage 抛了 Error
             // 先按照按钮的状态进行切换
-            var iconElement = document.getElementById(colorToggleIconName);
+            var iconElement = document.querySelector(colorToggleIconSelector);
             if (iconElement) {
                 currentSetting = iconElement.getAttribute('data');
             }
@@ -69,9 +72,9 @@
         banner.style.transition = "background 1.2s linear";
     }
 
-    Fluid.utils.waitElementLoaded(colorToggleButtonName, function() {
+    Fluid.utils.waitElementLoaded(colorToggleIconSelector, function() {
 
-        var button = document.getElementById(colorToggleButtonName);
+        var button = document.querySelector(colorToggleButtonSelector);
         var banner = document.getElementById(bannerIdName);
 
         if (button && banner) {

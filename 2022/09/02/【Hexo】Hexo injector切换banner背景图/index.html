@@ -1,56 +1,75 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="前端博客">
   <meta name="author" content="baobaodz">
   <meta name="keywords" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+  
+    <meta name="description" content="效果先看效果  也可查看博客的在线效果 https:&#x2F;&#x2F;baobaodz.top&#x2F;about&#x2F; 缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式&#x2F;日间模式切换的banner图片。 思路 不改变fluid主题源码的原则下，通过hexo injector注入js代码； 获取夜间模式切换（按钮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡">
+<meta property="og:url" content="http://example.com/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Baobaodz">
+<meta property="og:description" content="效果先看效果  也可查看博客的在线效果 https:&#x2F;&#x2F;baobaodz.top&#x2F;about&#x2F; 缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式&#x2F;日间模式切换的banner图片。 思路 不改变fluid主题源码的原则下，通过hexo injector注入js代码； 获取夜间模式切换（按钮">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png">
+<meta property="article:published_time" content="2022-09-02T15:31:17.000Z">
+<meta property="article:modified_time" content="2022-09-05T15:31:24.694Z">
+<meta property="article:author" content="baobaodz">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Injector">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡 - Baobaodz</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/atom-one-dark.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -60,19 +79,57 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21040841.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Baobaodz</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Baobaodz</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -137,7 +194,8 @@
           
           
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
                 作品
               </a>
@@ -189,13 +247,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -204,75 +264,82 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡">
-              
-                【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      baobaodz
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-09-02 23:31" pubdate>
-        2022年9月2日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1.1k 字
-    </span>
   
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      15
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 热度
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        baobaodz
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-02 23:31" pubdate>
+          2022年9月2日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -281,17 +348,23 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</h1>
             
-            <div class="markdown-body">
-              <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>先看效果</p>
-<p><img src="https://document.baobaodz.top/blog/banner.gif" srcset="/img/loading.gif" alt="banner"></p>
+            
+              <div class="markdown-body">
+                
+                <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>先看效果</p>
+<p><img src="https://document.baobaodz.top/blog/banner.gif" srcset="/img/loading.gif" lazyload alt="banner"></p>
 <p>也可查看博客的在线效果 <a target="_blank" rel="noopener" href="https://baobaodz.top/about/"><code>https://baobaodz.top/about/</code></a></p>
 <h2 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h2><p>做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式/日间模式切换的<code>banner</code>图片。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
@@ -301,48 +374,113 @@
 </ol>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="1、注入"><a href="#1、注入" class="headerlink" title="1、注入"></a>1、注入</h3><p><code>Hexo </code>注入器 可以将特定的代码注入到页面中，不影响源码。在根目录下新建<code>scripts\custom-inject.js</code>写入以下代码，可以将<code>source/js</code> 目录下的<code>change-banner.js</code> 注入到<code>about</code>页面的 <code>&lt;/body&gt;</code>之前。具体的<code>injector </code>示例可以参考</p>
 <p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/advance/">Hexo 注入代码</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot = <span class="hljs-string">&quot;/&quot;</span> &#125; = hexo.config;<br>hexo.extend.injector.register(<span class="hljs-string">&#x27;body_end&#x27;</span>, <span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/change-banner.js&quot;&gt;&lt;/script&gt;`</span>, <span class="hljs-string">&#x27;about&#x27;</span>);<br></code></pre></div></td></tr></table></figure>
-<h3 id="2、具体切换"><a href="#2、具体切换" class="headerlink" title="2、具体切换"></a>2、具体切换</h3><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">var</span> colorSchemaStorageKey = <span class="hljs-string">&#x27;Fluid_Color_Scheme&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorSchemaMediaQueryKey = <span class="hljs-string">&#x27;--color-mode&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleButtonName = <span class="hljs-string">&#x27;color-toggle-btn&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleIconName = <span class="hljs-string">&#x27;color-toggle-icon&#x27;</span>;<br>    <span class="hljs-keyword">var</span> bannerIdName = <span class="hljs-string">&#x27;banner&#x27;</span>;<br>    <span class="hljs-keyword">var</span> baseUrl = <span class="hljs-string">&#x27;https://document.baobaodz.top/blog/banner&#x27;</span>;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLS</span>(<span class="hljs-params">k</span>) </span>&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">localStorage</span>.getItem(k);<br>        &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSchemaFromCSSMediaQuery</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> res = getComputedStyle(rootElement).getPropertyValue(<br>            colorSchemaMediaQueryKey<br>        );<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> res.replace(<span class="hljs-regexp">/[&quot;&#x27;\s]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> validColorSchemaKeys = &#123;<br>        dark: <span class="hljs-literal">true</span>,<br>        light: <span class="hljs-literal">true</span><br>    &#125;;<br><br>    <span class="hljs-keyword">var</span> invertColorSchemaObj = &#123;<br>        dark: <span class="hljs-string">&#x27;light&#x27;</span>,<br>        light: <span class="hljs-string">&#x27;dark&#x27;</span><br>    &#125;;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCustomColorSchema</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = getLS(colorSchemaStorageKey);<br><br>        <span class="hljs-keyword">if</span> (validColorSchemaKeys[currentSetting]) &#123;<br>            <span class="hljs-comment">// 从 localStorage 中读取模式，并取相反的模式</span><br>            currentSetting = invertColorSchemaObj[currentSetting];<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error</span><br>            <span class="hljs-comment">// 先按照按钮的状态进行切换</span><br>            <span class="hljs-keyword">var</span> iconElement = <span class="hljs-built_in">document</span>.getElementById(colorToggleIconName);<br>            <span class="hljs-keyword">if</span> (iconElement) &#123;<br>                currentSetting = iconElement.getAttribute(<span class="hljs-string">&#x27;data&#x27;</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (!iconElement || !validColorSchemaKeys[currentSetting]) &#123;<br>                <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error，则读取默认值并切换到相反的模式</span><br>                currentSetting = invertColorSchemaObj[getSchemaFromCSSMediaQuery()];<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> currentSetting;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeBackground</span>(<span class="hljs-params">banner</span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = toggleCustomColorSchema();<br>        <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-string">&#x27;dark&#x27;</span>) &#123; <span class="hljs-comment">// 此时为日间模式</span><br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%284%29.jpg)`</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%285%29.jpg)`</span>;<br>        &#125;<br>        banner.style.transition = <span class="hljs-string">&quot;background 1.2s linear&quot;</span>;<br>    &#125;<br><br>    Fluid.utils.waitElementLoaded(colorToggleButtonName, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br><br>        <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(colorToggleButtonName);<br>        <span class="hljs-keyword">var</span> banner = <span class="hljs-built_in">document</span>.getElementById(bannerIdName);<br><br>        <span class="hljs-keyword">if</span> (button &amp;&amp; banner) &#123;<br>            changeBackground(banner);<br>            button.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br><br>                changeBackground(banner);<br><br>            &#125;);<br>        &#125;<br><br>    &#125;);<br><br>&#125;)();<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot = <span class="hljs-string">&quot;/&quot;</span> &#125; = hexo.config;<br>hexo.extend.injector.register(<span class="hljs-string">&#x27;body_end&#x27;</span>, <span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/change-banner.js&quot;&gt;&lt;/script&gt;`</span>, <span class="hljs-string">&#x27;about&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<h3 id="2、具体切换"><a href="#2、具体切换" class="headerlink" title="2、具体切换"></a>2、具体切换</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">var</span> colorSchemaStorageKey = <span class="hljs-string">&#x27;Fluid_Color_Scheme&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorSchemaMediaQueryKey = <span class="hljs-string">&#x27;--color-mode&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleButtonName = <span class="hljs-string">&#x27;color-toggle-btn&#x27;</span>;<br>    <span class="hljs-keyword">var</span> colorToggleIconName = <span class="hljs-string">&#x27;color-toggle-icon&#x27;</span>;<br>    <span class="hljs-keyword">var</span> bannerIdName = <span class="hljs-string">&#x27;banner&#x27;</span>;<br>    <span class="hljs-keyword">var</span> baseUrl = <span class="hljs-string">&#x27;https://document.baobaodz.top/blog/banner&#x27;</span>;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLS</span>(<span class="hljs-params">k</span>) </span>&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">localStorage</span>.getItem(k);<br>        &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSchemaFromCSSMediaQuery</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> res = getComputedStyle(rootElement).getPropertyValue(<br>            colorSchemaMediaQueryKey<br>        );<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> res.replace(<span class="hljs-regexp">/[&quot;&#x27;\s]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">var</span> validColorSchemaKeys = &#123;<br>        dark: <span class="hljs-literal">true</span>,<br>        light: <span class="hljs-literal">true</span><br>    &#125;;<br><br>    <span class="hljs-keyword">var</span> invertColorSchemaObj = &#123;<br>        dark: <span class="hljs-string">&#x27;light&#x27;</span>,<br>        light: <span class="hljs-string">&#x27;dark&#x27;</span><br>    &#125;;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCustomColorSchema</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = getLS(colorSchemaStorageKey);<br><br>        <span class="hljs-keyword">if</span> (validColorSchemaKeys[currentSetting]) &#123;<br>            <span class="hljs-comment">// 从 localStorage 中读取模式，并取相反的模式</span><br>            currentSetting = invertColorSchemaObj[currentSetting];<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error</span><br>            <span class="hljs-comment">// 先按照按钮的状态进行切换</span><br>            <span class="hljs-keyword">var</span> iconElement = <span class="hljs-built_in">document</span>.getElementById(colorToggleIconName);<br>            <span class="hljs-keyword">if</span> (iconElement) &#123;<br>                currentSetting = iconElement.getAttribute(<span class="hljs-string">&#x27;data&#x27;</span>);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (!iconElement || !validColorSchemaKeys[currentSetting]) &#123;<br>                <span class="hljs-comment">// 当 localStorage 中没有相关值，或者 localStorage 抛了 Error，则读取默认值并切换到相反的模式</span><br>                currentSetting = invertColorSchemaObj[getSchemaFromCSSMediaQuery()];<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> currentSetting;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeBackground</span>(<span class="hljs-params">banner</span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> currentSetting = toggleCustomColorSchema();<br>        <span class="hljs-keyword">if</span> (currentSetting === <span class="hljs-string">&#x27;dark&#x27;</span>) &#123; <span class="hljs-comment">// 此时为日间模式</span><br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%284%29.jpg)`</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            banner.style.backgroundImage = <span class="hljs-string">`url(<span class="hljs-subst">$&#123;baseUrl&#125;</span>/32323j448e4%20%285%29.jpg)`</span>;<br>        &#125;<br>        banner.style.transition = <span class="hljs-string">&quot;background 1.2s linear&quot;</span>;<br>    &#125;<br><br>    Fluid.utils.waitElementLoaded(colorToggleButtonName, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br><br>        <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(colorToggleButtonName);<br>        <span class="hljs-keyword">var</span> banner = <span class="hljs-built_in">document</span>.getElementById(bannerIdName);<br><br>        <span class="hljs-keyword">if</span> (button &amp;&amp; banner) &#123;<br>            changeBackground(banner);<br>            button.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br><br>                changeBackground(banner);<br><br>            &#125;);<br>        &#125;<br><br>    &#125;);<br><br>&#125;)();<br></code></pre></td></tr></table></figure>
 <p><code>changeBackground </code>方法上面的是取自<code>fluid</code>主题 <code>themes\fluid\source\js\color-schema.js</code> 中的获取当前模式的写法。</p>
 <p><code>banner.style.transition = &quot;background 1.2s linear&quot;;</code> 添加背景过渡效果，过渡时间为<code>1.2s</code>。</p>
 <h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>虽然更改了<code>banner</code>背景的过渡时间为<code>1.2s</code>，但是夜间模式切换的其他元素默认过渡时间为<code>0.2s</code>，于是就会造成主面板和<code>banner </code>切换速率不匹配的视觉差异，为了消除差异，对齐过渡时间，需要修改<code>fluid</code>主题的源码，因为这个过渡时间是写死在代码里的固定值。</p>
 <h3 id="展望1"><a href="#展望1" class="headerlink" title="展望1"></a>展望1</h3><p>给<code>fluid</code>作者提<code>issue</code>，期望能把过渡效果和时间在主题的<code>yml</code>中进行配置，或者引入全局变量例如<code>var(--custom-transition-duration)</code>，而不是像下面都是<code>0.2s</code>的这种写法</p>
-<figure class="highlight stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Stylus"><span class="hljs-selector-tag">img</span>, <span class="hljs-selector-class">.note</span>, .label<br>  -webkit-filter brightness(.9)<br>  filter brightness(.9)<br>  <span class="hljs-attribute">transition</span> filter <span class="hljs-number">0.2s</span> ease-in-out<br><br>.page-header<br>  <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>  <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br><br>.markdown-body<br><br>  :not(pre) &gt; code<br>    background-color rgba(#3e4b5e, .35)<br>    <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-keyword">if</span> <span class="hljs-variable">$highlight</span>-enable<br>    <span class="hljs-selector-class">.highlight</span> pre, pre<br>      background-color rgba(#f6f8fa, .80)<br>      <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, h2<br>    <span class="hljs-attribute">border-bottom-color</span> <span class="hljs-variable">$line</span>-color-dark<br>    <span class="hljs-attribute">transition</span> border-bottom-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">h5</span>, h6<br>    <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>    <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs Stylus"><span class="hljs-selector-tag">img</span>, <span class="hljs-selector-class">.note</span>, .label<br>  -webkit-filter brightness(.9)<br>  filter brightness(.9)<br>  <span class="hljs-attribute">transition</span> filter <span class="hljs-number">0.2s</span> ease-in-out<br><br>.page-header<br>  <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>  <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br><br>.markdown-body<br><br>  :not(pre) &gt; code<br>    background-color rgba(#3e4b5e, .35)<br>    <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-keyword">if</span> <span class="hljs-variable">$highlight</span>-enable<br>    <span class="hljs-selector-class">.highlight</span> pre, pre<br>      background-color rgba(#f6f8fa, .80)<br>      <span class="hljs-attribute">transition</span> background-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, h2<br>    <span class="hljs-attribute">border-bottom-color</span> <span class="hljs-variable">$line</span>-color-dark<br>    <span class="hljs-attribute">transition</span> border-bottom-color <span class="hljs-number">0.2s</span> ease-in-out<br><br>  <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">h5</span>, h6<br>    <span class="hljs-attribute">color</span> <span class="hljs-number">#ddd</span><br>    <span class="hljs-attribute">transition</span> color <span class="hljs-number">0.2s</span> ease-in-out<br></code></pre></td></tr></table></figure>
 <h3 id="展望2"><a href="#展望2" class="headerlink" title="展望2"></a>展望2</h3><p>注入<code>js</code>或<code>css</code>修改需要修改的过渡属性，比如上面就要覆盖<code>img, .note, .label</code>的<code>transition</code>，<code>page-header</code>的<code>transition</code>，以及<code>markdown-body</code>下的各种标签、<code>class</code>的<code>transition</code>，修改量巨大。</p>
 <p>目前采用的是修改源码的方法对齐了过渡时间，才使得上面<code>banner</code>图和面板过渡效果如此优雅和丝滑~</p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/Hexo/">Hexo</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Injector/">Injector</a>
-                    
-                  </div>
                 
               </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+        <a href="/tags/Fluid/">#Fluid</a>
+      
+        <a href="/tags/Injector/">#Injector</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</div>
+      <div>http://example.com/2022/09/02/【Hexo】Hexo injector切换banner背景图/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>baobaodz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
               
               
-                <div class="post-prevnext">
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
@@ -350,7 +488,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/">
+                      <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" title="【VSCode】Windows下VSCode集成zsh">
                         <span class="hidden-mobile">【VSCode】Windows下VSCode集成zsh</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -362,12 +500,10 @@
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                
+  <article id="comments" lazyload>
+    
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
+    Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
       var dark = 'github-dark';
       var schema = document.documentElement.getAttribute('data-user-color-scheme');
@@ -393,31 +529,63 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
 
 
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -436,14 +604,14 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
@@ -455,72 +623,76 @@
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
 
   
-  <!-- 备案信息 -->
-  <div class="beian">
-    <span>
-      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        苏ICP备2021009200号-1
-      </a>
-    </span>
     
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>苏ICP备2021009200号-1</span>
-          </a>
-        </span>
-      
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
     
-  </div>
-
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
   
-</footer>
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      苏ICP备2021009200号-1
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>苏ICP备2021009200号-1</span>
+        </a>
+      </span>
+    
+  
+</div>
 
-<!-- SCRIPTS -->
+  
+  
+</div>
 
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -531,40 +703,116 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
 
-
-  
-    <script  src="/js/lazyload.js" ></script>
-  
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -572,54 +820,17 @@
 
 
 
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-    <!-- 51.la Analytics -->
-    <script defer type="text/javascript" src="//js.users.51.la/21040841.js"></script>
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
 
-<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script src="/js/change-font.js"></script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
   <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
   <script data-pjax>
         function GithubCalendarConfig(){

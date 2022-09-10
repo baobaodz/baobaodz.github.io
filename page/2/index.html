@@ -1,40 +1,63 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="前端博客">
   <meta name="author" content="baobaodz">
   <meta name="keywords" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+  
+    <meta name="description" content="前端博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Baobaodz">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Baobaodz">
+<meta property="og:description" content="前端博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="baobaodz">
+<meta property="article:tag" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>Baobaodz</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -44,19 +67,57 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21040841.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Baobaodz</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Baobaodz</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -121,7 +182,8 @@
           
           
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
                 作品
               </a>
@@ -173,13 +235,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -188,36 +252,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://image.baobaodz.top/blog%2Fbanner%2Fb54e7b6fff804b879787873bd51c78.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
-              
-                
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://image.baobaodz.top/blog%2Fbanner%2Fb54e7b6fff804b879787873bd51c78.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle">凿破苍苔地，偷他一片天。白云生镜里，明月落阶前。</span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -225,681 +293,760 @@
                 
 
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/4c341c83b8ca4294b104a0a6bf1de295.jpg" srcset="/img/loading.gif" lazyload alt="【读书笔记】JavaScript高级程序设计-第四章">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" target="_self">
+          【读书笔记】JavaScript高级程序设计-第四章
+        </a>
+      </h1>
 
+      
+      <a class="index-excerpt " href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" target="_self">
+        <div>
+          思维导图附上本章学习的思维导图  补充阅读基本类型和引用类型篇 JavaScript - 基本类型与引用类型值  执行环境及作用域篇 Javascript执行环境及作用域 深入理解javascript作用域系列第五篇——一张图理解执行环境和作用域  垃圾收集篇 前端面试：谈谈 JS 垃圾回收机制 JavaScript 中的垃圾回收
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-17 19:14" pubdate>
+              2021-02-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/4c341c83b8ca4294b104a0a6bf1de295.jpg" srcset="/img/loading.gif" alt="【读书笔记】JavaScript高级程序设计-第四章">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">【读书笔记】JavaScript高级程序设计-第四章</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
-            
-            
-              
-            
-            思维导图附上本章学习的思维导图
-
-补充阅读基本类型和引用类型篇
-JavaScript - 基本类型与引用类型值
-
-执行环境及作用域篇
-Javascript执行环境及作用域
-深入理解javascript作用域系列第五篇——一张图理解执行环境和作用域
-
-垃圾收集篇
-前端面试：谈谈 JS 垃圾回收机制
-JavaScript 中的垃圾回收
-
-
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-02-17 19:14" pubdate>
-                2021-02-17
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/%E6%8A%80%E6%9C%AF/">技术</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/JavaScript/">JavaScript</a>
-              
-                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" class="category-chain-item">JavaScript</a>
+  
   
 
-
-  
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/86040f2d880811ebb6edd017c2d2eca2.jpg" srcset="/img/loading.gif" alt="【读书笔记】引爆执行力">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/">【读书笔记】引爆执行力</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/">
-            
-            
-              
-            
-            思维导图
-
-怎么才能引爆执行力（执行力体系）跳出执行力误区误区一：持续拖延误区二：DDL魔咒误区三：无从下手误区四：不分轻重缓急误区五：想的简单，做起来难误区六：精力不充沛，一干活就累避开执行力陷阱陷阱一：不靠谱，做事慢陷阱二：什么都想做，什么都做不好陷阱三：被同龄人抛弃陷阱四：忽视负面情绪掌控执行力逻辑逻辑一：成为真正靠谱的执行者事事有交代，事事有回应；给与准确的承诺，切且承诺的一定会做到；如果
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-02-17 16:24" pubdate>
-                2021-02-17
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/%E7%A4%BE%E7%A7%91/">社科</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-              
-                <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/">方法论</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
   
 
-
+      </span>
+    
   
-    <div class="row mx-auto index-card">
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/86040f2d880811ebb6edd017c2d2eca2.jpg" srcset="/img/loading.gif" lazyload alt="【读书笔记】引爆执行力">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/" target="_self">
+          【读书笔记】引爆执行力
+        </a>
+      </h1>
+
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/56ac935951ab4af78bf31af55b600d95.jpg" srcset="/img/loading.gif" alt="【读书笔记】JavaScript高级程序设计-第三章">
-          </a>
+      <a class="index-excerpt " href="/2021/02/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%BC%95%E7%88%86%E6%89%A7%E8%A1%8C%E5%8A%9B/" target="_self">
+        <div>
+          思维导图  怎么才能引爆执行力（执行力体系）跳出执行力误区误区一：持续拖延误区二：DDL魔咒误区三：无从下手误区四：不分轻重缓急误区五：想的简单，做起来难误区六：精力不充沛，一干活就累避开执行力陷阱陷阱一：不靠谱，做事慢陷阱二：什么都想做，什么都做不好陷阱三：被同龄人抛弃陷阱四：忽视负面情绪掌控执行力逻辑逻辑一：成为真正靠谱的执行者事事有交代，事事有回应；给与准确的承诺，切且承诺的一定会做到；如果
         </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/">【读书笔记】JavaScript高级程序设计-第三章</a>
-        </h1>
+      </a>
 
-        <p class="index-excerpt">
-          <a href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-17 16:24" pubdate>
+              2021-02-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-            
-              
-            
-            思维导图附上学习的思维导图
 
-补充阅读语法篇
-
-12种不宜使用的Javascript语法
-
-数据类型篇
-
-为什么 0.1 + 0.2 = 0.300000004
-
-原始类型篇
-
-简单了解ES6/ES2015 Symbol() 方法
-JavaScript 中的表示任意精度的 BigInt
-
-
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-02-06 21:40" pubdate>
-                2021-02-06
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/%E6%8A%80%E6%9C%AF/">技术</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/JavaScript/">JavaScript</a>
-              
-                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="category-chain-item">读书</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AF%BB%E4%B9%A6/%E7%A4%BE%E7%A7%91/" class="category-chain-item">社科</a>
+  
   
 
-
-  
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/8098868d6ad348f3bec5ba5766148b2c.jpg" srcset="/img/loading.gif" alt="【读书笔记】JavaScript高级程序设计">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">【读书笔记】JavaScript高级程序设计</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-            
-            
-              
-            
-            思维导图
-defer和async的区别《JavaScript高级程序设计》中对于defer和async的区别这样解释：
-defer
-
-这个属性的用途是表明脚本在执行时不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后再运行。因此，在``元素中设置defer属性，相当于告诉浏览器立即下载，但延迟执行。
-HTML5规范要求脚本按照它们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-01-31 16:17" pubdate>
-                2021-01-31
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/%E6%8A%80%E6%9C%AF/">技术</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/JavaScript/">JavaScript</a>
-              
-                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
   
 
-
+      </span>
+    
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2020/05/15/The-most-frequent-integers-and-times/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/b2ce3ca19c294533975ea8298f4bda3e.jpg" srcset="/img/loading.gif" alt="输出出现次数最多的整数及其出现次数">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2020/05/15/The-most-frequent-integers-and-times/">输出出现次数最多的整数及其出现次数</a>
-        </h1>
+</span>
 
-        <p class="index-excerpt">
-          <a href="/2020/05/15/The-most-frequent-integers-and-times/">
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
             
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
             
-              
+              <a href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/">#方法论</a>
             
-            问题【问题描述】输入一组无序的整数，编程输出其中出现次数最多的整数及其出现次数。
-【输入形式】先从标准输入读入整数的个数（大于等于1，小于等于100），然后在下一行输入这些整数，各整数之间以一个空格分隔。
-【输出形式】在标准输出上输出出现次数最多的整数及其出现次数，两者以一个空格分隔；若出现次数最多的整数有多个，则按照整数升序分行输出。
-【样例输入】12100 -50 0 632 5813 -50
-          </a>
-        </p>
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2020-05-15 00:00" pubdate>
-                2020-05-15
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Java/">Java</a>
-              
-            </div>
-          
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/56ac935951ab4af78bf31af55b600d95.jpg" srcset="/img/loading.gif" lazyload alt="【读书笔记】JavaScript高级程序设计-第三章">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/" target="_self">
+          【读书笔记】JavaScript高级程序设计-第三章
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/02/06/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E7%AB%A0/" target="_self">
+        <div>
+          思维导图附上学习的思维导图  补充阅读语法篇  12种不宜使用的Javascript语法  数据类型篇  为什么 0.1 + 0.2 = 0.300000004  原始类型篇  简单了解ES6/ES2015 Symbol() 方法 JavaScript 中的表示任意精度的 BigInt
         </div>
-      </article>
-    </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-06 21:40" pubdate>
+              2021-02-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-
-
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/a9c352ec56a5437a80b8c30000689daf.jpg" srcset="/img/loading.gif" alt="多项式相加问题的设计与实现方法">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/">多项式相加问题的设计与实现方法</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/">
-            
-            
-              
-            
-            多项式相加问题的设计与实现方法问题【问题描述】一个多项式可以表达为x的各次幂与系数乘积的和，比如：
-2x6+3x5+12x3+6x+20
-也就是对应数学中的$$2x^6+3x^5+12x^3+6x+20$$现在，你的程序要读入两个多项式，然后输出这两个多项式的和，也就是把对应的幂上的系数相加然后输出。
-程序要处理的幂最大为100。
-【输入形式】总共要输入两个多项式，每个多项式的输入格式如下：
-每行
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2020-05-02 00:52" pubdate>
-                2020-05-02
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Java/">Java</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" class="category-chain-item">JavaScript</a>
+  
   
 
-
-  
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/cbcfcc07e9e3400a849bdd81af78e339.jpg" srcset="/img/loading.gif" alt="Dropwizard项目构建——pom.xml">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/">Dropwizard项目构建——pom.xml</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/">
-            
-            
-              
-            
-            Dropwizard项目构建——pom.xml用IDEA导入项目文件夹，查看pom.xml文件。
-
-pom即 Project Object Model（项目对象模型），它用于描述整个 Maven 项目，所以也称为 Maven 描述文件。 
-
-纵观整个pom文件可以分为3部分。
-
-项目描述
-
-项目依赖
-
-项目构建
-
-
-项目描述12345678&lt;modelVersion&gt;4.0.0&lt;
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2019-11-27 22:29" pubdate>
-                2019-11-27
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Dropwizard/">Dropwizard</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
   
 
-
+      </span>
+    
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/b54e7b6fff804b87bbff243c3bd51c78.jpg" srcset="/img/loading.gif" alt="Dropwizard项目构建——初始化">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/">Dropwizard项目构建——初始化</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/">
-            
-            
-              
-            
-            maven创建项目12345678$ mvn -B archetype:generate \ -DarchetypeGroupId=io.dropwizard.archetypes \ -DarchetypeArtifactId=java-simple \ -DarchetypeVersion=2.0.0-rc9\ -DgroupId=com.baoabodz.example.dropwizard
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2019-11-20 22:36" pubdate>
-                2019-11-20
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
-              
-                <a href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a>
-              
-            </div>
-          
-          
-        </div>
-      </article>
-    </div>
+    
   
+</span>
 
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/8098868d6ad348f3bec5ba5766148b2c.jpg" srcset="/img/loading.gif" lazyload alt="【读书笔记】JavaScript高级程序设计">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+          【读书笔记】JavaScript高级程序设计
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/01/31/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" target="_self">
+        <div>
+          思维导图 defer和async的区别《JavaScript高级程序设计》中对于defer和async的区别这样解释： defer  这个属性的用途是表明脚本在执行时不会影响页面的构造。也就是说，脚本会被延迟到整个页面都解析完毕后再运行。因此，在``元素中设置defer属性，相当于告诉浏览器立即下载，但延迟执行。 HTML5规范要求脚本按照它们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-31 16:17" pubdate>
+              2021-01-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2019/11/17/tree-command/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/small150753bMRVL1594969673.jpg" srcset="/img/loading.gif" alt="tree命令用法（CMD/Git Bash/Linux）">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2019/11/17/tree-command/">tree命令用法（CMD/Git Bash/Linux）</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2019/11/17/tree-command/">
-            
-            
-              
-            
-            在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而tree命令就可以实现这种效果。
-Windows cmd 的 tree命令在cmd中就集成了tree 命令
-使用tree /?查看帮助信息
-1234567G:\Dev\workspace\hola&gt;tree /?以图形显示驱动器或路径的文件夹结构。TREE [drive:][path] [/F] [/A]   /F   显
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2019-11-17 01:31" pubdate>
-                2019-11-17
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
-              
-                <a href="/categories/%E8%BF%90%E7%BB%B4/Linux/">Linux</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Linux/">Linux</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" class="category-chain-item">JavaScript</a>
+  
   
 
+  
+
+      </span>
+    
+  
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/05/15/The-most-frequent-integers-and-times/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/b2ce3ca19c294533975ea8298f4bda3e.jpg" srcset="/img/loading.gif" lazyload alt="输出出现次数最多的整数及其出现次数">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/05/15/The-most-frequent-integers-and-times/" target="_self">
+          输出出现次数最多的整数及其出现次数
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2020/05/15/The-most-frequent-integers-and-times/" target="_self">
+        <div>
+          问题【问题描述】输入一组无序的整数，编程输出其中出现次数最多的整数及其出现次数。 【输入形式】先从标准输入读入整数的个数（大于等于1，小于等于100），然后在下一行输入这些整数，各整数之间以一个空格分隔。 【输出形式】在标准输出上输出出现次数最多的整数及其出现次数，两者以一个空格分隔；若出现次数最多的整数有多个，则按照整数升序分行输出。 【样例输入】12100 -50 0 632 5813 -50
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-15 00:00" pubdate>
+              2020-05-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
+  
+  
 
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/small1149111g4U41607312951.jpg" srcset="/img/loading.gif" alt="Linux常用命令汇总（二）">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/">Linux常用命令汇总（二）</a>
-        </h1>
 
-        <p class="index-excerpt">
-          <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/">
-            
-            
-              
-            
-            总结一些在日常工作中用到的查看磁盘占用的linux命令
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2019-11-10 16:51" pubdate>
-                2019-11-10
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
-              
-                <a href="/categories/%E8%BF%90%E7%BB%B4/Linux/">Linux</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Linux/">Linux</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+      </span>
+    
   
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Java/">#Java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/a9c352ec56a5437a80b8c30000689daf.jpg" srcset="/img/loading.gif" lazyload alt="多项式相加问题的设计与实现方法">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/" target="_self">
+          多项式相加问题的设计与实现方法
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2020/05/02/Design-and-implementation-of-polynomial-addition-problem/" target="_self">
+        <div>
+          多项式相加问题的设计与实现方法问题【问题描述】一个多项式可以表达为x的各次幂与系数乘积的和，比如： 2x6+3x5+12x3+6x+20 也就是对应数学中的$$2x^6+3x^5+12x^3+6x+20$$现在，你的程序要读入两个多项式，然后输出这两个多项式的和，也就是把对应的幂上的系数相加然后输出。 程序要处理的幂最大为100。 【输入形式】总共要输入两个多项式，每个多项式的输入格式如下： 每行
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-02 00:52" pubdate>
+              2020-05-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Java/">#Java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/cbcfcc07e9e3400a849bdd81af78e339.jpg" srcset="/img/loading.gif" lazyload alt="Dropwizard项目构建——pom.xml">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/" target="_self">
+          Dropwizard项目构建——pom.xml
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/11/27/Dropwizard-project-build%E2%80%94%E2%80%94pom/" target="_self">
+        <div>
+          Dropwizard项目构建——pom.xml用IDEA导入项目文件夹，查看pom.xml文件。  pom即 Project Object Model（项目对象模型），它用于描述整个 Maven 项目，所以也称为 Maven 描述文件。   纵观整个pom文件可以分为3部分。  项目描述  项目依赖  项目构建   项目描述12345678&lt;modelVersion&gt;4.0.0&lt;
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-27 22:29" pubdate>
+              2019-11-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Dropwizard/">#Dropwizard</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/b54e7b6fff804b87bbff243c3bd51c78.jpg" srcset="/img/loading.gif" lazyload alt="Dropwizard项目构建——初始化">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
+          Dropwizard项目构建——初始化
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
+        <div>
+          maven创建项目12345678$ mvn -B archetype:generate \ -DarchetypeGroupId=io.dropwizard.archetypes \ -DarchetypeArtifactId=java-simple \ -DarchetypeVersion=2.0.0-rc9\ -DgroupId=com.baoabodz.example.dropwizard
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-20 22:36" pubdate>
+              2019-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/17/tree-command/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/small150753bMRVL1594969673.jpg" srcset="/img/loading.gif" lazyload alt="tree命令用法（CMD/Git Bash/Linux）">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/11/17/tree-command/" target="_self">
+          tree命令用法（CMD/Git Bash/Linux）
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/11/17/tree-command/" target="_self">
+        <div>
+          在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而tree命令就可以实现这种效果。 Windows cmd 的 tree命令在cmd中就集成了tree 命令 使用tree /?查看帮助信息 1234567G:\Dev\workspace\hola&gt;tree /?以图形显示驱动器或路径的文件夹结构。TREE [drive:][path] [/F] [/A]   /F   显
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-17 01:31" pubdate>
+              2019-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-chain-item">运维</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%BF%90%E7%BB%B4/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/small1149111g4U41607312951.jpg" srcset="/img/loading.gif" lazyload alt="Linux常用命令汇总（二）">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
+          Linux常用命令汇总（二）
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
+        <div>
+          总结一些在日常工作中用到的查看磁盘占用的linux命令
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-11-10 16:51" pubdate>
+              2019-11-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-chain-item">运维</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%BF%90%E7%BB%B4/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">#Linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -911,7 +1058,7 @@ Windows cmd 的 tree命令在cmd中就集成了tree 命令
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -930,14 +1077,14 @@ Windows cmd 的 tree命令在cmd中就集成了tree 命令
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
@@ -949,72 +1096,76 @@ Windows cmd 的 tree命令在cmd中就集成了tree 命令
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
 
   
-  <!-- 备案信息 -->
-  <div class="beian">
-    <span>
-      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        苏ICP备2021009200号-1
-      </a>
-    </span>
     
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>苏ICP备2021009200号-1</span>
-          </a>
-        </span>
-      
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
     
-  </div>
-
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
   
-</footer>
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      苏ICP备2021009200号-1
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>苏ICP备2021009200号-1</span>
+        </a>
+      </span>
+    
+  
+</div>
 
-<!-- SCRIPTS -->
+  
+  
+</div>
 
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -1025,34 +1176,23 @@ Windows cmd 的 tree命令在cmd中就集成了tree 命令
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+
 
 
   
-    <script  src="/js/lazyload.js" ></script>
-  
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
-
-
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -1060,54 +1200,17 @@ Windows cmd 的 tree命令在cmd中就集成了tree 命令
 
 
 
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-    <!-- 51.la Analytics -->
-    <script defer type="text/javascript" src="//js.users.51.la/21040841.js"></script>
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
 
-<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script src="/js/change-font.js"></script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
   <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
   <script data-pjax>
         function GithubCalendarConfig(){

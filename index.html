@@ -1,40 +1,63 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="前端博客">
   <meta name="author" content="baobaodz">
   <meta name="keywords" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+  
+    <meta name="description" content="前端博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Baobaodz">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Baobaodz">
+<meta property="og:description" content="前端博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="baobaodz">
+<meta property="article:tag" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>Baobaodz</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -44,19 +67,57 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":false,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21040841.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Baobaodz</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Baobaodz</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -121,7 +182,8 @@
           
           
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
                 作品
               </a>
@@ -173,13 +235,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -188,36 +252,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://image.baobaodz.top/blog%2Fbanner%2Fb54e7b6fff804b879787873bd51c78.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
-              
-                
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://image.baobaodz.top/blog%2Fbanner%2Fb54e7b6fff804b879787873bd51c78.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle">凿破苍苔地，偷他一片天。白云生镜里，明月落阶前。</span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -225,607 +293,743 @@
                 
 
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
+          <img src="https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png" srcset="/img/loading.gif" lazyload alt="【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
+          【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡
+        </a>
+      </h1>
 
-  
-    <div class="row mx-auto index-card">
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
-            <img src="https://document.baobaodz.top/blog/banner/f1e95dc3f388410a9273bb730b43e724.png" srcset="/img/loading.gif" alt="【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡">
-          </a>
+      <a class="index-excerpt " href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
+        <div>
+          效果先看效果  也可查看博客的在线效果 https://baobaodz.top/about/ 缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式/日间模式切换的banner图片。 思路 不改变fluid主题源码的原则下，通过hexo injector注入js代码； 获取夜间模式切换（按钮
         </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-09-02 23:31" pubdate>
+              2022-09-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+              <a href="/tags/Fluid/">#Fluid</a>
+            
+              <a href="/tags/Injector/">#Injector</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
+          <img src="https://image.baobaodz.top/blog%2Fbanner%2FsvkTxA.jpg" srcset="/img/loading.gif" lazyload alt="【VSCode】Windows下VSCode集成zsh">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
+          【VSCode】Windows下VSCode集成zsh
+        </a>
+      </h1>
+
       
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/">【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/">
-            
-            
-              
-            
-            效果先看效果
-
-也可查看博客的在线效果 https://baobaodz.top/about/
-缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式/日间模式切换的banner图片。
-思路
-不改变fluid主题源码的原则下，通过hexo injector注入js代码；
-获取夜间模式切换（按钮
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2022-09-02 23:31" pubdate>
-                2022-09-02
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Hexo/">Hexo</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Hexo/">Hexo</a>
-              
-                <a href="/tags/Fluid/">Fluid</a>
-              
-                <a href="/tags/Injector/">Injector</a>
-              
-            </div>
-          
+      <a class="index-excerpt " href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
+        <div>
+          zsh是什么zsh 官网 : https://www.zsh.org/  oh-my-zsh官网 : http://ohmyz.sh/ zsh是shell语言类型，兼容bash，提供强大的命令行功能，比如tab补全，自动纠错功能等。缺点就是配置太麻烦，好在有一个叫做oh-my-zsh的开源项目，很好的弥补了这一缺陷，只需要修修改改配置文件，就能很顺手。  zsh和 oh-my-zsh的关系 zsh
         </div>
-      </article>
-    </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-14 16:31" pubdate>
+              2022-07-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%B7%A5%E5%85%B7/VSCode/" class="category-chain-item">VSCode</a>
+  
   
 
-
   
-    <div class="row mx-auto index-card">
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/VSCode/">#VSCode</a>
+            
+              <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/1245825.jpg" srcset="/img/loading.gif" lazyload alt="【Angular】本地调试代理转发">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
+          【Angular】本地调试代理转发
+        </a>
+      </h1>
+
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
-            <img src="https://image.baobaodz.top/blog%2Fbanner%2FsvkTxA.jpg" srcset="/img/loading.gif" alt="【VSCode】Windows下VSCode集成zsh">
-          </a>
+      <a class="index-excerpt " href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
+        <div>
+          代理转发在angular项目中本地调试时，经常会遇到跨域的问题，angular也给出了解决方案，通过创建并配置proxy.conf.json 来转发代理，具体可参考官网给出的例子  https://angular.cn/guide/build#proxying-to-a-backend-server  proxy.conf.json 配置 1234567891011121314151617&#12
         </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-13 16:24" pubdate>
+              2022-07-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/12/24/happy-birthday/" target="_self">
+          <img src="https://s3.ax1x.com/2021/03/06/6u5qqP.png" srcset="/img/loading.gif" lazyload alt="happy birthday">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/12/24/happy-birthday/" target="_self">
+          happy birthday
+        </a>
+      </h1>
+
       
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/">【VSCode】Windows下VSCode集成zsh</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/">
-            
-            
-              
-            
-            zsh是什么zsh 官网 : https://www.zsh.org/ 
-oh-my-zsh官网 : http://ohmyz.sh/
-zsh是shell语言类型，兼容bash，提供强大的命令行功能，比如tab补全，自动纠错功能等。缺点就是配置太麻烦，好在有一个叫做oh-my-zsh的开源项目，很好的弥补了这一缺陷，只需要修修改改配置文件，就能很顺手。
-
-zsh和 oh-my-zsh的关系 zsh
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2022-07-14 16:31" pubdate>
-                2022-07-14
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-              
-                <a href="/categories/%E5%B7%A5%E5%85%B7/VSCode/">VSCode</a>
-              
-                <a href="/categories/%E5%B7%A5%E5%85%B7/zsh/">zsh</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/VSCode/">VSCode</a>
-              
-                <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
-              
-            </div>
-          
+      <a class="index-excerpt " href="/2021/12/24/happy-birthday/" target="_self">
+        <div>
+          啊哈
         </div>
-      </article>
-    </div>
-  
+      </a>
 
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-24 22:31" pubdate>
+              2021-12-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%80%BB%E7%BB%93/">#总结</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
-  
-    <div class="row mx-auto index-card">
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/35d264214295410ba85a114246306829.png" srcset="/img/loading.gif" lazyload alt="【Angular】Angular应用启动流程">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
+          【Angular】Angular应用启动流程
+        </a>
+      </h1>
+
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/1245825.jpg" srcset="/img/loading.gif" alt="【Angular】本地调试代理转发">
-          </a>
+      <a class="index-excerpt " href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
+        <div>
+          在ng serve --open后，经过一段时间，Angular应用启动并打开了浏览器，这期间的过程是怎样的呢？Angular是怎样启动的呢？ 由表及里的认识我们不妨从表及里，一层一层的拨开它的神秘面纱。 首先在启动主页F12查看元素，可以看到如下图所示的dom结构。其中app-root这个标签明显不是HTML标签，那它是哪来的，怎么会可以正常挂在上面并显示呢？我们可以去到源码中搜索，发现在ind
         </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-28 18:13" pubdate>
+              2021-03-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/6421e0d29f7d41acb3277bb05ff57a53.png" srcset="/img/loading.gif" lazyload alt="【Angular】VS Code开发Angular常用插件集合">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
+          【Angular】VS Code开发Angular常用插件集合
+        </a>
+      </h1>
+
       
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/">【Angular】本地调试代理转发</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/">
-            
-            
-              
-            
-            代理转发在angular项目中本地调试时，经常会遇到跨域的问题，angular也给出了解决方案，通过创建并配置proxy.conf.json 来转发代理，具体可参考官网给出的例子
-
-https://angular.cn/guide/build#proxying-to-a-backend-server
-
-proxy.conf.json 配置
-1234567891011121314151617&#12
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2022-07-13 16:24" pubdate>
-                2022-07-13
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-            </div>
-          
+      <a class="index-excerpt " href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
+        <div>
+          分享一些我在开发Angular的过程中使用的一些VS Code插件。有些是专门给Angular专门使用的，有些是Web开发通用的插件。 For Angular Angular Snippets (Version 11) 此扩展为TypeScript和HTML添加了Angular的代码片段，使用a-*唤醒。Angular开发必装。  Angular Language ServiceAngular开发
         </div>
-      </article>
-    </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-14 21:55" pubdate>
+              2021-03-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
   
 
-
   
 
-
+      </span>
+    
   
-    <div class="row mx-auto index-card">
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+              <a href="/tags/VSCode/">#VSCode</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/667a7dc563914529ab8158bc88aaa3d8.jpg" srcset="/img/loading.gif" lazyload alt="【Angular】Angular常用命令">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
+          【Angular】Angular常用命令
+        </a>
+      </h1>
+
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/35d264214295410ba85a114246306829.png" srcset="/img/loading.gif" alt="【Angular】Angular应用启动流程">
-          </a>
+      <a class="index-excerpt " href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
+        <div>
+          常用于新建的指令ng init ：在当前目录创建新的应用程序。ng new ：创建新的目录，然后在新建的目录中运行 ng init 命令。  因此 ng new 与 ng init 的功能是相似的，只是 ng new 会为我们创建新的目录。  1234567ng generate class my-new-class					新建 classng generate component my-new
         </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/">【Angular】Angular应用启动流程</a>
-        </h1>
+      </a>
 
-        <p class="index-excerpt">
-          <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/">
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-13 21:09" pubdate>
+              2021-03-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-            
-              
-            
-            在ng serve --open后，经过一段时间，Angular应用启动并打开了浏览器，这期间的过程是怎样的呢？Angular是怎样启动的呢？
-由表及里的认识我们不妨从表及里，一层一层的拨开它的神秘面纱。
-首先在启动主页F12查看元素，可以看到如下图所示的dom结构。其中app-root这个标签明显不是HTML标签，那它是哪来的，怎么会可以正常挂在上面并显示呢？我们可以去到源码中搜索，发现在ind
-          </a>
-        </p>
 
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-28 18:13" pubdate>
-                2021-03-28
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
   
 
-
-  
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/6421e0d29f7d41acb3277bb05ff57a53.png" srcset="/img/loading.gif" alt="【Angular】VS Code开发Angular常用插件集合">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/">【Angular】VS Code开发Angular常用插件集合</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/">
-            
-            
-              
-            
-            分享一些我在开发Angular的过程中使用的一些VS Code插件。有些是专门给Angular专门使用的，有些是Web开发通用的插件。
-For Angular Angular Snippets (Version 11) 此扩展为TypeScript和HTML添加了Angular的代码片段，使用a-*唤醒。Angular开发必装。
-
-Angular Language ServiceAngular开发
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-14 21:55" pubdate>
-                2021-03-14
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-                <a href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-              
-                <a href="/categories/%E5%B7%A5%E5%85%B7/VSCode/">VSCode</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-                <a href="/tags/VSCode/">VSCode</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
   
 
-
+      </span>
+    
   
-    <div class="row mx-auto index-card">
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/35d03b2409a8d1437516753316664d614fbbb43d.jpg" srcset="/img/loading.gif" lazyload alt="【读书笔记】JavaScript高级程序设计-第五章">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/" target="_self">
+          【读书笔记】JavaScript高级程序设计-第五章
+        </a>
+      </h1>
+
       
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/667a7dc563914529ab8158bc88aaa3d8.jpg" srcset="/img/loading.gif" alt="【Angular】Angular常用命令">
-          </a>
+      <a class="index-excerpt " href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/" target="_self">
+        <div>
+          第五章-引用类型
         </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">【Angular】Angular常用命令</a>
-        </h1>
+      </a>
 
-        <p class="index-excerpt">
-          <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-07 19:14" pubdate>
+              2021-03-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
             
-            
-              
-            
-            常用于新建的指令ng init ：在当前目录创建新的应用程序。ng new ：创建新的目录，然后在新建的目录中运行 ng init 命令。
 
-因此 ng new 与 ng init 的功能是相似的，只是 ng new 会为我们创建新的目录。
-
-1234567ng generate class my-new-class					新建 classng generate component my-new
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-13 21:09" pubdate>
-                2021-03-13
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+<span class="category-chains">
   
-
-
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/35d03b2409a8d1437516753316664d614fbbb43d.jpg" srcset="/img/loading.gif" alt="【读书笔记】JavaScript高级程序设计-第五章">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/">【读书笔记】JavaScript高级程序设计-第五章</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/">
-            
-            
-              
-            
-            第五章-引用类型                            
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-07 19:14" pubdate>
-                2021-03-07
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-              
-                <a href="/categories/%E8%AF%BB%E4%B9%A6/%E6%8A%80%E6%9C%AF/">技术</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/">JavaScript</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/JavaScript/">JavaScript</a>
-              
-                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" class="category-chain-item">JavaScript</a>
+  
   
 
-
-  
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/6a84399bef1947cba8eb47bfcef09b1a.png" srcset="/img/loading.gif" alt="【Angular】Angular项目目录结构认识">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/">【Angular】Angular项目目录结构认识</a>
-        </h1>
-
-        <p class="index-excerpt">
-          <a href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/">
-            
-            
-              
-            
-            首先我的angular版本为
-123Angular CLI: 11.2.3Node: 12.21.0OS: win32 x64
-构建Angular项目三步走
-123ng new my-appcd my-appng serve --open
-第一步除了生成项目结构目录之外，还需要下载项目构建所需要的的依赖包，也就是node_modules目录，会比较慢。
-之后ng serve –open 自动打开浏
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-06 22:31" pubdate>
-                2021-03-06
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
   
 
+      </span>
+    
+  
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/6a84399bef1947cba8eb47bfcef09b1a.png" srcset="/img/loading.gif" lazyload alt="【Angular】Angular项目目录结构认识">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/" target="_self">
+          【Angular】Angular项目目录结构认识
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/03/06/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AE%A4%E8%AF%86/" target="_self">
+        <div>
+          首先我的angular版本为 123Angular CLI: 11.2.3Node: 12.21.0OS: win32 x64 构建Angular项目三步走 123ng new my-appcd my-appng serve --open 第一步除了生成项目结构目录之外，还需要下载项目构建所需要的的依赖包，也就是node_modules目录，会比较慢。 之后ng serve –open 自动打开浏
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-06 22:31" pubdate>
+              2021-03-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
+  
 
   
-    <div class="row mx-auto index-card">
-      
-      
-        <div class="col-12 col-md-4 m-auto index-img">
-          <a href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/" target="_self">
-            <img src="https://image.baobaodz.top/blog/banner/9d24be1b931c444d8b9f362b5ada2205.jpg" srcset="/img/loading.gif" alt="【Angular】一次升级node并卸载angular的记录">
-          </a>
-        </div>
-      
-      <article class="col-12 col-md-8 mx-auto index-info">
-        <h1 class="index-header">
-          
-          <a href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/">【Angular】一次升级node并卸载angular的记录</a>
-        </h1>
 
-        <p class="index-excerpt">
-          <a href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/">
-            
-            
-              
-            
-            ng -v报错
-123456baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev$ ng -vNode.js version v11.0.0 detected.The Angular CLI requires a minimum Node.js version of either v10.13 or v12.0.Please update your Node.js ver
-          </a>
-        </p>
-
-        <div class="index-btm post-metas">
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-date"></i>
-              <time datetime="2021-03-04 22:31" pubdate>
-                2021-03-04
-              </time>
-            </div>
-          
-          
-            <div class="post-meta mr-3">
-              <i class="iconfont icon-category"></i>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-              
-                <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/">Angular</a>
-              
-            </div>
-          
-          
-            <div class="post-meta">
-              <i class="iconfont icon-tags"></i>
-              
-                <a href="/tags/Angular/">Angular</a>
-              
-                <a href="/tags/node/">node</a>
-              
-                <a href="/tags/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
-              
-            </div>
-          
-        </div>
-      </article>
-    </div>
+      </span>
+    
   
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/" target="_self">
+          <img src="https://image.baobaodz.top/blog/banner/9d24be1b931c444d8b9f362b5ada2205.jpg" srcset="/img/loading.gif" lazyload alt="【Angular】一次升级node并卸载angular的记录">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/" target="_self">
+          【Angular】一次升级node并卸载angular的记录
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/03/04/%E3%80%90Angular%E3%80%91%E4%B8%80%E6%AC%A1%E5%8D%87%E7%BA%A7node%E5%B9%B6%E5%8D%B8%E8%BD%BDangular%E7%9A%84%E8%AE%B0%E5%BD%95/" target="_self">
+        <div>
+          ng -v报错 123456baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev$ ng -vNode.js version v11.0.0 detected.The Angular CLI requires a minimum Node.js version of either v10.13 or v12.0.Please update your Node.js ver
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-04 22:31" pubdate>
+              2021-03-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Angular/">#Angular</a>
+            
+              <a href="/tags/node/">#node</a>
+            
+              <a href="/tags/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">#问题记录</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -837,7 +1041,7 @@ Angular Language ServiceAngular开发
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -856,14 +1060,14 @@ Angular Language ServiceAngular开发
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
@@ -875,72 +1079,76 @@ Angular Language ServiceAngular开发
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
 
   
-  <!-- 备案信息 -->
-  <div class="beian">
-    <span>
-      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-        苏ICP备2021009200号-1
-      </a>
-    </span>
     
-      
-        <span>
-          <a
-            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
-            rel="nofollow noopener"
-            class="beian-police"
-            target="_blank"
-          >
-            
-              <span style="visibility: hidden; width: 0">|</span>
-              <img src="/img/police_beian.png" srcset="/img/loading.gif" alt="police-icon"/>
-            
-            <span>苏ICP备2021009200号-1</span>
-          </a>
-        </span>
-      
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
     
-  </div>
-
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
 
   
-</footer>
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      苏ICP备2021009200号-1
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>苏ICP备2021009200号-1</span>
+        </a>
+      </span>
+    
+  
+</div>
 
-<!-- SCRIPTS -->
+  
+  
+</div>
 
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -951,34 +1159,23 @@ Angular Language ServiceAngular开发
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+
 
 
   
-    <script  src="/js/lazyload.js" ></script>
-  
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
-
-
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -986,54 +1183,17 @@ Angular Language ServiceAngular开发
 
 
 
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-    <!-- 51.la Analytics -->
-    <script defer type="text/javascript" src="//js.users.51.la/21040841.js"></script>
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
 
-<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script src="/js/change-font.js"></script>
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
   <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
   <script data-pjax>
         function GithubCalendarConfig(){
