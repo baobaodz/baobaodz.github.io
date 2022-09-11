@@ -1,8 +1,6 @@
 (function() {
     var colorSchemaStorageKey = 'Fluid_Color_Scheme';
     var colorSchemaMediaQueryKey = '--color-mode';
-    var colorToggleButtonName = 'color-toggle-btn';
-    var colorToggleIconName = 'color-toggle-icon';
     var bannerIdName = 'banner';
     var baseUrl = 'https://document.baobaodz.top/blog/banner';
 

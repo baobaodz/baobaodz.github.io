@@ -37,9 +37,9 @@
     }
 
 
-    var homeSubtitleIdName = 'subtitle';
+    var homeSubtitleSelector = '#subtitle';
     var typedJsSrc = 'https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js';
-    Fluid.utils.waitElementLoaded(homeSubtitleIdName, function() {
+    Fluid.utils.waitElementLoaded(homeSubtitleSelector, function() {
 
         var scripts = document.getElementsByTagName("script");
         // for (var script of scripts) {
@@ -58,11 +58,11 @@
         // if (theme.index.slogan.api && theme.index.slogan.api.enable) {
         //     return;
         // }
-        var subtitle = document.getElementById(homeSubtitleIdName);
+
+        var subtitle = document.querySelector(homeSubtitleSelector);
         var typing = Fluid.plugins.typing;
         if (subtitle) {
             if (location.pathname !== '/') {
-                typing(subtitle.title);
                 return;
             }
             subtitle.style.fontFamily = 'SimSun';
@@ -97,12 +97,10 @@
                 },
                 error: function(err) {
                     console.log('🚀 ~ file: change-font.js ~ line 115 ~ Fluid.utils.waitElementLoaded ~ err', err);
-                    // typing(getText(1, subtitle.title))
+                    typing(getText(1, text))
                 }
             })
         }
-        // setTimeout(() => {
-        // }, 2000)
 
     });
 
