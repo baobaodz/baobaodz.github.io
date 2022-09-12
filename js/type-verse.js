@@ -38,71 +38,48 @@
 
 
     var homeSubtitleSelector = '#subtitle';
-    var typedJsSrc = 'https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js';
     Fluid.utils.waitElementLoaded(homeSubtitleSelector, function() {
 
-        var scripts = document.getElementsByTagName("script");
-        // for (var script of scripts) {
-        //     if (script.src && script.src.includes('typed.min.js')) {
-        //         typedJsSrc = script.src;
-        //         console.log('🚀 ~ file: change-font.js ~ line 68 ~ script', script);
-        //         script.nextElementSibling.remove();
-        //         script.remove();
-        //         break;
-        //     }
-        // }
-        console.log('🚀 ~ file: change-font.js ~ line 77 ~ Fluid.utils.waitElementLoaded ~ hexo.config', CONFIG);
-        // if (theme.fun_features.typing.enable && page.subtitle !== false) {
-        //     return;
-        // }
-        // if (theme.index.slogan.api && theme.index.slogan.api.enable) {
-        //     return;
-        // }
-
         var subtitle = document.querySelector(homeSubtitleSelector);
+        var defaultText = '凿破苍苔地，偷他一片天。白云生镜里，明月落阶前。';
+        var text = subtitle.getAttribute('data-typed-text') || defaultText;
         var typing = Fluid.plugins.typing;
         if (subtitle) {
+            // 只在home页生效
             if (location.pathname !== '/') {
                 return;
             }
             subtitle.style.fontFamily = 'SimSun';
-            // var text = getText(1, subtitle.title);
-            // console.log('🚀 ~ file: change-font.js ~ line 71 ~ Fluid.utils.waitElementLoaded ~ text', text);
-            // subtitle.innerHTML = text;
-            // subtitle.title = text;
             $.ajax({
                 type: 'GET',
                 url: 'https://v1.jinrishici.com/all.json',
                 headers: {},
                 dataType: 'json',
                 success: function(result) {
-                    var text;
+                    var apiText;
                     if (result) {
-                        var keys = 'content'.split('.')
+                        var keys = 'content'.split(',')
                         if (result instanceof Array) {
                             result = result[0]
                         }
                         for (const k of keys) {
                             var value = result[k]
                             if (typeof value === 'string') {
-                                text = getText(1, value);
-                                console.log('🚀 ~ file: change-font.js ~ line 89 ~ setTimeout ~ text', text);
+                                apiText = getText(1, value);
                                 break
                             } else if (value instanceof Object) {
                                 result = value
                             }
                         }
                     }
-                    text ? typing(text) : typing(getText(1, subtitle.title));
+                    apiText ? typing(apiText) : typing(getText(1, text));
                 },
                 error: function(err) {
-                    console.log('🚀 ~ file: change-font.js ~ line 115 ~ Fluid.utils.waitElementLoaded ~ err', err);
                     typing(getText(1, text))
                 }
             })
         }
 
     });
-
 
 })();
