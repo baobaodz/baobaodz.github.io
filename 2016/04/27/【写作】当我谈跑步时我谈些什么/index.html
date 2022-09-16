@@ -1,0 +1,831 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="baobaodz">
+  <meta name="keywords" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
+  
+    <meta name="description" content="看完村上春树的《当我谈跑步时我谈些什么》后，深深被他的真诚与质朴所打动。在书中，村上先生讲述了他参加马拉松长跑的经历与其间的感悟与感受，谈到了小说的创作，谈到了人生半百的追求，他的文字没有汗气蒸腾的的宣泄，没有烈日灼心的枯燥，只有汩汩清泉的舒畅，让人如沐春风。  村上先生将小说创作与跑步联系起来，大概是他20多年来长跑积累所得。但要我谈跑步时，我恐怕没什么可谈，我的跑步经历相对于村上先生的来说可谓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【写作】当我谈跑步时我谈些什么">
+<meta property="og:url" content="http://example.com/2016/04/27/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E5%BD%93%E6%88%91%E8%B0%88%E8%B7%91%E6%AD%A5%E6%97%B6%E6%88%91%E8%B0%88%E4%BA%9B%E4%BB%80%E4%B9%88/index.html">
+<meta property="og:site_name" content="Baobaodz">
+<meta property="og:description" content="看完村上春树的《当我谈跑步时我谈些什么》后，深深被他的真诚与质朴所打动。在书中，村上先生讲述了他参加马拉松长跑的经历与其间的感悟与感受，谈到了小说的创作，谈到了人生半百的追求，他的文字没有汗气蒸腾的的宣泄，没有烈日灼心的枯燥，只有汩汩清泉的舒畅，让人如沐春风。  村上先生将小说创作与跑步联系起来，大概是他20多年来长跑积累所得。但要我谈跑步时，我恐怕没什么可谈，我的跑步经历相对于村上先生的来说可谓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.baobaodz.top/blog/banner/cd3142a1141649a2afb91fcf1b006b6d.png">
+<meta property="article:published_time" content="2016-04-27T08:01:56.000Z">
+<meta property="article:modified_time" content="2022-09-16T17:51:52.019Z">
+<meta property="article:author" content="baobaodz">
+<meta property="article:tag" content="写作">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://image.baobaodz.top/blog/banner/cd3142a1141649a2afb91fcf1b006b6d.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>【写作】当我谈跑步时我谈些什么 - Baobaodz</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_2318976_4viifbpw5fg.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <!-- 51.la Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('//js.users.51.la/21040841.js');
+      }
+    </script>
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Baobaodz</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-el-icon-zhy-zhuye"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-guidang1"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-fenlei"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-biaoqian"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-xiangmuguanli"></i>
+                作品
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/project/">
+                    <i class="iconfont icon-daima"></i>
+                    个人项目
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/2021/01/10/photography">
+                    <i class="iconfont icon-photo"></i>
+                    摄影作品
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-wo"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://image.baobaodz.top/blog/banner/cd3142a1141649a2afb91fcf1b006b6d.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【写作】当我谈跑步时我谈些什么"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        baobaodz
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2016-04-27 16:01" pubdate>
+          2016年4月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【写作】当我谈跑步时我谈些什么</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年9月17日 凌晨
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>看完村上春树的《当我谈跑步时我谈些什么》后，深深被他的真诚与质朴所打动。在书中，村上先生讲述了他参加马拉松长跑的经历与其间的感悟与感受，谈到了小说的创作，谈到了人生半百的追求，他的文字没有汗气蒸腾的的宣泄，没有烈日灼心的枯燥，只有汩汩清泉的舒畅，让人如沐春风。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1354789-28e22e090ca6cfca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300/format/webp" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>村上先生将小说创作与跑步联系起来，大概是他20多年来长跑积累所得。但要我谈跑步时，我恐怕没什么可谈，我的跑步经历相对于村上先生的来说可谓是小巫见大巫，不值一提。但我又想谈些什么，虽然我不是一个小说家，也不是一个专业的长跑者，但总想将自己关于跑步的感悟诉诸于文字。</p>
+<p>我小时候是个病秧子，因为大病小病我经常被妈妈带着四处奔波于各个医院，而且我喜欢挑食，营养不良导致很瘦，跑步跑不过人家经常受欺负，但我在学习上很用心，也因为那时三好学生只以成绩为评选标准，所以年年拿奖状，年年当三好学生，但真要论体育成绩的话，班上的人能甩我两条街，然而记忆中的体育课都是玩玩闹闹，没有什么考试，更没有什么成绩。那时我无疑是幸运的。可这幸运也是有代价的。代价就是我的身体素质很低，到现在我才明白需要多少努力才能弥补。</p>
+<p>跑步进入我的生活是在初中，那时年级统一晨跑，大课间跑，但从小不愿锻炼的我对此很抗拒。可是我很快就适应了，就像适应在各个医院奔波一样。但我清楚那是没有灵魂的跑步，身心异处，像一堆羊群被牧人赶着，被牧羊狗看着，还要高唱着歌颂曲和励志调。可羊群那么懦弱，在固定的草地上吃了一年又一年的草，被赶了一圈又一圈。虽说我的体质有点增强，但影响最深的还是我对这种矩阵式的机械跑的反感，以致我这个老师眼中的好学生，乖学生竟然也旷跑，现在想想我无非是不断地在制度的高墙上撞了又撞，然后某一天搬来了一个梯子，想看看外面的世界罢了。</p>
+<p>我不仅讨厌被驱赶的感觉，更不喜欢和一群人跑，这大概与我的性格有关。我内向不善于与别人打交道，我更喜欢一个人做自己喜欢的事情。因此，当我心情压抑时，我也不与人倾诉，我经常一个人去操场，一边跑步一边将心事诉诸于耳边的风。当我放肆跑时，我觉得风最能抚慰我浮躁悸动的心，蒸腾的汗最能使我感受到虚脱的慰藉，漆黑的夜最能将无声的呜咽与黑暗吞咽，然后在每次转弯时吐出一点光亮，告诉我，前方还有路，继续跑吧。</p>
+<p>临近高考时，我得知我暗恋的女生晚自习经常去跑步，我下定决心晚上制造一次邂逅，但又怕逃课被老师逮到，于是借口上厕所，溜之大吉。当我跑到操场时，借着月光，我清楚地看到了她。她跑的特别快，长发在风中飘舞。我追赶上去，假装碰巧遇到，但很明显，她早已知道我逃课而来，但她不说话，跑步已使她不能说话，她微微的喘着气。我们就这样跑了一圈又一圈。我忽然想起一句话：我们不说话，就十分美好。但我又忽然发现，这美好是多么的短暂，我喘着粗气，渐渐被她落下，她跑的那么快而又有节奏。我跟不上她的节奏，我在我的节奏里已经应接不暇，我只能目送她消失在沉沉的夜色中，然后任黑夜吞并所有的黑暗，只留下一缕一缕的发香，拨动心上的那根弦，然后我告诉我自己，歇歇吧，她还会来。</p>
+<p>但她没来。我渐渐明白，爱恋就像跑步，两个人如果不在一个节奏，注定无缘。你赶上她的节奏，你很快会累的落下；她放慢她的节奏，也许会错过更多的风景。我在我的节奏里已经很累，只能在她与我擦肩而过的瞬间，说句“嗨，这么巧”，或许在她需要的时候推她一把，仅此而已。再远，我只能目送着她背影远去。再远，我就什么也看不到了。</p>
+<p>我真正喜欢跑步是在高中毕业后，我觉得生活充满了可能，我觉得我可以通过锻炼改变我的节奏，我感觉我做到了。但我此时已经不奢求追赶上谁了。我不再等待着，也不会追逐着，我的节奏里，我就是自己的神。步入大学，跑步已经逐渐成为我的一个习惯。我曾经说，努力很简单，坚持却很难。我已经坚持了几乎每天晚上去操场跑步，除去雾霾天。我觉得坚持了很久之后就不是坚持了，而是一种习惯。就像刷牙洗脸，一日三餐。养成习惯的过程就是坚持的过程。坚持下去的动力是我由衷的喜欢这项运动，无论是为小时的孱弱买账，还是对集体跑步的反感，亦或是对青春纯真爱恋的怀念，我都照单全收，毫无保留的表示我对跑步的喜爱。</p>
+<img src="https://upload-images.jianshu.io/upload_images/1354789-61e1539fe4a46439.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/970/format/webp" srcset="/img/loading.gif" lazyload alt="img" style="zoom:67%;" />
+
+
+
+<p>村上春树说“同样是十年，与其稀里糊涂地活过，目的明确、生气勃勃地活当然令人远为满意。跑步无疑大有魅力：在个人的局限中，可以让自己有限的燃烧——哪怕是一丁点儿，这便是跑步一事的本质，也是活着（在我来说还有写作）一事的隐喻。”我感觉，我在跑步时，也会体会到我的局限。无论是体力上的局限，还是思维见识上的局限。我跑的路还很少，也没有阿甘的跑步天赋。只能靠着每天的练习，当然，我跑步的目的也并不是为了参加各种比赛。但我很想跑步穿过一座一座的城市，亲历属于自己的风景，留下自己成长的脚印。仅此而已。</p>
+<p>我还有好多路要走，要跑。至少在青春岁月，大汗淋漓，不留遗憾。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%86%99%E4%BD%9C/" class="category-chain-item">写作</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%86%99%E4%BD%9C/">#写作</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【写作】当我谈跑步时我谈些什么</div>
+      <div>http://example.com/2016/04/27/【写作】当我谈跑步时我谈些什么/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>baobaodz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2016年4月27日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2016/05/04/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E5%BD%92/" title="【写作】归">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【写作】归</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'baobaodz/baobaodz.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'blog');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"> <link href="https://fonts.googlefonts.cn/css?family=Ubuntu:300,400" rel="stylesheet">
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br/> <script type="text/javascript" src="https://js.users.51.la/21040841.js"></script> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      苏ICP备2021009200号-1
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=18061978"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>苏ICP备2021009200号-1</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+        <script>
+            (function(window, document) {
+                var typing = Fluid.plugins.typing;
+                var subtitle = document.getElementById('subtitle');
+                if (!subtitle || !typing) {
+                    return;
+                }
+                var text = subtitle.getAttribute('data-typed-text');
+                
+                typing(text);
+                
+            })(window, document);
+        </script>
+        
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?baobaodz";
+            var git_color =['#ebedf0', '#9be9a8', '#40c463', '#30a14', '#22863a', '#176f2c', '#165c26', '#216e39'];
+            var git_user ="baobaodz";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="github-calendar" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/about/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body>
+</html>

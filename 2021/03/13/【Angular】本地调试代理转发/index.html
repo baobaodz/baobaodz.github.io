@@ -16,26 +16,26 @@
   <meta name="author" content="baobaodz">
   <meta name="keywords" content="前端博客,Angular,typescript,Vue,JavaScript,html5,css3,记录,总结,心得">
   
-    <meta name="description" content="代理转发在angular项目中本地调试时，经常会遇到跨域的问题，angular也给出了解决方案，通过创建并配置proxy.conf.json 来转发代理，具体可参考官网给出的例子  https:&#x2F;&#x2F;angular.cn&#x2F;guide&#x2F;build#proxying-to-a-backend-server  proxy.conf.json 配置 1234567891011121314151617&amp;#12">
+    <meta name="description" content="常用于新建的指令ng init ：在当前目录创建新的应用程序。ng new ：创建新的目录，然后在新建的目录中运行 ng init 命令。  因此 ng new 与 ng init 的功能是相似的，只是 ng new 会为我们创建新的目录。  1234567ng generate class my-new-class					新建 classng generate component my-new">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Angular】本地调试代理转发">
-<meta property="og:url" content="http://example.com/2022/07/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/index.html">
+<meta property="og:title" content="【Angular】Angular常用命令">
+<meta property="og:url" content="http://example.com/2021/03/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/index.html">
 <meta property="og:site_name" content="Baobaodz">
-<meta property="og:description" content="代理转发在angular项目中本地调试时，经常会遇到跨域的问题，angular也给出了解决方案，通过创建并配置proxy.conf.json 来转发代理，具体可参考官网给出的例子  https:&#x2F;&#x2F;angular.cn&#x2F;guide&#x2F;build#proxying-to-a-backend-server  proxy.conf.json 配置 1234567891011121314151617&amp;#12">
+<meta property="og:description" content="常用于新建的指令ng init ：在当前目录创建新的应用程序。ng new ：创建新的目录，然后在新建的目录中运行 ng init 命令。  因此 ng new 与 ng init 的功能是相似的，只是 ng new 会为我们创建新的目录。  1234567ng generate class my-new-class					新建 classng generate component my-new">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://image.baobaodz.top/blog/banner/1245825.jpg">
-<meta property="article:published_time" content="2022-07-13T08:24:56.000Z">
-<meta property="article:modified_time" content="2022-09-04T13:57:57.901Z">
+<meta property="og:image" content="https://image.baobaodz.top/blog/banner/667a7dc563914529ab8158bc88aaa3d8.jpg">
+<meta property="article:published_time" content="2021-03-13T13:09:03.000Z">
+<meta property="article:modified_time" content="2022-09-04T13:58:07.005Z">
 <meta property="article:author" content="baobaodz">
 <meta property="article:tag" content="Angular">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://image.baobaodz.top/blog/banner/1245825.jpg">
+<meta name="twitter:image" content="https://image.baobaodz.top/blog/banner/667a7dc563914529ab8158bc88aaa3d8.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>【Angular】本地调试代理转发 - Baobaodz</title>
+  <title>【Angular】Angular常用命令 - Baobaodz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -265,13 +265,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://image.baobaodz.top/blog/banner/1245825.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://image.baobaodz.top/blog/banner/667a7dc563914529ab8158bc88aaa3d8.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="【Angular】本地调试代理转发"></span>
+            <span id="subtitle" data-typed-text="【Angular】Angular常用命令"></span>
           
         </div>
 
@@ -287,8 +287,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-13 16:24" pubdate>
-          2022年7月13日 下午
+        <time datetime="2021-03-13 21:09" pubdate>
+          2021年3月13日 晚上
         </time>
       </span>
     
@@ -299,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.9k 字
+          887 字
         
       </span>
     
@@ -310,7 +310,7 @@
         
         
         
-          13 分钟
+          3 分钟
         
       </span>
     
@@ -356,7 +356,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【Angular】本地调试代理转发</h1>
+            <h1 style="display: none">【Angular】Angular常用命令</h1>
             
               <p class="note note-info">
                 
@@ -369,45 +369,20 @@
             
               <div class="markdown-body">
                 
-                <h3 id="代理转发"><a href="#代理转发" class="headerlink" title="代理转发"></a>代理转发</h3><p>在angular项目中本地调试时，经常会遇到跨域的问题，angular也给出了解决方案，通过创建并配置<code>proxy.conf.json</code> 来转发代理，具体可参考官网给出的例子</p>
+                <h2 id="常用于新建的指令"><a href="#常用于新建的指令" class="headerlink" title="常用于新建的指令"></a>常用于新建的指令</h2><p><strong>ng init</strong> ：在当前目录创建新的应用程序。<br><strong>ng new</strong> ：创建新的目录，然后在新建的目录中运行 ng init 命令。</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://angular.cn/guide/build#proxying-to-a-backend-server">https://angular.cn/guide/build#proxying-to-a-backend-server</a></p>
+<p>因此 ng new 与 ng init 的功能是相似的，只是 ng new 会为我们创建新的目录。</p>
 </blockquote>
-<p><code>proxy.conf.json</code> 配置</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JSON">&#123;<br>  <span class="hljs-attr">&quot;/api&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-attr">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// 如果你要访问的后端不在 localhost 上，还要设置 changeOrigin 选项</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;/facade&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-attr">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span><br>  &#125;,<br>  <span class="hljs-attr">&quot;/coapi&quot;</span>: &#123;<br>    <span class="hljs-attr">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-attr">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><code>package.json</code> 配置：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JSON">&quot;scripts&quot;: &#123;<br>  &quot;start:dev&quot;: &quot;ng serve --proxy-config proxy.dev.json --disable-host-check --port 7110&quot;,<br>&#125;,<br></code></pre></td></tr></table></figure>
-<p>执行时 <code>npm run start:dev</code> 即可特定的 <code>URL</code> 转发给后端服务器，从而达到本地调试的目的。</p>
-<h3 id="登录跳转-手动操作"><a href="#登录跳转-手动操作" class="headerlink" title="登录跳转-手动操作"></a>登录跳转-手动操作</h3><p>然而再实际开发中，代理的网址往往还需要登录，启动服务后发现会跳转到登录页面。究其本质，是本地启动服务缺少了正常访问的<code>token</code>和<code>cookie</code>。基本上有两种方法</p>
-<h4 id="1、手动复制Cookies"><a href="#1、手动复制Cookies" class="headerlink" title="1、手动复制Cookies"></a>1、手动复制<code>Cookies</code></h4><p>将登录的网站中<code>application</code>里的<code>Cookies</code>里的<code>refresh_token</code>和<code>access_token </code>复制到本地调试的网站里，比如下图的<a target="_blank" rel="noopener" href="http://localhost:7110/"><code>http://localhost:7110</code></a><a target="_blank" rel="noopener" href="http://localhost:7110/">中</a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jR0m79"><img src="https://s1.ax1x.com/2022/07/13/jR0m79.png" srcset="/img/loading.gif" lazyload alt="cookie"></a></p>
-<h4 id="2、proxy-conf-json-配置"><a href="#2、proxy-conf-json-配置" class="headerlink" title="2、proxy.conf.json 配置"></a>2、<code>proxy.conf.json</code> 配置</h4><p>找到一个真实请求，将<code>Request Headers</code>的<code>cookie</code>的内容复制到 下面的<code>headers</code>的<code>Cookie</code>选项中，其实只要<code>refresh_token</code>和<code>access_token</code>就可以了</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">&#123;<br>  <span class="hljs-string">&quot;/api&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-string">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-string">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 如果你要访问的后端不在 localhost 上，还要设置 changeOrigin 选项</span><br>    <span class="hljs-string">&quot;headers&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;refresh_token=a5074880de7843b6875fb0a06160c5f5; access_token=xxx&quot;</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;/facade&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-string">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-string">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-string">&quot;headers&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;refresh_token=a5074880de7843b6875fb0a06160c5f5; access_token=xxx&quot;</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;/coapi&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;target&quot;</span>: <span class="hljs-string">&quot;http://baobaodz.top&quot;</span>,<br>    <span class="hljs-string">&quot;secure&quot;</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-string">&quot;changeOrigin&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-string">&quot;headers&quot;</span>: &#123;<br>      <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;refresh_token=a5074880de7843b6875fb0a06160c5f5; access_token=xxx&quot;</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>本质上是在发请求的时候模拟<code>Request Headers</code>的<code>cookie</code></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jR0TuF"><img src="https://s1.ax1x.com/2022/07/13/jR0TuF.png" srcset="/img/loading.gif" lazyload alt="请求头"></a></p>
-<h3 id="登录跳转-自动操作"><a href="#登录跳转-自动操作" class="headerlink" title="登录跳转-自动操作"></a>登录跳转-自动操作</h3><p>无论是手动复制<code>Cookies</code> 还是 复制了token 配置到 <code>proxy.conf.json</code> 文件中，都需手动找到然后复制一连串的数字，比较麻烦。是否可以通过接口拿到<code>refresh_token</code>和<code>access_token</code>，再通过代码注入到代理的配置中呢？</p>
-<p>官网上确实给出了实现的可能，发出请求前先动态修改一下，可以添加 <code>bypass</code> 选项</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://angular.cn/guide/build#bypass-the-proxy">https://angular.cn/guide/build#bypass-the-proxy</a></p>
-</blockquote>
-<p>结合<code>bypaas</code>, 对于想自动登录跳转，就有了新的思路。</p>
-<p>需要新建对应的<code>proxy.conf.js</code> 文件</p>
-<p>安装<code>axios</code>，用于执行<code>http</code>请求 <code>npm install -save-dev axios</code></p>
-<p>具体逻辑如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 参考配置 https://angular.cn/guide/build#proxy-multiple-entries</span><br><span class="hljs-comment">// 更多配置 https://webpack.js.org/configuration/dev-server/#devserver-proxy</span><br><span class="hljs-comment">// 文件说明 通过调用登录接口，获取返回的数据拼成cookie赋值到代理的请求头里，无需手动配置任何token，即起即用</span><br><span class="hljs-comment">// 具体使用 1、npm install -save-dev axios 2、npm run start:devjs</span><br><span class="hljs-keyword">var</span> axios = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;axios&#x27;</span>);<br><span class="hljs-keyword">var</span> cookie;<br><span class="hljs-keyword">var</span> loginInfo = &#123;<br>    url: <span class="hljs-string">&#x27;http://xxx/user/v2/login/account&#x27;</span>, <span class="hljs-comment">// 登录目标网站的接口</span><br>    user: &#123;<br>        account: <span class="hljs-string">&quot;17687711936&quot;</span>,<br>        password: <span class="hljs-string">&quot;xxx&quot;</span> <span class="hljs-comment">// 可能是原始密码，也可能是加密后的密码，以接口入参为准</span><br>    &#125;,<br>    proxyContext: [<span class="hljs-string">&quot;/api&quot;</span>, <span class="hljs-string">&quot;/coapi&quot;</span>, <span class="hljs-string">&quot;/facade&quot;</span>],<br>    proxyTarget: <span class="hljs-string">&#x27;http://baobaodz.top/&#x27;</span><br>&#125;<br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loginAndGetCookie</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> axios.post(loginInfo.url, loginInfo.user);<br>    <span class="hljs-keyword">if</span> (response.status === <span class="hljs-number">200</span> &amp;&amp; response.data &amp;&amp; response.data.code === <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>        cookie = <span class="hljs-string">&#x27;refresh_token=&#x27;</span> + response.data.info.refresh_token + <span class="hljs-string">&#x27;;access_token=&#x27;</span> + response.data.info.access_token;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;[LOGIN] cookie: &quot;</span>, cookie);<br>    &#125;<br>&#125;<br>loginAndGetCookie(); <span class="hljs-comment">// 先登录</span><br>PROXY_CONFIG = [<br>    &#123;<br>        context: loginInfo.proxyContext,<br>        target: loginInfo.proxyTarget,<br>        secure: <span class="hljs-literal">false</span>,<br>        changeOrigin: <span class="hljs-literal">true</span>,<br>        bypass: <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, proxyOptions</span>) </span>&#123;<br>            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;🚀 ~ file: proxy.dev.js ~ line 32 ~ byPass ~ proxyOptions&quot;</span>, proxyOptions);<br>            proxyOptions[<span class="hljs-string">&#x27;headers&#x27;</span>][<span class="hljs-string">&#x27;Cookie&#x27;</span>] = cookie || <span class="hljs-string">&#x27;&#x27;</span>;<br>            <span class="hljs-keyword">if</span> (!cookie) &#123;<br>                loginAndGetCookie();<br>                proxyOptions[<span class="hljs-string">&#x27;headers&#x27;</span>][<span class="hljs-string">&#x27;Cookie&#x27;</span>] = cookie || <span class="hljs-string">&#x27;&#x27;</span>;<br>            &#125; <br>        &#125;,<br>        headers: &#123;<br>            Cookie: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// 动态填入</span><br>        &#125;,<br>    &#125;<br>]<br><span class="hljs-built_in">module</span>.exports = PROXY_CONFIG;<br></code></pre></td></tr></table></figure>
-<p><code>package.json</code> 配置：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JSON">&quot;scripts&quot;: &#123;<br>  &quot;start:dev&quot;: &quot;ng serve --proxy-config proxy.dev.json --disable-host-check --port 7110&quot;,<br>  &quot;start:devjs&quot;: &quot;ng serve --proxy-config proxy.dev.js --disable-host-check --port 7110&quot;,<br>&#125;,<br></code></pre></td></tr></table></figure>
-<p>执行<code>npm run start:devjs</code>，查看控制台日志</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jR07B4"><img src="https://s1.ax1x.com/2022/07/13/jR07B4.png" srcset="/img/loading.gif" lazyload alt="日志"></a></p>
-<p>看启动日志中的<code>proxyOptions </code>可以看到<code>Cookie</code>已经被填入，访问本地调试网站，也自动登录了进去。</p>
-<h3 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h3><h4 id="1、不引入额外的网络请求库axios"><a href="#1、不引入额外的网络请求库axios" class="headerlink" title="1、不引入额外的网络请求库axios"></a>1、不引入额外的网络请求库<code>axios</code></h4><p>毕竟<code>Angular</code>项目中使用的均为<code>HttpCilent </code>进行请求调用，在<code>proxy.conf.js</code> 中却引入了另外一个请求库<code>axios</code>，如果能一以贯之，不另外引入其他的库，想必是很好的。无奈本人技术水平有限，在<code>ts</code>的<code>constructor</code>中直接注入，在<code>js</code>中我就不会怎么注入<code>Http</code>了</p>
-<h4 id="2、利用node热更新实现失效cookie自动更新"><a href="#2、利用node热更新实现失效cookie自动更新" class="headerlink" title="2、利用node热更新实现失效cookie自动更新"></a>2、利用<code>node</code>热更新实现失效<code>cookie</code>自动更新</h4><p>虽然通过上述操作解决了手动处理的麻烦，但是存在这种情况，当原网站的登录<code>cookie</code>失效后，需要重新登录，重新生成<code>cookie</code>，这个在<code>bypass</code>中是感知不到的，相应的本地调试也跳转到了登录页。虽然说重新执行<code>npm run start:devjs</code> 重新获取一次<code>cookie</code>就可以了，但是对于短时间内频繁登录失效的网站来说，也是一个很头疼的事情（虽然在实际开发中很少遇到）。如果能够实时获取线上地址的<code>cookie</code>与本地调试的<code>cookie</code>对比，如若不一致，同步线上的<code>cookie</code>至调试环境，岂不美哉！然而涉及到<code>node</code>的相关知识，暂时缺乏了解，还需研究下。</p>
-<h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://angular.cn/guide/build#bypass-the-proxy">https://angular.cn/guide/build#bypass-the-proxy</a></p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016314976/">https://segmentfault.com/a/1190000016314976/</a></p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">ng generate class my-new-class					新建 class<br>ng generate component my-new-component			 新建组件<br>ng generate directive my-new-directive            新建指令<br>ng generate enum my-new-enum                      新建枚举<br>ng generate module my-new-module                  新建模块<br>ng generate pipe my-new-pipe                      新建管道<br>ng generate service my-new-service                新建服务<br></code></pre></td></tr></table></figure>
+<p>可以简写成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">ng g cl my-new-class                              新建 class<br>ng g c my-new-component                           新建组件<br>ng g d my-new-directive                           新建指令<br>ng g e my-new-enum                                新建枚举<br>ng g m my-new-module                              新建模块<br>ng g p my-new-pipe                                新建管道<br>ng g s my-new-service                             新建服务<br></code></pre></td></tr></table></figure>
+
+
+<p><strong>ng serve</strong>：命令会启动开发服务器，监听文件变化，并在修改这些文件时重新构建此应用。<br>使用–open（或-o）参数可以自动打开浏览器并访问<a target="_blank" rel="noopener" href="http://localhost/">http://localhost</a>:4200/。</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">ng serve <span class="hljs-comment">--open</span><br></code></pre></td></tr></table></figure>
+<h2 id="构建应用程序"><a href="#构建应用程序" class="headerlink" title="构建应用程序"></a>构建应用程序</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ng build<br></code></pre></td></tr></table></figure>
+<p>可用选项：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs vim">--ao<span class="hljs-variable">t:</span> 开启 ahead-of-time 编译,默认开启<br><br>--base-href: <span class="hljs-built_in">string</span>, 设置 <span class="hljs-built_in">index</span>.html 文件中 <span class="hljs-symbol">&lt;base&gt;</span> 元素的链接地址。<br><br>--environmen<span class="hljs-variable">t:</span> <span class="hljs-built_in">string</span>, 设置所使用的环境，默认为 dev。<br><br>--output-path: <span class="hljs-built_in">string</span>, 设置输出的路径。<br><br>--targe<span class="hljs-variable">t:</span> <span class="hljs-built_in">string</span>, 设置所使用的环境，默认为 development。<br><br>--watch: boolean, 默认为 false, 开启 watch 模式，监听文件异动并自动重新构建<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -460,8 +435,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【Angular】本地调试代理转发</div>
-      <div>http://example.com/2022/07/13/【Angular】本地调试代理转发/</div>
+      <div>【Angular】Angular常用命令</div>
+      <div>http://example.com/2021/03/13/【Angular】本地调试代理转发/</div>
     </div>
     <div class="license-meta">
       
@@ -473,7 +448,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月13日</div>
+          <div>2021年3月13日</div>
         </div>
       
       
@@ -503,15 +478,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" title="【VSCode】Windows下VSCode集成zsh">
+                      <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="【Angular】Angular常用命令">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【VSCode】Windows下VSCode集成zsh</span>
+                        <span class="hidden-mobile">【Angular】Angular常用命令</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/03/07/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%BA%94%E7%AB%A0/" title="【读书笔记】JavaScript高级程序设计-第五章">
+                        <span class="hidden-mobile">【读书笔记】JavaScript高级程序设计-第五章</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -636,7 +617,7 @@
     
       <div class="col-lg-7 mx-auto nopadding-x-md">
         <div class="container custom mx-auto">
-          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext">
+          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"> <link href="https://fonts.googlefonts.cn/css?family=Ubuntu:300,400" rel="stylesheet">
         </div>
       </div>
     
