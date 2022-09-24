@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>【Angular】VS Code开发Angular常用插件集合（二）</title>
+    <link href="/2022/09/24/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2022/09/24/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p>不知不觉使用Angular已经两年了，对Angular也有了深厚的感情（毕竟也是吃饭的家伙🤣）。在开发中摸索总结了一些于我实用提效的Vscode插件，记录分享至此。之前已经写了一部分，在这</p><p><a href="https://baobaodz.top/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/">【Angular】VS-Code开发Angular常用插件集合</a></p><p>这是第二弹，话不多说，上插件！</p><h2 id="For-Angular"><a href="#For-Angular" class="headerlink" title="For Angular"></a>For Angular</h2><h3 id="Angular-Support"><a href="#Angular-Support" class="headerlink" title="Angular Support"></a><a href="https://marketplace.visualstudio.com/items?itemName=vismalietuva.vscode-angular-support">Angular Support</a></h3><p>提供模板与ts文件之间的跳转</p><p><img src="https://image.baobaodz.top/blog/article/angular-support.jpg" alt="Angular Support Example"></p><h3 id="TypeScript-Importer"><a href="#TypeScript-Importer" class="headerlink" title="TypeScript Importer "></a><a href="https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter">TypeScript Importer </a></h3><p> 自动搜索工作区文件中的 TypeScript 定义，并提供所有已知符号作为完成项以允许代码完成。 </p><p><img src="https://image.baobaodz.top/blog/article/typescript-importer.gif" alt="Typescript Importer example"></p><h3 id="swagger-to-code"><a href="#swagger-to-code" class="headerlink" title="swagger-to-code "></a><a href="https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter">swagger-to-code </a></h3><p> 在遇见apifox之前用的很顺手的神器！将swagger文档接口转化成typescript接口模型，直接看动图👇。对于写typescript定义接口简直太方便啦！</p><p><img src="https://image.baobaodz.top/blog/article/swagger-to-ts-model.gif" alt="swagger to code example"></p><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Error-Lens"><a href="#Error-Lens" class="headerlink" title="Error Lens"></a><a href="https://marketplace.visualstudio.com/items?itemName=vismalietuva.vscode-angular-support">Error Lens</a></h3><p>错误行显示，会将原本波浪线显示的，鼠标放上去才显示的错误、警告，直接大红色显示到代码屁股后头，任谁看着都难以忍受，不能忽视</p><p><img src="https://image.baobaodz.top/blog/article/error-lens-example.png" alt="Error Lens example"></p><h3 id="Turbo-Console-Log"><a href="#Turbo-Console-Log" class="headerlink" title="Turbo Console Log "></a><a href="https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log">Turbo Console Log </a></h3><p>快捷打印插件，只需要简单快捷键就可以打印出带格式的语句，是不习惯断点debug，喜欢打印调试的人的快捷利器（没错就是我😋）。</p><p><img src="https://image.baobaodz.top/blog/article/log.gif" alt="Turbo Console Log example"></p><h3 id="CodeMetrics"><a href="#CodeMetrics" class="headerlink" title="CodeMetrics "></a><a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics">CodeMetrics </a></h3><p>代码复杂度分析插件，可以 计算 TypeScript / JavaScript / Lua 文件的复杂度。 当然，这个只是作为参考，只是会督促自己不要写长方法，该重构的重构。</p><p><img src="https://image.baobaodz.top/blog/article/CodeMetrics-example.png" alt="CodeMetrics example"></p><h3 id="DeepScan"><a href="#DeepScan" class="headerlink" title="DeepScan"></a><a href="https://marketplace.visualstudio.com/items?itemName=DeepScan.vscode-deepscan">DeepScan</a></h3><p>DeepScan 是一种尖端的 JavaScript 代码检查工具，用于检测 JavaScript、TypeScript、React 和 Vue.js 中的错误和质量问题。</p><h3 id="Tabnine-AI-Autocomplete-for-Javascript-Python-Typescript-PHP-Go-Java-Ruby-amp-more"><a href="#Tabnine-AI-Autocomplete-for-Javascript-Python-Typescript-PHP-Go-Java-Ruby-amp-more" class="headerlink" title="Tabnine AI Autocomplete for Javascript, Python, Typescript, PHP, Go, Java, Ruby &amp; more"></a><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">Tabnine AI Autocomplete for Javascript, Python, Typescript, PHP, Go, Java, Ruby &amp; more</a></h3><p>基于人工智能辅助代码完成、智能代码片段、代码建议、代码预测、代码提示等等，很强，试试就知道。</p><hr><p>当然实际开发中可能还会有，后续慢慢更新😀</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>工具</category>
+      
+      <category>Angular</category>
+      
+      <category>VSCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Angular</tag>
+      
+      <tag>VSCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【写作】那些年的碎碎念</title>
     <link href="/2022/09/17/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     <url>/2022/09/17/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
