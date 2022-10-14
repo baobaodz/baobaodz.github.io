@@ -62,15 +62,30 @@
 
     function changeBackground(banner) {
         var currentSetting = toggleCustomColorSchema();
-        if (currentSetting === 'dark') { // 此时为日间模式
-            banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%284%29.jpg)`;
-        } else {
-            banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%285%29.jpg)`;
+        if (location.pathname.includes('about')) {
+            if (currentSetting === 'dark') { // 此时为日间模式
+                banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%284%29.jpg)`;
+            } else {
+                banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%285%29.jpg)`;
+            }
+
+        } else if (location.pathname.includes('archives')) {
+            if (currentSetting === 'dark') { // 此时为日间模式
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-z86v5w.jpg)`;
+            } else {
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-q2qpl7.jpg)`;
+            }
         }
+
         banner.style.transition = "background 1.2s linear";
     }
 
     Fluid.utils.waitElementLoaded(colorToggleIconSelector, function() {
+
+        // 只在关于页和归档页页生效
+        if (!location.pathname.includes('about') && !location.pathname.includes('archives')) {
+            return;
+        }
 
         var button = document.querySelector(colorToggleButtonSelector);
         var banner = document.getElementById(bannerIdName);
