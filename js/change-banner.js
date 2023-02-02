@@ -6,6 +6,7 @@
 
     var colorToggleButtonSelector = '#color-toggle-btn';
     var colorToggleIconSelector = '#color-toggle-icon';
+    var routes = ['about', 'archives', 'categories'];
 
 
     function getLS(k) {
@@ -61,6 +62,7 @@
     }
 
     function changeBackground(banner) {
+        console.log('🚀 -> changeBackground -> location.pathname', location.pathname);
         var currentSetting = toggleCustomColorSchema();
         if (location.pathname.includes('about')) {
             if (currentSetting === 'dark') { // 此时为日间模式
@@ -75,6 +77,12 @@
             } else {
                 banner.style.backgroundImage = `url(${baseUrl}/wallhaven-q2qpl7.jpg)`;
             }
+        } else if (location.pathname.includes('categories')) {
+            if (currentSetting === 'dark') { // 此时为日间模式
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6okw6w.jpg)`;
+            } else {
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6oqzgq.jpg)`;
+            }
         }
 
         banner.style.transition = "background 1.2s linear";
@@ -83,7 +91,8 @@
     Fluid.utils.waitElementLoaded(colorToggleIconSelector, function() {
 
         // 只在关于页和归档页页生效
-        if (!location.pathname.includes('about') && !location.pathname.includes('archives')) {
+        const route = location.pathname.substring(location.pathname.indexOf('/') + 1, location.pathname.lastIndexOf('/'));
+        if (!routes.includes(route)) {
             return;
         }
 
