@@ -6,7 +6,7 @@
 
     var colorToggleButtonSelector = '#color-toggle-btn';
     var colorToggleIconSelector = '#color-toggle-icon';
-    var routes = ['about', 'archives', 'categories'];
+    var routes = ['about', 'archives', 'categories', 'tags'];
 
 
     function getLS(k) {
@@ -82,6 +82,12 @@
                 banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6okw6w.jpg)`;
             } else {
                 banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6oqzgq.jpg)`;
+            }
+        } else if (location.pathname.includes('tags')) {
+            if (currentSetting === 'dark') { // 此时为日间模式
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-1pqq1w.jpg)`;
+            } else {
+                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-9doozw.jpg)`;
             }
         }
 
