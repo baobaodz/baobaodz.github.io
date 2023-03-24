@@ -63,34 +63,30 @@
 
     function changeBackground(banner) {
         console.log('🚀 -> changeBackground -> location.pathname', location.pathname);
-        var currentSetting = toggleCustomColorSchema();
-        if (location.pathname.includes('about')) {
-            if (currentSetting === 'dark') { // 此时为日间模式
-                banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%284%29.jpg)`;
-            } else {
-                banner.style.backgroundImage = `url(${baseUrl}/32323j448e4%20%285%29.jpg)`;
-            }
+        const currentSetting = toggleCustomColorSchema();
+        const images = {
+            '/about': {
+                dark: `${baseUrl}/32323j448e4%20%284%29.jpg`,
+                light: `${baseUrl}/32323j448e4%20%285%29.jpg`,
+            },
+            '/archives': {
+                dark: `${baseUrl}/wallhaven-z86v5w.jpg`,
+                light: `${baseUrl}/wallhaven-q2qpl7.jpg`,
+            },
+            '/categories': {
+                dark: `${baseUrl}/wallhaven-6okw6w.jpg`,
+                light: `${baseUrl}/wallhaven-6oqzgq.jpg`,
+            },
+            '/tags': {
+                dark: `${baseUrl}/wallhaven-1pqq1w.jpg`,
+                light: `${baseUrl}/wallhaven-9doozw.jpg`,
+            },
+        };
 
-        } else if (location.pathname.includes('archives')) {
-            if (currentSetting === 'dark') { // 此时为日间模式
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-z86v5w.jpg)`;
-            } else {
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-q2qpl7.jpg)`;
-            }
-        } else if (location.pathname.includes('categories')) {
-            if (currentSetting === 'dark') { // 此时为日间模式
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6okw6w.jpg)`;
-            } else {
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-6oqzgq.jpg)`;
-            }
-        } else if (location.pathname.includes('tags')) {
-            if (currentSetting === 'dark') { // 此时为日间模式
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-1pqq1w.jpg)`;
-            } else {
-                banner.style.backgroundImage = `url(${baseUrl}/wallhaven-9doozw.jpg)`;
-            }
-        }
+        const path = Object.keys(images).find((key) => location.pathname.includes(key));
+        const backgroundImage = path ? images[path][currentSetting] : '';
 
+        banner.style.backgroundImage = `url(${backgroundImage})`;
         banner.style.transition = "background 1.2s linear";
     }
 
