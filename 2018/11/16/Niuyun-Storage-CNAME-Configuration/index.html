@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,8 +88,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -114,7 +112,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -145,9 +143,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -157,9 +155,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -169,9 +167,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -181,9 +179,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -196,24 +194,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -225,9 +223,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -237,9 +235,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -247,15 +245,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -300,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          916 字
+          566 字
         
       </span>
     
@@ -311,7 +310,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -356,13 +355,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">七牛云存储配置服务器CNAME</h1>
+            <h1 id="seo-header">七牛云存储配置服务器CNAME</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月4日 晚上
+                    本文最后更新于 2022年9月4日 晚上
                   
                 
               </p>
@@ -371,7 +369,7 @@
               <div class="markdown-body">
                 
                 <p>最近邮箱收到七牛云通知说，测试域名即将到期，这就意味着之前的图片外链将失效。为了能够继续存储图片等资源，需要自己创建自定义域名。</p>
-<a id="more"></a>
+<span id="more"></span>
 <p><img src="https://s2.ax1x.com/2019/10/13/ujTjVx.png" srcset="/img/loading.gif" lazyload alt="测试域名"></p>
 <h3 id="配置CNAME"><a href="#配置CNAME" class="headerlink" title="配置CNAME"></a>配置CNAME</h3><p>步骤1：在七牛云域名管理中创建域名。加速域名设置二级域名。因为之前一级域名baobaodz.com已经备案，所以二级域名可以直接用。</p>
 <p><img src="https://s2.ax1x.com/2019/10/13/uj7Gd0.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
@@ -382,7 +380,8 @@
 <p>其中</p>
 <pre><code class="hljs">记录类型改为CNAME
 主机记录为之前步骤1中的加速域名前缀。
-记录值为CNMAE的值。</code></pre>
+记录值为CNMAE的值。
+</code></pre>
 <p>点击确定。大约几分钟后便可生效。这个时候，访问resource.baobaodz.com会显示{&quot;error&quot;:&quot;Document not found&quot;}，表示成功解析，只是还没有访问到资源。需要resource.baobaodz.com/image/文件目录形式访问</p>
 <p>步骤4：回到七牛云中，在对象存储-内容管理-默认外链域名改为刚才设置的，保存默认域名</p>
 <p><img src="https://s2.ax1x.com/2019/10/13/uj7BLR.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
@@ -434,9 +433,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java-Web/">#Java Web</a>
+        <a href="/tags/Java-Web/" class="print-no-link">#Java Web</a>
       
-        <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">#云服务器</a>
+        <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="print-no-link">#云服务器</a>
       
     </div>
   
@@ -465,21 +464,23 @@
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -507,8 +508,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -536,7 +539,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -548,7 +552,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -716,22 +723,22 @@
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -749,22 +756,34 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -793,6 +812,21 @@
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 

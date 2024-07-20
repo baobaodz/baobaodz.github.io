@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,8 +88,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -114,7 +112,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -145,9 +143,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -157,9 +155,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -169,9 +167,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -181,9 +179,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -196,24 +194,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -225,9 +223,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -237,9 +235,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -247,15 +245,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -300,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.4k 字
+          966 字
         
       </span>
     
@@ -311,7 +310,7 @@
         
         
         
-          14 分钟
+          3 分钟
         
       </span>
     
@@ -356,13 +355,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">【Angular】Angular项目中常用的自定义指令</h1>
+            <h1 id="seo-header">【Angular】Angular项目中常用的自定义指令</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月26日 晚上
+                    本文最后更新于 2022年9月26日 晚上
                   
                 
               </p>
@@ -393,19 +391,23 @@
 </tbody></table>
 <p>本文介绍几个常见业务场景的自定义属性型指令实现</p>
 <h4 id="复制文字指令"><a href="#复制文字指令" class="headerlink" title="复制文字指令"></a>复制文字指令</h4><p>主要用于实现类似复制按钮的功能</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; Directive, HostListener, Input &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; NzMessageService &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ng-zorro-antd&#x27;</span>;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@description </span>点击复制文字到剪贴板功能</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@exports</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@class <span class="hljs-variable">CopyTextDirective</span></span></span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-meta">@Directive</span>(&#123;<br>  selector: <span class="hljs-string">&#x27;[copyText]&#x27;</span><br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CopyTextDirective</span> </span>&#123;<br><br>  <span class="hljs-meta">@Input</span>(<span class="hljs-string">&#x27;yzfCopyText&#x27;</span>) copyInner;<br>  <span class="hljs-title">constructor</span>(<span class="hljs-params"></span><br><span class="hljs-params">    <span class="hljs-keyword">private</span> message: NzMessageService,</span><br><span class="hljs-params">  </span>) &#123; &#125;<br>  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>  <span class="hljs-function"><span class="hljs-title">clickEvent</span>(<span class="hljs-params">event: MouseEvent</span>)</span> &#123;<br>    event.preventDefault();<br>    event.stopPropagation();<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;textarea&#x27;</span>);<br>    el.value = <span class="hljs-built_in">this</span>.copyInner;<br>    el.setAttribute(<span class="hljs-string">&#x27;readonly&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>    el.style.position = <span class="hljs-string">&#x27;fixed&#x27;</span>;<br>    el.style.left = <span class="hljs-string">&#x27;-9999px&#x27;</span>;<br>    el.style.opacity = <span class="hljs-string">&#x27;0&#x27;</span>;<br>    <span class="hljs-built_in">document</span>.body.appendChild(el);<br>    <span class="hljs-keyword">const</span> selected = <span class="hljs-built_in">document</span>.getSelection().rangeCount &gt; <span class="hljs-number">0</span> ? <span class="hljs-built_in">document</span>.getSelection().getRangeAt(<span class="hljs-number">0</span>) : <span class="hljs-literal">false</span>;<br>    el.select();<br>    <span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">&#x27;copy&#x27;</span>);<br>    <span class="hljs-built_in">document</span>.body.removeChild(el);<br><br>    <span class="hljs-keyword">if</span> (selected) &#123;<br>      <span class="hljs-built_in">document</span>.getSelection().removeAllRanges();<br>      <span class="hljs-built_in">document</span>.getSelection().addRange(selected);<br>    &#125;<br>    <span class="hljs-built_in">this</span>.message.success(<span class="hljs-string">&#x27;复制成功&#x27;</span>);<br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">HostListener</span>, <span class="hljs-title class_">Input</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">NzMessageService</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ng-zorro-antd&#x27;</span>;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@description</span> 点击复制文字到剪贴板功能</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@author</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@exports</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@class</span> <span class="hljs-variable">CopyTextDirective</span></span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-meta">@Directive</span>(&#123;<br>  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[copyText]&#x27;</span><br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CopyTextDirective</span> &#123;<br><br>  <span class="hljs-meta">@Input</span>(<span class="hljs-string">&#x27;yzfCopyText&#x27;</span>) copyInner;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span><br><span class="hljs-params">    <span class="hljs-keyword">private</span> <span class="hljs-attr">message</span>: <span class="hljs-title class_">NzMessageService</span>,</span><br><span class="hljs-params">  </span>) &#123; &#125;<br>  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>  <span class="hljs-title function_">clickEvent</span>(<span class="hljs-params"><span class="hljs-attr">event</span>: <span class="hljs-title class_">MouseEvent</span></span>) &#123;<br>    event.<span class="hljs-title function_">preventDefault</span>();<br>    event.<span class="hljs-title function_">stopPropagation</span>();<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;textarea&#x27;</span>);<br>    el.<span class="hljs-property">value</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">copyInner</span>;<br>    el.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;readonly&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>    el.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;fixed&#x27;</span>;<br>    el.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;-9999px&#x27;</span>;<br>    el.<span class="hljs-property">style</span>.<span class="hljs-property">opacity</span> = <span class="hljs-string">&#x27;0&#x27;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(el);<br>    <span class="hljs-keyword">const</span> selected = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getSelection</span>().<span class="hljs-property">rangeCount</span> &gt; <span class="hljs-number">0</span> ? <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getSelection</span>().<span class="hljs-title function_">getRangeAt</span>(<span class="hljs-number">0</span>) : <span class="hljs-literal">false</span>;<br>    el.<span class="hljs-title function_">select</span>();<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">execCommand</span>(<span class="hljs-string">&#x27;copy&#x27;</span>);<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">removeChild</span>(el);<br><br>    <span class="hljs-keyword">if</span> (selected) &#123;<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getSelection</span>().<span class="hljs-title function_">removeAllRanges</span>();<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getSelection</span>().<span class="hljs-title function_">addRange</span>(selected);<br>    &#125;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">message</span>.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;复制成功&#x27;</span>);<br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
 
 
 <h3 id="点击延迟指令"><a href="#点击延迟指令" class="headerlink" title="点击延迟指令"></a>点击延迟指令</h3><p>多用在提交按钮上，避免多次点击导致的重复提交，节流实现。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; Directive, Input, OnDestroy, OnInit, HostListener, Output, EventEmitter &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; throttleTime &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs/operators&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; Subject, Subscription &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    <span class="hljs-comment">// tslint:disable-next-line:directive-selector</span><br>    selector: <span class="hljs-string">&#x27;[click.once]&#x27;</span>,<br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OnceClickDirective</span> <span class="hljs-title">implements</span> <span class="hljs-title">OnInit</span>, <span class="hljs-title">OnDestroy</span> </span>&#123;<br>    <span class="hljs-comment">// tslint:disable-next-line:no-output-rename</span><br>    <span class="hljs-meta">@Output</span>(<span class="hljs-string">&#x27;click.once&#x27;</span>) clickCall: EventEmitter&lt;MouseEvent&gt; =<br>        <span class="hljs-keyword">new</span> EventEmitter();<br>    <span class="hljs-meta">@Input</span>() duration = <span class="hljs-number">1000</span>; <span class="hljs-comment">// 必须是数字，传入时要用绑定语法</span><br>    <span class="hljs-keyword">private</span> $sub = <span class="hljs-keyword">new</span> Subject&lt;<span class="hljs-built_in">any</span>&gt;();<br>    <span class="hljs-keyword">private</span> subscription: Subscription;<br>    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> &#123;&#125;<br>    <span class="hljs-function"><span class="hljs-title">ngOnInit</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.subscription = <span class="hljs-built_in">this</span>.$sub<br>            .pipe(throttleTime(<span class="hljs-built_in">this</span>.duration))<br>            .subscribe(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>                <span class="hljs-built_in">this</span>.clickCall.emit(e);<br>            &#125;);<br>    &#125;<br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-function"><span class="hljs-title">clickEvent</span>(<span class="hljs-params">event: MouseEvent</span>)</span> &#123;<br>        event.preventDefault();<br>        event.stopPropagation();<br>        <span class="hljs-built_in">this</span>.$sub.next(event);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-title">ngOnDestroy</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-built_in">this</span>.subscription.unsubscribe();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">Input</span>, <span class="hljs-title class_">OnDestroy</span>, <span class="hljs-title class_">OnInit</span>, <span class="hljs-title class_">HostListener</span>, <span class="hljs-title class_">Output</span>, <span class="hljs-title class_">EventEmitter</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; throttleTime &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs/operators&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Subject</span>, <span class="hljs-title class_">Subscription</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    <span class="hljs-comment">// tslint:disable-next-line:directive-selector</span><br>    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[click.once]&#x27;</span>,<br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OnceClickDirective</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">OnInit</span>, <span class="hljs-title class_">OnDestroy</span> &#123;<br>    <span class="hljs-comment">// tslint:disable-next-line:no-output-rename</span><br>    <span class="hljs-meta">@Output</span>(<span class="hljs-string">&#x27;click.once&#x27;</span>) <span class="hljs-attr">clickCall</span>: <span class="hljs-title class_">EventEmitter</span>&lt;<span class="hljs-title class_">MouseEvent</span>&gt; =<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">EventEmitter</span>();<br>    <span class="hljs-meta">@Input</span>() duration = <span class="hljs-number">1000</span>; <span class="hljs-comment">// 必须是数字，传入时要用绑定语法</span><br>    <span class="hljs-keyword">private</span> $sub = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Subject</span>&lt;<span class="hljs-built_in">any</span>&gt;();<br>    <span class="hljs-keyword">private</span> <span class="hljs-attr">subscription</span>: <span class="hljs-title class_">Subscription</span>;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;&#125;<br>    <span class="hljs-title function_">ngOnInit</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">subscription</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">$sub</span><br>            .<span class="hljs-title function_">pipe</span>(<span class="hljs-title function_">throttleTime</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">duration</span>))<br>            .<span class="hljs-title function_">subscribe</span>(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">clickCall</span>.<span class="hljs-title function_">emit</span>(e);<br>            &#125;);<br>    &#125;<br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-title function_">clickEvent</span>(<span class="hljs-params"><span class="hljs-attr">event</span>: <span class="hljs-title class_">MouseEvent</span></span>) &#123;<br>        event.<span class="hljs-title function_">preventDefault</span>();<br>        event.<span class="hljs-title function_">stopPropagation</span>();<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">$sub</span>.<span class="hljs-title function_">next</span>(event);<br>    &#125;<br>    <span class="hljs-title function_">ngOnDestroy</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">subscription</span>.<span class="hljs-title function_">unsubscribe</span>();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
 <h3 id="输入框去空指令"><a href="#输入框去空指令" class="headerlink" title="输入框去空指令"></a>输入框去空指令</h3><p>主要用于在输入框<code>blur</code>状态下，自动<code>trim</code>，这样就不用手动处理了。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; Directive, ElementRef, HostListener &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; NgControl &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    <span class="hljs-comment">// tslint:disable-next-line: directive-selector</span><br>    selector: <span class="hljs-string">&#x27;[trimBlur]&#x27;</span><br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TrimBlurDirective</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"> <span class="hljs-keyword">private</span> elementRef: ElementRef, <span class="hljs-keyword">private</span> control?: NgControl</span>)</span> &#123;<br><br>    &#125;<br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;blur&#x27;</span>, [<span class="hljs-string">&#x27;$event.target&#x27;</span>])<br>    <span class="hljs-function"><span class="hljs-title">onBlur</span>(<span class="hljs-params">event</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (event.value) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.control) &#123;<br>                <span class="hljs-built_in">this</span>.control.control.patchValue(<span class="hljs-built_in">this</span>.control.value.trim());<br>                <span class="hljs-built_in">this</span>.control.control.updateValueAndValidity();<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-built_in">this</span>.elementRef.nativeElement.value = event.value.trim();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">ElementRef</span>, <span class="hljs-title class_">HostListener</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">NgControl</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    <span class="hljs-comment">// tslint:disable-next-line: directive-selector</span><br>    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[trimBlur]&#x27;</span><br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TrimBlurDirective</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"> <span class="hljs-keyword">private</span> <span class="hljs-attr">elementRef</span>: <span class="hljs-title class_">ElementRef</span>, <span class="hljs-keyword">private</span> control?: <span class="hljs-title class_">NgControl</span></span>) &#123;<br><br>    &#125;<br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;blur&#x27;</span>, [<span class="hljs-string">&#x27;$event.target&#x27;</span>])<br>    <span class="hljs-title function_">onBlur</span>(<span class="hljs-params">event</span>) &#123;<br>        <span class="hljs-keyword">if</span> (event.<span class="hljs-property">value</span>) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">control</span>) &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">control</span>.<span class="hljs-property">control</span>.<span class="hljs-title function_">patchValue</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">control</span>.<span class="hljs-property">value</span>.<span class="hljs-title function_">trim</span>());<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">control</span>.<span class="hljs-property">control</span>.<span class="hljs-title function_">updateValueAndValidity</span>();<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">elementRef</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-property">value</span> = event.<span class="hljs-property">value</span>.<span class="hljs-title function_">trim</span>();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
 <h3 id="hotkey快捷键指令"><a href="#hotkey快捷键指令" class="headerlink" title="hotkey快捷键指令"></a>hotkey快捷键指令</h3><p>这个指令主要目的 </p>
 <ol>
 <li>阻止浏览器默认保存行为，自定义实现<code>ctrl+s</code>保存功能</li>
 <li><code>enter</code>向后跳转<code>input</code>聚焦，<code>shift+enter</code> 向前跳转<code>input</code>聚焦</li>
 </ol>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; Directive, ElementRef, HostListener, Input &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    selector: <span class="hljs-string">&#x27;[yzfHotkey]&#x27;</span><br>&#125;)<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HotkeyDirective</span> </span>&#123;<br><br>    <span class="hljs-meta">@Input</span>(<span class="hljs-string">&#x27;yzfHotkey&#x27;</span>) fpzlid;<br><br>    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> el: ElementRef</span>)</span> &#123;<br>        <span class="hljs-keyword">const</span> that = <span class="hljs-built_in">this</span>;<br>        <span class="hljs-built_in">window</span>.document.onkeyup = <span class="hljs-function">(<span class="hljs-params">ev: KeyboardEvent</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (ev.ctrlKey === <span class="hljs-literal">true</span> &amp;&amp; ev.code === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>                <span class="hljs-keyword">if</span> (that.el.nativeElement.querySelector(<span class="hljs-string">&#x27;#save&#x27;</span>)) &#123;<br>                    that.el.nativeElement.querySelector(<span class="hljs-string">&#x27;#save&#x27;</span>).click();<br>                &#125;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">// 阻止浏览器默认行为</span><br>        <span class="hljs-built_in">window</span>.document.onkeydown = <span class="hljs-function">(<span class="hljs-params">ev: KeyboardEvent</span>) =&gt;</span>  &#123;<br>            <span class="hljs-keyword">if</span> (ev.ctrlKey === <span class="hljs-literal">true</span> &amp;&amp; ev.code === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>                <span class="hljs-comment">// window.event.returnValue = false;</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (ev.code === <span class="hljs-string">&#x27;F10&#x27;</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;;<br>    &#125;<br><br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;keyup&#x27;</span>,  [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-function"><span class="hljs-title">onKeyup</span>(<span class="hljs-params">ev</span>)</span> &#123;<br>        <span class="hljs-keyword">const</span> inputs: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">any</span>&gt; = <span class="hljs-built_in">this</span>.el.nativeElement.querySelectorAll(<span class="hljs-string">&#x27;input&#x27;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; inputs.length; i++) &#123;<br>            inputs[i].index = i;<br>            inputs[i].onkeyup = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) </span>&#123;<br>                <span class="hljs-comment">// enter</span><br>                <span class="hljs-keyword">if</span> (evt.shiftKey === <span class="hljs-literal">false</span> &amp;&amp; evt.code === <span class="hljs-string">&#x27;Enter&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.index &lt; inputs.length - <span class="hljs-number">1</span>) &#123;<br>                        <span class="hljs-keyword">const</span> nextIndex = <span class="hljs-built_in">this</span>.index + <span class="hljs-number">1</span>;<br>                        inputs[nextIndex].focus();<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (evt.shiftKey === <span class="hljs-literal">true</span> &amp;&amp; evt.code === <span class="hljs-string">&#x27;Enter&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.index &gt; <span class="hljs-number">0</span>) &#123;<br>                        <span class="hljs-keyword">const</span> prevIndex = <span class="hljs-built_in">this</span>.index - <span class="hljs-number">1</span>;<br>                        inputs[prevIndex].focus();<br>                    &#125;<br>                &#125;<br>            &#125;;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (ev.ctrlKey === <span class="hljs-literal">true</span> &amp;&amp; ev.code === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.el.nativeElement.querySelector(<span class="hljs-string">&#x27;#save&#x27;</span>)) &#123;<br>                <span class="hljs-built_in">this</span>.el.nativeElement.querySelector(<span class="hljs-string">&#x27;#save&#x27;</span>).click();<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 阻止浏览器默认行为</span><br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;keydown&#x27;</span>,  [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-function"><span class="hljs-title">onKeydown</span>(<span class="hljs-params">ev: KeyboardEvent</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> (ev.ctrlKey === <span class="hljs-literal">true</span> &amp;&amp; ev.code === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>            <span class="hljs-comment">// window.event.returnValue = false;</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (ev.code === <span class="hljs-string">&#x27;F10&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">ElementRef</span>, <span class="hljs-title class_">HostListener</span>, <span class="hljs-title class_">Input</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>    <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[yzfHotkey]&#x27;</span><br>&#125;)<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HotkeyDirective</span> &#123;<br><br>    <span class="hljs-meta">@Input</span>(<span class="hljs-string">&#x27;yzfHotkey&#x27;</span>) fpzlid;<br><br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> <span class="hljs-attr">el</span>: <span class="hljs-title class_">ElementRef</span></span>) &#123;<br>        <span class="hljs-keyword">const</span> that = <span class="hljs-variable language_">this</span>;<br>        <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">onkeyup</span> = <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">ev</span>: <span class="hljs-title class_">KeyboardEvent</span></span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">ctrlKey</span> === <span class="hljs-literal">true</span> &amp;&amp; ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>                <span class="hljs-keyword">if</span> (that.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#save&#x27;</span>)) &#123;<br>                    that.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#save&#x27;</span>).<span class="hljs-title function_">click</span>();<br>                &#125;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">// 阻止浏览器默认行为</span><br>        <span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">onkeydown</span> = <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">ev</span>: <span class="hljs-title class_">KeyboardEvent</span></span>) =&gt;</span>  &#123;<br>            <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">ctrlKey</span> === <span class="hljs-literal">true</span> &amp;&amp; ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>                <span class="hljs-comment">// window.event.returnValue = false;</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;F10&#x27;</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;;<br>    &#125;<br><br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;keyup&#x27;</span>,  [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-title function_">onKeyup</span>(<span class="hljs-params">ev</span>) &#123;<br>        <span class="hljs-keyword">const</span> <span class="hljs-attr">inputs</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">any</span>&gt; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;input&#x27;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; inputs.<span class="hljs-property">length</span>; i++) &#123;<br>            inputs[i].<span class="hljs-property">index</span> = i;<br>            inputs[i].<span class="hljs-property">onkeyup</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>) &#123;<br>                <span class="hljs-comment">// enter</span><br>                <span class="hljs-keyword">if</span> (evt.<span class="hljs-property">shiftKey</span> === <span class="hljs-literal">false</span> &amp;&amp; evt.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;Enter&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">index</span> &lt; inputs.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>) &#123;<br>                        <span class="hljs-keyword">const</span> nextIndex = <span class="hljs-variable language_">this</span>.<span class="hljs-property">index</span> + <span class="hljs-number">1</span>;<br>                        inputs[nextIndex].<span class="hljs-title function_">focus</span>();<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (evt.<span class="hljs-property">shiftKey</span> === <span class="hljs-literal">true</span> &amp;&amp; evt.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;Enter&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">index</span> &gt; <span class="hljs-number">0</span>) &#123;<br>                        <span class="hljs-keyword">const</span> prevIndex = <span class="hljs-variable language_">this</span>.<span class="hljs-property">index</span> - <span class="hljs-number">1</span>;<br>                        inputs[prevIndex].<span class="hljs-title function_">focus</span>();<br>                    &#125;<br>                &#125;<br>            &#125;;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">ctrlKey</span> === <span class="hljs-literal">true</span> &amp;&amp; ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#save&#x27;</span>)) &#123;<br>                <span class="hljs-variable language_">this</span>.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#save&#x27;</span>).<span class="hljs-title function_">click</span>();<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 阻止浏览器默认行为</span><br>    <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&#x27;keydown&#x27;</span>,  [<span class="hljs-string">&#x27;$event&#x27;</span>])<br>    <span class="hljs-title function_">onKeydown</span>(<span class="hljs-params"><span class="hljs-attr">ev</span>: <span class="hljs-title class_">KeyboardEvent</span></span>) &#123;<br>        <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">ctrlKey</span> === <span class="hljs-literal">true</span> &amp;&amp; ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;KeyS&#x27;</span>) &#123;<br>            <span class="hljs-comment">// window.event.returnValue = false;</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (ev.<span class="hljs-property">code</span> === <span class="hljs-string">&#x27;F10&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
 
 <hr>
@@ -450,9 +452,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Angular/">#Angular</a>
+        <a href="/tags/Angular/" class="print-no-link">#Angular</a>
       
-        <a href="/tags/Director/">#Director</a>
+        <a href="/tags/Director/" class="print-no-link">#Director</a>
       
     </div>
   
@@ -481,21 +483,23 @@
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -523,8 +527,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -552,7 +558,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -564,7 +571,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -732,22 +742,22 @@
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -765,22 +775,34 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -809,6 +831,21 @@
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 

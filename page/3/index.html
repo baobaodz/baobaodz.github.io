@@ -68,7 +68,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -77,8 +77,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -103,7 +101,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -134,9 +132,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -146,9 +144,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -158,9 +156,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -170,9 +168,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -185,24 +183,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -214,9 +212,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -226,9 +224,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -236,15 +234,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -303,17 +302,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
           Dropwizard项目构建——初始化
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/11/20/Dropwizard-project-build%E2%80%94%E2%80%94initialization/" target="_self">
         <div>
-          maven创建项目12345678$ mvn -B archetype:generate \ -DarchetypeGroupId&#x3D;io.dropwizard.archetypes \ -DarchetypeArtifactId&#x3D;java-simple \ -DarchetypeVersion&#x3D;2.0.0-rc9\ -DgroupId&#x3D;com.baoabodz.example.dropwizard
+          maven创建项目12345678$ mvn -B archetype:generate \ -DarchetypeGroupId=io.dropwizard.archetypes \ -DarchetypeArtifactId=java-simple \ -DarchetypeVersion=2.0.0-rc9\ -DgroupId=com.baoabodz.example.dropwizard
         </div>
       </a>
 
@@ -370,17 +369,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/11/17/tree-command/" target="_self">
           tree命令用法（CMD/Git Bash/Linux）
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/11/17/tree-command/" target="_self">
         <div>
-          在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而tree命令就可以实现这种效果。 Windows cmd 的 tree命令在cmd中就集成了tree 命令 使用tree &#x2F;?查看帮助信息 1234567G:\Dev\workspace\hola&gt;tree &#x2F;?以图形显示驱动器或路径的文件夹结构。TREE [drive:][path] [&#x2F;F] [&#x2F;A]   &#x2F;F   显
+          在阅读到别人的技术文章时，经常会看到作者列出的文件树结构，清晰明了，而tree命令就可以实现这种效果。 Windows cmd 的 tree命令在cmd中就集成了tree 命令 使用tree /?查看帮助信息 1234567G:\Dev\workspace\hola&gt;tree /?以图形显示驱动器或路径的文件夹结构。TREE [drive:][path] [/F] [/A]   /F   显
         </div>
       </a>
 
@@ -444,12 +443,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
           Linux常用命令汇总（二）
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/11/10/Commonly-Used-Linux-Command-Summary-%E2%85%A1/" target="_self">
@@ -518,12 +517,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/11/08/2019-11-second-week/" target="_self">
           【2019-11第二周】技能点
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/11/08/2019-11-second-week/" target="_self">
@@ -592,12 +591,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/11/01/2019-11-first-week/" target="_self">
           【2019-11第一周】技能点
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/11/01/2019-11-first-week/" target="_self">
@@ -666,12 +665,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/10/17/multiple-parameters-with-no-annotation/" target="_self">
           multiple parameters with no annotation. Unable to resolve the injection source
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/10/17/multiple-parameters-with-no-annotation/" target="_self">
@@ -740,12 +739,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/10/12/Commonly-Used-Linux-Command-Summary/" target="_self">
           Linux常用命令汇总（一）
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/10/12/Commonly-Used-Linux-Command-Summary/" target="_self">
@@ -814,17 +813,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2019/09/22/Resolve-domain-name-unreachable-issue/" target="_self">
           解决域名无法访问的问题
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2019/09/22/Resolve-domain-name-unreachable-issue/" target="_self">
         <div>
-          解决域名无法访问的问题最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http:&#x2F;&#x2F;101.132.116.203:8080&#x2F;MyBlog&#x2F;    但是通过域名访问不了。可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。  查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。
+          解决域名无法访问的问题最近有空整理我之前写的网站，发现可以通过ip+项目地址访问网站，如http://101.132.116.203:8080/MyBlog/    但是通过域名访问不了。可以ping通域名。服务器防火墙已关闭。安全组也配置了端口开放 。在阿里云上进行检测。  查看80端口是否处于监听状态。发现并没有。一开始我以为是服务器防火墙需要放行80端口，搜了一堆怎么开放80端口的，不行。
         </div>
       </a>
 
@@ -888,12 +887,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2018/11/16/Niuyun-Storage-CNAME-Configuration/" target="_self">
           七牛云存储配置服务器CNAME
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2018/11/16/Niuyun-Storage-CNAME-Configuration/" target="_self">
@@ -964,17 +963,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2018/10/13/Javaweb-Project-Deployment/" target="_self">
           javaweb项目部署
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2018/10/13/Javaweb-Project-Deployment/" target="_self">
         <div>
-          购买域名和服务器购买服务器阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。 具体可看阿里云云翼计划  购买域名链接：域名注册com大概45元&#x2F;年，cn29元&#x2F;年。top9元&#x2F;年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录  等个十分钟
+          购买域名和服务器购买服务器阿里云域名和服务器对新注册用户，特别是学生认证用户有很大优惠。买了一年的云服务器ECS，先玩个一年。 具体可看阿里云云翼计划  购买域名链接：域名注册com大概45元/年，cn29元/年。top9元/年。看着买。新注册阿里云会有20元优惠券。可惜我当时注册了忘了用了。买好域名别忘了去域名解析。也就是把域名和IP地址关联起来。登录管理控制台-域名-添加解析记录  等个十分钟
         </div>
       </a>
 
@@ -1170,6 +1169,7 @@
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
+
 
 
 

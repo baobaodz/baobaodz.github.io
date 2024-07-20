@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,8 +88,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -114,7 +112,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -145,9 +143,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -157,9 +155,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -169,9 +167,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -181,9 +179,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -196,24 +194,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -225,9 +223,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -237,9 +235,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -247,15 +245,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -300,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.7k 字
+          2.2k 字
         
       </span>
     
@@ -311,7 +310,7 @@
         
         
         
-          15 分钟
+          6 分钟
         
       </span>
     
@@ -356,13 +355,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">javaweb项目部署</h1>
+            <h1 id="seo-header">javaweb项目部署</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月4日 晚上
+                    本文最后更新于 2022年9月4日 晚上
                   
                 
               </p>
@@ -387,27 +385,33 @@
 <p>总结一下常用的命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">su - oracle #切换到oracle用户<br>lsbrctl start #启动监听<br>lsnrctl stop #停止监听<br>sdnrctl status #查看listener的状态<br><br>sqlplus &quot;/as sysdba&quot; #以sysdba的身份登陆<br>shutdown #关闭数据库服务<br>strartup #启动数据库服务<br></code></pre></td></tr></table></figure>
 
+
 <h3 id="pl-sql-dev远程连接数据库"><a href="#pl-sql-dev远程连接数据库" class="headerlink" title="pl/sql dev远程连接数据库"></a>pl/sql dev远程连接数据库</h3><p>数据库搞好之后，我想需要个工具来操作服务器上的数据库。先选择了navicate for Oracle，但是正版需要1000多块钱，找前找后也没破解版。虽然只有14天免费试用，但是可以连接到远端服务器。</p>
 <p><img src="https://s2.ax1x.com/2019/10/13/ujGy11.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>但是这样始终不是长久之计啊。于是选择了pl/sql developer。因为我本机之前已经装了Oracle客户端，所以可以在C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN下tnsnames.ora文件中添加</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">alioracle=<br>	(DESCRIPTION =<br>		(ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.116.203)(PORT = 1521))<br>		(CONNECT_DATA =<br>  			(SERVER = DEDICATED)<br>  			(SERVICE_NAME = orcl11g)<br>		)<br>	)<br></code></pre></td></tr></table></figure>
 
+
 <p>其中</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">alioracle：连接时显示的本地名称，可以任意取<br>ADDRESS ：链接地址 <br>PROTOCOL ：使用的协议，一般为TCP <br>HOST ：服务器ip地址 <br>PORT ：服务器监听端口号，Oracle默认为1521 <br>SERVICE_NAME ：服务器服务名称<br></code></pre></td></tr></table></figure>
+
 
 <p>然后打开pl/sql developer工具就会在database的下拉选项中看到刚才起的本地连接名</p>
 <p><img src="https://s2.ax1x.com/2019/10/13/ujG2nK.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>点击ok但是就是登不上去显示</p>
-<pre><code class="hljs">ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务</code></pre>
+<pre><code class="hljs">ERROR: ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+</code></pre>
 <p>然后本地cmd中tnsping alioracle 是没问题的</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">C:\Users\Administrator&gt;tnsping alioracle<br><br>TNS Ping Utility for 32-bit Windows: Version 10.2.0.1.0 - Production on 11-10月-<br>2018 11:28:54<br><br>Copyright (c) 1997, 2005, Oracle.  All rights reserved.<br><br>已使用的参数文件:<br>C:\oracle\product\10.2.0\db_1\network\admin\sqlnet.ora<br><br>已使用 TNSNAMES 适配器来解析别名<br>Attempting to contact (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 101.132.<br>116.203)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl11g)))<br>OK (80 毫秒)<br></code></pre></td></tr></table></figure>
+
 
 <p>弄了好久才明白：</p>
 <p>这里的连接标识符即SERVICE_NAME（网络别名、网络服务名、主机连接字符串、主机名) tnsping 是用来执行oracle 网络别名SERVICE_NAME的解析工作。会解析出ORACLE client中设定的服务器IP与监听端口。</p>
 <p>因此tnsping alioracle 的时候只是根据tnsname.ora文件中记录的这个字符串”alioracle”相应的IP地址去查看对应的端口是否开放，而不会去验证SERVICE_NAME是否正确，SERVICE_NAME如果配置的不正确是不能连接上数据库的。</p>
 <p>那这个SERVICE_NAME在哪看呢？</p>
 <p>在Xshell中远程连接服务器输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz ~]# su - oracle<br><br>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;<br><br><span class="hljs-meta">SQL&gt;</span><span class="bash"> show parameter service_name</span><br><br>NAME				     TYPE	 VALUE<br>------------------------------------ ----------- ------------------------------<br>service_names			 string	 orcl11g.us.oracle.com<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz ~]# su - oracle<br><br>[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">SQL&gt; </span><span class="language-bash">show parameter service_name</span><br><br>NAME				     TYPE	 VALUE<br>------------------------------------ ----------- ------------------------------<br>service_names			 string	 orcl11g.us.oracle.com<br></code></pre></td></tr></table></figure>
+
 
 <p>​    </p>
 <p>可以看出服务器端的Oracle数据库service_name是orcl11g.us.oracle.com，而我在tnsnames.ora中的SERVICE_NAME = orcl11g。所以会显示无法识别连接描述符。改正之后，豁然可以连接上去了。</p>
@@ -417,22 +421,27 @@
 <li>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/beihangyjs/article/details/5732508">plSQL技巧：“tns:无法解析指定的连接标识符”问题详解</a></li>
 </ul>
 <h3 id="项目部署到服务器"><a href="#项目部署到服务器" class="headerlink" title="项目部署到服务器"></a>项目部署到服务器</h3><p>查看服务器端数据库名</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">SQL&gt;</span><span class="bash"> select name from v<span class="hljs-variable">$database</span>;</span><br><br>NAME<br>---------<br>ORCL11G<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">SQL&gt; </span><span class="language-bash"><span class="hljs-keyword">select</span> name from v<span class="hljs-variable">$database</span>;</span><br><br>NAME<br>---------<br>ORCL11G<br></code></pre></td></tr></table></figure>
+
 
 <p>在项目WEB-INF目录下db.properties文件中<br>修改dataSource.jdbcUrl=jdbc: oracle: thin:@127.0.0.1: 1521:ORCL为</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">dataSource.jdbcUrl=jdbc:oracle:thin:@101.132.116.203:1521:ORCL11G<br></code></pre></td></tr></table></figure>
 
+
 <p>注意：除此之外还需要加入对应的数据库驱动包。<br>客户端Oracle为10g，而服务器端Oracle为11g驱动包不一致还不行。于是在lib文件下加入jdbc_6g.jar。<br>然后在myeclipse中项目上右键-export-war文件。然后通过通过xftp工具将此war文件上传到tomcat目录下的webapps目录下。</p>
 <p>然后在访问时通过ip地址+端口号+war包名+jsp文件就可以访问啦！例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">http://101.132.116.203:8080/MyBlog/jsp/index.jsp<br></code></pre></td></tr></table></figure>
+
 <p>本地数据库的数据怎么办？<br>本来想着pl/sql dev中可以导出数据的sql脚本，但是因为表中含有列是clob类型，所以数据时无法导出的，但是建表语句还是可以查看的。<br>在新建表过程中出现了一个问题，就是中文字符乱码问题，所有中文字符变成了“？”。<br>查看数据库编码</p>
 <pre><code class="hljs">SQL&gt; select userenv(&#39;language&#39;) from dual;
 
 USERENV(&#39;LANGUAGE&#39;)
 ----------------------------------------------------
-AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
+AMERICAN_AMERICA.WE8MSWIN1252
+</code></pre>
 <p>可以看出数据库编码不是中文编码，于是在服务器上<br>vi /home/oracle/.bash_profile加入</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">export NLS_LANG=Simplified Chinese_CHINA.AL32UTF8<br></code></pre></td></tr></table></figure>
+
 
 <p>会发现“？”都变成了中文字符“靠”。。。按理说应该起作用啊。百思不得其解。后来发现，这个数据库编码只对新数据有效，旧数据没作用的，因此只要把其删掉重新插入就显示正常了。</p>
 <h3 id="去除项目名和端口号"><a href="#去除项目名和端口号" class="headerlink" title="去除项目名和端口号"></a>去除项目名和端口号</h3><p>项目部署后，输入<a target="_blank" rel="noopener" href="http://101.132.116.203:8080/MyBlog/jsp/index.jsp">http://101.132.116.203:8080/MyBlog/jsp/index.jsp</a> 可访问。现在需求是访问<a target="_blank" rel="noopener" href="http://baobaodz.com/">http://baobaodz.com</a> 也可以响应我们需要的内容。<br>1.去除端口号：<br>tomcat项目运行端口为8080，而我们平常访问的网站都是不带端口号的，即端口号是80，在阿里云安全组设置里面添加规则</p>
@@ -440,27 +449,35 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
 <p>过一会就可以访问baobaodz.com/MyBlog/jsp/index.jsp<br>，如果不行，别忘了去域名备案。不备案的话，端口80是不给开放的。<br>备案的过程很麻烦，填写各种信息，还要拍照打印各种证明材料，不过有指引一步一步来。备案提交后，需要七八天的审核时间。<br>2.设置欢迎页<br>在项目文件的web.xml文件里，欢迎页面需要进行小小的改动，把原来默认的index.jsp改为jsp/index.jsp。因为首页我是放在jsp文件夹下的。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt; display-name&gt;MyBlog&lt; /display-name&gt;<br>&lt; welcome-file-list&gt;<br>    &lt; welcome-file&gt;jsp/index.jsp&lt; /welcome-file&gt;<br>&lt; /welcome-file-list&gt;<br></code></pre></td></tr></table></figure>
 
+
 <p>除此之外，index.jsp文件中的所有跳转路径必须要改成绝对路径。这样css.js等资源才可以被正确访问。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt; a href=&quot;archives.jsp&quot;&gt;归档&lt;/a&gt;<br>&lt; a href=&quot;&lt;%=request.getContextPath()%&gt;/jsp/archives.jsp&quot;&gt;归档&lt; /a&gt;<br></code></pre></td></tr></table></figure>
 
+
 <p>重启服务器tomcat，访问baobaodz.com/MyBlog就可以了。<br>3.去除项目名<br>需要进入tomcat根目录下conf文件夹下的server.xml，添加Context标签。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;<br>   	&lt;Context  path=&quot;&quot;   docBase=&quot;/root/java/tomcat/apache-tomcat-8.5.34/webapps/MyBlog&quot;   debug=&quot;0&quot;/&gt;  <br>       &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;<br>   &lt;/Host&gt;<br></code></pre></td></tr></table></figure>
+
 
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>重启tomcat，刷新页面发现数据显示不了。出现500状态码错误，再去sqlplus连接数据库，显示无法监听，原来数据库连接不上了。原因是之前我重启Linux系统后，数据库没有重新启动，开启监听。</p>
 <p>切到Oracle登录显示</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz logs]# su - oracle<br>Last login: Fri Oct 12 17:52:55 CST 2018 on pts/0<br>-bash: export: `Chinese_CHINA.AL32UTF8&#x27;: not a valid identifier<br>[oracle@izuf66fm097gavs15ngjfvz ~]$ ls<br></code></pre></td></tr></table></figure>
 
+
 <p>原因是之前修改Oracle字符集的时候，在windows系统文本编辑器上修改的，和Linux上修改会有出入。所以建议还是在Linux下修改比较稳妥。</p>
 <p>编辑oracle用户的.bash_profile文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[oracle@node00 dse]$ vim ~/.bash_profile<br>找到<br>export NLS_LANG=&quot;SIMPLIFIED CHINESE_CHINA.AL32UTF8&quot;<br></code></pre></td></tr></table></figure>
 
+
 <p>发现没加双引号，加上使改变立即生效：</p>
-<pre><code class="hljs">[oracle@node00 dse]$ source ~/.bash_profile</code></pre>
+<pre><code class="hljs">[oracle@node00 dse]$ source ~/.bash_profile
+</code></pre>
 <p>如果不解决这个问题的话，在以dba登录时，会出现如下错误</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;<br><br>SQL*Plus: Release 11.2.0.1.0 Production on Wed Nov 14 18:55:03 2018<br><br>Copyright (c) 1982, 2009, Oracle.  All rights reserved.<br><br>ERROR:<br>ORA-12705: Cannot access NLS data files or invalid environment specified<br></code></pre></td></tr></table></figure>
 
+
 <p>然后后续启动数据库，启动监听</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;<br><span class="hljs-meta">SQL&gt;</span><span class="bash"> strartup</span><br><span class="hljs-meta">SQL&gt;</span><span class="bash"> <span class="hljs-built_in">exit</span></span><br>[oracle@izuf66fm097gavs15ngjfvz ~]$ lsnrctl start<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[oracle@izuf66fm097gavs15ngjfvz ~]$ sqlplus &quot;/as sysdba&quot;<br><span class="hljs-meta prompt_">SQL&gt; </span><span class="language-bash">strartup</span><br><span class="hljs-meta prompt_">SQL&gt; </span><span class="language-bash"><span class="hljs-built_in">exit</span></span><br>[oracle@izuf66fm097gavs15ngjfvz ~]$ lsnrctl start<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -500,9 +517,9 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java-Web/">#Java Web</a>
+        <a href="/tags/Java-Web/" class="print-no-link">#Java Web</a>
       
-        <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">#云服务器</a>
+        <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="print-no-link">#云服务器</a>
       
     </div>
   
@@ -531,21 +548,23 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -573,8 +592,10 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -602,7 +623,8 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -614,7 +636,10 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -782,22 +807,22 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -815,22 +840,34 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -859,6 +896,21 @@ AMERICAN_AMERICA.WE8MSWIN1252</code></pre>
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 

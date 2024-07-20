@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -88,8 +88,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -114,7 +112,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -145,9 +143,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -157,9 +155,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -169,9 +167,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -181,9 +179,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -196,24 +194,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -225,9 +223,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -237,9 +235,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -247,15 +245,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -300,7 +299,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          861 字
         
       </span>
     
@@ -311,7 +310,7 @@
         
         
         
-          7 分钟
+          3 分钟
         
       </span>
     
@@ -356,13 +355,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">【VSCode】Windows下VSCode集成zsh</h1>
+            <h1 id="seo-header">【VSCode】Windows下VSCode集成zsh</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月4日 晚上
+                    本文最后更新于 2022年9月4日 晚上
                   
                 
               </p>
@@ -380,13 +378,18 @@
 <p>下载<code>mysy2</code><a target="_blank" rel="noopener" href="https://www.msys2.org/"><code>https://www.msys2.org/</code></a>（以安装路径<code>C:\msys64</code>为例）</p>
 <p>修改<code>home</code>目录为<code>Windows home</code>目录，修改<code>C:\msys64\etc\nsswitch.conf</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">db_home: cygwin desc ----&gt; db_home: windows<br></code></pre></td></tr></table></figure>
+
 <p>启动<code>C:\msys64\msys2.exe</code>，在<code>msys2</code>的终端环境里键入以下命令并回车，即自动安装<code>zsh</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">pacman -S zsh<br></code></pre></td></tr></table></figure>
+
 <p>由于<code>msys2 </code>指定 <code>MSYSCON</code> 为 <code>defterm</code> 时默认是执行<code>bash.exe</code>， 我们简单地把 <code>C:\msys64\msys2_shell.cmd</code> 大概第5行的<code>bash</code>改成<code>zsh</code>即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-built_in">set</span> <span class="hljs-string">&quot;LOGINSHELL=bash&quot;</span> ----&gt; <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;LOGINSHELL=zsh&quot;</span><br></code></pre></td></tr></table></figure>
-<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JSON">pacman -S git  // 首先安装git<br>sh -c &quot;$(curl -fsSL [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh))&quot;<br></code></pre></td></tr></table></figure>
+
+<h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JSON">pacman -S git  <span class="hljs-comment">// 首先安装git</span><br>sh -c <span class="hljs-string">&quot;$(curl -fsSL [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh))&quot;</span><br></code></pre></td></tr></table></figure>
+
 <h3 id="vscode配置zsh"><a href="#vscode配置zsh" class="headerlink" title="vscode配置zsh"></a>vscode配置zsh</h3><p><code>vscode</code>的<code>setting.json</code>追加:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs JSON">&quot;terminal.integrated.defaultProfile.windows&quot;: &quot;GitBash&quot;,<br>&quot;terminal.integrated.profiles.windows&quot;: &#123;<br>  &quot;GitBash&quot;: &#123;<br>    &quot;path&quot;: &quot;C://msys64//msys2_shell.cmd&quot;,<br>    &quot;args&quot;: [<br>      &quot;-defterm&quot;,<br>      &quot;-mingw64&quot;,<br>      &quot;-no-start&quot;,<br>      &quot;-here&quot;,<br>      &quot;-lic&quot;,<br>      <span class="hljs-string">&quot;cd $PWD; exec zsh&quot;</span><br>    ]<br>  &#125;<br> &#125;,<br></code></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs JSON"><span class="hljs-attr">&quot;terminal.integrated.defaultProfile.windows&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;GitBash&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;terminal.integrated.profiles.windows&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;GitBash&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C://msys64//msys2_shell.cmd&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;args&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>      <span class="hljs-string">&quot;-defterm&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-string">&quot;-mingw64&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-string">&quot;-no-start&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-string">&quot;-here&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-string">&quot;-lic&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-string">&quot;cd $PWD; exec zsh&quot;</span><br>    <span class="hljs-punctuation">]</span><br>  <span class="hljs-punctuation">&#125;</span><br> <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br></code></pre></td></tr></table></figure>
+
 <p>在<code>vscode</code>中就可以看到新添加的终端</p>
 <p><img src="https://image.baobaodz.top/blog/vcsode-new-terminal.png" srcset="/img/loading.gif" lazyload alt="新终端"></p>
 <h3 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h3><p>打开<code>.zshrc</code>（一般在<code>c</code>盘当前用户目录下<code>C:\Users\baodunzheng</code>）找到包含<code>ZSH_THEME=</code>的这一行，修改为自己喜欢的主题。</p>
@@ -394,21 +397,28 @@
 <p>当然如果修改成<code>ZSH_THEME=&quot;random&quot;</code> 每次启动都会启用随机主题，也不失为选择困难症的福音。</p>
 <p>当然如果对现有主题不满意，可以自定义主题，对现有主题改进，只需要</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">1、在`~\.oh-my-zsh\custom\themes` 目录下新建或拷贝现有主题文件修改名称为`my-agnoster.zsh-theme.zsh-theme`<br>2、`.zshrc`中`ZSH_THEME=&quot;my-agnoster&quot;` ，主题名要与自定义主题文件名前半部分对应上<br></code></pre></td></tr></table></figure>
+
 <h3 id="插件设置"><a href="#插件设置" class="headerlink" title="插件设置"></a>插件设置</h3><h4 id="提示插件"><a href="#提示插件" class="headerlink" title="提示插件"></a>提示插件</h4><p>安装提示插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">git <span class="hljs-built_in">clone</span> [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) <span class="hljs-variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions<br></code></pre></td></tr></table></figure>
+
 <p>编辑<code>.zshrc</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">plugins=(git zsh-autosuggestions)<br></code></pre></td></tr></table></figure>
+
 <h4 id="高亮插件"><a href="#高亮插件" class="headerlink" title="高亮插件"></a>高亮插件</h4><p>安装高亮插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">git <span class="hljs-built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="hljs-variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting<br></code></pre></td></tr></table></figure>
+
 <p>编辑<code>.zshrc</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">plugins=(git zsh-autosuggestions zsh-syntax-highlighting)<br></code></pre></td></tr></table></figure>
+
 <p>最后<code>source ~/.zshrc</code> 使其生效</p>
 <p><img src="https://image.baobaodz.top/blog/oh-my-zsh-theme.png" srcset="/img/loading.gif" lazyload alt="新主题"></p>
 <h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><p><code>npm -v</code>时，报错<code>command not found: npm</code> 原因是找不到npm的环境，需要手动指定</p>
 <p>执行 <code>which npm</code> 找到<code>npm</code>安装运行环境</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Bash">baodunzheng@DESKTOP-HEK6UKM MSYS ~<br>$ <span class="hljs-built_in">which</span> npm<br>/d/work/dev/nodejs/npm<br></code></pre></td></tr></table></figure>
+
 <p>去除<code>/npm</code> ，拿到<code>/d/work/dev/nodejs</code>进入<code>.zshrc</code> 添加一行 <code>export PATH=/d/work/dev/nodejs:$PATH</code> 解决</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-comment"># If you come from bash you might have to change your $PATH.</span><br><span class="hljs-comment"># export PATH=$HOME/bin:/usr/local/bin:$PATH</span><br>  <span class="hljs-built_in">export</span> PATH=/d/work/dev/nodejs:<span class="hljs-variable">$PATH</span><br><span class="hljs-comment"># Path to your oh-my-zsh installation.</span><br><span class="hljs-built_in">export</span> ZSH=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.oh-my-zsh&quot;</span><br></code></pre></td></tr></table></figure>
+
 <p>至此，适合自己的<code>zsh</code>基本可以用了</p>
 <h3 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21418449">为什么说 zsh 是 shell 中的极品？</a></li>
@@ -456,9 +466,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/VSCode/">#VSCode</a>
+        <a href="/tags/VSCode/" class="print-no-link">#VSCode</a>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+        <a href="/tags/%E5%B7%A5%E5%85%B7/" class="print-no-link">#工具</a>
       
     </div>
   
@@ -487,21 +497,23 @@
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -529,8 +541,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -558,7 +572,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -570,7 +585,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -738,22 +756,22 @@
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -771,22 +789,34 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -815,6 +845,21 @@
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 

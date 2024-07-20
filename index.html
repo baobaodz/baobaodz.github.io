@@ -68,7 +68,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -77,8 +77,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -103,7 +101,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -134,9 +132,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -146,9 +144,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -158,9 +156,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -170,9 +168,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -185,24 +183,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -214,9 +212,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -226,9 +224,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -236,15 +234,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -303,12 +302,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/26/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" target="_self">
           【Angular】Angular项目中常用的自定义指令
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/09/26/%E3%80%90Angular%E3%80%91Angular%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4/" target="_self">
@@ -379,12 +378,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/24/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
           【Angular】VS Code开发Angular常用插件集合（二）
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/09/24/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
@@ -457,12 +456,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/17/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/" target="_self">
           【写作】那些年的碎碎念
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/09/17/%E3%80%90%E5%86%99%E4%BD%9C%E3%80%91%E9%82%A3%E4%BA%9B%E5%B9%B4%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/" target="_self">
@@ -524,17 +523,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/11/%E3%80%90Hexo%E3%80%91Hexo%20injector%E9%A6%96%E9%A1%B5%E9%9A%8F%E6%9C%BA%E7%B9%81%E4%BD%93%E8%AF%97%E5%8F%A5slogan/" target="_self">
           【Hexo】Hexo injector首页随机繁体诗句slogan
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/09/11/%E3%80%90Hexo%E3%80%91Hexo%20injector%E9%A6%96%E9%A1%B5%E9%9A%8F%E6%9C%BA%E7%B9%81%E4%BD%93%E8%AF%97%E5%8F%A5slogan/" target="_self">
         <div>
-          123版本概况hexo &gt; 5.0.0 Fluid 1.9.2 效果先看效果  也可查看博客的在线效果 https:&#x2F;&#x2F;baobaodz.top&#x2F; 缘由做这个的切换效果的缘由是，Fluid提供了打字机功能，对首页slogan可以通过公共API请求获取随机诗句，但是想把诗句的样式由默认的简体改为繁体，并设置古风字体，更有中国风韵味。 思路 不改变fluid主题源码的原则下，通过hexo inj
+          123版本概况hexo &gt; 5.0.0 Fluid 1.9.2  效果先看效果  也可查看博客的在线效果 https://baobaodz.top/ 缘由做这个的切换效果的缘由是，Fluid提供了打字机功能，对首页slogan可以通过公共API请求获取随机诗句，但是想把诗句的样式由默认的简体改为繁体，并设置古风字体，更有中国风韵味。 思路 不改变fluid主题源码的原则下，通过hexo in
         </div>
       </a>
 
@@ -602,17 +601,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
           【Hexo】Hexo injector切换banner背景图，日夜更迭，优雅过渡
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/09/02/%E3%80%90Hexo%E3%80%91Hexo%20injector%E5%88%87%E6%8D%A2banner%E8%83%8C%E6%99%AF%E5%9B%BE/" target="_self">
         <div>
-          123版本概况hexo &gt; 5.0.0 Fluid 1.9.2 效果先看效果  也可查看博客的在线效果 https:&#x2F;&#x2F;baobaodz.top&#x2F;about&#x2F; 缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式&#x2F;日间模式切换的banner图片。 思路 不改变fluid主题源码的原则下
+          123版本概况hexo &gt; 5.0.0 Fluid 1.9.2  效果先看效果  也可查看博客的在线效果 https://baobaodz.top/about/ 缘由做这个的切换效果的缘由是，在整理壁纸时，发现两张同一场景的图，一个是夜晚的室内环境图，一个是白天的室内环境图，于是就想着，能否用在自己的博客里，作随夜间模式/日间模式切换的banner图片。 思路 不改变fluid主题源码的原则
         </div>
       </a>
 
@@ -680,17 +679,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
           【VSCode】Windows下VSCode集成zsh
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/07/14/%E3%80%90VSCode%E3%80%91Windows%E4%B8%8BVSCode%E9%9B%86%E6%88%90zsh/" target="_self">
         <div>
-          zsh是什么zsh 官网 : https:&#x2F;&#x2F;www.zsh.org&#x2F;  oh-my-zsh官网 : http:&#x2F;&#x2F;ohmyz.sh&#x2F; zsh是shell语言类型，兼容bash，提供强大的命令行功能，比如tab补全，自动纠错功能等。缺点就是配置太麻烦，好在有一个叫做oh-my-zsh的开源项目，很好的弥补了这一缺陷，只需要修修改改配置文件，就能很顺手。  zsh和 oh-my-zsh的关系 zsh
+          zsh是什么zsh 官网 : https://www.zsh.org/  oh-my-zsh官网 : http://ohmyz.sh/ zsh是shell语言类型，兼容bash，提供强大的命令行功能，比如tab补全，自动纠错功能等。缺点就是配置太麻烦，好在有一个叫做oh-my-zsh的开源项目，很好的弥补了这一缺陷，只需要修修改改配置文件，就能很顺手。  zsh和 oh-my-zsh的关系 zsh
         </div>
       </a>
 
@@ -756,12 +755,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
           【Angular】Angular应用启动流程
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/03/28/%E3%80%90Angular%E3%80%91Angular%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_self">
@@ -830,12 +829,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
           【Angular】VS Code开发Angular常用插件集合
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/03/14/%E3%80%90Angular%E3%80%91VS-Code%E5%BC%80%E5%8F%91Angular%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E9%9B%86%E5%90%88/" target="_self">
@@ -908,12 +907,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
           【Angular】Angular常用命令
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/03/13/%E3%80%90Angular%E3%80%91Angular%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" target="_self">
@@ -982,12 +981,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2021/03/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
           【Angular】Angular常用命令
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2021/03/13/%E3%80%90Angular%E3%80%91%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91/" target="_self">
@@ -1186,6 +1185,7 @@
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
+
 
 
 

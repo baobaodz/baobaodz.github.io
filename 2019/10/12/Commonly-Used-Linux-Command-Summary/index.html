@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -87,8 +87,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -113,7 +111,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -144,9 +142,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -156,9 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -168,9 +166,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -180,9 +178,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -195,24 +193,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -224,9 +222,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -236,9 +234,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -246,15 +244,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -299,7 +298,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.2k 字
+          1k 字
         
       </span>
     
@@ -310,7 +309,7 @@
         
         
         
-          13 分钟
+          3 分钟
         
       </span>
     
@@ -355,13 +354,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Linux常用命令汇总（一）</h1>
+            <h1 id="seo-header">Linux常用命令汇总（一）</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月4日 晚上
+                    本文最后更新于 2022年9月4日 晚上
                   
                 
               </p>
@@ -370,8 +368,9 @@
               <div class="markdown-body">
                 
                 <p>总结一些在日常工作中用到的处理文件和目录的linux命令</p>
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="一、目录操作"><a href="#一、目录操作" class="headerlink" title="一、目录操作"></a>一、目录操作</h3><h4 id="pwd-当前所在目录"><a href="#pwd-当前所在目录" class="headerlink" title="pwd 当前所在目录"></a>pwd 当前所在目录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz home]# pwd<br>/home<br></code></pre></td></tr></table></figure>
+
 <h4 id="ls-列出目录内容"><a href="#ls-列出目录内容" class="headerlink" title="ls 列出目录内容"></a>ls 列出目录内容</h4><ul>
 <li><p>英文原意：list</p>
 </li>
@@ -396,16 +395,16 @@
 </li>
 <li><p>cd oracle     //进入指定目录,相当于<br>  cd ./oracle   // 切换到当前目录下的shi目录中，“.”表示当前目录<br>  cd ..         //  回到上级目录<br>  cd -          // 返回进入此目录之前的目录</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# cd oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>oradiag_oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# cd ..<br>[root@izuf66fm097gavs15ngjfvz home]# cd ./oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# ls<br>oradiag_oracle<br>[root@izuf66fm097gavs15ngjfvz oracle]# cd -<br>/home<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# <br></code></pre></td></tr></table></figure>
-
-
-
 </li>
 </ul>
 <h4 id="mkdir-新建目录"><a href="#mkdir-新建目录" class="headerlink" title="mkdir 新建目录"></a><strong>mkdir 新建目录</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@izuf66fm097gavs15ngjfvz /]# cd home<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>mysql  oracle  swap<br></code></pre></td></tr></table></figure>
+
 <h4 id="rmdir-删除空目录"><a href="#rmdir-删除空目录" class="headerlink" title="rmdir 删除空目录"></a><strong>rmdir 删除空目录</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">如目录不为空，删除不了，需要使用`rm -rf 目录名`才能强制删除非空目录。<br><br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# mkdir mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>mysql  oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]# cd mysql<br>[root@izuf66fm097gavs15ngjfvz mysql]# touch readme.md<br>[root@izuf66fm097gavs15ngjfvz mysql]# cd ../<br>[root@izuf66fm097gavs15ngjfvz home]# rmdir mysql<br>rmdir: failed to remove ‘mysql’: Directory not empty<br>[root@izuf66fm097gavs15ngjfvz home]# rm -rf mysql<br>[root@izuf66fm097gavs15ngjfvz home]# ls<br>oracle  swap<br>[root@izuf66fm097gavs15ngjfvz home]#<br></code></pre></td></tr></table></figure>
+
 <h3 id="二、文件操作"><a href="#二、文件操作" class="headerlink" title="二、文件操作"></a>二、文件操作</h3><h4 id="touch-新建文件"><a href="#touch-新建文件" class="headerlink" title="touch 新建文件"></a><strong>touch 新建文件</strong></h4><p>如果一个文件名参数是一个不存在的文件，则会创建一个空文件。</p>
 <p>如果存在则会更新文件访问时间。并不会对文件内容做出改变。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">touch test.java    // 如果文件不存在，就创建test.java<br><br>example:<br><br>[root@izuf66fm097gavs15ngjfvz home]# touch test.java<br>[root@izuf66fm097gavs15ngjfvz home]# ls -l<br>total 2097160<br>drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle<br>-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap<br>-rw-r--r-- 1 root   root              0 Oct 11 23:33 test.java<br>[root@izuf66fm097gavs15ngjfvz home]# touch test.java<br>[root@izuf66fm097gavs15ngjfvz home]# ls -l<br>total 2097160<br>drwx------ 3 oracle oinstall       4096 Nov 14  2018 oracle<br>-rw-r--r-- 1 root   root     2147483648 Oct  9  2018 swap<br>-rw-r--r-- 1 root   root              0 Oct 11 23:34 test.java<br></code></pre></td></tr></table></figure>
+
 <h4 id="mv-移动和重命名文件"><a href="#mv-移动和重命名文件" class="headerlink" title="mv 移动和重命名文件"></a><strong>mv 移动和重命名文件</strong></h4><ul>
 <li><p>英文原意：move</p>
 </li>
@@ -429,12 +428,14 @@
 </li>
 </ul>
 <h4 id="ls-l-查看文件权限"><a href="#ls-l-查看文件权限" class="headerlink" title="ls -l 查看文件权限"></a>ls -l 查看文件权限</h4><h4 id="chmod-修改权限"><a href="#chmod-修改权限" class="headerlink" title="chmod 修改权限"></a>chmod 修改权限</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java <br>-rw-r--r-- 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 777 HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l HelloWorld.java <br>-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod 666 HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java<br><br></code></pre></td></tr></table></figure>
+
 <p>r表示读取（read）权限，w表示写入（write）权限，x表示执行（eXecute）权限，通常具体的权限由数字来表示：r=4，w=2，x=1</p>
 <p>若要rwx属性则4+2+1=7；</p>
 <p>若要rw-属性则4+2=6；</p>
 <p>若要r-x属性则4+1=7。</p>
 <p>常用修改权限的命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo chmod 600 ××× （只有所有者有读和写的权限）<br><br>sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）<br><br>sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）<br><br>sudo chmod 666 ××× （每个人都有读和写的权限）<br><br>sudo chmod 777 ××× （每个人都有读和写以及执行的权限）<br><br>若要修改目录下所有文件的权限:chmod -R 权限 目录<br><br>`[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rw-r--r-- 1 root root 0 Oct 13 15:32 app.java<br>-rw-rw-rw- 1 root root 0 Oct 13 15:20 HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# chmod -R 777 ../HelloWorld<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls -l<br>total 0<br>-rwxrwxrwx 1 root root 0 Oct 13 15:32 app.java<br>-rwxrwxrwx 1 root root 0 Oct 13 15:20 HelloWorld.java<br>`<br></code></pre></td></tr></table></figure>
+
 <h4 id="rm-删除文件或目录"><a href="#rm-删除文件或目录" class="headerlink" title="rm 删除文件或目录"></a>rm 删除文件或目录</h4><ul>
 <li>  常用选项：</li>
 <li><ul>
@@ -448,8 +449,10 @@
 </ul>
 <h4 id="cat-查看文件内容"><a href="#cat-查看文件内容" class="headerlink" title="cat 查看文件内容"></a>cat 查看文件内容</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# vi HelloWorld.java <br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# cat HelloWorld.java <br>import test.package;<br></code></pre></td></tr></table></figure>
 
+
 <p>​    </p>
 <h4 id="find-查找文件"><a href="#find-查找文件" class="headerlink" title="find 查找文件"></a>find 查找文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@izuf66fm097gavs15ngjfvz HelloWorld]# ls<br>appConfiguration.java  app.java  HelloWorld.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app.java<br>app.java<br>[root@izuf66fm097gavs15ngjfvz HelloWorld]# find app*.java<br>appConfiguration.java<br>app.java<br>[root@izuf66fm097gavs15ngjfvz home]# find oracle/HelloWorld/ -name &amp;quot;*.java&amp;quot;<br>oracle/HelloWorld/appConfiguration.java<br>oracle/HelloWorld/HelloWorld.java<br>oracle/HelloWorld/app.java<br></code></pre></td></tr></table></figure>
+
 <h4 id="vi-编辑文件"><a href="#vi-编辑文件" class="headerlink" title="vi 编辑文件"></a>vi 编辑文件</h4><p>依次输入vi进入编辑页面，i进入insert状态，Esc退出编辑模式，输入:wq保存退出</p>
 
                 
@@ -491,7 +494,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -520,21 +523,23 @@
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -568,8 +573,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -597,7 +604,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -609,7 +617,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -777,22 +788,22 @@
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -810,22 +821,34 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -854,6 +877,21 @@
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 

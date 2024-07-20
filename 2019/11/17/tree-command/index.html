@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"🍦","loop":false,"scope":["post","tags","archives","categories","about","links","page","404"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":21040841,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -87,8 +87,6 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
-
   
 
   
@@ -113,7 +111,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -144,9 +142,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-el-icon-zhy-zhuye"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -156,9 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-guidang1"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -168,9 +166,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-fenlei"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -180,9 +178,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-biaoqian"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -195,24 +193,24 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="iconfont icon-xiangmuguanli"></i>
-                作品
+                <span>作品</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/project/">
+                  <a class="dropdown-item" href="/project/" target="_self">
                     <i class="iconfont icon-daima"></i>
-                    个人项目
+                    <span>个人项目</span>
                   </a>
                 
                   
                   
                   
-                  <a class="dropdown-item" href="/2021/01/10/photography">
+                  <a class="dropdown-item" href="/2021/01/10/photography" target="_self">
                     <i class="iconfont icon-photo"></i>
-                    摄影作品
+                    <span>摄影作品</span>
                   </a>
                 
               </div>
@@ -224,9 +222,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-wo"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -236,9 +234,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -246,15 +244,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -299,7 +298,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5k 字
+          1.1k 字
         
       </span>
     
@@ -310,7 +309,7 @@
         
         
         
-          13 分钟
+          3 分钟
         
       </span>
     
@@ -355,13 +354,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">tree命令用法（CMD/Git Bash/Linux）</h1>
+            <h1 id="seo-header">tree命令用法（CMD/Git Bash/Linux）</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于：2022年9月4日 晚上
+                    本文最后更新于 2022年9月4日 晚上
                   
                 
               </p>
@@ -373,6 +371,7 @@
 <h2 id="Windows-cmd-的-tree命令"><a href="#Windows-cmd-的-tree命令" class="headerlink" title="Windows cmd 的 tree命令"></a><code>Windows cmd</code> 的 <code>tree</code>命令</h2><p>在<code>cmd</code>中就集成了<code>tree</code> 命令</p>
 <p>使用<code>tree /?</code>查看帮助信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">G:\Dev\workspace\hola&gt;tree /?<br>以图形显示驱动器或路径的文件夹结构。<br><br>TREE [drive:][path] [/F] [/A]<br><br>   /F   显示每个文件夹中文件的名称。<br>   /A   使用 ASCII 字符，而不使用扩展字符。<br></code></pre></td></tr></table></figure>
+
 <p>主要命令</p>
 <ul>
 <li><code>tree</code></li>
@@ -382,47 +381,62 @@
 </ul>
 <p>tree  显示目录结构</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">G:\Dev\workspace\hola&gt;tree<br>卷 软件&amp;开发 的文件夹 PATH 列表<br>卷序列号为 623A-7D30<br>G:.<br>└─hola-dropwizard<br>    └─src<br>        ├─main<br>        │  └─java<br>        │      └─com<br>        │          └─baobaodz<br>        │              └─example<br>        │                  └─dropwizard<br>        └─<span class="hljs-built_in">test</span><br>            └─java<br>                └─com<br>                    └─baobaodz<br>                        └─example<br>                            └─dropwizard<br></code></pre></td></tr></table></figure>
+
 <p><code>tree /A</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">G:\Dev\workspace\hola&gt;tree /A<br>卷 软件&amp;开发 的文件夹 PATH 列表<br>卷序列号为 623A-7D30<br>G:.<br>\---hola-dropwizard<br>    \---src<br>        +---main<br>        |   \---java<br>        |       \---com<br>        |           \---baobaodz<br>        |               \---example<br>        |                   \---dropwizard<br>        \---<span class="hljs-built_in">test</span><br>            \---java<br>                \---com<br>                    \---baobaodz<br>                        \---example<br>                            \---dropwizard<br><br><br></code></pre></td></tr></table></figure>
+
 <p><code>tree /f</code> 不仅显示文件夹，还显示文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">G:\Dev\workspace\hola&gt;tree /f<br>卷 软件&amp;开发 的文件夹 PATH 列表<br>卷序列号为 623A-7D30<br>G:.<br>└─hola-dropwizard<br>    │  pom.xml<br>    │<br>    └─src<br>        ├─main<br>        │  └─java<br>        │      └─com<br>        │          └─baobaodz<br>        │              └─example<br>        │                  └─dropwizard<br>        │                          App.java<br>        │<br>        └─<span class="hljs-built_in">test</span><br>            └─java<br>                └─com<br>                    └─baobaodz<br>                        └─example<br>                            └─dropwizard<br>                                    AppTest.java<br></code></pre></td></tr></table></figure>
+
 <h2 id="Windows-git-bash-的-tree-命令"><a href="#Windows-git-bash-的-tree-命令" class="headerlink" title="Windows git bash 的 tree 命令"></a><code>Windows git bash</code> 的 <code>tree</code> 命令</h2><p>然而git中并没有集成<code>tree</code> 命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ tree<br>bash: tree: <span class="hljs-built_in">command</span> not found<br></code></pre></td></tr></table></figure>
+
 <p> 如果想使用<code>tree</code>命令</p>
 <h3 id="第一种：使用winpty命令"><a href="#第一种：使用winpty命令" class="headerlink" title="第一种：使用winpty命令"></a>第一种：使用<code>winpty</code>命令</h3><p> <code>winpty</code> 是一种提供与<code>cmd</code> 通信的软件包 ，可以通过调用<code>cmd</code>间接实现<code>tree</code>命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">winpty tree.com <br>winpty cmd //c tree <br></code></pre></td></tr></table></figure>
+
 <p>结果</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ winpty tree.com<br>卷 软件&amp;开发 的文件夹 PATH 列表<br>卷序列号为 623A-7D30<br>G:.<br>└─hola-dropwizard<br>    └─src<br>        ├─main<br>        │  └─java<br>        │      └─com<br>        │          └─baobaodz<br>        │              └─example<br>        │                  └─dropwizard<br>        └─<span class="hljs-built_in">test</span><br>            └─java<br>                └─com<br>                    └─baobaodz<br>                        └─example<br>                            └─dropwizard<br></code></pre></td></tr></table></figure>
+
 <h3 id="第二种：使用tree-exe"><a href="#第二种：使用tree-exe" class="headerlink" title="第二种：使用tree.exe"></a>第二种：使用<code>tree.exe</code></h3><ol>
 <li>下载  <a target="_blank" rel="noopener" href="http://gnuwin32.sourceforge.net/packages/tree.htm">tree for windows</a> 的 <code>Binaries Zip</code>格式，解压后找到bin目录下的<code>tree.exe</code></li>
 <li>复制粘贴到<code>git</code>安装目录下的*usr/bin/*目录下</li>
 <li>重新打开<code>git bash</code>，输入tree就有啦</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ tree<br>.<br>`-- hola-dropwizard<br>    |-- pom.xml<br>    `-- src<br>        |-- main<br>        |   `-- java<br>        |       `-- com<br>        |           `-- baobaodz<br>        |               `-- example<br>        |                   `-- dropwizard<br>        |                       `-- App.java<br>        `-- <span class="hljs-built_in">test</span><br>            `-- java<br>                `-- com<br>                    `-- baobaodz<br>                        `-- example<br>                            `-- dropwizard<br>                                `-- AppTest.java<br><br>14 directories, 3 files<br></code></pre></td></tr></table></figure>
+
 <p>常用命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">tree 列出所有文件(以虚线形式)<br><br>tree --<span class="hljs-built_in">help</span><br><br>tree -a 列出所有文件<br><br>tree -A 列出所有文件(以ANSI线图形缩进线形式)我叫它折线形式<br><br>tree -d 仅列出目录<br><br>tree -L level 显示目录深度<br><br>tree -o file 将结果输出到文件中<br></code></pre></td></tr></table></figure>
+
 <p><code>tree -a</code> 和<code>tree-A</code>的区别就是画线的不同，个人更喜欢-A折线形式的目录树。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ tree -a<br>.<br>`-- hola-dropwizard<br>    |-- pom.xml<br>    `-- src<br>        |-- main<br>        |   `-- java<br>        |       `-- com<br>        |           `-- baobaodz<br>        |               `-- example<br>        |                   `-- dropwizard<br>        |                       `-- App.java<br>        `-- <span class="hljs-built_in">test</span><br>            `-- java<br>                `-- com<br>                    `-- baobaodz<br>                        `-- example<br>                            `-- dropwizard<br>                                `-- AppTest.java<br><br>14 directories, 3 files<br><br>baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ tree -A<br>.<br>└── hola-dropwizard<br>    ├── pom.xml<br>    └── src<br>        ├── main<br>        │   └── java<br>        │       └── com<br>        │           └── baobaodz<br>        │               └── example<br>        │                   └── dropwizard<br>        │                       └── App.java<br>        └── <span class="hljs-built_in">test</span><br>            └── java<br>                └── com<br>                    └── baobaodz<br>                        └── example<br>                            └── dropwizard<br>                                └── AppTest.java<br><br>14 directories, 3 files<br></code></pre></td></tr></table></figure>
 
 
+
 <p><code>tree -LA 3</code> 列出三级目录下所有文件（以折线形式）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">baobaodz@DESKTOP-MN61DA5 MINGW64 /g/Dev/workspace/hola<br>$ tree -LA 3<br>.<br>└── hola-dropwizard<br>    ├── pom.xml<br>    └── src<br>        ├── main<br>        └── <span class="hljs-built_in">test</span><br>4 directories, 1 file<br></code></pre></td></tr></table></figure>
+
 <h2 id="Linux-的-tree-命令"><a href="#Linux-的-tree-命令" class="headerlink" title="Linux 的 tree 命令"></a><code>Linux</code> 的 <code>tree</code> 命令</h2><p><code>Linux</code>自身也没有集成<code>tree</code>命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz ~]<span class="hljs-comment"># tree</span><br>-bash: tree: <span class="hljs-built_in">command</span> not found<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz ~]# tree<br>-bash: tree: <span class="hljs-built_in">command</span> not found<br></code></pre></td></tr></table></figure>
+
 <p>需要下载，以<code>centOS 7</code>为例，执行 <code>yum -y install tree</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz ~]<span class="hljs-comment"># yum -y install tree</span><br>Loaded plugins: fastestmirror<br>Loading mirror speeds from cached hostfile<br>.....<br><br>Dependencies Resolved<br><br>================================================================================================================================<br><br> Package                    Arch                         Version                               Repository                  Size<br>================================================================================================================================<br><br>Installing:<br> tree                       x86_64                       1.6.0-10.el7                          base                        46 k<br><br>Transaction Summary<br>================================================================================================================================<br><br>Install  1 Package<br><br>Total download size: 46 k<br>Installed size: 87 k<br>Downloading packages:<br>tree-1.6.0-10.el7.x86_64.rpm                                                                             |  46 kB  00:00:00<br>Running transaction check<br>Running transaction <span class="hljs-built_in">test</span><br>Transaction <span class="hljs-built_in">test</span> succeeded<br>Running transaction<br>  Installing : tree-1.6.0-10.el7.x86_64                                                                                     1/1<br>  Verifying  : tree-1.6.0-10.el7.x86_64                                                                                     1/1<br><br>Installed:<br>  tree.x86_64 0:1.6.0-10.el7<br><br>Complete!<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz ~]# yum -y install tree<br>Loaded plugins: fastestmirror<br>Loading mirror speeds from cached hostfile<br>.....<br><br>Dependencies Resolved<br><br>================================================================================================================================<br><br> Package                    Arch                         Version                               Repository                  Size<br>================================================================================================================================<br><br>Installing:<br> tree                       x86_64                       1.6.0-10.el7                          base                        46 k<br><br>Transaction Summary<br>================================================================================================================================<br><br>Install  1 Package<br><br>Total download size: 46 k<br>Installed size: 87 k<br>Downloading packages:<br>tree-1.6.0-10.el7.x86_64.rpm                                                                             |  46 kB  00:00:00<br>Running transaction check<br>Running transaction <span class="hljs-built_in">test</span><br>Transaction <span class="hljs-built_in">test</span> succeeded<br>Running transaction<br>  Installing : tree-1.6.0-10.el7.x86_64                                                                                     1/1<br>  Verifying  : tree-1.6.0-10.el7.x86_64                                                                                     1/1<br><br>Installed:<br>  tree.x86_64 0:1.6.0-10.el7<br><br>Complete!<br></code></pre></td></tr></table></figure>
+
 
 
 <p>常用命令 和<code>git bash</code>安装的<code>tree</code> 命令一致</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">tree 列出所有文件(以虚线形式)<br>tree --<span class="hljs-built_in">help</span><br>tree -a 列出所有文件<br>tree -A 列出所有文件(以ANSI线图形缩进线形式)我叫它折线形式<br>tree -d 仅列出目录<br>tree -L level 显示目录深度<br>tree -o file 将结果输出到文件中<br></code></pre></td></tr></table></figure>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz home]<span class="hljs-comment"># tree</span><br>.<br>├── oracle<br>│   └── oradiag_oracle<br>│       └── diag<br>│           └── clients<br>│               └── user_oracle<br>│                   └── host_2814106076_76<br>│                       ├── alert<br>│                       │   └── log.xml<br>│                       ├── cdump<br>│                       ├── incident<br>│                       ├── incpkg<br>│                       ├── lck<br>│                       │   ├── AM_1096102193_3488045378.lck<br>│                       │   ├── AM_1096102262_3454819329.lck<br>│                       │   ├── AM_1744845641_3861997533.lck<br>│                       │   └── AM_3216668543_3129272988.lck<br>│                       ├── metadata<br>│                       │   ├── ADR_CONTROL.ams<br>│                       │   ├── ADR_INVALIDATION.ams<br>│                       │   ├── INC_METER_IMPT_DEF.ams<br>│                       │   └── INC_METER_PK_IMPTS.ams<br>│                       ├── stage<br>│                       ├── sweep<br>│                       └── trace<br>│                           └── sqlnet.log<br>└── swap<br><br>15 directories, 11 files<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@izuf66fm097gavs15ngjfvz home]# tree<br>.<br>├── oracle<br>│   └── oradiag_oracle<br>│       └── diag<br>│           └── clients<br>│               └── user_oracle<br>│                   └── host_2814106076_76<br>│                       ├── alert<br>│                       │   └── log.xml<br>│                       ├── cdump<br>│                       ├── incident<br>│                       ├── incpkg<br>│                       ├── lck<br>│                       │   ├── AM_1096102193_3488045378.lck<br>│                       │   ├── AM_1096102262_3454819329.lck<br>│                       │   ├── AM_1744845641_3861997533.lck<br>│                       │   └── AM_3216668543_3129272988.lck<br>│                       ├── metadata<br>│                       │   ├── ADR_CONTROL.ams<br>│                       │   ├── ADR_INVALIDATION.ams<br>│                       │   ├── INC_METER_IMPT_DEF.ams<br>│                       │   └── INC_METER_PK_IMPTS.ams<br>│                       ├── stage<br>│                       ├── sweep<br>│                       └── trace<br>│                           └── sqlnet.log<br>└── swap<br><br>15 directories, 11 files<br></code></pre></td></tr></table></figure>
+
 <h2 id="Windows-cmd的tree和-git-bash的tree的区别"><a href="#Windows-cmd的tree和-git-bash的tree的区别" class="headerlink" title="Windows cmd的tree和 git bash的tree的区别"></a><code>Windows cmd</code>的<code>tree</code>和 <code>git bash</code>的<code>tree</code>的区别</h2><p><code>Windows</code>集成的<code>tree</code>命令是在<em>C:\Windows\System32</em>目录下的<code>tree.com</code>文件起的作用</p>
 <p><code>git bash</code> 的<code>tree</code>命令是通过引入<code>tree.exe</code>到<em>Git\usr\bin</em>中而实现的</p>
 <p>在命令格式上，<code>cmd tree</code> 使用<code>/</code>来作为参数，git bash tree使用<code>-</code>作为输入参数；另外前者不区分大小写，<code>/f</code>和<code>/F</code>的作用一致。而<code>git bash tree</code>不仅区分大小写，而且大写小写参数不同作用也往往不同：</p>
 <p>如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">tree -d 仅显示文件夹<br>tree -D 以显示日期目录树<br></code></pre></td></tr></table></figure>
+
 <p>其次<code>cmd tree</code>默认显示是以折线显示目录树，而<code>git bash tree</code>默认以虚线形式显示目录树，这点与Linux tree命令显示的不一样。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://my.oschina.net/snowdreams1006/blog/3045419">git 入门教程之 git bash 竟然不支持 tree 命令</a></p>
 
@@ -465,7 +479,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -494,21 +508,23 @@
         </div>
       
       
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
             
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
             
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
+          </div>
         </div>
-      </div>
+      
     </div>
     <div class="license-icon iconfont"></div>
   </div>
@@ -542,8 +558,10 @@
             </div>
 
             
-  <article id="comments" lazyload>
-    
+  
+  
+    <article id="comments" lazyload>
+      
   <script type="text/javascript">
     Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
@@ -571,7 +589,8 @@
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-  </article>
+    </article>
+  
 
 
           </article>
@@ -583,7 +602,10 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -751,22 +773,22 @@
 <script  src="/js/plugins.js" ></script>
 
 
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
-    <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-        <script>
-            (function(window, document) {
-                var typing = Fluid.plugins.typing;
-                var subtitle = document.getElementById('subtitle');
-                if (!subtitle || !typing) {
-                    return;
-                }
-                var text = subtitle.getAttribute('data-typed-text');
-                
-                typing(text);
-                
-            })(window, document);
-        </script>
-        
+
 
 
   
@@ -784,22 +806,34 @@
     var boardCtn = jQuery('#board-ctn');
     var boardTop = boardCtn.offset().top;
 
-    window.tocbot.init({
+    window.tocbot.init(Object.assign({
       tocSelector     : '#toc-body',
       contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
       linkClass       : 'tocbot-link',
       activeLinkClass : 'tocbot-active-link',
       listClass       : 'tocbot-list',
       isCollapsedClass: 'tocbot-is-collapsed',
       collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
       scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
     if (toc.find('.toc-list-item').length > 0) {
       toc.css('visibility', 'visible');
     }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
   });
 </script>
 
@@ -828,6 +862,21 @@
       window.anchors.options.class = 'anchorjs-link-left';
     }
     window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
   });
 </script>
 
