@@ -1,0 +1,226 @@
+#mbti-container {
+    --trait-min-width: 50px;
+}
+
+#mbti-container[lang="en"] {
+    --trait-min-width: 100px;
+}
+
+.trait-left,
+.trait-right {
+    min-width: var(--trait-min-width);
+}
+
+.mbti-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.personality-avatar {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    clip-path: polygon(58% 2%, 94% 25%, 100% 75%, 50% 90%, 3% 69%, 13% 27%);
+}
+
+.personality-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+.personality-info {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.personality-info .personality-name {
+    display: inline-flex;
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.personality-info .personality-desc {
+    display: inline-flex;
+    width: 100%;
+    margin: 5px 0 0;
+    font-size: 15px;
+    color: #777777;
+}
+
+.personality-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personality-btns svg:hover {
+    cursor: pointer;
+    path {
+        fill-opacity: 1;
+    }
+}
+
+.mbti-card {
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.mbti-card:hover {
+    border-color: #fff;
+    box-shadow: 0 10px 40px rgba(29, 36, 50, .1);
+}
+
+.trait-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 48px auto;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.trait-left {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100px;
+}
+
+.trait-right {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100px;
+}
+
+.slider-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .mbti-header {
+        flex-direction: column;
+    }
+    .personality-info .personality-name,
+    .personality-info .personality-desc {
+        justify-content: center;
+    }
+    .trait-container {
+        flex-direction: row;
+    }
+    .slider-container {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    background: var(--slider-color);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--slider-color);
+    border: 3px solid white;
+    color: var(--slider-color);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(29, 36, 50, .15);
+    transition: background .2s;
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--slider-color);
+    border: 3px solid white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(29, 36, 50, .15);
+    transition: background .2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: var(--slider-color);
+}
+
+.slider::-moz-range-thumb:hover {
+    background: var(--slider-color);
+}
+
+.slider-tooltip {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: var(--slider-color);
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: max-content;
+}
+
+.slider-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--slider-color) transparent transparent transparent;
+}
+
+.no-after::after {
+    content: none;
+    display: none;
+}
+
+.mbti-footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.mbti-footer a:link,
+.mbti-footer a:visited,
+.mbti-footer a:hover,
+.mbti-footer a:active {
+    text-decoration: none !important;
+}
