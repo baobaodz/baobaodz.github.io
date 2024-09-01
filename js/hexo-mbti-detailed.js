@@ -1,6 +1,5 @@
 function initializeDetailedMBTI(config) {
     console.log('config: ', config)
-    const imagesHostUrl = 'https://cdn.jsdelivr.net/gh/baobaodz/picx-images-hosting@master/hexo-mbti'
     const createHeaderHTML = (personalityType) => {
         const resetButton = config.slide ?
             `
@@ -54,52 +53,15 @@ function initializeDetailedMBTI(config) {
         `;
     }
     const createFooterHTML = (personalityType) => {
-        const langConfig = {
-            prefix: { zh: 'ch/', en: '' },
-            suffix: { zh: '人格', en: 'personality' },
-            linkText: { zh: '查看性格剖析', en: 'View Detailed Personality Analysis' }
-        };
-
-        const baseUrl = 'https://www.16personalities.com/';
-        const lang = config.language || 'en';
-        const url = `${baseUrl}${langConfig.prefix[lang]}${personalityType.type.slice(0,4).toLowerCase()}-${langConfig.suffix[lang]}`;
 
         return `
             <div class="mbti-footer">
                 <span class="mbti-personality-link ">
-                    <a href="${url}" target="_blank">${langConfig.linkText[lang]}</a>
+                    <a href="${getMoreInfoLink(config.language, personalityType)}" target="_blank">${getLocalizedContent(config.language, 'linkDetailedText')}</a>
                 </span>
             </div>
         `;
     }
-    const languageConfig = {
-        en: {
-            ei: ['Extraverted', 'Introverted'],
-            ns: ['Intuitive', 'Observant'],
-            tf: ['Thinking', 'Feeling'],
-            jp: ['Judging', 'Prospecting'],
-            at: ['Assertive', 'Turbulent']
-        },
-        zh: {
-            ei: ['外向', '内向'],
-            ns: ['有远见', '现实'],
-            tf: ['理性分析', '感受'],
-            jp: ['评判', '展望'],
-            at: ['坚决', '起伏不定']
-        }
-    };
-
-    const getMBTIDimensions = (config) => {
-        const lang = config.language || 'en';
-        return [
-            { id: 'ei', label: languageConfig[lang].ei, value: config.data['E-I'] || config.data[languageConfig[lang].ei.join('-')], color: config.color[0] },
-            { id: 'ns', label: languageConfig[lang].ns, value: config.data['N-S'] || config.data[languageConfig[lang].ns.join('-')], color: config.color[1] },
-            { id: 'tf', label: languageConfig[lang].tf, value: config.data['T-F'] || config.data[languageConfig[lang].tf.join('-')], color: config.color[2] },
-            { id: 'jp', label: languageConfig[lang].jp, value: config.data['J-P'] || config.data[languageConfig[lang].jp.join('-')], color: config.color[3] },
-            { id: 'at', label: languageConfig[lang].at, value: config.data['A-T'] || config.data[languageConfig[lang].at.join('-')], color: config.color[4] },
-        ];
-    }
-
 
     const getMBTIBars = (dimensions) => {
         return dimensions.map(createBarHTML).join('');
@@ -159,7 +121,7 @@ function initializeDetailedMBTI(config) {
             const currentType = getDominantTraitIndex(mbtiDimensions[index].value[0]);
             if (currentType !== lastType) {
                 lastType = currentType;
-                currentPersonalityType = calculatePersonalityType(mbtiDimensions);
+                currentPersonalityType = calculatePersonalityType(config, mbtiDimensions);
                 updatePersonalityTypeDisplay(currentPersonalityType);
                 updatePersonalityLink(currentPersonalityType);
             }
@@ -192,12 +154,6 @@ function initializeDetailedMBTI(config) {
     function updatePersonalityLink(personalityType) {
         const link = document.querySelector('.mbti-personality-link a');
         link.href = link.href.replace(/\/[a-z]{4}-/, `/${personalityType.type.slice(0,4).toLowerCase()}-`);
-    }
-    const getDominantTraitIndex = (value) => {
-        return value > 50 ? 1 : 0;
-    }
-    const getLocalizedContent = (content) => {
-        return content[config.language];
     }
 
     const resetMBTI = () => {
@@ -238,41 +194,13 @@ function initializeDetailedMBTI(config) {
             link.click();
         })
     }
-    const calculatePersonalityType = (dimensions) => {
-        const type = dimensions
-            .slice(0, 4)
-            .map(d => d.id[getDominantTraitIndex(d.value[1])].toUpperCase())
-            .join('');
-        const personalityType = personalityTypes.find(p => p.type === type);
-
-        if (!personalityType) {
-            return { type, name: '未知类型', desc: '' };
-        }
-
-        let result = {
-            type,
-            name: getLocalizedContent(personalityType.name),
-            desc: getLocalizedContent(personalityType.desc),
-        };
-        result = {
-            ...result,
-            avatar: `${imagesHostUrl}/${result.type.toLowerCase()}-${personalityType.name.en.toLowerCase()}-s3-v1-${config.gender}.png?t=${Date.now()}`,
-            // avatar: personalityType.avatar[config.gender]
-        }
-
-        if (dimensions.length > 4) {
-            const atDimension = dimensions[4].value[0] < 50 ? 'A' : 'T';
-            result.type += '-' + atDimension;
-        }
-        return result;
-    };
 
     const containerId = `mbti-${config.cardType}-container`;
     let mbtiDimensions = getMBTIDimensions(config);
     const baseMBTIDimensions = JSON.parse(JSON.stringify(mbtiDimensions));
     const container = document.getElementById(containerId);
     container.setAttribute('lang', config.language);
-    let currentPersonalityType = calculatePersonalityType(mbtiDimensions);
+    let currentPersonalityType = calculatePersonalityType(config, mbtiDimensions);
     const basePersonalityType = JSON.parse(JSON.stringify(currentPersonalityType));
     container.innerHTML = createHeaderHTML(currentPersonalityType) +
         getMBTIBars(mbtiDimensions) +
@@ -287,23 +215,4 @@ function initializeDetailedMBTI(config) {
     window.addEventListener('resize', throttledUpdateAllTooltipPositions);
 
 
-}
-
-function debounce(func, delay) {
-    let timer;
-    return function(...args) {
-        clearTimeout(timer);
-        timer = setTimeout(() => func.apply(this, args), delay);
-    };
-}
-
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
 }

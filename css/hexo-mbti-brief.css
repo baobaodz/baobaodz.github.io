@@ -1,0 +1,360 @@
+/* 设置基本字体 */
+
+body {
+    font-family: var(--english-font), var(--chinese-font), sans-serif;
+}
+
+
+/* 为中文字符应用中文字体 */
+
+ :lang(zh),
+ :not(:lang(zh))>* {
+    font-family: var(--chinese-font), var(--english-font), sans-serif;
+}
+
+
+/* 为英文字符应用英文字体 */
+
+ :lang(en),
+ :not(:lang(zh))>*:lang(en) {
+    font-family: var(--english-font), var(--chinese-font), sans-serif;
+}
+
+
+/* 使用Unicode范围选择器为中文字符应用中文字体 */
+
+ :not(:lang(zh)):not(:lang(en)) {
+    font-family: var(--chinese-font), var(--english-font), sans-serif;
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+}
+
+.card-flipper {
+    perspective: 1000px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flipper.flipping {
+    transform: rotateY(180deg);
+}
+
+#mbti-brief-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    min-width: 175px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: box-shadow 0.3s ease-in-out, height 0.3s ease;
+    container-type: inline-size;
+    font-family: var(--style-font, Ubuntu, Mulish, SimSun, Georgia, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif);
+    letter-spacing: 1px;
+    /* background-image: url(https://s21.ax1x.com/2024/08/25/pAFWPPK.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+
+#mbti-brief-wrapper[width~=175px-260px] .water-drop-loading {
+    transform: scale(0.5);
+}
+
+#mbti-brief-wrapper:hover {
+    border-color: #fff;
+    box-shadow: 0 10px 40px rgba(29, 36, 50, .1);
+}
+
+.mbti-brief-header,
+.mbti-brief-body,
+.mbti-brief-footer,
+.mbti-style-switch {
+    z-index: 2;
+}
+
+.mbti-style-switch {
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.mbti-style-switch svg:hover {
+    path {
+        fill: var(--character-active-color);
+    }
+}
+
+#styleSwitchBtn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mbti-brief-header {
+    text-align: center;
+}
+
+.mbti-brief-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mbti-brief-personality-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.mbti-brief-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    object-fit: contain;
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+[data-style="illustration"] .mbti-brief-image-container {
+    mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, transparent), linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, transparent), linear-gradient(to left, transparent, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, transparent), linear-gradient(to top, transparent, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, transparent);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    clip-path: inset(0);
+}
+
+[data-style="Korean_comic"] .mbti-brief-image {
+    /* max-width: 80%; */
+}
+
+.mbti-brief-image {
+    background-color: transparent !important;
+}
+
+.mbti-brief-desc {
+    font-size: 12px;
+    color: #777777;
+}
+
+.mbti-brief-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.mbti-more-button {
+    height: 30px;
+    padding: 6px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: var(--character-color);
+    transition: opacity 0.3s;
+}
+
+.mbti-more-button a {
+    color: #2f2f2f !important;
+}
+
+.mbti-more-button:hover {
+    background-color: var(--character-active-color);
+    transition: background-color 0.3s ease;
+}
+
+.mbti-brief-card-bg {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: -1px;
+    z-index: 1;
+    background-color: var(--character-color);
+}
+
+.mbti-brief-card-bg:before {
+    content: "";
+    /* position: absolute;
+    top: 0; */
+    width: 100%;
+    height: 100%;
+    border-radius: 9px 9px 0 0;
+    border: 1px solid #DDDFE2;
+    border-width: 0 1px;
+}
+
+.mbti-brief-card-bg svg {
+    display: block;
+    width: 100%;
+    background: #fff;
+    position: static;
+}
+
+.mbti-nav-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.mbti-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.mbti-nav-button:hover {
+    background-color: var(--character-color);
+    transition: background-color 0.3s ease;
+}
+
+.mbti-nav-button.prev {
+    left: 10px;
+}
+
+.mbti-nav-button.next {
+    right: 10px;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(15%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-15%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-left {
+    animation: slideLeft 0.5s ease-in-out;
+}
+
+.slide-right {
+    animation: slideRight 0.5s ease-in-out;
+}
+
+.slide-transition {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-out-left {
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.slide-in-right {
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+.slide-out-right {
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+.slide-in-left {
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.mbti-brief-footer a:link,
+.mbti-brief-footer a:visited,
+.mbti-brief-footer a:hover,
+.mbti-brief-footer a:active {
+    text-decoration: none !important;
+}
+
+.water-drop-loading {
+    position: relative;
+    width: 80px;
+    height: 120px;
+    background: radial-gradient( circle at 60px 40px, #000, #000 7px, transparent 7px), radial-gradient(circle at 40px 40px, #000, #000 7px, transparent 7px), radial-gradient(circle at 50px 50px, var(--character-active-color), var(--character-active-color));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    border-radius: 40px 40px 60px 20px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5), -20px -4px 20px rgba(0, 0, 0, 0.1);
+    transform: skewX(-10deg);
+    animation: moveMain 1.2s infinite ease-out;
+}
+
+.water-drop-loading::before,
+.water-drop-loading::after {
+    content: "";
+    position: absolute;
+    background: var(--character-active-color);
+    border-radius: 50%;
+}
+
+.water-drop-loading::before {
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    left: -10px;
+    box-shadow: 0 0 0 1px var(--character-active-color);
+    animation: move 1.2s infinite ease-in;
+}
+
+.water-drop-loading::after {
+    width: 30px;
+    height: 25px;
+    top: 95px;
+    left: -10px;
+    box-shadow: 0 0 0 1px var(--character-active-color);
+    animation: move2 1.2s infinite ease-in;
+}
+
+@keyframes move {
+    80%,
+    100% {
+        box-shadow: -60px 0 0 0.5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes move2 {
+    80%,
+    100% {
+        box-shadow: -100px 0 0 0.5px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes moveMain {
+    42% {
+        transform: skewX(-10deg) translate(40px, 0);
+    }
+}
