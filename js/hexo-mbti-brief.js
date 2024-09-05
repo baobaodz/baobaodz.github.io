@@ -21,7 +21,7 @@ function initializeBriefMBTI(config) {
                 
                 <div class="mbti-brief-header">
                     <div class="mbti-brief-personality-name">
-                        ${personalityType.name} (${personalityType.type})
+                        <span>${personalityType.name}</span> <span lang="en">(${personalityType.type})</span>
                     </div>
                 </div>
                 <div class="mbti-brief-body">
@@ -105,10 +105,16 @@ function initializeBriefMBTI(config) {
             imgUrl: getAvatarImgUrl(wrapper.dataset.style, personalityType),
         };
         setTimeout(() => {
-            const briefImageContainer = document.querySelector('.mbti-brief-image-container');
-            loadCardContent(currentPersonalityType, wrapper.dataset.style, briefImageContainer);
             flipper.classList.remove('flipping');
-        }, 300);
+            const briefImageContainer = document.querySelector('.mbti-brief-image-container');
+            loadCardContent(currentPersonalityType, wrapper.dataset.style, briefImageContainer)
+                .then(() => {
+                    requestAnimationFrame(() => {
+                        wrapper.style.maxHeight = 'none';
+
+                    });
+                });
+        }, 500);
     }
 
 
@@ -150,10 +156,15 @@ function initializeBriefMBTI(config) {
     container.innerHTML = createHTML(currentPersonalityType);
     const wrapper = document.getElementById('mbti-brief-wrapper');
     wrapper.dataset.style = config.style;
+    wrapper.setAttribute('lang', config.language);
     const briefImageContainer = document.querySelector('.mbti-brief-image-container');
 
-    loadCardContent(currentPersonalityType, config.style, briefImageContainer);
-
+    loadCardContent(currentPersonalityType, wrapper.dataset.style, briefImageContainer)
+        .then(() => {
+            requestAnimationFrame(() => {
+                wrapper.style.maxHeight = 'none';
+            });
+        });
 
     if (config.interaction.slide) {
         const elements = {
@@ -169,7 +180,7 @@ function initializeBriefMBTI(config) {
             currentIndex = (newIndex + personalityTypes.length) % personalityTypes.length;
             currentPersonalityType = getCurrentPersonalityType(personalityTypes[currentIndex]);
 
-            elements.wrapper.querySelector('.mbti-brief-personality-name').textContent = `${currentPersonalityType.name} (${currentPersonalityType.type})`;
+            elements.wrapper.querySelector('.mbti-brief-personality-name').innerHTML = `<span>${currentPersonalityType.name}</span> <span lang="en">(${currentPersonalityType.type})</span>`;
             elements.wrapper.querySelector('.mbti-brief-desc').textContent = currentPersonalityType.desc;
             elements.backgroundElement.style.backgroundColor = currentPersonalityType.characterColor;
             elements.backgroundElement.querySelector('svg path').setAttribute('fill', currentPersonalityType.characterColor);
@@ -193,7 +204,15 @@ function initializeBriefMBTI(config) {
                 newImageContainer.classList.remove('slide-in-right', 'slide-in-left');
 
                 updatePersonalityInfo(currentIndex + (isNext ? 1 : -1));
-                loadCardContent(currentPersonalityType, elements.wrapper.dataset.style, newImageContainer);
+                // loadCardContent(currentPersonalityType, elements.wrapper.dataset.style, newImageContainer);
+
+                loadCardContent(currentPersonalityType, elements.wrapper.dataset.style, newImageContainer)
+                    .then(() => {
+                        requestAnimationFrame(() => {
+                            wrapper.style.maxHeight = 'none';
+                            newImageContainer.classList.remove('slide-in-right', 'slide-in-left');
+                        });
+                    });
             }, 500);
         };
 
@@ -205,6 +224,11 @@ function initializeBriefMBTI(config) {
     if (config.interaction.switch) {
         const throttledSwitchStyle = throttle(switchStyle, 300);
         document.getElementById('styleSwitchBtn').addEventListener('click', throttledSwitchStyle);
+    }
+    if (config.interaction.resize) {
+        wrapper.addClass('resizable');
+        const throttledResize = throttle(resizeContainer, 300);
+        throttledResize('.resizable')
     }
 }
 
@@ -237,7 +261,7 @@ class ClassicStyleHandler extends StyleHandler {
         fetchWithCache(personalityType.imgUrl)
             .then(animationData => {
                 container.innerHTML = '';
-                container.style.minHeight = '100%';
+                container.style.minHeight = 'auto';
                 const animation = lottie.loadAnimation({
                     container: container,
                     renderer: 'svg',
@@ -257,6 +281,7 @@ class ClassicStyleHandler extends StyleHandler {
                     if (!container.matches(':hover')) {
                         animation.stop();
                     }
+                    container.dispatchEvent(new Event('load'));
                 });
 
             });
@@ -282,7 +307,8 @@ class imgStyleHandler extends StyleHandler {
                 img.onload = () => {
                     container.innerHTML = '';
                     container.appendChild(img);
-                    container.style.minHeight = '100%';
+                    container.style.minHeight = 'auto';
+                    container.dispatchEvent(new Event('load')); // 触发 load 事件
                 };
             })
             .catch(error => {
@@ -329,7 +355,7 @@ const styleConfigs = {
             genderSpecific: true
         },
         fontFormat: {
-            chineseFont: '',
+            chineseFont: 'HanYiFeiLi-Jian',
             englishFont: "Lilita One",
         },
         handler: imgStyleHandler,
@@ -412,6 +438,84 @@ const styleConfigs = {
         },
         handler: imgStyleHandler,
     },
+    cat: {
+        name: 'cat',
+        author: 'none',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Architects Daughter",
+        },
+        handler: imgStyleHandler,
+    },
+    classic_cute: {
+        name: 'classic_cute',
+        author: 'none',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Architects Daughter",
+        },
+        handler: imgStyleHandler,
+    },
+    work: {
+        name: 'work',
+        author: 'mbti.friendly',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Archivo Black",
+        },
+        handler: imgStyleHandler,
+    },
+    illustration_3: {
+        name: 'illustration_3',
+        author: 'toptier sensor',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Sue Ellen Francisco",
+        },
+        handler: imgStyleHandler,
+    },
+    animals: {
+        name: 'animals',
+        author: 'ProvenPsychology',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Pangolin",
+        },
+        handler: imgStyleHandler,
+    },
+    Disney_princesses: {
+        name: 'Disney_princesses',
+        author: 'LittleMsArtsy',
+        imageFormat: {
+            type: 'png',
+            genderSpecific: false
+        },
+        fontFormat: {
+            chineseFont: '',
+            englishFont: "Pangolin",
+        },
+        handler: imgStyleHandler,
+    },
 };
 Object.values(styleConfigs).forEach(config => {
     if (!config.imageFormat.getUrl) {
@@ -435,7 +539,9 @@ const styleHandlerFactory = {
 };
 
 function loadCardContent(personalityType, style, briefImageContainer) {
-    const handler = styleHandlerFactory.getHandler(style);
-    handler.loadContent(personalityType, briefImageContainer, style);
-
+    return new Promise((resolve) => {
+        const handler = styleHandlerFactory.getHandler(style);
+        handler.loadContent(personalityType, briefImageContainer, style);
+        briefImageContainer.addEventListener('load', resolve, { once: true });
+    });
 }

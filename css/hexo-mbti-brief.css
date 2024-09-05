@@ -1,31 +1,6 @@
-/* 设置基本字体 */
-
-body {
-    font-family: var(--english-font), var(--chinese-font), sans-serif;
-}
-
-
-/* 为中文字符应用中文字体 */
-
- :lang(zh),
- :not(:lang(zh))>* {
-    font-family: var(--chinese-font), var(--english-font), sans-serif;
-}
-
-
-/* 为英文字符应用英文字体 */
-
- :lang(en),
- :not(:lang(zh))>*:lang(en) {
-    font-family: var(--english-font), var(--chinese-font), sans-serif;
-}
-
-
-/* 使用Unicode范围选择器为中文字符应用中文字体 */
-
- :not(:lang(zh)):not(:lang(en)) {
-    font-family: var(--chinese-font), var(--english-font), sans-serif;
-    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F;
+@font-face {
+    font-family: 'CustomFontSet';
+    src: local('Ubuntu'), local('Mulish'), local('Georgia'), local('PingFang SC'), local('Hiragino Sans GB'), local('Microsoft YaHei'), local(sans-serif);
 }
 
 .card-flipper {
@@ -44,7 +19,7 @@ body {
     align-items: center;
     position: relative;
     justify-content: center;
-    min-width: 175px;
+    min-width: 185px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -53,8 +28,11 @@ body {
     backface-visibility: hidden;
     transition: box-shadow 0.3s ease-in-out, height 0.3s ease;
     container-type: inline-size;
-    font-family: var(--style-font, Ubuntu, Mulish, SimSun, Georgia, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif);
+    /* font-family: var(--style-font, Ubuntu, Mulish, SimSun, Georgia, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif); */
+    font-family: var(--english-font, "CustomFontSet"), var(--chinese-font, "CustomFontSet");
     letter-spacing: 1px;
+    max-height: 2000px;
+    transition: max-height 2s ease-in-out;
     /* background-image: url(https://s21.ax1x.com/2024/08/25/pAFWPPK.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -102,6 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: calc(100% - 68px);
 }
 
 .mbti-brief-personality-name {
@@ -112,10 +91,10 @@ body {
 .mbti-brief-image-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px;
     object-fit: contain;
-    width: 90%;
+    /* width: 90%; */
     height: auto;
     min-height: 200px;
     position: relative;

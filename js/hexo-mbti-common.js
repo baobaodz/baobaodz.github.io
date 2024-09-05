@@ -132,11 +132,12 @@ function loadFontWithCache(fontConfig) {
     }
 
     if (fontConfig.chineseFont) {
+        const fontFamily = fontConfig.chineseFont.replace(/\s/g, '');
         fontPromises.push(new Promise((resolve, reject) => {
-            const fontFace = new FontFace(fontConfig.chineseFont, `
-                url(${imagesHostUrl}/fonts/${fontConfig.chineseFont}.woff2) format('woff2'),
-                url(${imagesHostUrl}/fonts/${fontConfig.chineseFont}.woff) format('woff')
-            `);
+            const fontFace = new FontFace(
+                fontFamily,
+                `url(${imagesHostUrl}/fonts//${fontFamily}/${fontFamily}.woff2) format('woff2'),`, { unicodeRange: 'U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700-2B73F, U+2B740-2B81F, U+2B820-2CEAF, U+F900-FAFF, U+2F800-2FA1F' }
+            );
             fontFace.load().then((loadedFace) => {
                 document.fonts.add(loadedFace);
                 resolve();
@@ -149,6 +150,44 @@ function loadFontWithCache(fontConfig) {
     return fontPromise;
 }
 
+function resizeContainer(selector, width, height) {
+    interact(selector)
+        .resizable({
+            edges: { left: true, right: true, bottom: true, top: true },
+            listeners: {
+                move(event) {
+                    var target = event.target
+                    var x = (parseFloat(target.getAttribute('data-x')) || 0)
+                    var y = (parseFloat(target.getAttribute('data-y')) || 0)
+
+                    // 更新元素的宽度和高度
+                    target.style.width = event.rect.width + 'px'
+                    target.style.height = event.rect.height + 'px'
+
+                    // 更新元素的位置
+                    x += event.deltaRect.left
+                    y += event.deltaRect.top
+
+                    target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+
+                    target.setAttribute('data-x', x)
+                    target.setAttribute('data-y', y)
+                }
+            },
+            modifiers: [
+                // 保持元素的宽高比
+                interact.modifiers.aspectRatio({
+                    ratio: 'preserve'
+                }),
+
+                // 限制大小
+                interact.modifiers.restrictSize({
+                    min: { width: 100, height: 100 },
+                    max: { width: 900, height: 800 },
+                }),
+            ],
+        })
+}
 
 function debounce(func, delay) {
     let timer;
